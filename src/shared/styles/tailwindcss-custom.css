@@ -1,0 +1,11 @@
+.title-limiter {
+  max-width: 14em;
+}
+.tracking-tight {
+  letter-spacing: -0.025em;
+}
+
+.text-md-tight {
+  font-size: 1.125rem !important;
+  line-height: 1.333 !important;
+}

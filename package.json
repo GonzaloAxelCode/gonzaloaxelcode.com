@@ -1,0 +1,52 @@
+{
+  "name": "coursera-clone",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@dhaiwat10/react-link-preview": "^1.15.0",
+    "@notionhq/client": "^2.2.13",
+    "@react-oauth/google": "^0.11.1",
+    "@splidejs/react-splide": "^0.7.12",
+    "@tailwindcss/typography": "^0.5.10",
+    "axios": "^1.5.1",
+    "bright": "^0.8.4",
+    "firebase": "^10.5.0",
+    "get-link-preview": "^1.0.7",
+    "google-auth-library": "^9.1.0",
+    "moment": "^2.29.4",
+    "next": "13.5.5",
+    "next-auth": "^4.24.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-preview-link": "^1.0.1",
+    "react-slick": "^0.29.0",
+    "react-syntax-highlighter": "^15.5.0",
+    "react-tiny-link": "^3.6.1",
+    "react-toggle-dark-mode": "^1.1.1",
+    "slick-carousel": "^1.8.1",
+    "slugify": "^1.6.6",
+    "swiper": "^10.3.1",
+    "swr": "^2.2.4",
+    "tailwind-cn": "^1.0.2",
+    "unist-util-visit": "^5.0.0",
+    "use-link-preview": "^1.0.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10",
+    "encoding": "^0.1.13",
+    "eslint": "^8",
+    "eslint-config-next": "13.5.5",
+    "postcss": "^8",
+    "tailwindcss": "^3",
+    "typescript": "^5"
+  }
+}
