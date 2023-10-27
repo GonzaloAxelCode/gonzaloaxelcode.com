@@ -30,7 +30,7 @@ const PresentationArticle = ({ article }: any) => {
       className="flex-col lg:flex-row my-8 max-w-[768px] lg:max-w-[1280px] mx-auto px-8"
     >
       <Flex col full className="space-y-3">
-        <Flex full itemscenter className="space-x-3">
+        <Flex full itemscenter className="gap-2 flex-wrap">
           <P>
             <svg
               width={64}
