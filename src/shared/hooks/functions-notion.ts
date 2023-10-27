@@ -1,7 +1,10 @@
 import {
   findArticleBySlug,
+  getAllArticles,
   getArticle,
+  getTags,
 } from "@/shared/services/notion-services";
+import suglifyTitle from "../utils/suglify-title";
 
 export const getFullArticleBySlug = async (slug: any) => {
   const { idPage, article } = await findArticleBySlug(
@@ -11,6 +14,19 @@ export const getFullArticleBySlug = async (slug: any) => {
 
   const content = await getArticle(idPage);
   return { content, article, idPage };
+};
+
+export const getFullArticlesByCategorySlug = async (categoryslug: any) => {
+  const allpages = await getAllArticles(process.env.NOTION_DATABASE, {});
+
+  const filterpages = allpages.filter((page: any) => {
+    return (
+      suglifyTitle(page.properties?.Category?.select.name) ===
+      suglifyTitle(categoryslug)
+    );
+  });
+  const tags = getTags(filterpages);
+  return { articles: filterpages, tags };
 };
 
 export const getFullTutorialBySlug = async (slug: any) => {
@@ -39,3 +55,54 @@ export const getFullTopicBySlug = async (slug: any) => {
   const topic = await getArticle(idPage);
   return topic;
 };
+
+
+export function obtenerCategoriasUnicas(data: any) {
+  const categoriasUnicas: any = new Set();
+  data?.forEach((item: any) => {
+    if (
+      item.properties &&
+      item.properties.Category &&
+      item.properties.Category.select
+    ) {
+      categoriasUnicas.add(JSON.stringify(item?.properties?.Category?.select));
+    }
+  });
+
+  const categoriasArray = [...categoriasUnicas].map((item) => JSON.parse(item));
+
+  return categoriasArray;
+}
+
+export function filterByTagAndCategory(data: any, tagName: any, categoryName: any) {
+  if (
+    tagName === "all-tags" ||
+    tagName === "" ||
+    tagName === null ||
+    tagName === " "
+  ) {
+    return data?.filter((item: any) => {
+      const tags = item?.properties?.Tags?.multi_select?.map((tag: any) => {
+        if (
+          suglifyTitle(item?.properties?.Category?.select?.name) ===
+          suglifyTitle(categoryName)
+        ) {
+          return suglifyTitle(tag.name);
+        }
+      });
+      return tags;
+    });
+  } else {
+    return data?.filter((item: any) => {
+      const tags = item?.properties?.Tags?.multi_select?.map((tag: any) => {
+        if (
+          suglifyTitle(item?.properties?.Category?.select?.name) ===
+          suglifyTitle(categoryName)
+        ) {
+          return suglifyTitle(tag.name);
+        }
+      });
+      return tags.includes(suglifyTitle(tagName));
+    });
+  }
+}

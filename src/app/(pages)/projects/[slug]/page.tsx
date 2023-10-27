@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
 
 
 export default async function ProjectPage({ params }: any) {
-  console.log(params.slug);
+  
   const { content, article: project } = await getFullProjectBySlug(params.slug);
 
   return (

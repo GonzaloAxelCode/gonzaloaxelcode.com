@@ -1,13 +1,15 @@
 "use client";
 import P from "@/shared/UIComponents/Base/P";
 import Subtitle from "@/shared/UIComponents/Base/Subtitle";
-import { UIContext } from "@/shared/contexts/UIContext";
 import Image from "next/image";
-import { useContext } from "react";
 
 import Flex from "@/shared/UIComponents/Base/Flex";
 //@ts-ignore
+import Title from "@/shared/UIComponents/Base/Title";
+//@ts-ignore
 import SyntaxHighlighter from "react-syntax-highlighter";
+//@ts-ignore
+import suglifyTitle from "@/shared/utils/suglify-title";
 //@ts-ignore
 import { atomOneDark as theme } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import LinkDownloadPreview from "./LinkDownloadPreview";
@@ -25,14 +27,30 @@ const ContentBlock = ({ block }: any) => {
         </P>
       );
     case "heading_1":
+      const textReferenceH1 = value?.rich_text
+        ?.map((el: any, index: number) => {
+          return `${el.text?.content}`;
+        })
+        .join("");
       return (
-        <Subtitle className="wrap-balance tracking-tight text-3xl lg:text-4xl 2xl:text-6xl font-bold my-12 first:mt-0 scroll-mt-[120px]">
+        <Title
+          id={suglifyTitle(textReferenceH1)}
+          className="wrap-balance  tracking-tight text-3xl lg:text-4xl font-bold mb-2 mt-2 my-4"
+        >
           <Text texts={value.rich_text} />
-        </Subtitle>
+        </Title>
       );
     case "heading_2":
+      const textReferenceH2 = value?.rich_text
+        ?.map((el: any, index: number) => {
+          return `${el.text?.content}`;
+        })
+        .join("");
       return (
-        <Subtitle className=" tracking-tight text-2xl-tight lg:text-3xl-tight 2xl:text-4xl font-bold mb-6 mt-12 first:mt-0 scroll-mt-[120px]">
+        <Subtitle
+          id={suglifyTitle(textReferenceH2)}
+          className="wrap-balance  tracking-tight text-2xl lg:text-2xl font-bold mb-2 mt-1 my-2"
+        >
           <Text texts={value.rich_text} />
         </Subtitle>
       );
@@ -99,13 +117,13 @@ const ContentBlock = ({ block }: any) => {
         <CodeBlock
           language={value.language}
           code={value?.rich_text || []}
-          caption={value?.caption[0]?.plain_text || ""}
+          caption={value?.caption}
         />
       );
 
     case "callout":
       return (
-        <div className="my-12 first:mt-0 last:mb-0 p-6 md:p-10 rounded-2xl flex flex-col gap-4 bg-quaternary-green">
+        <div className="w-full my-12 first:mt-0 last:mb-0 p-4 md:p-6 rounded-2xl flex flex-col  bg-quaternary-blue dark:bg-gray-1F">
           <div className="flex flex-col sm:flex-row gap-6 sm:items-center">
             <svg
               width={64}
@@ -113,7 +131,7 @@ const ContentBlock = ({ block }: any) => {
               viewBox="0 0 64 64"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="w-12 h-12 text-primary-green shrink-0"
+              className="w-12 h-12 text-primary-blue shrink-0"
             >
               <path
                 opacity="0.2"
@@ -125,18 +143,15 @@ const ContentBlock = ({ block }: any) => {
                 fill="currentColor"
               />
             </svg>
-            <Subtitle className="tracking-tight scroll-mt-[120px] dark:dark:text-graydark text-2xl-tight lg:text-3xl-tight 2xl:text-4xl font-2xl">
+            <h2 className="mb-3 text-black dark:text-white tracking-tight text-xl 2xl:text-4xl font-2xl">
               Nota
-            </Subtitle>
+            </h2>
           </div>
-          <div>
-            <div className="">
-              <div className=" sm:pl-[72px]  2xl:text-md  print:text-[12px] print:text-justify">
-                <P className="my-4 first:mt-0 last:mb-0 print:my-2 text-md dark:text-graydark">
-                  {value.rich_text[0]?.plain_text}
-                </P>
-              </div>
-            </div>
+
+          <div className=" sm:pl-[72px]  2xl:text-md  print:text-[12px] print:text-justify">
+            <P className="dark:text-white text-graydark my-4 first:mt-0 last:mb-0 print:my-2 text-md ">
+              XDDDD
+            </P>
           </div>
         </div>
       );
@@ -222,7 +237,7 @@ const Text = ({ texts }: any) => {
           bold && "font-bold",
           italic && "font-italic",
           code &&
-            "inline-code  p-[2px] leading-[1] bg-primary-orange rounded bg-opacity-20 text-primary-orange font-mono text-sm font-medium",
+            "inline-code  p-[3px] leading-[1] bg-primary-orange rounded bg-opacity-20 text-primary-orange font-mono  font-medium",
           strikethrough && "",
           underline && "underline",
         ].join(" ")}
@@ -244,38 +259,38 @@ const Text = ({ texts }: any) => {
   });
 };
 
-const CodeBlock = ({ code, language, metastring, caption }: any) => {
-  const { themeGlobal } = useContext(UIContext);
-
+const CodeBlock = ({ code, language, caption }: any) => {
   const CODE = code.reduce((acc: any, el: any) => {
     return acc + `${el.plain_text}`;
   }, ``);
 
-  const resultado = extraerValores(caption);
-  const ADDED = [1, 2];
-  const REMOVED = [5, 6];
-
   return (
-    <div
-      className="bg-[#151515] pt-5  text-sm"
-      style={{
-        display: "grid",
-        borderRadius: "15px",
-        width: "100%",
-      }}
-    >
-      <SyntaxHighlighter
-        language={resultado?.language}
-        customStyle={{
-          background: "transparent",
-          width: "100%",
-          marginBottom: "20px",
-        }}
-        style={theme}
-        wrapLines={true}
-        showLineNumbers
-        showInlineLineNumbers
-        lineProps={(lineNumber: any) => {
+    <div className="w-full">
+      <div className="grid bg-[#151515] p-4  text-sm rounded-xl w-full">
+        <SyntaxHighlighter
+          language={language}
+          customStyle={{
+            background: "transparent",
+            width: "100%",
+          }}
+          style={theme}
+          wrapLines={true}
+          showLineNumbers
+          showInlineLineNumbers
+        >
+          {CODE}
+        </SyntaxHighlighter>
+      </div>
+      <P className="text-center text-xs w-ful m-1">
+        <Text texts={caption || "Description to code"} />
+      </P>
+    </div>
+  );
+};
+
+/*
+
+   lineProps={(lineNumber: any) => {
           let style: any = { display: "flex" };
           style.paddingLeft = "30px";
           style.paddingRight = "30px";
@@ -291,12 +306,7 @@ const CodeBlock = ({ code, language, metastring, caption }: any) => {
 
           return { style };
         }}
-      >
-        {CODE}
-      </SyntaxHighlighter>
-    </div>
-  );
-};
+ */
 
 function extraerValores(cadena: any) {
   const regex = /\[(.*?)\]/g;

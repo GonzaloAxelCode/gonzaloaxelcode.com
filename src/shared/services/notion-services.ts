@@ -29,28 +29,27 @@ export const getAllArticles = cache(
 
 export const getTags = (articles: any) => {
   let list: any = [];
-  articles.map((art: any) => {
-    list.push(art.properties.Tags.multi_select);
+  articles?.map((art: any) => {
+    list.push(art?.properties?.Tags?.multi_select);
   });
 
-  let result = list.reduce((acc: any, el: any) => {
+  let result = list?.reduce((acc: any, el: any) => {
     return acc.concat(el);
   }, []);
 
-  let tagsNames = result.reduce((acc: any, el: any) => {
+  let tagsNames = result?.reduce((acc: any, el: any) => {
     return [...acc, el.name];
   }, []);
 
-  let objetsTags = tagsNames.reduce((acc: any, el: any) => {
+  let objetsTags = tagsNames?.reduce((acc: any, el: any) => {
     acc[el] = (acc[el] || 0) + 1;
 
     return acc;
   }, {});
 
   let tagsKeys = Object.keys(objetsTags);
-  let tagsValues = Object.values(objetsTags);
 
-  return { tagsKeys, tagsValues };
+  return tagsKeys;
 };
 
 export const getArticle = async (id: string) => {
@@ -67,12 +66,8 @@ export const findArticleBySlug = async (
   slug: string
 ) => {
   const pages = await getAllArticles(database_id, {});
-  console.log("SLUG:", suglifyTitle(slug));
+
   const page = pages.find((page: any) => {
-    console.log(
-      " VALOR : ",
-      suglifyTitle(page.properties?.Name?.title[0]?.plain_text)
-    );
     return (
       suglifyTitle(page.properties?.Name?.title[0]?.plain_text) ===
       suglifyTitle(slug)

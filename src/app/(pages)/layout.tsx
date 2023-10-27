@@ -15,10 +15,59 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const Meetup = false;
   return (
     <html lang="es">
-      <body className="body bg-transparent  overflow-x-hidden antialiased selection:bg-primary-purple ">
+      <body
+        id="body-id"
+        className="body bg-transparent  overflow-x-hidden antialiased selection:bg-primary-purple "
+      >
         <GlobalProviders>
+          {Meetup && (
+            <div
+              id="siteBanner"
+              className="max-w-[768px] lg:max-w-[1280px]  mx-auto  px-8 text-sm relative z-50 print:hidden overflow-hidden transition-all duration-300 ease-out text-graydark "
+            >
+              <div className=" font-medium text-sm sm:text-sm rounded-xl flex flex-col sm:flex-row overflow-hidden relative justify-between mt-4 bg-gray-EE text-gray-30">
+                <div className="font-bold py-3 px-4 sm:py-4 sm:px-6 text-center flex shrink-0 items-center bg-gray-F7">
+                  <span>Prismic Meetup</span>
+                </div>
+                <div className="py-3 px-4 sm:py-4 sm:px-6 flex flex-wrap gap-x-4 gap-y-2">
+                  <span>
+                    Live Coding with Next.js &amp; Prismic: 5 Features in 1 Hour
+                    to Empower Marketers! — Tuesday, October 31st
+                  </span>
+                  <a
+                    target="_blank"
+                    className="font-bold underline inline-block underline-offset-4 hover:underline-offset-2"
+                    rel="noreferrer"
+                    href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MGQwdG9oOTg5c2FlYjZrdTNyYXE0aWIybTcgbm91aGEuY2hoaWhAcHJpc21pYy5pbw&tmsrc=nouha.chhih%40prismic.io"
+                  >
+                    Add to calendar
+                  </a>
+                </div>
+                <button
+                  className="absolute top-2 right-2 sm:relative sm:top-0 sm:right-0 sm:mr-4"
+                  type="button"
+                  aria-label="Close banner"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-gray-30"
+                  >
+                    <path
+                      d="m7.757 7.757 8.486 8.486M7.757 16.243l8.486-8.486"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          )}
+
           <Header />
           <Flex full className="relative z-2 ">
             {children}

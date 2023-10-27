@@ -1,41 +1,25 @@
-import { createContext, useEffect, useState } from "react";
+"use client";
+import { createContext, useState } from "react";
+import useDarkSide from "../hooks/useDarkSide";
 
 export const UIContext = createContext<any>({});
 
 export const UIProvider = ({ children }: any) => {
-  const [scrollTop, setScrollTop] = useState(0);
-  const [showNotification, setShowNotification] = useState({
-    show: false,
-    message: "",
-  });
+  const [colorTheme, setToggleTheme] = useDarkSide();
 
-  const [themeGlobal, setThemeGlobalState] = useState<boolean>(false);
+  const [darkSide, setDarkSide] = useState(
+    colorTheme === "light" ? true : false
+  );
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const themeLocal =
-        localStorage.getItem("theme") === null
-          ? false
-          : localStorage.getItem("theme") === "true"
-          ? true
-          : false;
-      setThemeGlobalState(themeLocal);
-      localStorage.setItem("theme", themeLocal.toString());
-    }
-  }, []);
-
-  const setThemeGlobal = () => {
-    localStorage.setItem("theme", (!themeGlobal).toString()); // Convertir a cadena
-    setThemeGlobalState(!themeGlobal);
+  const toggleDarkMode = (checked: any) => {
+    setToggleTheme();
+    setDarkSide(checked);
   };
 
-  const state = {
-    showNotification,
-    setShowNotification,
-    setThemeGlobal,
-    themeGlobal,
-    scrollTop,
-    setScrollTop,
+  const state: any = {
+    themeGlobal: darkSide,
+    darkSide,
+    toggleDarkMode,
   };
 
   return <UIContext.Provider value={state}>{children}</UIContext.Provider>;

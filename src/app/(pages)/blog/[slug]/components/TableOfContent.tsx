@@ -1,74 +1,86 @@
+"use client";
 import P from "@/shared/UIComponents/Base/P";
 import Title from "@/shared/UIComponents/Base/Title";
+import suglifyTitle from "@/shared/utils/suglify-title";
+//@ts-ignore
+import Cookies from "js-cookie";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { cn } from "tailwind-cn";
+import SvgCompletedArticle from "./SvgCompletedArticle";
+//@ts-ignore
+import Flex from "@/shared/UIComponents/Base/Flex";
+import usePostRatings from "@/shared/hooks/usePostRatings";
+import useTheme from "@/shared/hooks/useTheme";
+import Confetti from "./Confetti";
 
-const list_content = [
-  {
-    text: "What is Postman",
-    type: "title",
-    redirect: "#",
-  },
-  {
-    text: "How do you use Postman?",
-    type: "subtitle",
-    redirect: "#",
-  },
-  {
-    text: "The request URL field",
-    type: "text",
-    redirect: "#",
-  },
-  {
-    text: "Methods",
-    type: "text",
-    redirect: "#",
-  },
-  {
-    text: "Params, headers, and authentication",
-    type: "text",
-    redirect: "#",
-  },
-  {
-    text: "Status codes",
-    type: "text",
-    redirect: "#",
-  },
-  {
-    text: "Other functions",
-    type: "text",
-    redirect: "#",
-  },
+function extractHeading1Text(inputArray: any) {
+  const extractedArray = inputArray
+    .filter((obj: any) => obj.type === "heading_1" || obj.type === "heading_2")
+    .map((obj: any) => ({
+      slugtext: suglifyTitle(
+        obj[obj?.type || ""]?.rich_text
+          .map((el: any, index: number) => {
+            return `${el.text?.content}`;
+          })
+          .join("")
+      ),
+      type: obj?.type || "",
+      text: obj[obj?.type || ""]?.rich_text
+        .map((el: any, index: number) => {
+          return `${el.text?.content}`;
+        })
+        .join(""),
+    }));
+  return extractedArray;
+}
+const TableOfContent = ({ content, id }: any) => {
+  const extractedArray = extractHeading1Text(content);
+  const [title, setTitle] = useState("");
+  const { themeGlobal } = useTheme();
+  const { ratings, handleToggleLike } = usePostRatings(id);
+  useEffect(() => {
+    const handleScroll = () => {
+      const divs: any = document.querySelectorAll(".id-ref");
 
-  {
-    text: "Make your first request",
-    type: "subtitle",
-    redirect: "#",
-  },
-  {
-    text: "Prismic's endpoint",
-    type: "text",
-    redirect: "#",
-  },
-  {
-    text: "Write a query",
-    type: "text",
-    redirect: "#",
-  },
-  {
-    text: "The JSON response",
-    type: "text",
-    redirect: "#",
-  },
+      for (const div of divs) {
+        if (isElementInViewport(div)) {
+          if (div.id !== "" && div.id !== null) {
+            setTitle(div.id);
+            break;
+          }
+        }
+      }
+    };
 
-  {
-    text: "FAQs",
-    type: "subtitle",
-    redirect: "#",
-  },
-];
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Llama a handleScroll inicialmente para establecer el título
 
-const TableOfContent = ({ content }: any) => {
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Agrega un desplazamiento suave para una transición más agradable.
+    });
+  };
+
+  function isElementInViewport(el: any) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+  const isLiked = (type: any) => {
+    return Cookies.get(`rated_${id}_${type}`) === "true";
+  };
   return (
     <div className="pb-6 lg:col-span-4 order-1 lg:sticky  lg:top-[20px] lg:h-[700px]">
       <div className="bg-white dark:bg-blackbg overflow-hidden pt-6 px-6 pb-2.5 relative border-2 rounded-xl border-gray-100 dark:border-darkborder  ">
@@ -77,17 +89,19 @@ const TableOfContent = ({ content }: any) => {
             <Title className=" scroll-mt-[120px] text-xl font-medium">
               Table of contents
             </Title>
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-7 h-7 -mr-2 transition-transform -rotate-90 text-white dark:text-black"
-            >
-              <path
-                d="M7 11.25h-.75v1.5H7v-1.5Zm9.75 1.5h.75v-1.5h-.75v1.5Zm-3.22-5.78L13 6.44 11.94 7.5l.53.53 1.06-1.06ZM17.5 12l.53.53.53-.53-.53-.53-.53.53Zm-5.03 3.97-.53.53L13 17.56l.53-.53-1.06-1.06ZM7 12.75h9.75v-1.5H7v1.5Zm5.47-4.72 4.5 4.5 1.06-1.06-4.5-4.5-1.06 1.06Zm4.5 3.44-4.5 4.5 1.06 1.06 4.5-4.5-1.06-1.06Z"
-                fill="currentColor"
-              />
-            </svg>
+            <div onClick={() => scrollToTop()}>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-7 h-7 -mr-2 transition-transform -rotate-90 dark:text-white text-black"
+              >
+                <path
+                  d="M7 11.25h-.75v1.5H7v-1.5Zm9.75 1.5h.75v-1.5h-.75v1.5Zm-3.22-5.78L13 6.44 11.94 7.5l.53.53 1.06-1.06ZM17.5 12l.53.53.53-.53-.53-.53-.53.53Zm-5.03 3.97-.53.53L13 17.56l.53-.53-1.06-1.06ZM7 12.75h9.75v-1.5H7v1.5Zm5.47-4.72 4.5 4.5 1.06-1.06-4.5-4.5-1.06 1.06Zm4.5 3.44-4.5 4.5 1.06 1.06 4.5-4.5-1.06-1.06Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
           </button>
         </header>
         <div className="relative">
@@ -95,85 +109,75 @@ const TableOfContent = ({ content }: any) => {
             <div className="relative" style={{ transform: "none" }}>
               <div className="w-1 bg-quaternary-purple absolute top-0 left-4 bottom-0 hidden lg:block" />
               <div
-                style={{ height: 32 }}
-                className="w-1 origin-top bg-primary-purple absolute top-0 left-4 hidden lg:block"
+                style={{
+                  height:
+                    35 +
+                    35 *
+                      (extractedArray.findIndex(
+                        (item: any) => item.slugtext === title
+                      ) +
+                        1),
+                }}
+                className="w-1 origin-top bg-primary-purple absolute top-0 left-4 hidden lg:block transition-all duration-400"
               />
-              <div
-                style={{ height: 32 * (list_content.length + 1) }}
-                className="w-1 origin-top bg-secondary-purple opacity-30 absolute top-0 left-4 hidden lg:block"
-              />
+              <div className="w-1 origin-top bg-secondary-purple opacity-30 absolute top-0 left-4 hidden lg:block transition-all duration-100" />
               <ul className="list-none text-sm">
-                {list_content.map((el: any, index: any) => {
-                  return (
-                    <li key={index} className="first:pt-0 last:pb-6 text-base ">
-                      <Link
-                        href={el.redirect}
-                        className={cn(
-                          "inline-block lg:ml-8 rounded-sm text-gray-50 hover:text-primary-purple leading-6 px-2 relative transition-colors duration-200 focus:outline-none focus:ring-2 ring-gray-EE pl-2"
-                        )}
+                {extractedArray &&
+                  extractedArray?.map((el: any, index: any) => {
+                    return (
+                      <li
+                        key={index}
+                        className="first:pt-0 last:pb-6 text-base "
                       >
-                        <P
+                        <Link
+                          href={`#${suglifyTitle(el.text)}`}
                           className={cn(
-                            "hover:text-primary-purple",
-                            el.type == "title" && "text-md text-black",
-                            el.type == "subtitle" && "text-md py-2",
-                            el.type == "text" && "text-sm ml-4"
+                            "inline-block lg:ml-8 rounded-sm  hover:text-primary-purple leading-6 px-2 relative transition-colors duration-200 focus:outline-none focus:ring-2 ring-gray-EE pl-2",
+                            suglifyTitle(title) === suglifyTitle(el.text)
+                              ? "text-primary-purple"
+                              : "text-gray-50"
                           )}
                         >
-                          {el.text}
-                        </P>
-                      </Link>
-                    </li>
-                  );
-                })}
+                          <P
+                            className={cn(
+                              "hover:text-primary-purple",
+
+                              el.type == "heading_1" && "text-md py-1",
+                              el.type == "heading_2" && "text-sm ml-4",
+                              suglifyTitle(title) === suglifyTitle(el.text)
+                                ? "text-[#151515] underline"
+                                : "text-[#151515] opacity-50"
+                            )}
+                          >
+                            {el.text}
+                          </P>
+                        </Link>
+                      </li>
+                    );
+                  })}
               </ul>
             </div>
           </div>
           <div className="absolute transition-opacity w-full inset-0 lg:left-7 bottom-auto hidden lg:block h-4 bg-gradient-to-b from-white to-transparent pointer-events-none opacity-0" />
-          <div className="absolute transition-opacity w-full inset-0 lg:left-7 top-auto h-4 bg-gradient-to-t from-white to-transparent pointer-events-none opacity-0" />
         </div>
-        <div className="items-center bg-gray-F7 rounded-lg z-10 relative -mx-3.5 py-2.5 pl-16 -mt-2 hidden lg:flex">
-          <svg
-            width={64}
-            height={64}
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="absolute left-0 top-0"
-          >
-            <path
-              d="M32 0C32 0 32 7.92318 32 13C21 13 12 22 12 33C12 44 21 53 32 53C43 53 52 44 52 33C52 22 43 13 32.5 13"
-              stroke="#EEE3FC"
-              strokeWidth={4}
-            />
-            <path
-              d="M32 0C32 0 32 7.92318 32 13C21 13 12 22 12 33C12 44 21 53 32 53C43 53 52 44 52 33C52 22 43 13 32.5 13"
-              stroke="#8E44EC"
-              strokeWidth={4}
-              pathLength={1}
-              strokeDashoffset="0px"
-              strokeDasharray="0px 1px"
-            />
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M25 30.5C24.4477 30.5 24 30.9477 24 31.5V39.5C24 40.0523 24.4477 40.5 25 40.5H39C39.5523 40.5 40 40.0523 40 39.5V31.5C40 30.9477 39.5523 30.5 39 30.5H25ZM31.5 33.5C30.9477 33.5 30.5 33.9477 30.5 34.5V37.5C30.5 38.0523 30.9477 38.5 31.5 38.5H32.5C33.0523 38.5 33.5 38.0523 33.5 37.5V34.5C33.5 33.9477 33.0523 33.5 32.5 33.5H31.5Z"
-              fill="#8E44EC"
-            />
-            <path
-              d="M36.5 30.5V29C36.5 26.5147 34.4853 24.5 32 24.5V24.5C29.5147 24.5 27.5 26.5147 27.5 29V30.5"
-              stroke="#8E44EC"
-              strokeWidth={3}
-              pathLength={1}
-              strokeDashoffset="0px"
-              strokeDasharray="1px 1px"
-            />
-          </svg>
+
+        <div className="items-center bg-gray-F7 dark:bg-gray-1F rounded-lg z-10 relative -mx-3.5 py-2.5 pl-16 -mt-2 hidden lg:flex">
+          <SvgCompletedArticle
+            active={
+              extractedArray.findIndex(
+                (item: any) => item.slugtext === title
+              ) ===
+              extractedArray.length - 1
+            }
+          />
+
           <div className="text-base-tight flex flex-col">
             <P className="font-bold text-md text-black">Congratulations!</P>
             <P className="text-sm">You’ve thoroughly explored this topic!</P>
           </div>
         </div>
+        {extractedArray.findIndex((item: any) => item.slugtext === title) ===
+          extractedArray.length - 1 && <Confetti />}
         <div className="absolute bottom-10 left-10">
           <div style={{ position: "relative" }} />
         </div>
@@ -241,20 +245,71 @@ const TableOfContent = ({ content }: any) => {
             </Link>
           </div>
         </nav>
-        <div className="w-14 h-16 relative rounded-lg shrink-0 bg-gray-F7 font-headings flex flex-col items-center justify-center overflow-hidden">
-          <div
-            className="absolute bottom-0 left-0 right-0 bg-quaternary-green"
-            style={{ height: 0 }}
-          />
-          <button className="w-full h-8 relative before:border-gray-15 before:border-opacity-50 before:content-[''] before:border-4 before:border-r-transparent before:border-b-transparent before:w-2 before:h-2 before:-mt-2 before:rotate-45 before:-translate-x-1/2 before:block before:absolute before:top-5 before:left-1/2 disabled:opacity-20">
-            <span className="sr-only">Upvote post</span>
-          </button>
-          <P className="text-sm relative z-10">10</P>
-          <button className="rotate-180 w-full h-8 relative before:border-gray-15 before:border-opacity-50 before:content-[''] before:border-4 before:border-r-transparent before:border-b-transparent before:w-2 before:h-2 before:-mt-2 before:rotate-45 before:-translate-x-1/2 before:block before:absolute before:top-5 before:left-1/2 disabled:opacity-20">
-            <span className="sr-only">Downvote post</span>
-          </button>
-        </div>
       </div>
+      <Flex full className="gap-3 my-3">
+        <button onClick={() => handleToggleLike("like")}>
+          <div
+            className="w-16 py-3 h-20 relative rounded-lg shrink-0 bg-gray-F7 dark:bg-gray-1F font-headings flex flex-col items-center justify-center overflow-hidden"
+            style={{
+              backgroundColor: !isLiked("like")
+                ? ""
+                : !themeGlobal
+                ? "#E9E9E9"
+                : "black",
+            }}
+          >
+            <span className=" text-2xl">👍</span>
+            <P className="text-sm relative z-10">{ratings.like}</P>
+          </div>
+        </button>
+        <button onClick={() => handleToggleLike("heart")}>
+          <div
+            className="w-16 py-3 h-20 relative rounded-lg shrink-0 bg-gray-F7 dark:bg-gray-1F font-headings flex flex-col items-center justify-center overflow-hidden"
+            style={{
+              backgroundColor: !isLiked("heart")
+                ? ""
+                : !themeGlobal
+                ? "#E9E9E9"
+                : "black",
+            }}
+          >
+            <span className=" text-2xl">❤️</span>
+            <P className="text-sm relative z-10">{ratings.heart}</P>
+          </div>
+        </button>
+
+        <button onClick={() => handleToggleLike("applause")}>
+          <div
+            className="w-16 py-3 h-20 relative rounded-lg shrink-0 bg-gray-F7 dark:bg-gray-1F font-headings flex flex-col items-center justify-center overflow-hidden"
+            style={{
+              backgroundColor: !isLiked("applause")
+                ? ""
+                : !themeGlobal
+                ? "#E9E9E9"
+                : "black",
+            }}
+          >
+            <span className=" text-2xl">👏</span>
+            <P className="text-sm relative z-10">{ratings.applause}</P>
+          </div>
+        </button>
+
+        <button onClick={() => handleToggleLike("confetti")}>
+          <div
+            className="w-16 py-3 h-20 relative rounded-lg shrink-0 bg-gray-F7 dark:bg-gray-1F font-headings flex flex-col items-center justify-center overflow-hidden"
+            style={{
+              backgroundColor: !isLiked("confetti")
+                ? ""
+                : !themeGlobal
+                ? "#E9E9E9"
+                : "black",
+            }}
+          >
+            <span className="text-2xl">🎉</span>
+            <P className="text-sm relative z-10"> {ratings.confetti}</P>
+          </div>
+        </button>
+      </Flex>
     </div>
   );
 };

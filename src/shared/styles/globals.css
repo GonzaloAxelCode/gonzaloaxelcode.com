@@ -158,6 +158,7 @@
   padding: 0;
   box-sizing: border-box !important;
   scroll-behavior: smooth;
+  transition: 0.001s all;
 }
 
 h1,
@@ -536,3 +537,9 @@ pre {
   min-height: 400px;
   background-size: cover;
 }
+
+
+iframe body .haAclf{
+  background-color: red !important; 
+}
+

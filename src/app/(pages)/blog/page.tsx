@@ -9,13 +9,15 @@ import LastestContent from "./components/LatestContent";
 export const metadata: Metadata = {
   ...defaultMetadata,
 };
+
+
 const PageBlog = () => {
   return (
     <main className="w-full overflow-x-hidden">
       <BlogGridPresentation />
       <LastestContent />
       <ChooseTechStack />
-      <div className="max-w-[768px] lg:max-w-[1280px]  mx-auto  px-8">
+      <div className="max-w-[768px] lg:max-w-[1280px]  mx-auto my-10 px-8">
         <Subscribe />
       </div>
       <ArticlesByTopic />

@@ -6,11 +6,11 @@ const P = ({ children, className = "", ...args }: any) => {
       style={{
         lineHeight: 1.555,
       }}
+      {...args}
       className={cn(
         "text-base font-bold-400 text-graydark dark:text-graywhite",
         className
       )}
-      {...args}
     >
       {children}
     </p>

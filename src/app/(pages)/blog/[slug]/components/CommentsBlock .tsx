@@ -1,15 +1,15 @@
-import { CredentialResponse, GoogleLogin } from "@react-oauth/google";
+"use client";
+import { GoogleLogin } from "@react-oauth/google";
 import { useEffect, useState } from "react";
 
 import {
-    addComment,
-    addSubComment,
-    getComments,
+  addComment,
+  addSubComment,
+  getComments,
 } from "@/shared/services/firebase";
 
 import Image from "next/image";
 
-import decodeJwt from "@/shared/utils/decodeJwt";
 //@ts-ignore
 import moment from "moment";
 //@ts-ignore
@@ -106,11 +106,8 @@ const CommentsBlock = ({ idArticle }: any) => {
     }
   };
 
-  async function handleSuccess(credentialResponse: CredentialResponse) {
-    console.log("credentialResponse", credentialResponse);
+  async function handleSuccess(credentialResponse: any) {
     if (credentialResponse.credential) {
-      const { payload } = decodeJwt(credentialResponse.credential);
-      console.log("payload credential", payload);
       const response = await fetch("/api/google", {
         method: "POST",
         body: JSON.stringify({
@@ -118,25 +115,22 @@ const CommentsBlock = ({ idArticle }: any) => {
         }),
       });
       const json = await response.json();
-      console.log("verify", json);
+
       setEmail(json.email);
       setUser({
         ...json,
         name: json?.given_name,
         image: json?.picture,
       });
-      console.log(json);
     }
   }
-  function handleError() {
-    console.log("Login failed");
-  }
+  function handleError() {}
 
   return (
     <div className="my-12">
       <h2
         id="commentsSection"
-        className="font-headings tracking-tight  text-2xl-tight lg:text-3xl-tight 2xl:text-4xl font-medium mt-12 scroll-mt-[120px]"
+        className="font-headings text-blackbg dark:text-white tracking-tight  text-2xl-tight lg:text-3xl-tight 2xl:text-4xl font-medium mt-12 scroll-mt-[120px]"
       >
         {allComments ? allComments.length || 0 : 0} comments
       </h2>
@@ -150,7 +144,7 @@ const CommentsBlock = ({ idArticle }: any) => {
               id="commentBox"
               placeholder="Your comment"
               style={{ paddingTop: 12 }}
-              className="rounded-lg border-2 px-4 py-2 leading-7 focus:outline-none focus:ring-4 focus:ring-tertiary-purple w-full block h-36 bg-white border-gray-15"
+              className="rounded-lg text-blackbg dark:text-white border-2 px-4 py-2 leading-7 focus:outline-none focus:ring-4 focus:ring-tertiary-purple w-full block h-36 bg-white dark:bg-gray-1F border-gray-15"
               defaultValue={""}
               onChange={(e: any) =>
                 setNewComment({
@@ -176,15 +170,23 @@ const CommentsBlock = ({ idArticle }: any) => {
             )}
 
             {!email && (
-              <GoogleLogin
-                onSuccess={handleSuccess}
-                onError={handleError}
-                useOneTap
-              />
+              <div className="w-full ">
+                <GoogleLogin
+                  onSuccess={handleSuccess}
+                  onError={handleError}
+                  useOneTap
+                  theme="filled_black"
+                  shape="pill"
+                  locale="es"
+                  size="large"
+                  auto_select
+                />
+              </div>
             )}
           </div>
         </div>
       </form>
+
       <div className="flex flex-col gap-8 mt-12 text-gray-15">
         {allComments &&
           allComments.map((comment: any, index: number) => {
@@ -247,8 +249,4 @@ const ButtonPostComment = ({
       </span>
     </button>
   );
-};
-
-const ButtonSigOut = () => {
-  return <div></div>;
 };

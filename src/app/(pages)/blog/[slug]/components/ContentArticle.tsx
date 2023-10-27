@@ -1,25 +1,26 @@
 "use client";
 import Flex from "@/shared/UIComponents/Base/Flex";
-import P from "@/shared/UIComponents/Base/P";
-import Title from "@/shared/UIComponents/Base/Title";
 import CommentsBlock from "./CommentsBlock ";
 import ContentBlock from "./ContentBlokcs";
 
 const ContentArticle = ({ content, id }: any) => {
   return (
     <div>
-      {content &&
-        content?.map((block: any, index: number) => {
-          return (
-            <Flex key={index}>
-              <ContentBlock block={block} />
-            </Flex>
-          );
-        })}
-      <div className="bg-gray-F7 rounded-xl p-8 dark-copy flex gap-4 my-12">
+      <div className="w-full">
+        {content &&
+          content?.map((block: any, index: number) => {
+            return (
+              <Flex key={index}>
+                <ContentBlock block={block} />
+              </Flex>
+            );
+          })}
+      </div>
+      <div id="end-id" />
+      <div className="bg-gray-F7 dark:bg-gray-1F text-blackbg dark:text-white  rounded-xl p-8 dark-copy flex gap-4 my-12">
         <div>
           <span className="text-base-flat">Article written by</span>
-          <h3 className="font-headings tracking-tight scroll-mt-[120px] text-xl-tight 2xl:2xl-tight font-medium mt-1">
+          <h3 className="text-blackbg dark:text-white font-headings tracking-tight scroll-mt-[120px] text-xl-tight 2xl:2xl-tight font-medium mt-1">
             Coner Murphy
           </h3>
           <div className="font-copy text-base 2xl:text-md font-medium print:text-[12px] print:text-justify copy-muted mt-4">
@@ -49,12 +50,12 @@ const ContentArticle = ({ content, id }: any) => {
           src="https://images.prismic.io/prismic-main/Mjc2N2Y2N2QtYTk4Zi00MzA1LWFmYmQtZmFiZGUyOWI3Mjk1_4a5c8696-86bf-4f89-9fa3-31318133e5f3_coner_murphy.jpg?auto=compress%2Cformat&rect=0%2C0%2C1200%2C1126&w=3840&fit=max"
         />
       </div>
-      <div className="my-12 first:mt-0 last:mb-0 bg-gray-F7 p-6 rounded-xl">
-        <h2 className="font-headings tracking-tight scroll-mt-[120px] text-md-tight 2xl:text-lg font-medium">
+      <div className="my-12 first:mt-0 last:mb-0 bg-gray-F7 dark:bg-blackbg p-6 rounded-xl">
+        <h2 className="text-blackbg dark:text-white font-headings tracking-tight scroll-mt-[120px] text-md-tight 2xl:text-lg font-medium">
           You might also like
         </h2>
         <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mt-6">
-          <article className="overflow-hidden flex w-full grow h-full relative border-2 rounded-xl flex-col bg-white border-gray-EE text-gray-15">
+          <article className="overflow-hidden flex w-full grow h-full relative border-2 rounded-xl flex-col bg-white dark:bg-gray-1F border-gray-EE dark:border-gray-1F dark:text-white text-gray-15">
             <div className="hidden sm:block">
               <div className="aspect-[258/145] bg-quaternary-purple">
                 <svg
@@ -357,7 +358,7 @@ const ContentArticle = ({ content, id }: any) => {
                     />
                   </g>
                   <defs>
-                    <clipPath id="blog-fallback_svg__a">
+                    <clipPath>
                       <path fill="#fff" d="M0 0h516v290H0z" />
                     </clipPath>
                   </defs>
@@ -389,7 +390,7 @@ const ContentArticle = ({ content, id }: any) => {
                         fill="currentColor"
                       />
                     </svg>
-                    <span className="whitespace-nowrap overflow-ellipsis overflow-hidden">
+                    <span className="  dark:text-white text-gray-15 whitespace-nowrap overflow-ellipsis overflow-hidden">
                       Performance &amp; UX
                     </span>
                   </a>
@@ -407,7 +408,7 @@ const ContentArticle = ({ content, id }: any) => {
               </div>
             </div>
           </article>
-          <article className="overflow-hidden flex w-full grow h-full relative border-2 rounded-xl flex-col bg-white border-gray-EE text-gray-15">
+          <article className="overflow-hidden flex w-full grow h-full relative border-2 rounded-xl flex-col bg-white dark:bg-gray-1F border-gray-EE dark:border-gray-1F dark:text-white text-gray-15">
             <div className="hidden sm:block">
               <div className="aspect-[258/145] overflow-hidden relative">
                 <img
@@ -449,7 +450,7 @@ const ContentArticle = ({ content, id }: any) => {
                         fill="currentColor"
                       />
                     </svg>
-                    <span className="whitespace-nowrap overflow-ellipsis overflow-hidden">
+                    <span className=" dark:text-white text-gray-15 whitespace-nowrap overflow-ellipsis overflow-hidden">
                       Performance &amp; UX
                     </span>
                   </a>
@@ -471,10 +472,15 @@ const ContentArticle = ({ content, id }: any) => {
         </div>
       </div>
 
-      
       <CommentsBlock idArticle={id} />
+    </div>
+  );
+};
 
-      <Flex full className="space-x-5 flex-wrap">
+export default ContentArticle;
+
+/*
+ <Flex full className="space-x-5 flex-wrap">
         <div className="container-coffe p-10">
           <div className="coffee-header">
             <div className="coffee-header__buttons coffee-header__button-one"></div>
@@ -504,8 +510,4 @@ const ContentArticle = ({ content, id }: any) => {
           </P>
         </Flex>
       </Flex>
-    </div>
-  );
-};
-
-export default ContentArticle;
+*/

@@ -9,15 +9,20 @@ const useExtractInfoArticle = (article: any) => {
   let category = article.properties?.Category?.select?.name;
 
   let createdAt = article.properties?.Created?.created_time;
+  let updatedLast = article.last_edited_time;
+  let minRead = article?.properties?.MinRead?.rich_text[0]?.plain_text;
 
   const tags = article?.properties?.Tags?.multi_select || [];
+  
   return {
     tags,
     title,
     description,
     category,
     createdAt,
-    cover: cover,
+    updatedLast,
+    minRead,
+    cover,
   };
 };
 

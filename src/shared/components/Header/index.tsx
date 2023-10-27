@@ -1,6 +1,10 @@
+"use client";
 import Flex from "@/shared/UIComponents/Base/Flex";
 import P from "@/shared/UIComponents/Base/P";
+import { fetcherCache } from "@/shared/services/fetcher";
+import suglifyTitle from "@/shared/utils/suglify-title";
 import Link from "next/link";
+import useSWR from "swr";
 import { cn } from "tailwind-cn";
 import Logo from "../Logo/Index";
 import Switcher from "../SwitcherDark";
@@ -29,6 +33,30 @@ const paths = [
 ];
 
 const Header = () => {
+  function obtenerCategoriasUnicas(data: any) {
+    const categoriasUnicas: any = new Set();
+    data?.forEach((item: any) => {
+      if (
+        item.properties &&
+        item.properties.Category &&
+        item.properties.Category.select
+      ) {
+        categoriasUnicas.add(
+          JSON.stringify(item?.properties?.Category?.select)
+        );
+      }
+    });
+
+    const categoriasArray = [...categoriasUnicas].map((item) =>
+      JSON.parse(item)
+    );
+
+    return categoriasArray;
+  }
+  const { data: articles } = useSWR("/api/blog", fetcherCache);
+
+  const categorias = obtenerCategoriasUnicas(articles);
+
   return (
     <Flex full col className="lg:max-w-screen">
       <Flex full itemscenter between className="mx-auto px-8 py-2">
@@ -112,36 +140,17 @@ const Header = () => {
           <div className="overflow-hidden relative transition-all w-auto">
             <div className="relative overflow-x-auto overflow-y-hidden py-2 scroll-personalizado">
               <div className="flex z-30 gap-6 items-center  border-gray-EE whitespace-nowrap">
-                <Link className="last:pr-10" href="/blog/category/latest-articles">
-                  <P className="text-sm">Latest Articles</P>
-                </Link>
-                <Link
-                  className="last:pr-10"
-                  href="/blog/category/performance-and-ux"
-                >
-                  <P className="text-sm">Performance &amp; UX</P>
-                </Link>
-                <Link className="last:pr-10" href="/blog/category/tech-stack">
-                  <P className="text-sm">Tech stack</P>
-                </Link>
-                <Link
-                  className="last:pr-10"
-                  href="/blog/category/developer-workflow"
-                >
-                  <P className="text-sm">Developer Workflow</P>
-                </Link>
-                <Link
-                  className="last:pr-10"
-                  href="/blog/category/announcements"
-                >
-                  <P className="text-sm">Prismic Announcements</P>
-                </Link>
-                <Link
-                  className="last:pr-10"
-                  href="/blog/category/developer-business"
-                >
-                  <P className="text-sm">Business of Web Development</P>
-                </Link>
+                {categorias.map((el: any, index: number) => {
+                  return (
+                    <Link
+                      key={index}
+                      className="last:pr-10"
+                      href={`/blog/category/${suglifyTitle(el.name)}`}
+                    >
+                      <P className="text-sm">{el.name}</P>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </div>

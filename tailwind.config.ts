@@ -18,7 +18,7 @@ const config: Config = {
       },
       colors: {
         graydark: "#505050",
-        blackbg: "#1E1E1E",
+        blackbg: "#181818",
         blackbgsection: "#151515",
         bgcode: "#151515",
         darkborder: "#292929",
@@ -26,7 +26,7 @@ const config: Config = {
         graywhite: "#D3D3D3",
         notegreen:"rgb(59, 187, 150)",
         primary: {
-          purple: "regb(142 ,68, 236)",
+          purple: "rgb(142 ,68, 236)",
           green: "rgb(59, 187, 150)",
           orange: "rgb(237, 107, 34)",
           blue: "rgb(89 ,181, 248)",
@@ -55,11 +55,10 @@ const config: Config = {
         base: "1.125rem",
         sm: "14px",
         md: "16px",
-        "3xl": "48px",
+        "3xl": "36px",
         "5xl": "56px",
         "6xl": "3rem",
         "7xl": "3.5rem",
-
         "xl-tight": "1.375rem",
       },
       letterSpacing: {

@@ -3,14 +3,32 @@ import Flex from "@/shared/UIComponents/Base/Flex";
 import P from "@/shared/UIComponents/Base/P";
 import Title from "@/shared/UIComponents/Base/Title";
 import useExtractInfoArticle from "@/shared/hooks/useExtractInfoArticle";
+import usePostViews from "@/shared/hooks/usePostViews";
 import siteMetadata from "@/shared/settings/sitemetdata";
+import formatDate from "@/shared/utils/format-date";
+import suglifyTitle from "@/shared/utils/suglify-title";
 import Image from "next/image";
 
 const PresentationArticle = ({ article }: any) => {
-  const { tags, title, description, cover } = useExtractInfoArticle(article);
-
+  const {
+    tags,
+    title,
+    updatedLast,
+    minRead,
+    description,
+    cover,
+    category,
+    createdAt,
+  } = useExtractInfoArticle(article);
+  console.log(article)
+  const viewCount = usePostViews(suglifyTitle(title));
   return (
-    <Flex full itemscenter justifycenter className="flex-col lg:flex-row my-8">
+    <Flex
+      full
+      itemscenter
+      justifycenter
+      className="flex-col lg:flex-row my-8 max-w-[768px] lg:max-w-[1280px] mx-auto px-8"
+    >
       <Flex col full className="space-y-3">
         <Flex full itemscenter className="space-x-3">
           <P>
@@ -33,10 +51,10 @@ const PresentationArticle = ({ article }: any) => {
               />
             </svg>
           </P>
-          <P className="text-sm text-black font-bold">Tech stack</P>
-          <P className="text-md">November 1, 2021 </P>
+          <P className="text-xs sm:text-sm text-black font-bold">{category}</P>
+          <P className="text-sm sm:text-md">{formatDate(createdAt)}</P>
           <P>&middot;</P>
-          <P className="text-md">7 min read</P>
+          <P className="text-sm sm:text-md">{minRead} min read</P>
         </Flex>
         <Title className="text-3xl  lg:text-5xl max-w-lg lg:max-w-none">
           {title}
@@ -55,7 +73,7 @@ const PresentationArticle = ({ article }: any) => {
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="inline-block w-6 h-6 mr-1"
+              className="inline-block w-6 h-6 mr-1 dark:text-white text-graydark"
             >
               <path
                 d="M2.958 12.251c-.001 0 .001-.006.007-.02a.125.125 0 0 1-.007.02ZM3.096 12c.12-.19.301-.446.542-.75A18.495 18.495 0 0 1 5.775 9C7.598 7.374 9.86 6 12 6c2.15 0 4.417 1.332 6.231 2.924.888.779 1.622 1.58 2.127 2.228a7.39 7.39 0 0 1 .583.848 7.39 7.39 0 0 1-.583.848 16.89 16.89 0 0 1-2.127 2.228C16.417 16.668 14.151 18 12 18c-2.14 0-4.402-1.374-6.225-3a18.5 18.5 0 0 1-2.137-2.25 8.932 8.932 0 0 1-.542-.75Zm17.927.173-.003-.012a.087.087 0 0 1 .003.012Zm-.003-.334a.096.096 0 0 1 0 0Zm-18.055-.07a.105.105 0 0 1-.007-.02l.007.02Z"
@@ -68,8 +86,10 @@ const PresentationArticle = ({ article }: any) => {
                 strokeWidth={2}
               />
             </svg>
+     
+
             <div className="w-0.5 h-6 bg-gray"></div>
-            <P className="text-md"> 1309 views</P>
+            <P className="text-md"> | {viewCount} views</P>
           </Flex>
         </Flex>
       </Flex>
@@ -84,7 +104,7 @@ const PresentationArticle = ({ article }: any) => {
           />
         </picture>
         <P className="text-sm italic font-light my-2">
-          Article updated on September 14, 2023
+          Article updated on {formatDate(updatedLast)}
         </P>
       </Flex>
     </Flex>
