@@ -13,6 +13,7 @@
     "@notionhq/client": "^2.2.13",
     "@react-oauth/google": "^0.11.1",
     "@splidejs/react-splide": "^0.7.12",
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@tailwindcss/typography": "^0.5.10",
     "axios": "^1.5.1",
     "bright": "^0.8.4",
@@ -41,7 +42,8 @@
     "swr": "^2.2.4",
     "tailwind-cn": "^1.0.2",
     "unist-util-visit": "^5.0.0",
-    "use-link-preview": "^1.0.6"
+    "use-link-preview": "^1.0.6",
+    "use-scroll-direction": "^1.1.4"
   },
   "devDependencies": {
     "@types/node": "^20",

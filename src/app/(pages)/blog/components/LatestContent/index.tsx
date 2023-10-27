@@ -12,7 +12,7 @@ const LastestContent = () => {
         <div className="container max-w-[768px] lg:max-w-[1280px]  mx-auto  px-8">
           <div className="md:flex md:items-center md:justify-between">
             <div className="max-w-[740px] pr-6">
-              <h2 className="font-headings tracking-tight scroll-mt-[120px] text-4xl lg:text-4xl 2xl:text-4xl font-bold mt-2 first:mt-0 title-limiter">
+              <h2 className="font-headings tracking-tight scroll-mt-[120px] text-4xl lg:text-4xl 2xl:text-4xl font-bold mt-4 mb-3 first:mt-0 title-limiter">
                 Latest Youtube content
               </h2>
             </div>
@@ -32,7 +32,7 @@ const LastestContent = () => {
                 {articles?.map((article: any, index: number) => (
                   <SplideSlide
                     key={index}
-                    className="max-w-[364px] py-4 transform translate-x-11"
+                    className="max-w-[314px] py-4 transform translate-x-11"
                   >
                     <CardArticle article={article} />
                   </SplideSlide>

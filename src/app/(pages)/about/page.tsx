@@ -1,4 +1,3 @@
-
 import defaultMetadata from "@/shared/settings/default-metadata";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
@@ -6,42 +5,58 @@ export const metadata: Metadata = {
 };
 const PageAbout = () => {
   return (
-    <main className="w-full">
-      <section className="relative overflow-hidden  max-w-[768px] lg:max-w-[1280px]  mx-auto  px-8">
-        <div className="container items-center relative z-10 py-16 lg:py-16 2xl:py-20">
+    <main
+      className="w-full"
+      style={{
+        backgroundImage:
+          "url(https://res.cloudinary.com/djzt16xpp/image/upload/e_blur:900/v1696951897/rays.426980b9_xy7aj1.png)",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "contain",
+      }}
+    >
+      <section className="relative">
+        <div className="  max-w-[768px] lg:max-w-[1280px]  mx-auto  px-8  items-center relative z-10 py-16 pb-2 lg:py-16 lg:pb-2 2xl:py-20 2xl:pb-2">
           <div className="mx-auto flex flex-col ">
-            <span className="font-bold text-base md:text-md mb-4 text-primary-orange">
+            <span className="font-bold text-base  mb-4 text-primary-orange">
               Hola, soy Gonzalo Axel
             </span>
-            <h1 className="font-headings tracking-tight scroll-mt-[120px] text-6xl lg:text-7xl 2xl:text-8xl font-bold title-limiter leading-title">
+            <h1 className="font-headings text-blackbg dark:text-white tracking-tight scroll-mt-[120px] text-6xl lg:text-7xl 2xl:text-8xl font-bold title-limiter leading-title">
               Desarrollador de software, programador junior y apasionado porla
               tecnologia.
             </h1>
             <div className="font-copy text-base lg:text-md 2xl:text-xl font-medium print:text-[14px] print:text-justify mt-4 lg:mt-6 max-w-xl text-[#505050]">
-              <p className="my-6 first:mt-0 last:mb-0 print:my-2">
+              <p className="my-6 first:mt-0 dark:text-graywhite last:mb-0 print:my-2">
                 Soy Gonzalo Axel, un apasionado desarrollador web en constante
                 crecimiento y formación. Mi objetivo es convertirme en un
                 destacado creador de software web, contribuyendo con soluciones
                 innovadoras y eficientes en el mundo digital.
               </p>
             </div>
-            <nav className="flex items-center flex-wrap gap-4 mt-6 lg:mt-10 ">
+            <nav className="flex items-center flex-wrap gap-4 mt-6 lg:mt-10  ">
               <a
                 target=""
-                className="rounded-lg font-bold whitespace-nowrap focus:outline-none focus:ring-tertiary-purple disabled:opacity-50 group border-2 focus:ring-4 transition-opacity transition-colors hover:bg-opacity-75 disabled:hover:bg-opacity-100 border-gray-15 py-3 px-6 text-sm-flat leading-5 2xl:text-base-flat 2xl:leading-5 bg-gray-15 text-white"
+                className="rounded-3xl  whitespace-nowrap focus:outline-none focus:ring-tertiary-purple disabled:opacity-50 group border-2 focus:ring-4 transition-opacity transition-colors hover:bg-opacity-75 disabled:hover:bg-opacity-100 border-gray-15 dark:border-white py-3 px-6 text-sm-flat leading-5 2xl:text-base-flat 2xl:leading-5 bg-gray-15 text-white"
                 rel="noreferrer"
                 href="https://prismic.io/try"
               >
                 Ver mis projectos
+              </a>
+              <a
+                target=""
+                className="rounded-3xl whitespace-nowrap focus:outline-none focus:ring-tertiary-purple disabled:opacity-50 group border-2 focus:ring-4 transition-opacity transition-colors hover:bg-opacity-75 disabled:hover:bg-opacity-100 border-gray-15 dark:border-white py-3 px-6 text-sm-flat leading-5 2xl:text-base-flat 2xl:leading-5 bg-gray-15 text-white"
+                rel="noreferrer"
+                href="https://prismic.io/try"
+              >
+                Ver mi CV
               </a>
             </nav>
           </div>
         </div>
       </section>
 
-      <section className="w-full  py-10 md:py-16 2xl:py-20 overflow-hidden transition-opacity duration-500 light-copy ">
+      <section className="w-full dark:text-white text-blackbg py-10 md:py-10 2xl:py-10 overflow-hidden transition-opacity duration-500 light-copy ">
         <div className=" max-w-[768px] lg:max-w-[1280px]  mx-auto  px-8">
-          <h2 className="font-headings tracking-tight scroll-mt-[120px] text-md-tight 2xl:text-lg font-medium">
+          <h2 className="font-headings tracking-tight scroll-mt-[120px] dark:text-white text-blackbg text-md-tight 2xl:text-lg font-medium">
             7,107 developers and CTOs are empowering their marketing team with
             Prismic
           </h2>
@@ -205,7 +220,7 @@ const PageAbout = () => {
         </div>
       </section>
 
-      <section className="w-full text-gray-15 py-10 md:py-16 2xl:py-20 overflow-hidden dark-copy">
+      <section className="w-full dark:text-white text-blackbg py-10 md:py-16 2xl:py-20 overflow-hidden dark-copy">
         <div className="container flex flex-col md:flex-row gap-6 md:items-center  max-w-[768px] lg:max-w-[1280px]  mx-auto  px-8">
           <div className="md:w-1/2 order-2 md:order-first md:pr-14">
             <h2 className="font-headings tracking-tight scroll-mt-[120px] text-4xl lg:text-5xl 2xl:text-6xl font-bold mt-2 first:mt-0">
@@ -243,7 +258,7 @@ const PageAbout = () => {
         </div>
       </section>
 
-      <section className="w-full text-gray-15 py-10 md:py-16 2xl:py-20 overflow-hidden dark-copy">
+      <section className="w-full dark:text-white text-blackbg py-10 md:py-16 2xl:py-20 overflow-hidden dark-copy">
         <div className="max-w-[768px] lg:max-w-[1280px]  mx-auto  px-8">
           <div className="container md:grid md:grid-cols-12 md:gap-x-6">
             <div className="md:col-span-5 mb-10 md:mb-20 flex flex-col gap-6">

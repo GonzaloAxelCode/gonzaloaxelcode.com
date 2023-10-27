@@ -29,7 +29,10 @@ const ArticlesByTopic = () => {
   const [changeCategorySlug, setChangeCategorySlug] = useState(
     suglifyTitle(categorias[0]?.name)
   );
-
+  useEffect(() => {
+    const cate = obtenerCategoriasUnicas(articles);
+    setChangeCategorySlug(cate[0]?.name);
+  }, [articles]);
   //cuando cambia el tag
   useEffect(() => {
     const filterArticlesByTag = filterByTagAndCategory(
@@ -76,7 +79,8 @@ const ArticlesByTopic = () => {
           </div>
         </div>
         <div className="mt-12">
-          <div className="relative">
+          <div className="relative z-3   dark:bg-blackbg bg-white">
+            <div className="absolute -bottom-0 z-28   h-[1px] border-t-2 dark:border-darkborder  border-gray-EE w-full grid bg-transparent"></div>
             <div className="" role="tablist" aria-orientation="horizontal">
               <Splide
                 hasTrack
@@ -86,7 +90,7 @@ const ArticlesByTopic = () => {
                   arrows: false,
                 }}
               >
-                <SplideTrack>
+                <SplideTrack className="">
                   {categorias &&
                     categorias?.map((el: any, index: number) => {
                       const colorCategory =
@@ -101,7 +105,13 @@ const ArticlesByTopic = () => {
                           key={index}
                           className="max-w-[264px]"
                         >
-                          <button className="px-6 py-4 pb-5 lg:px-12 lg:py-6 mr-4 border-2 focus:outline-none rounded-t-xl flex items-center gap-3 bg-white dark:bg-blackbgsection border-gray-EE dark:border-darkborder h-full">
+                          <button
+                            className={cn(
+                              "relative z-10 px-6 py-4 pb-5 lg:px-12 lg:py-6 mr-4 border-2   focus:outline-none rounded-t-xl flex items-center gap-3 bg-white dark:bg-blackbgsection border-gray-EE dark:border-darkborder h-full",
+                              changeCategorySlug === suglifyTitle(el.name) &&
+                                "border-b-0"
+                            )}
+                          >
                             <svg
                               width={64}
                               height={64}
@@ -132,89 +142,88 @@ const ArticlesByTopic = () => {
               </Splide>
             </div>
           </div>
-          <div className="">
-            <div className="relative p-6 lg:p-12 border-2 rounded-bl-xl dark:border-darkborder">
-              <nav className="mb-4 relative">
-                <div className="overflow-auto">
-                  <div className="flex mb-4 text-sm font-semibold gap-2">
-                    <button
-                      onClick={() => setChangeTag("all-tags")}
-                      className={cn(
-                        "leading-4 whitespace-nowrap transition-all border-r-2 border-gray-EE pr-2 last:pr-0 last:border-0 ",
-                        changeTag === "all-tags"
-                          ? "text-primary-blue underline underline-offset-4 "
-                          : ""
-                      )}
-                    >
-                      All
-                    </button>
 
-                    {allTags &&
-                      allTags?.map((tagname: any, index: number) => {
-                        return (
-                          <span
-                            key={index}
-                            onClick={() => setChangeTag(suglifyTitle(tagname))}
-                            className="last:pr-6 cursor-pointer"
+          <div className="relative z-1 p-6 z-1  lg:p-12 border-2 border-t-0 rounded-bl-xl dark:border-darkborder">
+            <nav className="mb-4 relative">
+              <div className="overflow-auto">
+                <div className="flex mb-4 text-sm font-semibold gap-2">
+                  <button
+                    onClick={() => setChangeTag("all-tags")}
+                    className={cn(
+                      "leading-4 whitespace-nowrap transition-all border-r-2 border-gray-EE pr-2 last:pr-0 last:border-0 ",
+                      changeTag === "all-tags"
+                        ? "text-primary-blue underline underline-offset-4 "
+                        : ""
+                    )}
+                  >
+                    All
+                  </button>
+
+                  {allTags &&
+                    allTags?.map((tagname: any, index: number) => {
+                      return (
+                        <span
+                          key={index}
+                          onClick={() => setChangeTag(suglifyTitle(tagname))}
+                          className="last:pr-6 cursor-pointer"
+                        >
+                          <button
+                            className={cn(
+                              "leading-4 whitespace-nowrap transition-all border-r-2 border-gray-EE pr-2 last:pr-0 last:border-0 ",
+                              changeTag === suglifyTitle(tagname)
+                                ? "text-primary-blue underline underline-offset-4 "
+                                : ""
+                            )}
                           >
-                            <button
-                              className={cn(
-                                "leading-4 whitespace-nowrap transition-all border-r-2 border-gray-EE pr-2 last:pr-0 last:border-0 ",
-                                changeTag === suglifyTitle(tagname)
-                                  ? "text-primary-blue underline underline-offset-4 "
-                                  : ""
-                              )}
-                            >
-                              {tagname}
-                            </button>
-                          </span>
-                        );
-                      })}
-                  </div>
+                            {tagname}
+                          </button>
+                        </span>
+                      );
+                    })}
                 </div>
-              </nav>
-              <Splide
-                hasTrack={false}
-                options={{
-                  drag: "free",
-                  gap: "0.5rem",
-                }}
-              >
-                <Flex full>
-                  <Flex className="ml-auto space-x-2 splide__arrows">
-                    <button className="splide__arrow splide__arrow--prev disabled:opacity-30 dark:text-white">
-                      <svg
-                        className="w-[18px] h-[18px]"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M8.775 3.225 0 12l8.775 8.775 1.498-1.407-6.421-6.267H24v-2.202H3.852l6.421-6.267-1.498-1.407Z"></path>
-                      </svg>
-                    </button>
-                    <button className="splide__arrow splide__arrow--next disabled:opacity-30 dark:text-white">
-                      <svg
-                        className="w-[18px] h-[18px]"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M15.225 20.775 24 12l-8.775-8.775-1.498 1.407 6.421 6.267H0v2.202h20.148l-6.421 6.267 1.498 1.407Z"></path>
-                      </svg>
-                    </button>
-                  </Flex>
+              </div>
+            </nav>
+            <Splide
+              hasTrack={false}
+              options={{
+                drag: "free",
+                gap: "0.5rem",
+              }}
+            >
+              <Flex full>
+                <Flex className="ml-auto space-x-2 splide__arrows">
+                  <button className="splide__arrow splide__arrow--prev disabled:opacity-30 dark:text-white">
+                    <svg
+                      className="w-[18px] h-[18px]"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M8.775 3.225 0 12l8.775 8.775 1.498-1.407-6.421-6.267H24v-2.202H3.852l6.421-6.267-1.498-1.407Z"></path>
+                    </svg>
+                  </button>
+                  <button className="splide__arrow splide__arrow--next disabled:opacity-30 dark:text-white">
+                    <svg
+                      className="w-[18px] h-[18px]"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M15.225 20.775 24 12l-8.775-8.775-1.498 1.407 6.421 6.267H0v2.202h20.148l-6.421 6.267 1.498 1.407Z"></path>
+                    </svg>
+                  </button>
                 </Flex>
+              </Flex>
 
-                <SplideTrack>
-                  {filterArticles &&
-                    filterArticles?.map((article: any, index: number) => (
-                      <SplideSlide key={index} className="max-w-[274px] py-4">
-                        <CardArticle2 article={article} key={index} />
-                      </SplideSlide>
-                    ))}
-                </SplideTrack>
-              </Splide>
-            </div>
+              <SplideTrack>
+                {filterArticles &&
+                  filterArticles?.map((article: any, index: number) => (
+                    <SplideSlide key={index} className="max-w-[274px] py-4">
+                      <CardArticle2 article={article} key={index} />
+                    </SplideSlide>
+                  ))}
+              </SplideTrack>
+            </Splide>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import Flex from "@/shared/UIComponents/Base/Flex";
 import Footer from "@/shared/components/Footer/Footer";
 import Header from "@/shared/components/Header";
+import Subheader from "@/shared/components/Header/Subheader";
 import "@/shared/styles/globals.css";
 import "@/shared/styles/tailwindcss-custom.css";
 import "@splidejs/react-splide/css/core";
@@ -20,7 +21,7 @@ export default function RootLayout({
     <html lang="es">
       <body
         id="body-id"
-        className="body bg-transparent  overflow-x-hidden antialiased selection:bg-primary-purple "
+        className="body min-h-screen bg-transparent  overflow-x-hidden antialiased selection:bg-primary-purple "
       >
         <GlobalProviders>
           {Meetup && (
@@ -67,13 +68,15 @@ export default function RootLayout({
               </div>
             </div>
           )}
-
-          <Header />
-          <Flex full className="relative z-2 ">
-            {children}
-          </Flex>
-          <div className="max-w-[768px] lg:max-w-[1280px]  mx-auto  px-8">
-            <Footer />
+          <div className="w-full">
+            <Header />
+            <Subheader />
+            <Flex full className=" z-2 ">
+              {children}
+            </Flex>
+            <div className="max-w-[768px]  lg:max-w-[1280px]  mx-auto  px-8">
+              <Footer />
+            </div>
           </div>
           <div className="line-container dark:bg-blackbg bg-white fixed -z-10 w-screen h-screen top-0 left-0 m-0 p-0 overflow-hidden">
             <div className="lines">
