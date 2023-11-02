@@ -7,7 +7,7 @@ import CardArticle from "../CardArticle";
 const LastestContent = () => {
   const { data: articles } = useSWR("/api/blog", fetcherCache);
   return (
-    <section className="w-full text-white  bg-blackbgsection py-10 md:py-16 2xl:py-20 light-copy">
+    <section className="w-full dark:text-white text-gray-15  py-10 md:py-16 2xl:py-20 light-copy">
       <div className="">
         <div className="container max-w-[768px] lg:max-w-[1280px]  mx-auto  px-8">
           <div className="md:flex md:items-center md:justify-between">

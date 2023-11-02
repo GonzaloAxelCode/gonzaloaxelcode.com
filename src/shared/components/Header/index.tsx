@@ -65,7 +65,7 @@ const Header = () => {
   
  
   return (
-    <Flex full col className="lg:max-w-screen sticky  top-0 bg-white dark:bg-blackbg z-30 sm:bg-opacity-80 sm:backdrop-blur-lg">
+    <Flex full col className="lg:max-w-screen sticky  top-0 z-30  sm:bg-opacity-90 sm:backdrop-blur-lg">
       <Flex full itemscenter between className="mx-auto px-8 py-0">
         <Flex>
           <div className="relative flex items-center z-10  self-stretch  lg:pr-8">

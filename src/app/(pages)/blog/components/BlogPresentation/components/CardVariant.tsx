@@ -4,6 +4,7 @@ import extractInfoArticle from "@/shared/hooks/extract-info-article";
 import usePostRatings from "@/shared/hooks/usePostRatings";
 import { fetcherCache } from "@/shared/services/fetcher";
 import siteMetadata from "@/shared/settings/sitemetdata";
+import { BorderOpacity, BoxBgOpacityClasses } from "@/shared/styles/custom-tw-classes";
 import suglifyTitle from "@/shared/utils/suglify-title";
 import Link from "next/link";
 import useSWR from "swr";
@@ -21,11 +22,16 @@ const CardVariant = ({ article, type }: { article: any; type: TYPE }) => {
     `/api/views?postId=${suglifyTitle(title)}`,
     fetcherCache
   );
- 
+
   return (
     <>
       {type === "normal" && (
-        <article className="overflow-hidden flex w-full grow h-full relative border-2 rounded-xl flex-col bg-white dark:bg-gray-1F border-gray-EE dark:border-gray-1F text-gray-15 dark:text-white">
+        <article
+          className={cn(
+            "overflow-hidden flex w-full grow h-full relative border-2 rounded-xl flex-col  text-gray-15 dark:text-white",
+            BoxBgOpacityClasses
+          )}
+        >
           <div className="">
             <div className="aspect-[258/145] overflow-hidden relative">
               <img
@@ -88,10 +94,15 @@ const CardVariant = ({ article, type }: { article: any; type: TYPE }) => {
 
       {type === "mini-card-liked" && (
         <div
-          className="border-b-2 border-gray-EE dark:border-darkborder last:border-b-0 hidden md:block"
+          className={cn("border-b-2 last:border-b-0 hidden md:block",BorderOpacity)}
           data-projection-id={11}
         >
-          <article className="overflow-hidden flex w-full grow h-full relative rounded-xl sm:flex-row  bg-white dark:bg-gray-1F border-gray-EE dark:border-gray-1F text-gray-15 dark:text-white">
+          <article
+            className={cn(
+              "overflow-hidden flex w-full grow h-full relative rounded-xl sm:flex-row  text-gray-15 dark:text-white",
+              BoxBgOpacityClasses
+            )}
+          >
             <div className="flex h-full gap-4 f p-4 justify-between w-full flex-col">
               <div className="flex flex-col gap-4 flex-grow">
                 <Link
@@ -104,11 +115,10 @@ const CardVariant = ({ article, type }: { article: any; type: TYPE }) => {
                 </Link>
               </div>
             </div>
-            <div className="w-14 h-16 bg-gray-F7 dark:bg-gray-1F relative rounded-lg shrink-0  font-headings flex flex-col items-center justify-center overflow-hidden m-4">
+            <div className="w-14 h-16  relative rounded-lg shrink-0  font-headings flex flex-col items-center justify-center overflow-hidden m-4">
               <div
                 className={cn(
-                  " w-14 py-3 h-16 relative rounded-lg shrink-0 font-headings flex flex-col items-center justify-center overflow-hidden",
-                  "bg-gray-F7 dark:bg-blackbg"
+                  "w-14 py-3 h-16 relative rounded-lg shrink-0 font-headings flex flex-col items-center justify-center overflow-hidden "
                 )}
               >
                 <span className=" text-xl">👍</span>

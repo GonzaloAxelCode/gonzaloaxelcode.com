@@ -96,72 +96,32 @@ const Footer = () => {
             </nav>
           </div>
         </div>
+        <div className="col-span-6 lg:col-span-3 row-span-1 group"></div>
+
         <div className="col-span-6 lg:col-span-3 row-span-1 group">
           <div>
-            <Span className="font-headings tracking-tight scroll-mt-[120px] text-xl-tight 2xl:2xl-tight font-medium mb-8">
-              Product
-            </Span>
+            <h2 className="font-headings tracking-tight scroll-mt-[120px] text-xl-tight 2xl:2xl-tight font-medium">
+              <Span>Resources</Span>
+            </h2>
             <Link
               className="block text-gray-EE opacity-75 mt-4 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-gray-15 ring-gray-50 rounded-sm hover:opacity-100 hover:text-white transition-colors"
-              href="/developers"
+              href="/customers/evri"
             >
-              <Span>Prismic for developers</Span>
+              <Span>How Evri Cut Their Time to Ship</Span>
             </Link>
             <Link
               className="block text-gray-EE opacity-75 mt-4 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-gray-15 ring-gray-50 rounded-sm hover:opacity-100 hover:text-white transition-colors"
-              href="/marketers"
+              href="/customers/pallyy"
             >
-              <Span>Prismic for marketers</Span>
-            </Link>
-            <Link
-              className="block text-gray-EE opacity-75 mt-4 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-gray-15 ring-gray-50 rounded-sm hover:opacity-100 hover:text-white transition-colors"
-              href="/agencies"
-            >
-              <Span>Prismic for agencies</Span>
-            </Link>
-            <Link
-              className="block text-gray-EE opacity-75 mt-4 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-gray-15 ring-gray-50 rounded-sm hover:opacity-100 hover:text-white transition-colors"
-              href="/slice-machine"
-            >
-              <Span>Slice Machine</Span>
-            </Link>
-            <Link
-              className="block text-gray-EE opacity-75 mt-4 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-gray-15 ring-gray-50 rounded-sm hover:opacity-100 hover:text-white transition-colors"
-              href="/page-builder"
-            >
-              <Span>Page Builder</Span>
-            </Link>
-            <Link
-              className="block text-gray-EE opacity-75 mt-4 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-gray-15 ring-gray-50 rounded-sm hover:opacity-100 hover:text-white transition-colors"
-              href="/pricing"
-            >
-              <Span>Pricing</Span>
-            </Link>
-            <Link
-              className="block text-gray-EE opacity-75 mt-4 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-gray-15 ring-gray-50 rounded-sm hover:opacity-100 hover:text-white transition-colors"
-              href="/reviews"
-            >
-              <Span>Reviews</Span>
+              <Span>How Pallyy Grew Daily Visitors</Span>
             </Link>
             <Link
               className="block text-gray-EE opacity-75 mt-4 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-gray-15 ring-gray-50 rounded-sm hover:opacity-100 hover:text-white transition-colors"
               rel="noreferrer"
-              href="https://prismic.io/progress"
+              href="https://prismic.io/docs/"
             >
-              <Span>Progress</Span>
+              <Span>Documentation</Span>
             </Link>
-            <Link
-              className="block text-gray-EE opacity-75 mt-4 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-gray-15 ring-gray-50 rounded-sm hover:opacity-100 hover:text-white transition-colors"
-              rel="noreferrer"
-              href="https://status.prismic.io/"
-            >
-              <Span>Status</Span>
-            </Link>
-            <div className="hidden group-last:block text-gray-EE opacity-75 mt-4">
-              <button>
-                <Span>Cookie settings</Span>
-              </button>
-            </div>
           </div>
         </div>
         <div className="col-span-6 lg:col-span-3 row-span-1 group">
@@ -188,117 +148,6 @@ const Footer = () => {
             >
               <Span>Documentation</Span>
             </Link>
-            <Link
-              className="block text-gray-EE opacity-75 mt-4 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-gray-15 ring-gray-50 rounded-sm hover:opacity-100 hover:text-white transition-colors"
-              rel="noreferrer"
-              href="https://prismic.io/docs/guides"
-            >
-              <Span>Marketer guides</Span>
-            </Link>
-            <Link
-              target=""
-              className="block text-gray-EE opacity-75 mt-4 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-gray-15 ring-gray-50 rounded-sm hover:opacity-100 hover:text-white transition-colors"
-              rel="noreferrer"
-              href="https://prismic.io/academy"
-            >
-              <Span>Academy</Span>
-            </Link>
-            <Link
-              className="block text-gray-EE opacity-75 mt-4 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-gray-15 ring-gray-50 rounded-sm hover:opacity-100 hover:text-white transition-colors"
-              rel="noreferrer"
-              href="https://prismic.io/docs/help-center"
-            >
-              <Span>Help center</Span>
-            </Link>
-            <Link
-              className="block text-gray-EE opacity-75 mt-4 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-gray-15 ring-gray-50 rounded-sm hover:opacity-100 hover:text-white transition-colors"
-              href="/hire-a-developer"
-            >
-              <Span>Find a partner</Span>
-            </Link>
-            <Link
-              className="block text-gray-EE opacity-75 mt-4 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-gray-15 ring-gray-50 rounded-sm hover:opacity-100 hover:text-white transition-colors"
-              href="/partners"
-            >
-              <Span>Become a partner</Span>
-            </Link>
-            <Link
-              className="block text-gray-EE opacity-75 mt-4 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-gray-15 ring-gray-50 rounded-sm hover:opacity-100 hover:text-white transition-colors"
-              rel="noreferrer"
-              href="https://community.prismic.io"
-            >
-              <Span>Community</Span>
-            </Link>
-            <Link
-              className="block text-gray-EE opacity-75 mt-4 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-gray-15 ring-gray-50 rounded-sm hover:opacity-100 hover:text-white transition-colors"
-              rel="noreferrer"
-              href="https://prismic.io/blog/"
-            >
-              <Span>Blog</Span>
-            </Link>
-            <Link
-              className="block text-gray-EE opacity-75 mt-4 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-gray-15 ring-gray-50 rounded-sm hover:opacity-100 hover:text-white transition-colors"
-              href="/shows"
-            >
-              <Span>Events</Span>
-            </Link>
-            <div className="hidden group-last:block text-gray-EE opacity-75 mt-4">
-              <button>Cookie settings</button>
-            </div>
-          </div>
-        </div>
-        <div className="col-span-6 lg:col-span-3 row-span-1 group">
-          <div>
-            <h2 className="font-headings tracking-tight scroll-mt-[120px] text-xl-tight 2xl:2xl-tight font-medium mb-8">
-              <Span>Company</Span>
-            </h2>
-            <Link
-              className="block text-gray-EE opacity-75 mt-4 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-gray-15 ring-gray-50 rounded-sm hover:opacity-100 hover:text-white transition-colors"
-              href="/about"
-            >
-              <Span>About</Span>
-            </Link>
-            <Link
-              className="block text-gray-EE opacity-75 mt-4 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-gray-15 ring-gray-50 rounded-sm hover:opacity-100 hover:text-white transition-colors"
-              href="/jobs"
-            >
-              <Span>Jobs</Span>
-            </Link>
-            <Link
-              className="block text-gray-EE opacity-75 mt-4 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-gray-15 ring-gray-50 rounded-sm hover:opacity-100 hover:text-white transition-colors"
-              href="/showcase"
-            >
-              <Span>Showcase</Span>
-            </Link>
-            <Link
-              className="block text-gray-EE opacity-75 mt-4 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-gray-15 ring-gray-50 rounded-sm hover:opacity-100 hover:text-white transition-colors"
-              href="/research"
-            >
-              <Span>Join our research panel</Span>
-            </Link>
-            <Link
-              className="block text-gray-EE opacity-75 mt-4 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-gray-15 ring-gray-50 rounded-sm hover:opacity-100 hover:text-white transition-colors"
-              href="/legal/terms-of-service"
-            >
-              <Span>Terms of service</Span>
-            </Link>
-            <Link
-              className="block text-gray-EE opacity-75 mt-4 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-gray-15 ring-gray-50 rounded-sm hover:opacity-100 hover:text-white transition-colors"
-              href="/legal/privacy"
-            >
-              <Span>Privacy</Span>
-            </Link>
-            <Link
-              className="block text-gray-EE opacity-75 mt-4 focus:outline-none focus:ring-2 ring-offset-2 ring-offset-gray-15 ring-gray-50 rounded-sm hover:opacity-100 hover:text-white transition-colors"
-              href="/legal/security"
-            >
-              <Span>Security</Span>
-            </Link>
-            <div className="hidden group-last:block text-gray-EE opacity-75 mt-4">
-              <button>
-                <Span>Cookie settings</Span>
-              </button>
-            </div>
           </div>
         </div>
       </div>

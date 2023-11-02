@@ -18,7 +18,7 @@ const ChooseTechStack = () => {
         <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[768px] lg:max-w-[1280px]  mx-auto  px-8">
           <div className="sm:col-span-1 z-10 relative">
             <div className="relative z-10 pr-12 sm:pb-20">
-              <h2 className="font-headings tracking-tight scroll-mt-[120px] text-4xl lg:text-5xl 2xl:text-6xl font-bold">
+              <h2 className="font-headings leading-custom-11 scroll-mt-[120px] text-4xl lg:text-5xl 2xl:text-6xl font-bold">
                 Choose your tech stack
               </h2>
               <div className="font-copy text-base 2xl:text-md font-medium print:text-[12px] print:text-justify mt-6">

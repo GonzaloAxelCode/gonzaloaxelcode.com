@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap");
+
 /* Satoshi Black */
 @font-face {
   font-family: "Satoshi Black";
@@ -539,4 +541,93 @@ pre {
 
 iframe body .haAclf {
   background-color: red !important;
+}
+
+.container-canvas #canvas-laptop {
+  display: block;
+  width: 600px;
+  height: 600px;
+}
+
+/* circles */
+
+.circle1,
+.apply-relative-for-circles .circle1-apply-animate {
+  position: absolute;
+  background: radial-gradient(
+    circle closest-side,
+    #8e63f1,
+    rgba(233, 168, 2, 0)
+  );
+
+  width: 500px;
+  height: 550px;
+  right: 0;
+  top: 30%;
+  filter: blur(70px);
+  transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  animation: traverse-up-left 5s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.apply-relative-for-circles {
+  position: relative;
+}
+.circle2,
+.apply-relative-for-circles .circle2-apply-animate {
+  position: absolute;
+
+  background: radial-gradient(
+    circle closest-side,
+    #6366f1,
+    rgba(233, 168, 2, 0)
+  );
+  width: 450px;
+  height: 450px;
+  top: 50%;
+  left: 0;
+
+  filter: blur(70px);
+  animation: traverse-up-right 5s ease-in-out infinite alternate;
+  transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+@keyframes traverse-up-left {
+  0% {
+    transform: translateY(100) translateX(0) scale(1);
+  }
+
+  100% {
+    transform: translateY(200px) translateX(-250px) rotate(180deg);
+  }
+}
+
+@keyframes traverse-up-right {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+
+  100% {
+    transform: translateY(-400px) translateX(300px) rotate(1turn);
+  }
+}
+
+@media (max-width: 600px) {
+  .circle1,
+  .apply-relative-for-circles .circle1-apply-animate {
+    filter: none;
+    width: 250px;
+    height: 250px;
+    display: none;
+  }
+
+  .circle2,
+  .apply-relative-for-circles .circle2-apply-animate {
+    width: 150px;
+    display: none;
+    height: 150px;
+    filter: none;
+  }
 }

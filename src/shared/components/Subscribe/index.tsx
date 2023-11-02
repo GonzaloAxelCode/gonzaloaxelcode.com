@@ -1,7 +1,20 @@
+import { BoxBgOpacityClasses } from "@/shared/styles/custom-tw-classes";
+import { cn } from "tailwind-cn";
+
 const Subscribe = () => {
   return (
     <div className="container  ">
-      <div className="flex justify-between text-white bg-blackbg items-center gap-12 relative p-12 rounded-xl bg-gray-1F">
+      <div
+        className={cn(
+          "flex justify-between  dark:text-white text-gray-15  items-center gap-12 relative p-12 rounded-xl object-cover",
+          BoxBgOpacityClasses
+        )}
+        style={{
+          backgroundImage: "url()",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <div className="flex flex-col light-copy max-w-xl light-copy">
           <div className="text-primary-blue w-12 h-12">
             <svg
@@ -30,7 +43,7 @@ const Subscribe = () => {
               which new web dev tools are worth adding to your stack.
             </p>
           </div>
-          <div className="mt-6 text-white">
+          <div className="mt-6 ">
             <form className="flex flex-wrap">
               <label htmlFor="EMAIL" className="sr-only">
                 Email Address <span className="asterisk">*</span>
@@ -40,7 +53,7 @@ const Subscribe = () => {
                   type="email"
                   id="EMAIL"
                   placeholder="mail@example.com"
-                  className="rounded-lg border-2 px-4 py-2 leading-7 focus:outline-none focus:ring-4 focus:ring-tertiary-purple w-full bg-gray-15 border-gray-50"
+                  className="rounded-lg border-2 px-4 py-2 leading-7 focus:outline-none focus:ring-4 focus:ring-tertiary-purple w-full dark:bg-gray-15 bg-gray-100 dark:border-gray-50 border-graywhite"
                   name="EMAIL"
                   defaultValue=""
                 />

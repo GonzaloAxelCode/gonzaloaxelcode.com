@@ -1,10 +1,12 @@
 import Flex from "@/shared/UIComponents/Base/Flex";
 import extractInfoArticle from "@/shared/hooks/extract-info-article";
 import { fetcherCache } from "@/shared/services/fetcher";
+import { BoxBgOpacityClasses } from "@/shared/styles/custom-tw-classes";
 import formatDate from "@/shared/utils/format-date";
 import suglifyTitle from "@/shared/utils/suglify-title";
 import Link from "next/link";
 import useSWR from "swr";
+import { cn } from "tailwind-cn";
 
 const CardArticle = ({ article }: any) => {
   const { tags, title, description, category, createdAt, cover } =
@@ -15,9 +17,14 @@ const CardArticle = ({ article }: any) => {
   );
   return (
     <Flex col>
-      <article className="rounded-xl overflow-hidden border-2 relative w-full bg-gray-1F border-gray-1F">
-        <a
-          href="https://www.youtube.com/watch?v=8GmfcbuYOWE"
+      <article
+        className={cn(
+          "rounded-xl overflow-hidden border-2 relative w-full",
+          BoxBgOpacityClasses
+        )}
+      >
+        <Link
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
           className="aspect-w-16 aspect-h-9 block"
@@ -31,7 +38,7 @@ const CardArticle = ({ article }: any) => {
             sizes="100vw"
             src={cover}
           />
-        </a>
+        </Link>
         <div className="mt-3 p-6">
           <footer className="flex justify-between text-base-flat font-medium text-gray-A4">
             <p className="text-sm text-gray-500 flex items-center">

@@ -3,12 +3,18 @@
 import extractInfoArticle from "@/shared/hooks/extract-info-article";
 import { fetcherCache } from "@/shared/services/fetcher";
 import siteMetadata from "@/shared/settings/sitemetdata";
+import {
+  BorderOpacity,
+  BoxBgOpacityClasses,
+} from "@/shared/styles/custom-tw-classes";
 import formatDate from "@/shared/utils/format-date";
 import resumirTexto from "@/shared/utils/resume-text";
 import sortByCreatedTime from "@/shared/utils/sort-createdtime";
 import suglifyTitle from "@/shared/utils/suglify-title";
 import Link from "next/link";
+import { TypeAnimation } from "react-type-animation";
 import useSWR from "swr";
+import { cn } from "tailwind-cn";
 import CardVariant from "./components/CardVariant";
 
 const BlogGridPresentation = () => {
@@ -34,27 +40,22 @@ const BlogGridPresentation = () => {
         <span className="relative font-headings font-bold text-6xl lg:text-7xl 2xl:text-8xl text-blackbg dark:text-white">
           <div data-projection-id={123} style={{ opacity: 1 }}>
             <div data-projection-id={124}>
-              <span
-                className="inline"
-                data-projection-id={125}
-                style={{ opacity: 1, transform: "none" }}
-              >
-                Deliver{" "}
-              </span>
-              <span
-                className="inline"
-                data-projection-id={126}
-                style={{ opacity: 1, transform: "none" }}
-              >
-                great{" "}
-              </span>
-              <span
-                className="inline"
-                data-projection-id={127}
-                style={{ opacity: 1, transform: "none" }}
-              >
-                websites.{" "}
-              </span>
+              <TypeAnimation
+                preRenderFirstString={true}
+                sequence={[
+                  500,
+                  "We produce food for Mice", // initially rendered starting point
+                  1000,
+                  "We produce food for Hamsters",
+                  1000,
+                  "We produce food for Guinea Pigs",
+                  1000,
+                  "We produce food for Chinchillas",
+                  500,
+                ]}
+                speed={50}
+                repeat={Infinity}
+              />
             </div>
           </div>
         </span>
@@ -71,7 +72,16 @@ const BlogGridPresentation = () => {
           </div>
           <div className="col-span-1 lg:col-span-3 grid grid-cols-1 md:grid-cols-9 lg:grid-cols-3 gap-6 order-1 xl:order-2 xl:row-span-1">
             <div className="col-span-1 md:col-span-5 lg:col-span-2 grid">
-              <article className="overflow-hidden flex w-full grow h-full relative border-2 rounded-xl flex-col bg-white dark:bg-gray-1F border-gray-EE dark:border-gray-1F text-gray-15 dark:text-white">
+              <article
+                className={cn(
+                  "overflow-hidden flex w-full grow h-full relative border-2 rounded-xl flex-col    text-gray-15 dark:text-white",
+                  BoxBgOpacityClasses
+                )}
+                style={{
+                  backgroundImage: "url()",
+                  backgroundSize: "contain",
+                }}
+              >
                 <div className="">
                   <div className="aspect-[258/145] overflow-hidden relative">
                     <img
@@ -185,7 +195,12 @@ const BlogGridPresentation = () => {
                 </div>
               </article>
             </div>
-            <div className="grid grid-cols-1 md:col-span-4 lg:col-span-1 border-2 border-gray-EE dark:border-darkborder rounded-xl overflow-hidden dark:bg-gray-1F">
+            <div
+              className={cn(
+                "grid grid-cols-1 md:col-span-4 lg:col-span-1 rounded-xl overflow-hidden",
+                BorderOpacity
+              )}
+            >
               {sortArticlesByLiked &&
                 sortArticlesByLiked
                   .slice(1, 7)

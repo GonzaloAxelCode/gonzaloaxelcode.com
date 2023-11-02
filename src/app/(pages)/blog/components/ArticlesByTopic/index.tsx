@@ -13,6 +13,7 @@ import {
   obtenerCategoriasUnicas,
 } from "@/shared/hooks/functions-notion";
 //@ts-ignore
+import { BoxBgOpacityClasses } from "@/shared/styles/custom-tw-classes";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
@@ -60,7 +61,7 @@ const ArticlesByTopic = () => {
   }, [changeCategorySlug]);
 
   return (
-    <section className="w-full text-gray-15 py-10 md:py-16 2xl:py-20 overflow-hidden dark-copy dark:bg-blackbgsection dark:text-white ">
+    <section className="w-full text-gray-15 py-10 md:py-16 2xl:py-20 overflow-hidden dark-copy dark:text-white ">
       <div className="max-w-[768px] lg:max-w-[1280px]  mx-auto  px-8">
         <div className="">
           <div className="relative z-10 flex justify-between items-end">
@@ -79,7 +80,7 @@ const ArticlesByTopic = () => {
           </div>
         </div>
         <div className="mt-12">
-          <div className="relative z-3   dark:bg-blackbg bg-white">
+          <div className="relative z-3">
             <div className="absolute -bottom-0 z-28   h-[1px] border-t-2 dark:border-darkborder  border-gray-EE w-full grid bg-transparent"></div>
             <div className="" role="tablist" aria-orientation="horizontal">
               <Splide
@@ -107,7 +108,8 @@ const ArticlesByTopic = () => {
                         >
                           <button
                             className={cn(
-                              "relative z-10 px-6 py-4 pb-5 lg:px-12 lg:py-6 mr-4 border-2   focus:outline-none rounded-t-xl flex items-center gap-3 bg-white dark:bg-blackbgsection border-gray-EE dark:border-darkborder h-full",
+                              "relative z-10 px-6 py-4 pb-5 lg:px-12 lg:py-6 mr-4 border-2   focus:outline-none rounded-t-xl flex items-center gap-3 h-full",
+                              BoxBgOpacityClasses,
                               changeCategorySlug === suglifyTitle(el.name) &&
                                 "border-b-0"
                             )}
@@ -143,7 +145,11 @@ const ArticlesByTopic = () => {
             </div>
           </div>
 
-          <div className="relative z-1 p-6 z-1  lg:p-12 border-2 border-t-0 rounded-bl-xl dark:border-darkborder">
+          <div
+            className={cn(
+              "relative z-1 p-6 z-1  lg:p-12 border-2 border-t-0 rounded-bl-xl dark:border-darkborder"
+            )}
+          >
             <nav className="mb-4 relative">
               <div className="overflow-auto">
                 <div className="flex mb-4 text-sm font-semibold gap-2">
@@ -183,6 +189,7 @@ const ArticlesByTopic = () => {
                 </div>
               </div>
             </nav>
+
             <Splide
               hasTrack={false}
               options={{

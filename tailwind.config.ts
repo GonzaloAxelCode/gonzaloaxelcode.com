@@ -18,6 +18,7 @@ const config: Config = {
       },
       colors: {
         graydark: "#505050",
+        graydarksoft:"#5C5C5C",
         blackbg: "#181818",
         blackbgsection: "#151515",
         bgcode: "#151515",
@@ -56,6 +57,7 @@ const config: Config = {
         sm: "14px",
         md: "16px",
         "3xl": "36px",
+        "4xl": "48px",
         "5xl": "56px",
         "6xl": "3rem",
         "7xl": "3.5rem",
