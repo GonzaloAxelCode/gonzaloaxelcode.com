@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@dhaiwat10/react-link-preview": "^1.15.0",
+    "@headlessui/react": "^1.7.17",
     "@notionhq/client": "^2.2.13",
     "@react-oauth/google": "^0.11.1",
     "@react-spring/core": "^9.7.3",
