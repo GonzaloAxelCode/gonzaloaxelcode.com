@@ -23,13 +23,11 @@ export default function RootLayout({
         id="body-id"
         className="body min-h-screen  overflow-x-hidden dark:text-white text-gray-15  antialiased selection:bg-primary-purple relative "
       >
-        <div className="circle1"></div>
-        <div className="circle2"></div>
         <GlobalProviders>
           <div className="relative w-full dark:text-white text-gray-15  bg-white dark:bg-blackbg overflow-x-hidden">
             <Header />
             <Subheader />
-            <Flex className="pt-[50px]">{children}</Flex>
+            <div className="pt-[50px]">{children}</div>
             <div className="max-w-[768px]  lg:max-w-[1280px]  mx-auto  px-8">
               <Footer />
             </div>
