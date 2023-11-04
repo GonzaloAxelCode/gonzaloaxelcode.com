@@ -104,7 +104,7 @@ export default function Home() {
                 </h2>
                 <p className="text-gray-400 mb-8 md:text-xl">
                   Easily organize sites and pages into separate projects. Save
-                  your projects, edit projects, create unique URL's for each
+                  your projects, edit projects, create unique URLs for each
                   project, and more!
                 </p>
                 <a
