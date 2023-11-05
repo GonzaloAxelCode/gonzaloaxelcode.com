@@ -82,7 +82,7 @@ const TableOfContent = ({ content, id }: any) => {
     return Cookies.get(`rated_${id}_${type}`) === "true";
   };
   return (
-    <div className="pb-6 lg:col-span-4 order-1 lg:sticky  lg:top-[20px] lg:h-[700px]">
+    <div className="pb-6 lg:col-span-4 order-1 lg:sticky  lg:top-[55px] lg:h-[700px]">
       <div className="bg-white dark:bg-blackbg overflow-hidden pt-6 px-6 pb-2.5 relative border-2 rounded-xl border-gray-100 dark:border-darkborder  ">
         <header className="pb-4">
           <button className="flex justify-between items-center w-full">

@@ -47,22 +47,44 @@ export default function Home() {
             className=""
           />
         </svg>
+
         <div>
           <p className=" text-center  uppercase  px-10 mb-1">
             ⚡️ The Ultimate ⚡️
           </p>
           <h1 className="text-center text-5xl mt-10 mb-5  title-limiter leading-title">
             El equilibrio entre forma y función en
-            <span className="inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent from-[#5c3de6]  to-[#fe97dc]">
+            <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent from-[#5c3de6]  to-[#fe97dc]">
               {" "}
               desarrollo fullstack.
+              <span
+                className="absolute top-13 right-0"
+                style={{ display: "inline-block", verticalAlign: "top" }}
+              >
+                <svg
+                  viewBox="0 0 24 23"
+                  style={{
+                    width: 26,
+                    height: 26,
+                    display: "block",
+
+                    flexShrink: 0,
+                  }}
+                  fill="#bd73e8"
+                >
+                  <g>
+                    <path d="M10.4563 5.72844C10.9113 5.57094 10.9113 5.29094 10.4563 5.11594L7.98881 4.17094C7.55131 4.01344 7.04381 3.50594 6.86881 3.05094L5.92381 0.583437C5.76631 0.128438 5.48631 0.128438 5.31131 0.583437L4.36631 3.05094C4.20881 3.48844 3.70131 3.99594 3.24631 4.17094L0.778811 5.11594C0.323811 5.27344 0.323811 5.55344 0.778811 5.72844L3.24631 6.67344C3.68381 6.83094 4.19131 7.33844 4.36631 7.79344L5.31131 10.2609C5.46881 10.7159 5.74881 10.7159 5.92381 10.2609L6.86881 7.79344C7.02631 7.35594 7.53381 6.84844 7.98881 6.67344L10.4563 5.72844Z" />
+                    <path d="M22.4788 14.3734C23.8788 14.0234 23.8788 13.4459 22.4788 13.0959L19.3813 12.3259C17.9813 11.9759 16.5463 10.5409 16.1963 9.14091L15.4263 6.04341C15.0763 4.64341 14.4988 4.64341 14.1488 6.04341L13.3788 9.14091C13.0288 10.5409 11.5938 11.9759 10.1938 12.3259L7.09631 13.0959C5.69631 13.4459 5.69631 14.0234 7.09631 14.3734L10.1938 15.1434C11.5938 15.4934 13.0288 16.9284 13.3788 18.3284L14.1488 21.4259C14.4988 22.8259 15.0763 22.8259 15.4263 21.4259L16.1963 18.3284C16.5463 16.9284 17.9813 15.4934 19.3813 15.1434L22.4788 14.3734Z" />
+                  </g>
+                </svg>
+              </span>
             </span>
           </h1>
           <div className="w-full flex justify-center sm:flex-row flex-col sm:gap-4 items-center">
-            <button className="px-7 py-4 rounded-full bg-zinc-100 mt-2  text-zinc-800 sm:w-auto w-full font-medium">
-              Join Our Community
+            <button className="px-6 py-3 rounded-full bg-zinc-100 mt-2  text-zinc-800 sm:w-auto w-full font-medium">
+              Blog
             </button>
-            <button className="px-7 py-4 flex items-center justify-center rounded-full bg-zinc-800 mt-2 sm:w-auto w-full  text-zinc-100 font-medium">
+            <button className="px-6 py-3 flex items-center justify-center rounded-full bg-zinc-800 mt-2 sm:w-auto w-full  text-zinc-100 font-medium">
               <svg
                 className="w-6 h-6 -ml-2 mr-2"
                 xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +100,7 @@ export default function Home() {
                   className=""
                 />
               </svg>
-              <span className="">Account Login</span>
+              <span className="">Sobre mi</span>
             </button>
           </div>
         </div>
@@ -86,65 +108,13 @@ export default function Home() {
       <section id="features" className="h-auto  py-10 sm:py-12 md:py-20">
         <div className="px-10 md:px-0">
           <h2 className="mb-4 text-xl md:text-2xl font-extrabold jakarta text-left sm:text-center md:text-4xl lg:text-6xl md:mb-6">
-            🤘 Super Cool Features 👇
+            🤘 Explora mi sitio web 👇
           </h2>
           <p className="max-w-xl mx-auto text-left text-gray-400 sm:text-center text-sm md:text-lg">
-            Tails has some cool features that allow you to build some awesome
-            Tailwind Websites. Check out a few of them below.
+            Hola soy Gonzalo Axel, desarrollador web fullstack junior, construi
+            esta web para poner a prueba todos mis conocimientos que he
+            adquirido durante una corta carrera como desarrollador.Visitala.
           </p>
-        </div>
-      </section>
-      <section className="h-auto ">
-        <div className="relative max-w-6xl md:px-5 md:border-transparent border-t border-gray-800 md:pb-20 flex md:flex-row flex-col md:space-x-5 w-full h-full items-center justify-center mx-auto">
-          <div className="bg-gradient-to-br from-[#292930] to-[#090910] border border-[#292930] flex md:flex-row flex-col md:rounded-xl overflow-hidden">
-            <div className="relative h-full w-full flex flex-col items-start justify-center rounded-md">
-              <div className="relative w-full h-full p-10 lg:p-16 flex flex-col items-start justify-center">
-                <h2 className="text-3xl md:text-5xl mb-8 text-gray-200 font-black jakarta">
-                  Projects
-                </h2>
-                <p className="text-gray-400 mb-8 md:text-xl">
-                  Easily organize sites and pages into separate projects. Save
-                  your projects, edit projects, create unique URLs for each
-                  project, and more!
-                </p>
-                <a
-                  href="/tails/app"
-                  className="inline-flex justify-center items-center w-full px-6 py-4 mb-6 text- font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-700 sm:mb-0 sm:w-auto hover:bg-indigo-600 rounded-full"
-                >
-                  <svg
-                    className="w-5 h-5 mr-2 fill-current"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                  >
-                    <g fill="none" stroke="none">
-                      <path
-                        d="M6 12l5.485-5.485A12 12 0 0 1 19.971 3H21v1.029a12 12 0 0 1-3.515 8.486L12 18m-6-6l6 6m-6-6L3 9l.828-.828A4 4 0 0 1 6.657 7H11l-5 5zm6 6l3 3 .828-.828A4 4 0 0 0 17 17.343V13l-5 5zm-4.5-4.5l-2.379 2.379A7.242 7.242 0 0 0 3 21a7.243 7.243 0 0 0 5.121-2.121L10.5 16.5"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M16.778 7.916a.5.5 0 1 1-.556-.832.5.5 0 0 1 .556.832z"
-                        fill="#212121"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </g>
-                  </svg>
-                  <span className="">Ver mi Proyectos</span>
-                </a>
-              </div>
-            </div>
-            <div className="flex h-full w-full justify-end items-end overflow-hidden relative">
-              <img
-                src="https://cdn.devdojo.com/images/june2022/projects.png"
-                className="mt-10 w-full h-auto object-contain object-left-top ml-12 rounded-tl"
-              />
-            </div>
-          </div>
         </div>
       </section>
     </main>

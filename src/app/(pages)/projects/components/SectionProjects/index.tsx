@@ -1,4 +1,5 @@
 "use client";
+import LogosBg from "@/shared/components/LogosBg";
 import { fetcherCache } from "@/shared/services/fetcher";
 import COLORS_NOTION from "@/shared/utils/colors-notion";
 import resumirTexto from "@/shared/utils/resume-text";
@@ -9,147 +10,68 @@ const SectionProjects = () => {
   const { data: projects } = useSWR("/api/projects", fetcherCache);
 
   return (
-    <section className="w-full  text-gray-15 dark:text-white py-10 md:py-16 2xl:py-20 overflow-hidden light-copy">
-      {projects &&
-        projects?.map((project: any, index: any) => {
-          let description =
-            project?.properties?.Description.rich_text[0]?.plain_text ||
-            "Articulo aun no terminado.Intenta mas tarde.";
-          const title =
-            project?.properties.Name?.title[0]?.plain_text ||
-            "Articulo sin Titulo";
-          const tags = project?.properties?.Tags?.multi_select || [];
-
-          return (
-            <section
-              key={index}
-              className="w-full  dark:text-white text-blackbg py-10 md:py-16 2xl:py-20 overflow-hidden light-copy
-              max-w-[768px] lg:max-w-[1280px]  mx-auto  px-8
-              "
-            >
-              <div className="container flex flex-col md:flex-row gap-6 md:items-center">
-                <div className="md:w-1/2 order-2 md:order-first md:pr-14">
-                  <span className="text-xs mb-4 dark:text-white gap-1 flex flex-wrap">
-                    {tags.map((el: any, index: number) => {
-                      return (
-                        <span
-                          key={index}
-                          style={{
-                            background: COLORS_NOTION[el.color].colorDM,
-                          }}
-                          className=" rounded-3xl opacity-90  border-solid py-1 px-3"
-                        >
-                          {el.name}
+    <section className="pt-14 md:pt-32 max-w-[768px]  lg:max-w-[1280px]  mx-auto  px-8">
+      <div className="flex flex-col gap-6 justify-center items-center">
+        {projects &&
+          projects?.map((project: any, index: any) => {
+            let description =
+              project?.properties?.Description.rich_text[0]?.plain_text ||
+              "Articulo aun no terminado.Intenta mas tarde.";
+            const title =
+              project?.properties.Name?.title[0]?.plain_text ||
+              "Articulo sin Titulo";
+            const tags = project?.properties?.Tags?.multi_select || [];
+            const cover =
+              project?.cover?.file?.url || project?.cover?.external?.url || "";
+            const href = `/projects/${suglifyTitle(title)}`;
+            return (
+              <div
+                key={index}
+                className="relative z-10 overflow-hidden border-2 border-graywhite dark:border-graydark border-solid  px-6 py-12 sm:rounded-[22px] sm:px-8 md:px-14"
+              >
+                <div className="flex flex-wrap items-center lg:flex-nowrap">
+                  <div className="w-full">
+                    <div className="relative z-20 mb-10 text-center lg:mb-0 lg:text-left">
+                      <div className="mb-4.5 inline-flex items-center rounded-3xl  px-3.5 py-2.5">
+                        <span className="pr-2.5">
+                          <svg
+                            width={24}
+                            height={24}
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M12.8324 21.8013C15.9583 21.1747 20 18.926 20 13.1112C20 7.8196 16.1267 4.29593 13.3415 2.67685C12.7235 2.31757 12 2.79006 12 3.50492V5.3334C12 6.77526 11.3938 9.40711 9.70932 10.5018C8.84932 11.0607 7.92052 10.2242 7.816 9.20388L7.73017 8.36604C7.6304 7.39203 6.63841 6.80075 5.85996 7.3946C4.46147 8.46144 3 10.3296 3 13.1112C3 20.2223 8.28889 22.0001 10.9333 22.0001C11.0871 22.0001 11.2488 21.9955 11.4171 21.9858C10.1113 21.8742 8 21.064 8 18.4442C8 16.3949 9.49507 15.0085 10.631 14.3346C10.9365 14.1533 11.2941 14.3887 11.2941 14.7439V15.3331C11.2941 15.784 11.4685 16.4889 11.8836 16.9714C12.3534 17.5174 13.0429 16.9454 13.0985 16.2273C13.1161 16.0008 13.3439 15.8564 13.5401 15.9711C14.1814 16.3459 15 17.1465 15 18.4442C15 20.4922 13.871 21.4343 12.8324 21.8013Z"
+                              fill="#F27430"
+                            />
+                          </svg>
                         </span>
-                      );
-                    })}
-                  </span>
-                  <h2 className="font-headings leading-10  text-4xl lg:text-4xl 2xl:text-5xl font-bold mt-2 first:mt-0 ">
-                    {title}
-                  </h2>
-                  <div className="font-copy text-base 2xl:text-md font-medium print:text-[12px] print:text-justify copy-muted mt-6 max-w-lg">
-                    <p className="my-6 first:mt-0 last:mb-0 print:my-2">
-                      {resumirTexto(description, 150)}
-                      <br />
-                      <br />
-                      As we grow together, we invest in our partners:
-                    </p>
-                    <ul>
-                      <li className="my-6 first:mt-0 last:mb-0 pl-9 relative print:my-2 print:pl-6">
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="absolute left-0 top-0.5 w-6 h-6 print:w-4 print:h-4 text-primary-purple"
-                        >
-                          <circle
-                            opacity="0.2"
-                            cx={12}
-                            cy={12}
-                            r={12}
-                            fill="currentColor"
-                          />
-                          <path
-                            d="M17.749 8.251a.858.858 0 0 1 0 1.213l-6.856 6.857a.858.858 0 0 1-1.214 0l-3.428-3.429a.858.858 0 0 1 1.213-1.213l2.823 2.82 6.251-6.248a.858.858 0 0 1 1.214 0h-.003Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                        Win more projects
-                      </li>
-                      <li className="my-6 first:mt-0 last:mb-0 pl-9 relative print:my-2 print:pl-6">
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="absolute left-0 top-0.5 w-6 h-6 print:w-4 print:h-4 text-primary-purple"
-                        >
-                          <circle
-                            opacity="0.2"
-                            cx={12}
-                            cy={12}
-                            r={12}
-                            fill="currentColor"
-                          />
-                          <path
-                            d="M17.749 8.251a.858.858 0 0 1 0 1.213l-6.856 6.857a.858.858 0 0 1-1.214 0l-3.428-3.429a.858.858 0 0 1 1.213-1.213l2.823 2.82 6.251-6.248a.858.858 0 0 1 1.214 0h-.003Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                        Get revenue share
-                      </li>
-                      <li className="my-6 first:mt-0 last:mb-0 pl-9 relative print:my-2 print:pl-6">
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="absolute left-0 top-0.5 w-6 h-6 print:w-4 print:h-4 text-primary-purple"
-                        >
-                          <circle
-                            opacity="0.2"
-                            cx={12}
-                            cy={12}
-                            r={12}
-                            fill="currentColor"
-                          />
-                          <path
-                            d="M17.749 8.251a.858.858 0 0 1 0 1.213l-6.856 6.857a.858.858 0 0 1-1.214 0l-3.428-3.429a.858.858 0 0 1 1.213-1.213l2.823 2.82 6.251-6.248a.858.858 0 0 1 1.214 0h-.003Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                        Get technical support
-                      </li>
-                    </ul>
+                        <p className="font-heading text-sm font-medium text-fb-orange ">
+                          Works with almost anything
+                        </p>
+                      </div>
+                      <h2 className="mx-auto mb-5 max-w-[490px] font-heading text-2xl font-black  sm:text-4xl sm:leading-[45px] lg:ml-0">
+                        {title}
+                      </h2>
+                      <p className="mx-auto max-w-[530px] mb-4 text-sm leading-[24px] text-body-color lg:ml-0">
+                        {resumirTexto(description, 200)}
+                      </p>
+                      <LogosBg />
+                    </div>
                   </div>
-                  <nav className="flex items-center flex-wrap gap-4 mt-8">
-                    <Link
-                      className="rounded-lg font-bold whitespace-nowrap focus:outline-none focus:ring-tertiary-purple disabled:opacity-50 group underline underline-offset-8 focus:ring-4 underline-offset-4 border-gray-15 py-3 px-6 text-sm-flat leading-5 2xl:text-base-flat 2xl:leading-5 -mx-2.5 px-2.5"
-                      href={`/projects/${suglifyTitle(title)}`}
-                    >
-                      Visit Project
-                    </Link>
-                  </nav>
-                </div>
-                <figure className="md:w-1/2">
-                  <div className="border-2 border-gray-15 bg-gray-15 rounded-2xl overflow-hidden shadow-image-fix">
+                  <div className="w-full">
                     <img
-                      loading="lazy"
-                      width={1024}
-                      height={1024}
-                      decoding="async"
-                      data-nimg={1}
-                      src={
-                        project?.cover?.file?.url ||
-                        project?.cover?.external?.url ||
-                        ""
-                      }
-                      style={{ color: "transparent" }}
+                      className="rounded-2xl border-1 border-solid border-graywhite"
+                      src={cover}
+                      alt=""
                     />
                   </div>
-                </figure>
+                </div>
               </div>
-            </section>
-          );
-        })}
+            );
+          })}
+      </div>
     </section>
   );
 };

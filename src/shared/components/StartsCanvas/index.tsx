@@ -38,9 +38,12 @@ const StarsCanvas = () => {
   const starmode: any = "active";
   return (
     <div
-      className={`w-full h-auto ${
+      className={`w-full  ${
         starmode === "active" ? "" : " hidden"
       }  absolute inset-0 z-1`}
+      style={{
+        height: "100vh",
+      }}
     >
       <Canvas camera={{ position: [0, 0, 1] }}>
         <Suspense fallback={null}>
