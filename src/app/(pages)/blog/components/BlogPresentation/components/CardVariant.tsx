@@ -4,7 +4,10 @@ import extractInfoArticle from "@/shared/hooks/extract-info-article";
 import usePostRatings from "@/shared/hooks/usePostRatings";
 import { fetcherCache } from "@/shared/services/fetcher";
 import siteMetadata from "@/shared/settings/sitemetdata";
-import { BorderOpacity, BoxBgOpacityClasses } from "@/shared/styles/custom-tw-classes";
+import {
+  BorderOpacity,
+  BoxBgOpacityClasses,
+} from "@/shared/styles/custom-tw-classes";
 import suglifyTitle from "@/shared/utils/suglify-title";
 import Link from "next/link";
 import useSWR from "swr";
@@ -94,7 +97,10 @@ const CardVariant = ({ article, type }: { article: any; type: TYPE }) => {
 
       {type === "mini-card-liked" && (
         <div
-          className={cn("border-b-2 last:border-b-0 hidden md:block",BorderOpacity)}
+          className={cn(
+            "border-b-2 last:border-b-0 hidden md:block",
+            BorderOpacity
+          )}
           data-projection-id={11}
         >
           <article

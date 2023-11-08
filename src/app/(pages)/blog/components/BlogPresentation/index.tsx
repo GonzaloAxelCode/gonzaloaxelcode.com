@@ -194,7 +194,7 @@ const BlogGridPresentation = () => {
                             src={siteMetadata.avatarImage}
                           />
                           <span className="overflow-hidden text-ellipsis whitespace-nowrap">
-                            By {/* */}
+                            Por {/* */}
                             {siteMetadata.author}
                           </span>
                         </a>

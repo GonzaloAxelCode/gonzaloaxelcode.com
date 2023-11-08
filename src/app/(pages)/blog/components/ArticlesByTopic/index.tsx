@@ -66,14 +66,13 @@ const ArticlesByTopic = () => {
         <div className="">
           <div className="relative z-10 flex justify-between items-end">
             <div className="max-w-lg">
-              <h2 className="font-headings tracking-tight scroll-mt-[120px] text-4xl lg:text-5xl 2xl:text-6xl font-bold">
-                Articles by topic
+              <h2 className="font-headings leading-title text-4xl  font-bold">
+                Articulos por categoria
               </h2>
               <div className="font-copy text-base 2xl:text-md font-medium print:text-[12px] print:text-justify mt-6 copy-muted">
                 <p className="my-6 first:mt-0 last:mb-0 print:my-2">
-                  Dive into our top content categories like headless CMS,
-                  Jamstack, CSS frameworks, technical SEO, and more - learn from
-                  industry experts.
+                  Aqui estan todos los articulos organizados por categorias y
+                  tags para que puedas escoger.
                 </p>
               </div>
             </div>
@@ -175,7 +174,7 @@ const ArticlesByTopic = () => {
                         >
                           <button
                             className={cn(
-                              "leading-4 whitespace-nowrap transition-all border-r-2 border-gray-EE pr-2 last:pr-0 last:border-0 ",
+                              " font-normal leading-4 whitespace-nowrap transition-all border-r-2 border-gray-EE pr-2 last:pr-0 last:border-0 ",
                               changeTag === suglifyTitle(tagname)
                                 ? "text-primary-blue underline underline-offset-4 "
                                 : ""

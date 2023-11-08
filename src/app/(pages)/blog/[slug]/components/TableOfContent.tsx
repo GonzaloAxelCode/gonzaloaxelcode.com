@@ -83,7 +83,7 @@ const TableOfContent = ({ content, id }: any) => {
   };
   return (
     <div className="pb-6 lg:col-span-4 order-1 lg:sticky  lg:top-[55px] lg:h-[700px]">
-      <div className="bg-white dark:bg-blackbg overflow-hidden pt-6 px-6 pb-2.5 relative border-2 rounded-xl border-gray-100 dark:border-darkborder  ">
+      <div className="bg-white  dark:bg-blackbg overflow-hidden pt-6 px-6 pb-2.5 relative border-2 rounded-xl border-gray-100 dark:border-darkborder  ">
         <header className="pb-4">
           <button className="flex justify-between items-center w-full">
             <Title className=" scroll-mt-[120px] text-xl font-medium">
@@ -172,8 +172,8 @@ const TableOfContent = ({ content, id }: any) => {
           />
 
           <div className="text-base-tight flex flex-col">
-            <P className="font-bold text-md text-black">Congratulations!</P>
-            <P className="text-sm">You’ve thoroughly explored this topic!</P>
+            <P className="font-bold text-md text-black">Felicitaciones!</P>
+            <P className="text-sm">¡Has explorado a fondo este tema!</P>
           </div>
         </div>
         {extractedArray.findIndex((item: any) => item.slugtext === title) ===
@@ -182,134 +182,138 @@ const TableOfContent = ({ content, id }: any) => {
           <div style={{ position: "relative" }} />
         </div>
       </div>
-      <div className="mt-6 flex items-center justify-between">
-        <nav className="flex gap-2.5 items-center flex-wrap">
-          <P className="font-semibold text-md leading-tight">Share article</P>
-          <div className="flex gap-2.5 items-center">
-            <Link
-              className="block cursor-pointer w-10 h-10  p-2 dark:text-white text-black"
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Share on Twitter"
-            >
-              <svg
-                viewBox="0 0 64 64"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6 mx-auto pointer-events-none"
+      <div className="flex flex-col items-center">
+        <div className="mt-1 flex items-center justify-between">
+          <nav className="flex gap-2.5 items-center flex-wrap">
+            <P className="font-semibold text-sm leading-tight">
+              Compartir articulo
+            </P>
+            <div className="flex gap-2.5 items-center">
+              <Link
+                className="block cursor-pointer w-10 h-10  p-2 dark:text-white text-black"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Share on Twitter"
               >
-                <path
-                  d="M51.066 21.716c.03.426.03.853.03 1.279 0 13.005-9.898 27.99-27.99 27.99-5.573 0-10.75-1.614-15.106-4.416.792.091 1.553.121 2.376.121 4.599 0 8.832-1.553 12.213-4.203a9.855 9.855 0 0 1-9.198-6.822c.609.091 1.218.152 1.858.152.883 0 1.766-.122 2.589-.335a9.839 9.839 0 0 1-7.889-9.655v-.121a9.907 9.907 0 0 0 4.447 1.248 9.83 9.83 0 0 1-4.386-8.193c0-1.827.487-3.502 1.34-4.964A27.963 27.963 0 0 0 31.635 24.09a11.103 11.103 0 0 1-.244-2.253c0-5.422 4.386-9.838 9.837-9.838a9.814 9.814 0 0 1 7.188 3.107 19.369 19.369 0 0 0 6.244-2.376 9.81 9.81 0 0 1-4.325 5.421c1.98-.213 3.899-.761 5.665-1.523a21.146 21.146 0 0 1-4.934 5.087Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </Link>
-            <Link
-              className="block cursor-pointer w-10 h-10 p-2  dark:text-white text-black"
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Share on LinkedIn"
-            >
-              <svg
-                viewBox="0 0 64 64"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6 mx-auto pointer-events-none -mt-0.5"
+                <svg
+                  viewBox="0 0 64 64"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-6 h-6 mx-auto pointer-events-none"
+                >
+                  <path
+                    d="M51.066 21.716c.03.426.03.853.03 1.279 0 13.005-9.898 27.99-27.99 27.99-5.573 0-10.75-1.614-15.106-4.416.792.091 1.553.121 2.376.121 4.599 0 8.832-1.553 12.213-4.203a9.855 9.855 0 0 1-9.198-6.822c.609.091 1.218.152 1.858.152.883 0 1.766-.122 2.589-.335a9.839 9.839 0 0 1-7.889-9.655v-.121a9.907 9.907 0 0 0 4.447 1.248 9.83 9.83 0 0 1-4.386-8.193c0-1.827.487-3.502 1.34-4.964A27.963 27.963 0 0 0 31.635 24.09a11.103 11.103 0 0 1-.244-2.253c0-5.422 4.386-9.838 9.837-9.838a9.814 9.814 0 0 1 7.188 3.107 19.369 19.369 0 0 0 6.244-2.376 9.81 9.81 0 0 1-4.325 5.421c1.98-.213 3.899-.761 5.665-1.523a21.146 21.146 0 0 1-4.934 5.087Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </Link>
+              <Link
+                className="block cursor-pointer w-10 h-10 p-2  dark:text-white text-black"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Share on LinkedIn"
               >
-                <path
-                  d="M18.744 56H8.793V23.953h9.951V56Zm-4.98-36.419C10.58 19.581 8 16.946 8 13.763a5.763 5.763 0 0 1 11.527 0c0 3.183-2.582 5.818-5.764 5.818ZM55.99 56h-9.93V40.4c0-3.718-.075-8.486-5.174-8.486-5.174 0-5.967 4.04-5.967 8.218V56h-9.94V23.953h9.544v4.371h.139c1.329-2.518 4.574-5.175 9.416-5.175C54.15 23.15 56 29.782 56 38.396V56h-.01Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </Link>
-            <Link
-              className="block cursor-pointer w-10 h-10  p-2  dark:text-white text-black"
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Share by email"
-            >
-              <svg
-                viewBox="0 0 64 64"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6 mx-auto pointer-events-none"
+                <svg
+                  viewBox="0 0 64 64"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-6 h-6 mx-auto pointer-events-none -mt-0.5"
+                >
+                  <path
+                    d="M18.744 56H8.793V23.953h9.951V56Zm-4.98-36.419C10.58 19.581 8 16.946 8 13.763a5.763 5.763 0 0 1 11.527 0c0 3.183-2.582 5.818-5.764 5.818ZM55.99 56h-9.93V40.4c0-3.718-.075-8.486-5.174-8.486-5.174 0-5.967 4.04-5.967 8.218V56h-9.94V23.953h9.544v4.371h.139c1.329-2.518 4.574-5.175 9.416-5.175C54.15 23.15 56 29.782 56 38.396V56h-.01Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </Link>
+              <Link
+                className="block cursor-pointer w-10 h-10  p-2  dark:text-white text-black"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Share by email"
               >
-                <path
-                  d="M12.5 14a4.501 4.501 0 0 0-2.7 8.1l20.4 15.3a3.01 3.01 0 0 0 3.6 0l20.4-15.3a4.501 4.501 0 0 0-2.7-8.1h-39ZM8 24.5V44c0 3.31 2.69 6 6 6h36c3.31 0 6-2.69 6-6V24.5L35.6 39.8a5.99 5.99 0 0 1-7.2 0L8 24.5Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </Link>
-          </div>
-        </nav>
+                <svg
+                  viewBox="0 0 64 64"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-6 h-6 mx-auto pointer-events-none"
+                >
+                  <path
+                    d="M12.5 14a4.501 4.501 0 0 0-2.7 8.1l20.4 15.3a3.01 3.01 0 0 0 3.6 0l20.4-15.3a4.501 4.501 0 0 0-2.7-8.1h-39ZM8 24.5V44c0 3.31 2.69 6 6 6h36c3.31 0 6-2.69 6-6V24.5L35.6 39.8a5.99 5.99 0 0 1-7.2 0L8 24.5Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </nav>
+        </div>
+        <Flex className="gap-3 my-1 ">
+          <button onClick={() => handleToggleLike("like")}>
+            <div
+              className="w-16 py-3 h-20 relative rounded-lg shrink-0 bg-gray-F7 dark:bg-gray-1F font-headings flex flex-col items-center justify-center overflow-hidden"
+              style={{
+                backgroundColor: !isLiked("like")
+                  ? ""
+                  : !themeGlobal
+                  ? "#E9E9E9"
+                  : "black",
+              }}
+            >
+              <span className=" text-2xl">👍</span>
+              <P className="text-sm relative z-10">{ratings.like}</P>
+            </div>
+          </button>
+          <button onClick={() => handleToggleLike("heart")}>
+            <div
+              className="w-16 py-3 h-20 relative rounded-lg shrink-0 bg-gray-F7 dark:bg-gray-1F font-headings flex flex-col items-center justify-center overflow-hidden"
+              style={{
+                backgroundColor: !isLiked("heart")
+                  ? ""
+                  : !themeGlobal
+                  ? "#E9E9E9"
+                  : "black",
+              }}
+            >
+              <span className=" text-2xl">❤️</span>
+              <P className="text-sm relative z-10">{ratings.heart}</P>
+            </div>
+          </button>
+
+          <button onClick={() => handleToggleLike("applause")}>
+            <div
+              className="w-16 py-3 h-20 relative rounded-lg shrink-0 bg-gray-F7 dark:bg-gray-1F font-headings flex flex-col items-center justify-center overflow-hidden"
+              style={{
+                backgroundColor: !isLiked("applause")
+                  ? ""
+                  : !themeGlobal
+                  ? "#E9E9E9"
+                  : "black",
+              }}
+            >
+              <span className=" text-2xl">👏</span>
+              <P className="text-sm relative z-10">{ratings.applause}</P>
+            </div>
+          </button>
+
+          <button onClick={() => handleToggleLike("confetti")}>
+            <div
+              className="w-16 py-3 h-20 relative rounded-lg shrink-0 bg-gray-F7 dark:bg-gray-1F font-headings flex flex-col items-center justify-center overflow-hidden"
+              style={{
+                backgroundColor: !isLiked("confetti")
+                  ? ""
+                  : !themeGlobal
+                  ? "#E9E9E9"
+                  : "black",
+              }}
+            >
+              <span className="text-2xl">🎉</span>
+              <P className="text-sm relative z-10"> {ratings.confetti}</P>
+            </div>
+          </button>
+        </Flex>
       </div>
-      <Flex full className="gap-3 my-3">
-        <button onClick={() => handleToggleLike("like")}>
-          <div
-            className="w-16 py-3 h-20 relative rounded-lg shrink-0 bg-gray-F7 dark:bg-gray-1F font-headings flex flex-col items-center justify-center overflow-hidden"
-            style={{
-              backgroundColor: !isLiked("like")
-                ? ""
-                : !themeGlobal
-                ? "#E9E9E9"
-                : "black",
-            }}
-          >
-            <span className=" text-2xl">👍</span>
-            <P className="text-sm relative z-10">{ratings.like}</P>
-          </div>
-        </button>
-        <button onClick={() => handleToggleLike("heart")}>
-          <div
-            className="w-16 py-3 h-20 relative rounded-lg shrink-0 bg-gray-F7 dark:bg-gray-1F font-headings flex flex-col items-center justify-center overflow-hidden"
-            style={{
-              backgroundColor: !isLiked("heart")
-                ? ""
-                : !themeGlobal
-                ? "#E9E9E9"
-                : "black",
-            }}
-          >
-            <span className=" text-2xl">❤️</span>
-            <P className="text-sm relative z-10">{ratings.heart}</P>
-          </div>
-        </button>
-
-        <button onClick={() => handleToggleLike("applause")}>
-          <div
-            className="w-16 py-3 h-20 relative rounded-lg shrink-0 bg-gray-F7 dark:bg-gray-1F font-headings flex flex-col items-center justify-center overflow-hidden"
-            style={{
-              backgroundColor: !isLiked("applause")
-                ? ""
-                : !themeGlobal
-                ? "#E9E9E9"
-                : "black",
-            }}
-          >
-            <span className=" text-2xl">👏</span>
-            <P className="text-sm relative z-10">{ratings.applause}</P>
-          </div>
-        </button>
-
-        <button onClick={() => handleToggleLike("confetti")}>
-          <div
-            className="w-16 py-3 h-20 relative rounded-lg shrink-0 bg-gray-F7 dark:bg-gray-1F font-headings flex flex-col items-center justify-center overflow-hidden"
-            style={{
-              backgroundColor: !isLiked("confetti")
-                ? ""
-                : !themeGlobal
-                ? "#E9E9E9"
-                : "black",
-            }}
-          >
-            <span className="text-2xl">🎉</span>
-            <P className="text-sm relative z-10"> {ratings.confetti}</P>
-          </div>
-        </button>
-      </Flex>
     </div>
   );
 };

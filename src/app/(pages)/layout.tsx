@@ -25,9 +25,21 @@ export default function RootLayout({
         className="body overflow-x-hidden dark:text-white text-gray-15  antialiased selection:bg-primary-purple relative "
       >
         <GlobalProviders>
-          <div className="relative w-full dark:text-white text-gray-15  bg-white dark:bg-blackbg ">
+          <div
+            className="relative w-full dark:text-white text-gray-15  bg-white dark:bg-[#222222]"
+            style={{
+              backgroundImage:
+                "url(https://res.cloudinary.com/ddksrkond/image/upload/e_blur:900/v1699402460/docs_tinypng.d9e4dcdc_fjao77.png)",
+              backgroundSize: "contain",
+              backgroundPosition: "top",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
             <Header />
+            {/*
+            
             <StarsCanvas />
+            */}
             <Subheader />
             <div className="pt-[50px]">{children}</div>
             <Footer />

@@ -34,13 +34,15 @@ const Subscribe = () => {
             </svg>
           </div>
           <h2 className="font-headings tracking-tight scroll-mt-[120px] text-xl-tight 2xl:2xl-tight font-medium mt-6">
-            Stay on Top of New Tools, Frameworks, and More
+            Manténgase al día de las nuevas herramientas, frameworks, liberias y
+            mucho más.
           </h2>
           <div className="font-copy text-base 2xl:text-md font-medium print:text-[12px] print:text-justify copy-muted mt-3">
             <p className="my-6 first:mt-0 last:mb-0 print:my-2">
-              Research shows that we learn better by doing. Dive into a monthly
-              tutorial with the Optimized Dev Newsletter that helps you decide
-              which new web dev tools are worth adding to your stack.
+              Los estudios demuestran que aprendemos mejor haciendo. Sumérgete
+              en un tutorial mensual con el boletín Dev Newsletter que te
+              ayudará a decidir qué nuevas herramientas de desarrollo web merece
+              la pena aprender.
             </p>
           </div>
           <div className="mt-6 ">
@@ -61,7 +63,7 @@ const Subscribe = () => {
               <div />
               <button
                 className="text-blackbg rounded-lg font-bold whitespace-nowrap focus:outline-none focus:ring-tertiary-purple disabled:opacity-50 group border-2 focus:ring-4 transition-opacity transition-colors hover:bg-opacity-75 disabled:hover:bg-opacity-100 border-white py-3 px-6 text-sm-flat leading-5 2xl:text-base-flat 2xl:leading-5 bg-white text-gray-15 mt-4"
-                type="submit"
+                type="button"
                 name="subscribe"
               >
                 Subscribe
@@ -70,8 +72,7 @@ const Subscribe = () => {
           </div>
         </div>
         <img
-          src="https://prismic-main.cdn.prismic.io/prismic-main/843667ae-d988-49ea-81f6-544d7da7ec85_home_optimized_dev.svg"
-          srcSet="https://prismic-main.cdn.prismic.io/prismic-main/843667ae-d988-49ea-81f6-544d7da7ec85_home_optimized_dev.svg?width=640 640w, https://prismic-main.cdn.prismic.io/prismic-main/843667ae-d988-49ea-81f6-544d7da7ec85_home_optimized_dev.svg?width=828 828w, https://prismic-main.cdn.prismic.io/prismic-main/843667ae-d988-49ea-81f6-544d7da7ec85_home_optimized_dev.svg?width=1200 1200w, https://prismic-main.cdn.prismic.io/prismic-main/843667ae-d988-49ea-81f6-544d7da7ec85_home_optimized_dev.svg?width=2048 2048w, https://prismic-main.cdn.prismic.io/prismic-main/843667ae-d988-49ea-81f6-544d7da7ec85_home_optimized_dev.svg?width=3840 3840w"
+          src="https://igrowth.ch/wp-content/uploads/2021/07/webdev.png"
           className="grow max-w-sm min-w-[300px] hidden lg:block"
         />
       </div>

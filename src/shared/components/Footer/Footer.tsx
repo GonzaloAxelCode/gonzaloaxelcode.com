@@ -9,10 +9,9 @@ const Footer = () => {
         <div className="px-5 pt-9 flex flex-col lg:flex-row justify-between items-center lg:items-end border-t border-neutral-300/10">
           <div>
             <img src={siteMetadata.avatarImage} className="h-10 w-10" alt="" />{" "}
-            <span>Gonzalo Axel</span>
+            <span>Gonzalo Axel - Fullstack junior developer.</span>
             <p className="mt-3 hidden lg:block max-w-[342px]">
-              Better Stack lets you see inside any stack, debug any issue, and
-              resolve any incident.
+              El equilibrio entre forma y función en desarrollo fullstack.
             </p>
           </div>
           <div className="flex items-center gap-6 whitespace-nowrap">
@@ -20,13 +19,13 @@ const Footer = () => {
               className="hidden lg:block -mx-1 px-1"
               href="tel:+1 (201) 500-2007"
             >
-              +1 (201) 500-2007
+              +51 (954)-399-179 {"  "}Peru
             </a>
             <a
               className="hidden lg:block -mx-1 px-1"
               href="mailto:hello@betterstack.com"
             >
-              hello@betterstack.com
+              gonzaloaxelh@gmail.com
             </a>
             <div className="hidden lg:block h-4 border-l border-neutral-300/10" />
             <div className="hidden lg:flex">
@@ -67,25 +66,29 @@ const Footer = () => {
         </div>
         <div className="px-5 lg:px-2 lg:mx-3 mt-5 py-3 lg:border-t flex flex-col lg:flex-row justify-between items-center border-neutral-300/10 dark:border-[#1F2433]/70 text-[12px] leading-[18px]">
           <div className="flex items-center gap-6 whitespace-nowrap dark:text-neutral-300">
-            <a className="-mx-1 px-1" href="/terms">
-              Terms of Use
-            </a>
-            <a className="-mx-1 px-1" href="/privacy">
-              Privacy Policy
-            </a>
-            <a className="-mx-1 px-1" href="/dpa">
-              GDPR
-            </a>
-            <a
-              className="hidden sm:block -mx-1 px-1"
-              href="https://status.betterstack.com/"
+            <Link className="-mx-1 px-1 hover:underline" href="/">
+              Inicio
+            </Link>
+            <Link className="-mx-1 px-1 hover:underline" href="/blog">
+              Blog
+            </Link>
+            <Link className="-mx-1 px-1 hover:underline" href="/proyectos">
+              Proyectos
+            </Link>
+            <Link className="-mx-1 px-1 hover:underline" href="/about">
+              Sobre mi
+            </Link>
+
+            <Link
+              className="hidden sm:block -mx-1 px-1 hover:underline"
+              href="/academy"
               target="_blank"
             >
               <svg width={14} height={15} className="mr-1 hidden lg:inline">
                 <use href="/assets/v2/status-green-9b323a3710393221033993056c8b5de0999eaf3139262ab0625db787dee99f00.svg#root" />
               </svg>
-              System status
-            </a>
+              Academy (no disponible)
+            </Link>
           </div>
           <div className="mt-8 mb-2 flex lg:hidden">
             <div className="flex gap-4 text-neutral-300">
@@ -122,7 +125,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex items-center text-neutral-300">
-            © 2023 Better Stack, Inc.
+            © 2023 Gonzalo Axel. All rights reserved
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"

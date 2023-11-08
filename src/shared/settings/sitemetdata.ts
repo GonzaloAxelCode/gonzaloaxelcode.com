@@ -3,7 +3,7 @@ const siteMetadata = {
   author: "Gonzalo Axel",
   headerTitle: "Gonzalo's Portfolio",
   description:
-    "Hola soy Gonzalo Axel. Programador frontEnd apasionado por la tecnologia web.",
+    "Desarrollador/Programador Web Fullstack Junior en Peru, especializado en en el desarrollo Frontend con Nextjs y Angular 16.",
   language: "es-PE",
   siteUrl: "https://gonzaloaxel.online/",
   siteRepo: "https://github.com/GonzaloAxelCode",

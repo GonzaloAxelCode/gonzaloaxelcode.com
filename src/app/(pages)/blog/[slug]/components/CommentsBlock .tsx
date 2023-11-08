@@ -132,7 +132,7 @@ const CommentsBlock = ({ idArticle }: any) => {
         id="commentsSection"
         className="font-headings text-blackbg dark:text-white tracking-tight  text-2xl-tight lg:text-3xl-tight 2xl:text-4xl font-medium mt-12 scroll-mt-[120px]"
       >
-        {allComments ? allComments.length || 0 : 0} comments
+        {allComments ? allComments.length || 0 : 0} comnetarios
       </h2>
       <form
         className="flex gap-4 flex-col mt-6 relative"

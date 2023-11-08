@@ -32,7 +32,11 @@ export default async function PageSlugBlog({ params }: any) {
   return (
     <main className="w-full">
       <PresentationArticle article={article} />
-      <BodyArticle content={content} article={article} />
+      <BodyArticle
+        category={article?.properties?.Category?.select}
+        content={content}
+        article={article}
+      />
     </main>
   );
 }

@@ -18,20 +18,20 @@ const ChooseTechStack = () => {
         <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[768px] lg:max-w-[1280px]  mx-auto  px-8">
           <div className="sm:col-span-1 z-10 relative">
             <div className="relative z-10 pr-12 sm:pb-20">
-              <h2 className="font-headings leading-custom-11 scroll-mt-[120px] text-4xl lg:text-5xl 2xl:text-6xl font-bold">
-                Choose your tech stack
+              <h2 className="font-headings leading-custom-11 scroll-mt-[120px] text-4xl font-bold">
+                Todo sobre frameworks
               </h2>
               <div className="font-copy text-base 2xl:text-md font-medium print:text-[12px] print:text-justify mt-6">
                 <p className="my-6 first:mt-0 last:mb-0 print:my-2">
-                  Build a solid foundation as you select the technologies and
-                  tools to help you build a great website faster.{" "}
+                  Escoge los articulos por frameworks de frontend y backend,
+                  tutoriales sobre novedades, ultimas actualizaciones, etc.
                 </p>
               </div>
               <a
                 className="rounded-lg font-bold whitespace-nowrap focus:outline-none focus:ring-tertiary-purple disabled:opacity-50 group underline underline-offset-8 focus:ring-4 hover:underline-offset-4 border-gray-15 py-3 px-6 text-sm-flat leading-5 2xl:text-base-flat 2xl:leading-5 -mx-2.5 px-2.5 inline-block mt-6 md:mt-12"
                 href="#"
               >
-                Read more
+                Ver mas
               </a>
               <nav className="splide__arrows gap-2 flex blog-post-swiper-nav-a61e6647-294a-457f-9a1c-c35a20497725 mt-10 absolute bottom-0 right-0 sm:left-0 sm:right-auto">
                 <button

@@ -5,6 +5,7 @@ import Title from "@/shared/UIComponents/Base/Title";
 import useExtractInfoArticle from "@/shared/hooks/useExtractInfoArticle";
 import usePostViews from "@/shared/hooks/usePostViews";
 import siteMetadata from "@/shared/settings/sitemetdata";
+import COLORS_NOTION from "@/shared/utils/colors-notion";
 import formatDate from "@/shared/utils/format-date";
 import suglifyTitle from "@/shared/utils/suglify-title";
 import Image from "next/image";
@@ -19,8 +20,9 @@ const PresentationArticle = ({ article }: any) => {
     cover,
     category,
     createdAt,
+    categoryColor,
   } = useExtractInfoArticle(article);
-  console.log(article)
+  console.log(article);
   const viewCount = usePostViews(suglifyTitle(title));
   return (
     <Flex
@@ -38,7 +40,10 @@ const PresentationArticle = ({ article }: any) => {
               viewBox="0 0 64 64"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="w-5 h-5 shrink-0 text-blue-400"
+              className="w-5 h-5 shrink-0"
+              style={{
+                color: COLORS_NOTION[categoryColor],
+              }}
             >
               <path
                 opacity="0.2"
@@ -67,7 +72,7 @@ const PresentationArticle = ({ article }: any) => {
             height={30}
             alt={siteMetadata.author}
           />
-          <P className="m-0 text-sm">By {siteMetadata.author}</P>
+          <P className="m-0 text-xs sm:text-sm">Por {siteMetadata.author}</P>
           <Flex itemscenter>
             <svg
               viewBox="0 0 24 24"
@@ -86,10 +91,18 @@ const PresentationArticle = ({ article }: any) => {
                 strokeWidth={2}
               />
             </svg>
-     
 
             <div className="w-0.5 h-6 bg-gray"></div>
-            <P className="text-md"> | {viewCount} views</P>
+            <P className="text-xs flex items-center sm:text-sm">
+              {" "}
+              | {viewCount} views |{" "}
+              <img
+                className="h-8 w-8 object-contain"
+                src="https://res.cloudinary.com/ddksrkond/image/upload/v1699381028/ChatGPT-Logo_xghvfd.png"
+                alt=""
+              />{" "}
+              Generado y revisado{" "}
+            </P>
           </Flex>
         </Flex>
       </Flex>

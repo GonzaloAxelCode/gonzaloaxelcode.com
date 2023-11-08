@@ -12,8 +12,8 @@ const LastestContent = () => {
         <div className="container max-w-[768px] lg:max-w-[1280px]  mx-auto  px-8">
           <div className="md:flex md:items-center md:justify-between">
             <div className="max-w-[740px] pr-6">
-              <h2 className="font-headings tracking-tight scroll-mt-[120px] text-4xl lg:text-4xl 2xl:text-4xl font-bold mt-4 mb-3 first:mt-0 title-limiter">
-                Latest Youtube content
+              <h2 className="font-headings leading-title scroll-mt-[120px] text-4xl font-bold mt-4 mb-3 first:mt-0 title-limiter">
+                Los articulos mas vistos
               </h2>
             </div>
           </div>

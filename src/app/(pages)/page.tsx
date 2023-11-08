@@ -52,7 +52,7 @@ export default function Home() {
           <p className=" text-center  uppercase  px-10 mb-1">
             ⚡️ The Ultimate ⚡️
           </p>
-          <h1 className="text-center text-5xl mt-10 mb-5  title-limiter leading-title">
+          <h1 className="text-center text-3xl md:text-5xl mt-10 mb-5  title-limiter leading-title">
             El equilibrio entre forma y función en
             <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent from-[#5c3de6]  to-[#fe97dc]">
               {" "}
@@ -80,34 +80,26 @@ export default function Home() {
               </span>
             </span>
           </h1>
-          <div className="w-full flex justify-center sm:flex-row flex-col sm:gap-4 items-center">
-            <button className="px-6 py-3 rounded-full bg-zinc-100 mt-2  text-zinc-800 sm:w-auto w-full font-medium">
-              Blog
-            </button>
-            <button className="px-6 py-3 flex items-center justify-center rounded-full bg-zinc-800 mt-2 sm:w-auto w-full  text-zinc-100 font-medium">
-              <svg
-                className="w-6 h-6 -ml-2 mr-2"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-                  className=""
-                />
-              </svg>
-              <span className="">Sobre mi</span>
-            </button>
+
+          <div className="flex gap-2 mx-auto w-full justify-center">
+            <a
+              href="https://twitter.com/tnylea"
+              className="inline-flex w-auto px-4 py-2 mt-5  text-sm sm:text-md font-bold  duration-300 ease-out border rounded-full bg-neutral-900 dark:bg-white dark:text-neutral-900 text-neutral-100  border-neutral-900"
+            >
+              Explora mi Blog
+            </a>
+            <a
+              href="https://twitter.com/tnylea"
+              className="inline-flex w-auto px-4 py-2 mt-5 text-sm sm:text-md font-bold duration-300 ease-out border rounded-full   dark:text-neutral-900  border-neutral-700 dark:border-neutral-300 bg-white dark:bg-black dark>text-white dark:text-white text-neutral-900"
+            >
+              Descarga mi CV
+            </a>
           </div>
         </div>
       </div>
       <section id="features" className="h-auto  py-10 sm:py-12 md:py-20">
         <div className="px-10 md:px-0">
-          <h2 className="mb-4 text-xl md:text-2xl font-extrabold jakarta text-left sm:text-center md:text-4xl lg:text-6xl md:mb-6">
+          <h2 className="mb-4 text-2xl sm:text-3xl  text-center  font-extrabold jakarta  sm:text-center  md:mb-6">
             🤘 Explora mi sitio web 👇
           </h2>
           <p className="max-w-xl mx-auto text-left text-gray-400 sm:text-center text-sm md:text-lg">

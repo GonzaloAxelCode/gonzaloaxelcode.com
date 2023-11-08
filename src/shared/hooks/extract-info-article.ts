@@ -16,6 +16,7 @@ const extractInfoArticle = (article: any) => {
 
   return {
     id,
+    categoryColor,
     tags,
     title,
     description,
