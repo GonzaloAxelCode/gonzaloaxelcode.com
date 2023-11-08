@@ -94,8 +94,3 @@ const PageProjects = () => {
 };
 
 export default PageProjects;
-
-/*
-
-  
-*/

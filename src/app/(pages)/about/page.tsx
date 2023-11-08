@@ -488,7 +488,7 @@ const PageAbout = () => {
           </span>
           personal
           <br />
-          con mas de 10+ articulos ya publicados.
+          con mas de 13+ articulos ya publicados.
         </h2>
         <p
           className="mt-3 text-center md:text-large-18 max-w-[459px] aos-init aos-animate"

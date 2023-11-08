@@ -36,10 +36,7 @@ export default function RootLayout({
             }}
           >
             <Header />
-            {/*
-            
-            <StarsCanvas />
-            */}
+
             <Subheader />
             <div className="pt-[50px]">{children}</div>
             <Footer />

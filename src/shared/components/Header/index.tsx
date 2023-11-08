@@ -9,7 +9,7 @@ import Logo from "../Logo/Index";
 import Switcher from "../SwitcherDark";
 import Sidebar from "./Sidebar";
 
-const paths = [
+export const pathsNavHeader = [
   {
     text: "Inicio",
     path: "/",
@@ -90,7 +90,7 @@ const Header = () => {
             </div>
           </Flex>
           <Flex full className="hidden lg:flex space-x-8 ml-auto justify-end">
-            {paths.map((el: any, index: any) => {
+            {pathsNavHeader.map((el: any, index: any) => {
               return (
                 <Link key={index} href={el.path} className="">
                   <P className={cn("text-sm", "")}>{el.text}</P>

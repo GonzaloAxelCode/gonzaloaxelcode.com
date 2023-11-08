@@ -6,6 +6,7 @@ import resumirTexto from "@/shared/utils/resume-text";
 import suglifyTitle from "@/shared/utils/suglify-title";
 import Link from "next/link";
 import useSWR from "swr";
+import TecnologiesProyect from "../TecnologiesProyect";
 const SectionProjects = () => {
   const { data: projects } = useSWR("/api/projects", fetcherCache);
 
@@ -27,12 +28,12 @@ const SectionProjects = () => {
             return (
               <div
                 key={index}
-                className="relative z-10 overflow-hidden border-2 border-graywhite dark:border-graydark border-solid  px-6 py-12 sm:rounded-[22px] sm:px-8 md:px-14"
+                className="relative z-10 overflow-hidden  px-6 py-12 sm:px-8 md:px-14"
               >
-                <div className="flex flex-wrap items-center lg:flex-nowrap">
+                <div className="flex items-center  flex-wrap flex-col lg:flex-row">
                   <div className="w-full">
                     <div className="relative z-20 mb-10 text-center lg:mb-0 lg:text-left">
-                      <div className="mb-4.5 inline-flex items-center rounded-3xl  px-3.5 py-2.5">
+                      <div className="mb-4.5 inline-flex items-center rounded-3xl  py-2.5">
                         <span className="pr-2.5">
                           <svg
                             width={24}
@@ -48,8 +49,21 @@ const SectionProjects = () => {
                           </svg>
                         </span>
                         <p className="font-heading text-sm font-medium text-fb-orange ">
-                          Works with almost anything
+                          En desarrollo actualmente
                         </p>
+                        <span
+                          style={{
+                            background: "rgb(254, 240, 138)",
+                            color: "rgb(113, 63, 18)",
+                            padding: "2px 6px",
+
+                            borderRadius: 5,
+                            fontSize: 11,
+                          }}
+                          className="font-headings font-bold mx-1"
+                        >
+                          PRO
+                        </span>
                       </div>
                       <h2 className="mx-auto mb-5 max-w-[490px] font-heading text-2xl font-black  sm:text-4xl sm:leading-[45px] lg:ml-0">
                         {title}
@@ -57,15 +71,49 @@ const SectionProjects = () => {
                       <p className="mx-auto max-w-[530px] mb-4 text-sm leading-[24px] text-body-color lg:ml-0">
                         {resumirTexto(description, 200)}
                       </p>
-                      <LogosBg />
+                      <TecnologiesProyect />
                     </div>
                   </div>
-                  <div className="w-full">
-                    <img
-                      className="rounded-2xl border-1 border-solid border-graywhite"
-                      src={cover}
-                      alt=""
-                    />
+                  <div className="w-full h-[40vw]">
+                    <div className="container  transform translate-y-[70%]">
+                      <div className="grid grid-cols-12 gap-x-6">
+                        <img
+                          loading="lazy"
+                          width={1030}
+                          height={1300}
+                          decoding="async"
+                          data-nimg={1}
+                          className="rounded-2xl border-2 border-gray-15 relative z-10 border-opacity-10 shadow-image-fix col-span-5"
+                          style={{ color: "transparent" }}
+                          src={cover}
+                        />
+                        <div className="col-span-9 relative col-start-4 -mt-[50%]">
+                          <img
+                            loading="lazy"
+                            width={1896}
+                            height={1140}
+                            decoding="async"
+                            data-nimg={1}
+                            className="rounded-2xl border-2 border-gray-15  border-opacity-10 shadow-image-fix"
+                            style={{ color: "transparent" }}
+                            src={cover}
+                          />
+                          <span className="block text-xs-flat text-sm   leading-4 mt-2 absolute max-w-[45%]">
+                            Capturas.
+                          </span>
+                        </div>
+                        <img
+                          loading="lazy"
+                          width={816}
+                          height={468}
+                          decoding="async"
+                          data-nimg={1}
+                          className="rounded-2xl border-2 border-opacity-10 border-gray-15 col-start-8 z-10  shadow-image-fix col-span-4 -mt-[32%]"
+                          src={cover}
+                          style={{ color: "transparent" }}
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

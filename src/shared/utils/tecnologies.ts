@@ -53,40 +53,4 @@ let tecnologys = {
   //WORDPRESS: "https://cdn.svgporn.com/logos/wordpress-icon.svg",
 };
 
-const Tool = ({ url, name }: any) => {
-  return (
-    <div
-      className="avatar"
-      style={{
-        width: "100px",
-        height: "100px",
-      }}
-    >
-      <img alt={name} aria-hidden src={url} className="background" />
-      <img alt={name} src={url} width="100" height="100" />
-    </div>
-  );
-};
-
-const MyTools = () => {
-  const toolsArray = Object.entries(tecnologys);
-
-  return (
-    <div
-      className="all-tools"
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "center",
-        columnGap: "25px",
-        rowGap: "25px",
-      }}
-    >
-      {toolsArray.map(([tech, url]) => (
-        <Tool key={tech} name={tech} url={url} />
-      ))}
-    </div>
-  );
-};
-
-export default MyTools;
+export default tecnologys;

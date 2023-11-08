@@ -2,6 +2,11 @@
 
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
+import { pathsNavHeader } from ".";
+import Link from "next/link";
+import Switcher from "../SwitcherDark";
+import Logo from "../Logo/Index";
+
 const Sidebar = ({ open, setOpen }) => {
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -30,10 +35,7 @@ const Sidebar = ({ open, setOpen }) => {
                 leaveFrom="translate-x-0"
                 leaveTo="translate-x-full"
               >
-                <Dialog.Panel
-                  className="pointer-events-auto relative w-[300px]"
-                 
-                >
+                <Dialog.Panel className="pointer-events-auto relative w-[300px]">
                   <Transition.Child
                     as={Fragment}
                     enter="ease-in-out duration-500"
@@ -53,14 +55,49 @@ const Sidebar = ({ open, setOpen }) => {
                       </button>
                     </div>
                   </Transition.Child>
-                  <div className="flex h-full flex-col  overflow-hidden bg-white dark:bg-blackbg py-6 shadow-xl">
-                    <div className="px-4 sm:px-6">
-                      <Dialog.Title className="text-base font-semibold leading-6 text-gray-900 dark:text-white">
-                        Panel title
-                      </Dialog.Title>
-                    </div>
-                    <div className="relative mt-6 flex-1 px-4 sm:px-6">
-                      {/* Your content */}
+                  <div
+                    className="relative flex h-full flex-col  overflow-hidden bg-white dark:bg-blackbg  shadow-xl"
+                    style={{
+                      backgroundImage:
+                        "url(https://res.cloudinary.com/ddksrkond/image/upload/e_blur:900/v1699402460/docs_tinypng.d9e4dcdc_fjao77.png)",
+                      backgroundSize: "contain",
+                      backgroundRepeat: "no-repeat",
+                    }}
+                  >
+                    <div className="py-16 flex-1 px-6 sm:px-6">
+                      <Link href="/" className="absolute left-7 top-3">
+                        <Logo />
+                      </Link>
+                      <button>
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"></path>
+                        </svg>
+                      </button>
+                      <button className="absolute right-12 top-6">
+                        <Switcher />
+                      </button>
+                      <div className="flex flex-col gap-2">
+                        {pathsNavHeader.map((el: any, index: any) => {
+                          return (
+                            <Link href={el.path} key={index} className="flex">
+                              <span style={{ fontSize: "12px" }}>
+                                0{index + 1}
+                              </span>
+                              <span className="text-3xl font-headings">
+                                <span className="relative inline hover:leading-[0] hover:bg-gradient-to-br hover:bg-clip-text hover:text-transparent hover:from-[#5c3de6]  hover:to-[#fe97dc]">
+                                  {el.text}
+                                </span>
+                              </span>
+                            </Link>
+                          );
+                        })}
+                      </div>
                     </div>
                   </div>
                 </Dialog.Panel>
