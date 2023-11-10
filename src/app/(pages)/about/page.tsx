@@ -13,7 +13,7 @@ import Link from "next/link";
 const PageAbout = () => {
   return (
     <main className="w-full max-w-[768px] lg:max-w-[1200px]  mx-auto  px-8">
-      <div className="relative z-20 w-full  mt-4  md:mt-8 lg:mt-8 xl:px-0 ">
+      <div className="relative z-20 w-full  mt-10 sm:mt-0 md:mt-24 mb-12   xl:px-0 ">
         <div className="flex  flex-col-reverse items-center md:flex-row justify-between  ">
           <div className="relative w-full md:w-1/2 lg:w-3/4">
             <h1 className="mb-5 leading-title text-center md:text-left mt-5 md:mt-0 w-full text-3xl sm:text-4xl font-bold md:text-5xl lg:text-5xl dark:text-white">
@@ -65,26 +65,26 @@ const PageAbout = () => {
               16.
             </p>
 
-            <div className="flex gap-2 ">
-              <a
-                href="https://twitter.com/tnylea"
+            <div className="flex gap-2 justify-center md:justify-normal lg:justify-normal">
+              <Link
+                href="/"
                 className="inline-flex w-auto px-4 py-2 mt-5  text-sm sm:text-md font-bold  duration-300 ease-out border rounded-full bg-neutral-900 dark:bg-white dark:text-neutral-900 text-neutral-100  border-neutral-900"
               >
                 Sigueme en Github
-              </a>
-              <a
-                href="https://twitter.com/tnylea"
+              </Link>
+              <Link
+                href="/"
                 className="inline-flex w-auto px-4 py-2 mt-5 text-sm sm:text-md font-bold duration-300 ease-out border rounded-full   dark:text-neutral-900  border-neutral-700 dark:border-neutral-300 bg-white dark:bg-black dark>text-white dark:text-white text-neutral-900"
               >
                 Descarga mi CV
-              </a>
+              </Link>
             </div>
           </div>
 
-          <div className="pt-0 p-1  mx-auto lg:m-auto lg:mt-0 lg:ml-0">
+          <div className="py-5 p-1  mx-auto lg:m-auto lg:mt-0 lg:ml-0">
             <img
               src="https://res.cloudinary.com/ddksrkond/image/upload/v1691016769/full-stack-bnr_zyhgfj.png"
-              className="h-[130px] w-[130px] md:h-[200px] md:w-[200px]  rounded-full border-2 border-dashed border-graydark"
+              className="h-[150px] w-[150px]  sm:h-[200px] md:w-[200px]  rounded-full border-2 border-dashed border-graydark"
             />
           </div>
         </div>
@@ -273,9 +273,8 @@ const PageAbout = () => {
               300 000 registros.
             </p>
             <p className="my-3">Use las siguientes tecnologias: </p>
-            <p>
-              <LogosBg />
-            </p>
+
+            <LogosBg />
           </div>
         </div>
       </div>
@@ -497,9 +496,7 @@ const PageAbout = () => {
           Descubre mi blog personal, aqui es donde escribo sobre algunas
           novedades, curiosidades y sobre tecnologia.Puedes hecharle un vistazo.
         </p>
-        <div className="mt-7 md:mz-8 lg:mt-16 text-[#363D4E] w-screen md:w-auto">
-          <RecentArticles />
-        </div>
+        <RecentArticles />
         <div className="mt-5 mb-9 md:hidden flex gap-1">
           <a
             aria-label="A Complete Guide to Task Scheduling in Laravel"

@@ -16,7 +16,6 @@ const FilterArticles = ({ articles, tags }: any) => {
     setFilterArticles(sortArticlesByDate);
   }, [changeTag]);
 
-  
   function filterByTag(data: any, tagName: any) {
     if (
       tagName === "all-tags" ||
@@ -37,7 +36,7 @@ const FilterArticles = ({ articles, tags }: any) => {
   return (
     <div className="max-w-[768px] lg:max-w-[1280px]  mx-auto  px-8">
       <nav className="mb-4 relative mb-12">
-        <h2 className="font-bold mb-3">Filter by tag</h2>
+        <h2 className="font-bold mb-3">Filtrar por tag</h2>
         <div className="w-6 bg-gradient-to-r from-transparent to-white  dark:to-gray-1F absolute z-10 right-0 top-0 bottom-4" />
         <div className="overflow-auto">
           <div className="flex mb-4 text-sm font-semibold gap-2">
@@ -49,7 +48,7 @@ const FilterArticles = ({ articles, tags }: any) => {
                     changeTag === "all-tags"
                       ? "bg-primary-purple text-white"
                       : "bg-gray-F7  dark:bg-gray-1F dark:text-white text-blackbg",
-                    "leading-4 whitespace-nowrap  transition-all duration-300    p-4  rounded-xl"
+                    "leading-4 whitespace-nowrap font-normal  transition-all duration-300    p-4  rounded-xl"
                   )}
                 >
                   All
@@ -71,7 +70,7 @@ const FilterArticles = ({ articles, tags }: any) => {
                           changeTag === suglifyTitle(tagname)
                             ? "bg-primary-purple text-white"
                             : "bg-gray-F7 dark:bg-gray-1F dark:text-white text-blackbg",
-                          "leading-4 whitespace-nowrap  transition-all duration-300 p-4   rounded-xl  relative"
+                          "leading-4 whitespace-nowrap  transition-all duration-300 p-4  font-normal  rounded-xl  relative"
                         )}
                       >
                         {tagname}
