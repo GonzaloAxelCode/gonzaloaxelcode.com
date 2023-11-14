@@ -9,8 +9,18 @@ export const metadata: Metadata = {
 
 const PageProjects = () => {
   return (
-    <main className="w-full">
-      <div className="mx-auto relative  px-1 sm:px-4 w-full flex justify-center">
+    <main className="w-full overflow-x-hidden">
+      <div
+        className=" absolute  right-0"
+        style={{
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+          height: "50vh",
+          width: "100vw",
+        }}
+      ></div>
+
+      <div className="mx-auto relative mt-10 px-1 sm:px-4 w-full flex justify-center">
         <svg
           className="absolute top-9 left-[23%] h-8 transform -rotate-12"
           viewBox="0 0 244 243"
@@ -49,11 +59,11 @@ const PageProjects = () => {
           />
         </svg>
 
-        <div className="w-full flex flex-col  items-center">
+        <div className="w-full px-4 flex flex-col  items-center">
           <p className=" text-center  uppercase  px-10 mb-1">
             ⚡️ Proyectos ⚡️
           </p>
-          <h1 className="text-center text-5xl mt-10 mb-5  title-limiter leading-title">
+          <h1 className="text-center text-3xl md:text-5xl mt-10 mb-5  title-limiter leading-title">
             Explora mis proyectos
             <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent from-[#5c3de6]  to-[#fe97dc]">
               {" "}
@@ -83,7 +93,7 @@ const PageProjects = () => {
           </h1>
           <p className="max-w-[550px] text-center">
             Estos son mis proyectos mas recientes que he desarrollado hasta
-            ahora , puedes verlos y cada uno tiene su demo y su repositorio.
+            ahora, puedes verlos y cada uno tiene su demo y su repositorio.
           </p>
         </div>
       </div>

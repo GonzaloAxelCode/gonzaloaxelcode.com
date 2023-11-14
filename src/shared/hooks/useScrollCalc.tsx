@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
-function useScrollCalc() {
+function useScrollCalc(scroll = 100) {
   const [scrolledPast, setScrolledPast] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > scroll) {
         setScrolledPast(true);
       } else {
         setScrolledPast(false);

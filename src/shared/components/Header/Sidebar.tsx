@@ -68,6 +68,9 @@ const Sidebar = ({ open, setOpen }) => {
                       <Link href="/" className="absolute left-7 top-3">
                         <Logo />
                       </Link>
+                      <button className="absolute right-12 top-6">
+                        <Switcher />
+                      </button>
                       <button>
                         <svg
                           width="14"
@@ -79,20 +82,21 @@ const Sidebar = ({ open, setOpen }) => {
                           <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"></path>
                         </svg>
                       </button>
-                      <button className="absolute right-12 top-6">
-                        <Switcher />
-                      </button>
+
                       <div className="flex flex-col gap-2">
                         {pathsNavHeader.map((el: any, index: any) => {
                           return (
-                            <Link href={el.path} key={index} className="flex">
+                            <Link
+                              href={el.path}
+                              onClick={() => setOpen(false)}
+                              key={index}
+                              className="flex"
+                            >
                               <span style={{ fontSize: "12px" }}>
                                 0{index + 1}
                               </span>
-                              <span className="text-3xl font-headings">
-                                <span className="relative inline hover:leading-[0] hover:bg-gradient-to-br hover:bg-clip-text hover:text-transparent hover:from-[#5c3de6]  hover:to-[#fe97dc]">
-                                  {el.text}
-                                </span>
+                              <span className="text-2xl ml-2 font-headings">
+                                {el.text}
                               </span>
                             </Link>
                           );

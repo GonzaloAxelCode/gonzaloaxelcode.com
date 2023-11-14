@@ -34,7 +34,7 @@ const CardArticle = ({ article }: any) => {
             loading="lazy"
             decoding="async"
             data-nimg="fill"
-            className="object-cover rounded-lg h-[228px] w-full"
+            className="object-cover rounded-lg h-[190px] w-full"
             sizes="100vw"
             src={cover}
           />

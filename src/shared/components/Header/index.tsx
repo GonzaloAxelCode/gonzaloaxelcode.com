@@ -8,6 +8,7 @@ import { cn } from "tailwind-cn";
 import Logo from "../Logo/Index";
 import Switcher from "../SwitcherDark";
 import Sidebar from "./Sidebar";
+import useScrollCalc from "@/shared/hooks/useScrollCalc";
 
 export const pathsNavHeader = [
   {
@@ -15,19 +16,15 @@ export const pathsNavHeader = [
     path: "/",
   },
   {
-    text: "Sobre mi",
-    path: "/about",
-  },
-  {
     text: "Blog",
     path: "/blog",
   },
   {
-    text: "Projects",
+    text: "Proyectos",
     path: "/projects",
   },
   {
-    text: "Academy",
+    text: "Academia",
     path: "/academy",
   },
 ];
@@ -66,15 +63,20 @@ const Header = () => {
     };
   };
   const path = statePage(fulpath);
+  const { scrolledPast } = useScrollCalc();
 
   return (
     <>
       <Flex
         full
         col
-        className="lg:max-w-screen sticky  top-0 z-30  sm:bg-opacity-70 sm:backdrop-blur-lg"
+        className={cn(
+          "lg:max-w-screen sticky  top-0 z-30  sm:bg-opacity-70 sm:backdrop-blur-lg",
+          " bg-opacity-1 dark:bg-opacity-1 sm:bg-opacity-50   dark:sm:bg-opacity-70",
+          !scrolledPast ? "bg-transparent" : " bg-white dark:bg-blackbg"
+        )}
       >
-        <Flex full itemscenter between className="mx-auto px-8 py-0">
+        <Flex full itemscenter between className="mx-auto px-3  md:px-8 py-0">
           <Flex>
             <div className="relative flex items-center z-10  self-stretch  lg:pr-8">
               <Link className="focus:outline-none" href="/">
@@ -92,6 +94,9 @@ const Header = () => {
             })}
           </Flex>
           <Flex itemscenter className="space-x-4">
+            <div>
+              <Switcher />
+            </div>
             <button
               className="lg:hidden w-12 h-12 relative -mr-2 z-20"
               aria-label="Toggle menu"
@@ -122,10 +127,6 @@ const Header = () => {
                 />
               </svg>
             </button>
-
-            <div>
-              <Switcher />
-            </div>
           </Flex>
         </Flex>
       </Flex>

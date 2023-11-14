@@ -22,7 +22,8 @@ const Subheader = () => {
     <nav
       className={cn(
         "sticky top-0 z-30 py-2 h-[55px] flex items-center border-b border-t  border-gray-100 border-opacity-20  dark:border-graydark dark:border-opacity-20 dark:text-graywhite w-full px-8 sm:backdrop-blur-lg",
-        "bg-white  bg-opacity-1 dark:bg-opacity-1 sm:bg-opacity-50 dark:bg-blackbg  dark:sm:bg-opacity-70"
+        " bg-opacity-1 dark:bg-opacity-1 sm:bg-opacity-50   dark:sm:bg-opacity-70",
+        !scrolledPast ? "bg-transparent" : " bg-white dark:bg-blackbg"
       )}
     >
       <div className="container flex items-center relative justify-center  gap-2 mx-auto ">

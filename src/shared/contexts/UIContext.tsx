@@ -19,6 +19,7 @@ export const UIProvider = ({ children }: any) => {
   const state: any = {
     themeGlobal: darkSide,
     darkSide,
+    colorTheme,
     toggleDarkMode,
   };
 

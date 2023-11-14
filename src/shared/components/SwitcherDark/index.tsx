@@ -5,7 +5,7 @@ export default function Switcher() {
   const { toggleDarkMode, darkSide } = useTheme();
   return (
     <DarkModeSwitch
-      checked={darkSide}
+      checked={!!darkSide}
       onChange={(e) => toggleDarkMode(e)}
       size={23}
     />

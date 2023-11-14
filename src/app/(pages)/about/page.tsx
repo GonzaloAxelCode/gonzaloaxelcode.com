@@ -13,6 +13,18 @@ import Link from "next/link";
 const PageAbout = () => {
   return (
     <main className="w-full max-w-[768px] lg:max-w-[1200px]  mx-auto  px-8">
+      <div
+        className="absolute top-0 right-0"
+        style={{
+          backgroundImage:
+            "url(https://res.cloudinary.com/ddksrkond/image/upload/v1699677416/hero-illustration_odblid.svg)",
+          backgroundSize: "cover",
+          backgroundPosition: "top",
+          backgroundRepeat: "no-repeat",
+          height: "100vh",
+          width: "100vw",
+        }}
+      ></div>
       <div className="relative z-20 w-full  mt-10 sm:mt-0 md:mt-24 mb-12   xl:px-0 ">
         <div className="flex  flex-col-reverse items-center md:flex-row justify-between  ">
           <div className="relative w-full md:w-1/2 lg:w-3/4">
@@ -32,7 +44,7 @@ const PageAbout = () => {
                 </svg>
                 Gonzalo Axel
               </span>{" "}
-              desarrollador <br />
+              desarrollador de software <br />
               <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent from-[#5c3de6]  to-[#fe97dc]">
                 <TextChange />
                 <span
@@ -67,13 +79,15 @@ const PageAbout = () => {
 
             <div className="flex gap-2 justify-center md:justify-normal lg:justify-normal">
               <Link
-                href="/"
+                href="https://github.com/GonzaloAxelCode"
+                target="_blank"
                 className="inline-flex w-auto px-4 py-2 mt-5  text-sm sm:text-md font-bold  duration-300 ease-out border rounded-full bg-neutral-900 dark:bg-white dark:text-neutral-900 text-neutral-100  border-neutral-900"
               >
                 Sigueme en Github
               </Link>
               <Link
-                href="/"
+                href="/CURRICULUM2.pdf"
+                target="_blank"
                 className="inline-flex w-auto px-4 py-2 mt-5 text-sm sm:text-md font-bold duration-300 ease-out border rounded-full   dark:text-neutral-900  border-neutral-700 dark:border-neutral-300 bg-white dark:bg-black dark>text-white dark:text-white text-neutral-900"
               >
                 Descarga mi CV
@@ -83,8 +97,8 @@ const PageAbout = () => {
 
           <div className="py-5 p-1  mx-auto lg:m-auto lg:mt-0 lg:ml-0">
             <img
-              src="https://res.cloudinary.com/ddksrkond/image/upload/v1691016769/full-stack-bnr_zyhgfj.png"
-              className="h-[150px] w-[150px]  sm:h-[200px] md:w-[200px]  rounded-full border-2 border-dashed border-graydark"
+              src="https://res.cloudinary.com/ddksrkond/image/upload/v1699676589/default-avatar-icon-of-social-media-user-vector_ga3tpd.jpg"
+              className="h-[150px] w-[150px] md:h-[200px] md:w-[200px]   rounded-full border-2 border-dashed border-graydark"
             />
           </div>
         </div>

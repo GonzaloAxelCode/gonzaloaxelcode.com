@@ -14,14 +14,9 @@ const PageTutorials = () => {
             data-slice-variation="default"
             className="slice"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 py-8 dark:text-white text-blackbg">
-              <div>
-                <h1
-                  style={{
-                    fontSize: "4rem",
-                    lineHeight: "1",
-                  }}
-                >
+            <div className="grid grid-cols-1  md:grid-cols-2 gap-12 py-8 dark:text-white text-blackbg">
+              <div className="flex flex-col w-full justify-center md:justify-normal">
+                <h1 className="text-3xl text-center md:text-left md:text-5xl leading-title">
                   <p className="mb-5  font-headings ">
                     La seccion de Academy se publicara
                     <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent from-[#5c3de6]  to-[#fe97dc]">
@@ -54,39 +49,31 @@ const PageTutorials = () => {
                     </span>
                   </p>
                 </h1>
-                <div>
-                  <h1
-                    className="flex"
-                    style={{
-                      fontSize: "4rem",
-                      lineHeight: "1",
-                    }}
-                  >
-                    <span className="flex flex-col">
-                      <span className="text-sm">Dias</span>
-                      <span>00:</span>
-                    </span>
-                    <span className="flex flex-col">
-                      <span className="text-sm">Horas</span>
-                      <span>00:</span>
-                    </span>
-                    <span className="flex flex-col">
-                      <span className="text-sm">Minutos</span>
-                      <span>00:</span>
-                    </span>
-                    <span className="flex flex-col">
-                      <span className="text-sm">Segundos</span>
-                      <span>00</span>
-                    </span>
-                  </h1>
-                </div>
+
+                <h1 className="flex justify-center md:justify-normal md:text-left text-center text-3xl md:text-5xl leading-title">
+                  <span className="flex flex-col">
+                    <span className="text-sm">Dias</span>
+                    <span>00:</span>
+                  </span>
+                  <span className="flex flex-col">
+                    <span className="text-sm">Horas</span>
+                    <span>00:</span>
+                  </span>
+                  <span className="flex flex-col">
+                    <span className="text-sm">Minutos</span>
+                    <span>00:</span>
+                  </span>
+                  <span className="flex flex-col">
+                    <span className="text-sm">Segundos</span>
+                    <span>00</span>
+                  </span>
+                </h1>
               </div>
-              <div>
-                <img
-                  src="https://cdn.svgator.com/assets/main-page/fold7/export-settings-2.png"
-                  alt=""
-                />
-              </div>
+
+              <img
+                src="https://cdn.svgator.com/assets/main-page/fold7/export-settings-2.png"
+                alt=""
+              />
             </div>
           </section>
         </article>

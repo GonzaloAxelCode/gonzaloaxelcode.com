@@ -34,7 +34,7 @@ const BlogGridPresentation = () => {
   return (
     <div className="max-w-[768px] lg:max-w-[1280px]  mx-auto  px-8">
       <div className="container mt-6 mb-12">
-        <span className="relative font-headings font-bold text-6xl lg:text-7xl 2xl:text-8xl text-blackbg dark:text-white">
+        <span className="relative font-headings font-bold text-3xl md:text-5xl text-blackbg dark:text-white">
           <svg
             className="absolute h-8 left-[35%] -top-3"
             viewBox="0 0 1039 260"

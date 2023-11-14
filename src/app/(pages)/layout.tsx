@@ -22,21 +22,11 @@ export default function RootLayout({
     <html lang="es">
       <body
         id="body-id"
-        className="body overflow-x-hidden dark:text-white text-gray-15  antialiased selection:bg-primary-purple relative "
+        className="body overflow-x-hidden dark:text-white text-gray-15  antialiased selection:bg-primary-purple relative bg-white dark:bg-[#222222] "
       >
         <GlobalProviders>
-          <div
-            className="relative w-full dark:text-white text-gray-15  bg-white dark:bg-[#222222]"
-            style={{
-              backgroundImage:
-                "url(https://res.cloudinary.com/ddksrkond/image/upload/e_blur:900/v1699402460/docs_tinypng.d9e4dcdc_fjao77.png)",
-              backgroundSize: "contain",
-              backgroundPosition: "top",
-              backgroundRepeat: "no-repeat",
-            }}
-          >
+          <div className="relative w-full dark:text-white text-gray-15  ">
             <Header />
-
             <Subheader />
             <div className="my-4">{children}</div>
             <Footer />

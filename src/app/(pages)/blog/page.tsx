@@ -10,11 +10,24 @@ export const metadata: Metadata = {
   ...defaultMetadata,
 };
 
-
 const PageBlog = () => {
   return (
     <main className="w-full overflow-x-hidden">
-      <BlogGridPresentation />
+      <div
+        className="absolute top-0 right-0"
+        style={{
+          backgroundImage:
+            "url(https://res.cloudinary.com/ddksrkond/image/upload/v1699677912/hero-illustration_1_cyratn.svg)",
+          backgroundSize: "contain",
+          backgroundPosition: "top",
+          backgroundRepeat: "no-repeat",
+          height: "500vh",
+          width: "100vw",
+        }}
+      ></div>
+      <section className="w-full">
+        <BlogGridPresentation />
+      </section>
       <LastestContent />
       <ChooseTechStack />
       <div className="max-w-[768px] lg:max-w-[1280px]  mx-auto my-10 px-8">

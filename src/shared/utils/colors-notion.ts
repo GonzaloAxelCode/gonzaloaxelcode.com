@@ -13,7 +13,7 @@ const COLORS_NOTION: any = {
   },
   orange: {
     colorDM: "rgb(237,107,34)",
-    colorLM: "rgb(254 241 233)", // Corregí un error de separación de valores en la propiedad colorLM (debería ser comas en lugar de espacios).
+    colorLM: "rgb(254,241,233)", // Corregí un error de separación de valores en la propiedad colorLM (debería ser comas en lugar de espacios).
   },
   yellow: {
     colorDM: "rgb(223,171,1)",

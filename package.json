@@ -35,6 +35,7 @@
     "react": "^18",
     "react-background-animation": "^1.0.1",
     "react-canvas-confetti": "^1.4.0",
+    "react-color-extractor": "^1.1.2",
     "react-confetti": "^6.1.0",
     "react-confetti-explosion": "^2.1.2",
     "react-dom": "^18",

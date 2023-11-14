@@ -6,7 +6,7 @@ import resumirTexto from "@/shared/utils/resume-text";
 import suglifyTitle from "@/shared/utils/suglify-title";
 import Link from "next/link";
 import useSWR from "swr";
-import TecnologiesProyect from "../TecnologiesProyect";
+import TecnologiesProyect from "./TecnologiesProyect";
 const SectionProjects = () => {
   const { data: projects } = useSWR("/api/projects", fetcherCache);
 
@@ -32,7 +32,7 @@ const SectionProjects = () => {
               >
                 <div className="flex items-center  flex-wrap flex-col lg:flex-row">
                   <div className="w-full">
-                    <div className="relative z-20 mb-10 text-center lg:mb-0 lg:text-left">
+                    <div className="relative z-20 mb-10 text-center lg:mb-0  lg:text-left">
                       <div className="mb-4.5 inline-flex items-center rounded-3xl  py-2.5">
                         <span className="pr-2.5">
                           <svg
@@ -65,8 +65,8 @@ const SectionProjects = () => {
                           PRO
                         </span>
                       </div>
-                      <h2 className="mx-auto mb-5 max-w-[490px] font-heading text-2xl font-black  sm:text-4xl sm:leading-[45px] lg:ml-0">
-                        {title}
+                      <h2 className=" mx-auto mb-5 max-w-[490px] font-heading text-2xl font-black  sm:text-4xl sm:leading-[45px] lg:ml-0">
+                        <Link href={href}>{title}</Link>
                       </h2>
                       <p className="mx-auto max-w-[530px] mb-4 text-sm leading-[24px] text-body-color lg:ml-0">
                         {resumirTexto(description, 200)}
