@@ -1,11 +1,12 @@
 import { Metadata } from "next";
+import siteMetadata from "./sitemetdata";
 
 const defaultMetadata: Metadata = {
   title: {
     template: "%s | Gonzalo Axel",
     default: "Inicio",
   },
-  description: "Sitio web principal",
+  description: siteMetadata.description,
   openGraph: {
     title: "Inicio",
     description: "Pagina de inicio de mi web personal.",
