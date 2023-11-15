@@ -10,16 +10,16 @@ import MyTools from "./about/components/MyTools";
 import siteMetadata from "@/shared/settings/sitemetdata";
 
 export const metadata: Metadata = {
-  title: "Gonzalo Axel",
+  title: "Gonzalo Axel Web Junior Developer",
   description: siteMetadata.description,
   openGraph: {
-    title: "Gonzalo Axel",
+    title: "Gonzalo Axel Web Junior Developer",
     description: "Pagina de inicio de portfolio personal.",
     siteName: "Gonzalo's Portfolio",
     url: "https://gonzaloaxelcode.vercel.app",
     images: [
       {
-        url: "https://res.cloudinary.com/ddksrkond/image/upload/v1700016694/SEO/banner1aboutme_bxogor.png",
+        url: "https://res.cloudinary.com/ddksrkond/image/upload/v1700017223/SEO/banner1aboutme_qvwhdc.png",
         width: 1035,
         height: 318,
       },
