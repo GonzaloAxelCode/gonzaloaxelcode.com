@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     url: "https://gonzaloaxelcode.vercel.app",
     images: [
       {
-        url: "https://res.cloudinary.com/ddksrkond/image/upload/v1700017223/SEO/banner1aboutme_qvwhdc.png",
+        url: "https://res.cloudinary.com/ddksrkond/image/upload/v1700019246/SEO/banner1aboutme_nygjwy.png",
         width: 1035,
         height: 318,
       },
