@@ -14,7 +14,7 @@ const CardArticle2 = ({ article }: any) => {
     fetcherCache
   );
   return (
-    <article className="overflow-hidden flex w-full grow h-full relative border-2 rounded-xl flex-col bg-white border-gray-EE text-gray-15 dark:bg-gray-1F dark:border-gray-1F">
+    <article className="overflow-hidden flex w-full grow h-full relative border-1 rounded-xl flex-col bg-white border-gray-EE text-gray-15 dark:bg-gray-1F dark:border-gray-1F">
       <div className="">
         <div className="aspect-[258/145] overflow-hidden relative">
           <img
@@ -30,12 +30,12 @@ const CardArticle2 = ({ article }: any) => {
           />
         </div>
       </div>
-      <div className="flex h-full gap-4 f p-8 flex-col">
-        <div className="flex justify-between items-center gap-4">
+      <div className="flex h-full gap-1 p-6 pb-3 flex-col">
+        <div className="flex flex-col justify-between gap-1">
           <span className="flex tracking-tight items-center gap-1.5 relative h-6 font-bold text-sm-flat overflow-auto relative z-10 text-gray-15 dark:text-white">
-            <a
+            <Link
               className="flex items-center gap-1.5 focus:outline-none focus:ring-2 ring-offset-2 rounded-sm max-w-full ring-offset-white ring-gray-EE"
-              href="/blog/category/tech-stack"
+              href="#"
             >
               <svg
                 width={64}
@@ -43,7 +43,7 @@ const CardArticle2 = ({ article }: any) => {
                 viewBox="0 0 64 64"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-5 h-5 shrink-0 text-primary-blue"
+                className="w-5 h-5 shrink-0"
               >
                 <path
                   opacity="0.2"
@@ -55,24 +55,24 @@ const CardArticle2 = ({ article }: any) => {
                   fill="currentColor"
                 />
               </svg>
-              <span className="whitespace-nowrap overflow-ellipsis overflow-hidden">
+              <span className="whitespace-nowrap text-sm overflow-ellipsis overflow-hidden">
                 {category}
               </span>
-            </a>
+            </Link>
           </span>
-          <span className="shrink-0 text-gray-50 dark:text-graywhite">
+          <span className="shrink-0 text-gray-50 text-sm dark:text-graywhite">
             {formatDate(createdAt)}
           </span>
         </div>
-        <div className="flex flex-col gap-4 flex-grow">
+        <div className="flex flex-col flex-grow">
           <Link
             href={`/blog/${suglifyTitle(title)}`}
             target="_blank"
             className="after:absolute after:inset-0"
           >
-            <h2 className="font-headings tracking-tight scroll-mt-[120px] dark:text-white text-xl-tight 2xl:2xl-tight font-medium">
+            <p className="font-headings tracking-tight scroll-mt-[120px] dark:text-white text-lg 2xl:2xl-tight font-medium">
               {title}
-            </h2>
+            </p>
           </Link>
         </div>
         <footer className="flex items-center">
@@ -89,7 +89,7 @@ const CardArticle2 = ({ article }: any) => {
                   src={siteMetadata.avatarImage}
                   style={{ color: "transparent" }}
                 />
-                <span className="overflow-hidden dark:text-graywhite text-ellipsis whitespace-nowrap">
+                <span className="overflow-hidden text-xs dark:text-graywhite text-ellipsis whitespace-nowrap">
                   By {siteMetadata.author}
                 </span>
               </div>

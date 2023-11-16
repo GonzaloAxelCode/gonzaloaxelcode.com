@@ -19,7 +19,7 @@ const CardArticle = ({ article }: any) => {
     <Flex col>
       <article
         className={cn(
-          "rounded-xl overflow-hidden border-2 relative w-full",
+          "rounded-xl overflow-hidden border-1 relative w-full",
           BoxBgOpacityClasses
         )}
       >

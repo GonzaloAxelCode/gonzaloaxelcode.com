@@ -36,7 +36,7 @@ const ChooseTechStack = () => {
               <nav className="splide__arrows gap-2 flex blog-post-swiper-nav-a61e6647-294a-457f-9a1c-c35a20497725 mt-10 absolute bottom-0 right-0 sm:left-0 sm:right-auto">
                 <button
                   aria-label="Previous"
-                  className="splide__arrow splide__arrow--prev disabled:opacity-50 prev dark:text-gray-700 text-graywhite disable:text-gray-15 rounded-full border-2 h-10 w-10 transition-all  disabled:bg-transparent border-gray-15 bg-gray-15 dark:bg-white  blog-post-swiper-nav-disabled"
+                  className="splide__arrow splide__arrow--prev disabled:opacity-50 prev dark:text-gray-700 text-graywhite disable:text-gray-15 rounded-full border-1 h-10 w-10 transition-all  disabled:bg-transparent border-gray-15 bg-gray-15 dark:bg-white  blog-post-swiper-nav-disabled"
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -54,7 +54,7 @@ const ChooseTechStack = () => {
                 </button>
                 <button
                   aria-label="Next"
-                  className="splide__arrow splide__arrow--next disabled:opacity-50 next rounded-full dark:text-gray-700 text-graywhite disable:text-gray-15 border-2 h-10 w-10 transition-all  disabled:bg-transparent border-gray-15 bg-gray-15 dark:bg-white"
+                  className="splide__arrow splide__arrow--next disabled:opacity-50 next rounded-full dark:text-gray-700 text-graywhite disable:text-gray-15 border-1 h-10 w-10 transition-all  disabled:bg-transparent border-gray-15 bg-gray-15 dark:bg-white"
                 >
                   <svg
                     viewBox="0 0 24 24"

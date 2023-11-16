@@ -107,7 +107,7 @@ const ArticlesByTopic = () => {
                         >
                           <button
                             className={cn(
-                              "relative z-10 px-6 py-4 pb-5 lg:px-12 lg:py-6 mr-4 border-2   focus:outline-none rounded-t-xl flex items-center gap-3 h-full",
+                              "relative z-10 px-6 py-4 pb-5 lg:px-12 lg:py-6 mr-4 border-1   focus:outline-none rounded-t-xl flex items-center gap-3 h-full",
                               BoxBgOpacityClasses,
                               changeCategorySlug === suglifyTitle(el.name) &&
                                 "border-b-0"
@@ -146,7 +146,7 @@ const ArticlesByTopic = () => {
 
           <div
             className={cn(
-              "relative z-1 p-6 z-1  lg:p-12 border-2 border-t-0 rounded-bl-xl dark:border-darkborder"
+              "relative z-1 p-6 z-1  lg:p-12 border-1 border-t-0 rounded-bl-xl dark:border-darkborder"
             )}
           >
             <nav className="mb-4 relative">

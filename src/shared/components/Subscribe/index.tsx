@@ -6,7 +6,7 @@ const Subscribe = () => {
     <div className="container  ">
       <div
         className={cn(
-          "flex justify-between  dark:text-white text-gray-15  items-center gap-12 relative p-12 rounded-xl object-cover",
+          "flex justify-between  dark:text-white border-1 text-gray-15  items-center gap-12 relative p-12 rounded-xl object-cover",
           BoxBgOpacityClasses
         )}
         style={{

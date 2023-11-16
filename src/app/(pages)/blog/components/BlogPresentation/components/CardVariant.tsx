@@ -31,7 +31,7 @@ const CardVariant = ({ article, type }: { article: any; type: TYPE }) => {
       {type === "normal" && (
         <article
           className={cn(
-            "overflow-hidden flex w-full grow h-full relative border-2 rounded-xl flex-col  text-gray-15 dark:text-white",
+            "overflow-hidden flex w-full grow h-full relative border-1 rounded-xl flex-col  text-gray-15 dark:text-white",
             BoxBgOpacityClasses
           )}
         >
