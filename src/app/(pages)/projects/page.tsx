@@ -10,16 +10,6 @@ export const metadata: Metadata = {
 const PageProjects = () => {
   return (
     <main className="w-full overflow-x-hidden">
-      <div
-        className=" absolute  right-0"
-        style={{
-          backgroundSize: "contain",
-          backgroundRepeat: "no-repeat",
-          height: "50vh",
-          width: "100vw",
-        }}
-      ></div>
-
       <div className="mx-auto relative mt-10 px-1 sm:px-4 w-full flex justify-center">
         <svg
           className="absolute top-9 left-[23%] h-8 transform -rotate-12"
@@ -65,7 +55,7 @@ const PageProjects = () => {
           </p>
           <h1 className="text-center text-3xl md:text-5xl mt-10 mb-5  title-limiter leading-title">
             Explora mis proyectos
-            <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent from-[#5c3de6]  to-[#fe97dc]">
+            <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent   from-[#3a3a3a]  to-[#d3d3d3] dark:to-[#ffffff]">
               {" "}
               mas recientes.
               <span
@@ -81,7 +71,7 @@ const PageProjects = () => {
 
                     flexShrink: 0,
                   }}
-                  fill="#bd73e8"
+                  className="fill-black dark:fill-white "
                 >
                   <g>
                     <path d="M10.4563 5.72844C10.9113 5.57094 10.9113 5.29094 10.4563 5.11594L7.98881 4.17094C7.55131 4.01344 7.04381 3.50594 6.86881 3.05094L5.92381 0.583437C5.76631 0.128438 5.48631 0.128438 5.31131 0.583437L4.36631 3.05094C4.20881 3.48844 3.70131 3.99594 3.24631 4.17094L0.778811 5.11594C0.323811 5.27344 0.323811 5.55344 0.778811 5.72844L3.24631 6.67344C3.68381 6.83094 4.19131 7.33844 4.36631 7.79344L5.31131 10.2609C5.46881 10.7159 5.74881 10.7159 5.92381 10.2609L6.86881 7.79344C7.02631 7.35594 7.53381 6.84844 7.98881 6.67344L10.4563 5.72844Z" />

@@ -2,7 +2,17 @@ import { useCallback, useEffect, useRef } from "react";
 
 import ReactCanvasConfetti from "react-canvas-confetti";
 
-export default function Confetti() {
+export default function Confetti({
+  styles = {
+    position: "fixed",
+    pointerEvents: "none",
+    width: "100%",
+    height: "100%",
+    top: "100px",
+    left: "-550px",
+    zIndex: 9999,
+  },
+}: any) {
   const refAnimationInstance: any = useRef(null);
 
   const getInstance = useCallback((instance: any) => {
@@ -60,6 +70,7 @@ export default function Confetti() {
         top: "100px",
         left: "-550px",
         zIndex: 9999,
+        ...styles,
       }}
     />
   );

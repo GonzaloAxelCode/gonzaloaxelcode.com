@@ -18,14 +18,14 @@ const config: Config = {
       },
       colors: {
         graydark: "#505050",
-        graydarksoft:"#5C5C5C",
+        graydarksoft: "#5C5C5C",
         blackbg: "#181818",
         blackbgsection: "#151515",
         bgcode: "#151515",
         darkborder: "#292929",
         notegren: "rgb(212 ,242 ,233)",
         graywhite: "#D3D3D3",
-        notegreen:"rgb(59, 187, 150)",
+        notegreen: "rgb(59, 187, 150)",
         primary: {
           purple: "rgb(142 ,68, 236)",
           green: "rgb(59, 187, 150)",
@@ -79,6 +79,9 @@ const config: Config = {
         "bold-300": "300",
         "bold-400": "400",
         medium: "500",
+      },
+      borderWidth: {
+        "1": "1px",
       },
       borderRadius: {
         max: "50px",

@@ -94,7 +94,7 @@ const Header = () => {
             })}
           </Flex>
           <Flex itemscenter className="space-x-4">
-            <div>
+            <div className="mx-2">
               <Switcher />
             </div>
             <button

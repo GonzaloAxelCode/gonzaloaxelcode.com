@@ -16,8 +16,7 @@ const PageAbout = () => {
       <div
         className="absolute top-0 right-0"
         style={{
-          backgroundImage:
-            "url(https://res.cloudinary.com/ddksrkond/image/upload/v1699677416/hero-illustration_odblid.svg)",
+          backgroundImage: "url()",
           backgroundSize: "cover",
           backgroundPosition: "top",
           backgroundRepeat: "no-repeat",
@@ -46,7 +45,7 @@ const PageAbout = () => {
                   Gonzalo Axel
                 </span>{" "}
                 desarrollador de software <br />
-                <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent from-[#5c3de6]  to-[#fe97dc]">
+                <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent   from-[#3a3a3a]  to-[#d3d3d3] dark:to-[#ffffff]">
                   <TextChange />
                   <span
                     className="absolute top-13 right-0"
@@ -61,7 +60,7 @@ const PageAbout = () => {
 
                         flexShrink: 0,
                       }}
-                      fill="#bd73e8"
+                      className="fill-black dark:fill-white "
                     >
                       <g>
                         <path d="M10.4563 5.72844C10.9113 5.57094 10.9113 5.29094 10.4563 5.11594L7.98881 4.17094C7.55131 4.01344 7.04381 3.50594 6.86881 3.05094L5.92381 0.583437C5.76631 0.128438 5.48631 0.128438 5.31131 0.583437L4.36631 3.05094C4.20881 3.48844 3.70131 3.99594 3.24631 4.17094L0.778811 5.11594C0.323811 5.27344 0.323811 5.55344 0.778811 5.72844L3.24631 6.67344C3.68381 6.83094 4.19131 7.33844 4.36631 7.79344L5.31131 10.2609C5.46881 10.7159 5.74881 10.7159 5.92381 10.2609L6.86881 7.79344C7.02631 7.35594 7.53381 6.84844 7.98881 6.67344L10.4563 5.72844Z" />
@@ -89,7 +88,7 @@ const PageAbout = () => {
                 <Link
                   href="/CURRICULUM2.pdf"
                   target="_blank"
-                  className="inline-flex w-auto px-4 py-2 mt-5 text-sm sm:text-md font-bold duration-300 ease-out border rounded-full   dark:text-neutral-900  border-neutral-700 dark:border-neutral-300 bg-white dark:bg-black dark>text-white dark:text-white text-neutral-900"
+                  className="inline-flex w-auto px-4 py-2 mt-5 text-sm sm:text-md  duration-300 ease-out  rounded-full   dark:text-neutral-900  border-neutral-700 dark:border-neutral-300 bg-white dark:bg-black dark>text-white dark:text-white text-neutral-900 "
                 >
                   Descarga mi CV
                 </Link>
@@ -97,14 +96,19 @@ const PageAbout = () => {
             </div>
 
             <div className="py-5 p-1  mx-auto lg:m-auto lg:mt-0 lg:ml-0">
-              <img
-                src="https://res.cloudinary.com/ddksrkond/image/upload/v1699676589/default-avatar-icon-of-social-media-user-vector_ga3tpd.jpg"
-                className="h-[150px] w-[150px]  md:h-[200px] md:w-[200px]  rounded-full  border-2 border-dashed border-graydark"
-              />
+              <div className="d-flex justify-content-center">
+                <div className="image_outer_container">
+                  <div className="green_icon"></div>
+                  <div className="image_inner_container">
+                    <img src="https://res.cloudinary.com/ddksrkond/image/upload/c_crop,ar_1:1/v1700110843/SEO/WhatsApp_Image_2023-11-15_at_11.58.48_PM_pvgump.jpg" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
       <section className="w-full  py-10 md:py-16 2xl:py-20 overflow-hidden light-copy ">
         <div className="mb-4">
           <h2
@@ -112,7 +116,7 @@ const PageAbout = () => {
             style={{ maxWidth: 500 }}
           >
             Mas{" "}
-            <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent from-[#5c3de6]  to-[#fe97dc]">
+            <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent   from-[#3a3a3a]  to-[#d3d3d3] dark:to-[#ffffff]">
               {" "}
               sobre mi
               <span
@@ -128,7 +132,7 @@ const PageAbout = () => {
 
                     flexShrink: 0,
                   }}
-                  fill="#bd73e8"
+                  className="fill-black dark:fill-white "
                 >
                   <g>
                     <path d="M10.4563 5.72844C10.9113 5.57094 10.9113 5.29094 10.4563 5.11594L7.98881 4.17094C7.55131 4.01344 7.04381 3.50594 6.86881 3.05094L5.92381 0.583437C5.76631 0.128438 5.48631 0.128438 5.31131 0.583437L4.36631 3.05094C4.20881 3.48844 3.70131 3.99594 3.24631 4.17094L0.778811 5.11594C0.323811 5.27344 0.323811 5.55344 0.778811 5.72844L3.24631 6.67344C3.68381 6.83094 4.19131 7.33844 4.36631 7.79344L5.31131 10.2609C5.46881 10.7159 5.74881 10.7159 5.92381 10.2609L6.86881 7.79344C7.02631 7.35594 7.53381 6.84844 7.98881 6.67344L10.4563 5.72844Z" />
@@ -225,7 +229,7 @@ const PageAbout = () => {
               style={{ maxWidth: 500 }}
             >
               Experiencia en{" "}
-              <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent from-[#5c3de6]  to-[#fe97dc]">
+              <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent   from-[#3a3a3a]  to-[#d3d3d3] dark:to-[#ffffff]">
                 {" "}
                 desarrollo
                 <span
@@ -241,7 +245,7 @@ const PageAbout = () => {
 
                       flexShrink: 0,
                     }}
-                    fill="#bd73e8"
+                    className="fill-black dark:fill-white "
                   >
                     <g>
                       <path d="M10.4563 5.72844C10.9113 5.57094 10.9113 5.29094 10.4563 5.11594L7.98881 4.17094C7.55131 4.01344 7.04381 3.50594 6.86881 3.05094L5.92381 0.583437C5.76631 0.128438 5.48631 0.128438 5.31131 0.583437L4.36631 3.05094C4.20881 3.48844 3.70131 3.99594 3.24631 4.17094L0.778811 5.11594C0.323811 5.27344 0.323811 5.55344 0.778811 5.72844L3.24631 6.67344C3.68381 6.83094 4.19131 7.33844 4.36631 7.79344L5.31131 10.2609C5.46881 10.7159 5.74881 10.7159 5.92381 10.2609L6.86881 7.79344C7.02631 7.35594 7.53381 6.84844 7.98881 6.67344L10.4563 5.72844Z" />
@@ -297,7 +301,7 @@ const PageAbout = () => {
               style={{ maxWidth: 500 }}
             >
               Certificaciones y
-              <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent from-[#5c3de6]  to-[#fe97dc]">
+              <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent   from-[#3a3a3a]  to-[#d3d3d3] dark:to-[#ffffff]">
                 {" "}
                 cursos
                 <span
@@ -313,7 +317,7 @@ const PageAbout = () => {
 
                       flexShrink: 0,
                     }}
-                    fill="#bd73e8"
+                    className="fill-black dark:fill-white "
                   >
                     <g>
                       <path d="M10.4563 5.72844C10.9113 5.57094 10.9113 5.29094 10.4563 5.11594L7.98881 4.17094C7.55131 4.01344 7.04381 3.50594 6.86881 3.05094L5.92381 0.583437C5.76631 0.128438 5.48631 0.128438 5.31131 0.583437L4.36631 3.05094C4.20881 3.48844 3.70131 3.99594 3.24631 4.17094L0.778811 5.11594C0.323811 5.27344 0.323811 5.55344 0.778811 5.72844L3.24631 6.67344C3.68381 6.83094 4.19131 7.33844 4.36631 7.79344L5.31131 10.2609C5.46881 10.7159 5.74881 10.7159 5.92381 10.2609L6.86881 7.79344C7.02631 7.35594 7.53381 6.84844 7.98881 6.67344L10.4563 5.72844Z" />
@@ -474,7 +478,7 @@ const PageAbout = () => {
           data-aos="fade-up"
         >
           Este es mi
-          <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent from-[#5c3de6]  to-[#fe97dc]">
+          <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent   from-[#3a3a3a]  to-[#d3d3d3] dark:to-[#ffffff]">
             {" "}
             blog{" "}
             <span
@@ -490,7 +494,7 @@ const PageAbout = () => {
 
                   flexShrink: 0,
                 }}
-                fill="#bd73e8"
+                className="fill-black dark:fill-white "
               >
                 <g>
                   <path d="M10.4563 5.72844C10.9113 5.57094 10.9113 5.29094 10.4563 5.11594L7.98881 4.17094C7.55131 4.01344 7.04381 3.50594 6.86881 3.05094L5.92381 0.583437C5.76631 0.128438 5.48631 0.128438 5.31131 0.583437L4.36631 3.05094C4.20881 3.48844 3.70131 3.99594 3.24631 4.17094L0.778811 5.11594C0.323811 5.27344 0.323811 5.55344 0.778811 5.72844L3.24631 6.67344C3.68381 6.83094 4.19131 7.33844 4.36631 7.79344L5.31131 10.2609C5.46881 10.7159 5.74881 10.7159 5.92381 10.2609L6.86881 7.79344C7.02631 7.35594 7.53381 6.84844 7.98881 6.67344L10.4563 5.72844Z" />
@@ -543,7 +547,7 @@ const PageAbout = () => {
               style={{ maxWidth: 500 }}
             >
               Herramientas y
-              <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent from-[#5c3de6]  to-[#fe97dc]">
+              <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent   from-[#3a3a3a]  to-[#d3d3d3] dark:to-[#ffffff]">
                 {" "}
                 tecnologias{" "}
                 <span
@@ -559,7 +563,7 @@ const PageAbout = () => {
 
                       flexShrink: 0,
                     }}
-                    fill="#bd73e8"
+                    className="fill-black dark:fill-white "
                   >
                     <g>
                       <path d="M10.4563 5.72844C10.9113 5.57094 10.9113 5.29094 10.4563 5.11594L7.98881 4.17094C7.55131 4.01344 7.04381 3.50594 6.86881 3.05094L5.92381 0.583437C5.76631 0.128438 5.48631 0.128438 5.31131 0.583437L4.36631 3.05094C4.20881 3.48844 3.70131 3.99594 3.24631 4.17094L0.778811 5.11594C0.323811 5.27344 0.323811 5.55344 0.778811 5.72844L3.24631 6.67344C3.68381 6.83094 4.19131 7.33844 4.36631 7.79344L5.31131 10.2609C5.46881 10.7159 5.74881 10.7159 5.92381 10.2609L6.86881 7.79344C7.02631 7.35594 7.53381 6.84844 7.98881 6.67344L10.4563 5.72844Z" />

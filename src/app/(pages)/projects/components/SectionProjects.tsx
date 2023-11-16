@@ -26,93 +26,119 @@ const SectionProjects = () => {
               project?.cover?.file?.url || project?.cover?.external?.url || "";
             const href = `/projects/${suglifyTitle(title)}`;
             return (
-              <div
-                key={index}
-                className="relative z-10 overflow-hidden  px-6 py-12 sm:px-8 md:px-14"
-              >
-                <div className="flex items-center  flex-wrap flex-col lg:flex-row">
-                  <div className="w-full">
-                    <div className="relative z-20 mb-10 text-center lg:mb-0  lg:text-left">
-                      <div className="mb-4.5 inline-flex items-center rounded-3xl  py-2.5">
-                        <span className="pr-2.5">
-                          <svg
-                            width={24}
-                            height={24}
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M12.8324 21.8013C15.9583 21.1747 20 18.926 20 13.1112C20 7.8196 16.1267 4.29593 13.3415 2.67685C12.7235 2.31757 12 2.79006 12 3.50492V5.3334C12 6.77526 11.3938 9.40711 9.70932 10.5018C8.84932 11.0607 7.92052 10.2242 7.816 9.20388L7.73017 8.36604C7.6304 7.39203 6.63841 6.80075 5.85996 7.3946C4.46147 8.46144 3 10.3296 3 13.1112C3 20.2223 8.28889 22.0001 10.9333 22.0001C11.0871 22.0001 11.2488 21.9955 11.4171 21.9858C10.1113 21.8742 8 21.064 8 18.4442C8 16.3949 9.49507 15.0085 10.631 14.3346C10.9365 14.1533 11.2941 14.3887 11.2941 14.7439V15.3331C11.2941 15.784 11.4685 16.4889 11.8836 16.9714C12.3534 17.5174 13.0429 16.9454 13.0985 16.2273C13.1161 16.0008 13.3439 15.8564 13.5401 15.9711C14.1814 16.3459 15 17.1465 15 18.4442C15 20.4922 13.871 21.4343 12.8324 21.8013Z"
-                              fill="#F27430"
-                            />
-                          </svg>
-                        </span>
-                        <p className="font-heading text-sm font-medium text-fb-orange ">
-                          En desarrollo actualmente
-                        </p>
-                        <span
-                          style={{
-                            background: "rgb(254, 240, 138)",
-                            color: "rgb(113, 63, 18)",
-                            padding: "2px 6px",
-
-                            borderRadius: 5,
-                            fontSize: 11,
-                          }}
-                          className="font-headings font-bold mx-1"
-                        >
-                          PRO
-                        </span>
+              <div key={index} className="flex flex-col">
+                <div className="grid grid-cols-1 gap-1 items-center py-10 lg:grid-cols-2 border-solid border-1 dark:border-white/[0.12] border-black/[0.05] bg-gray-F7 dark:bg-[#303030] rounded-2xl">
+                  <div className="flex flex-col gap-6 px-5 lg:px-10 lg:pr-0 lg:pt-10">
+                    <div className="flex flex-col gap-3">
+                      <div className="lg:max-w-[511px]">
+                        <h3 className="text-3xl md:text-4xl leading-title ">
+                          {title}
+                        </h3>
                       </div>
-                      <h2 className=" mx-auto mb-5 max-w-[490px] font-heading text-2xl font-black  sm:text-4xl sm:leading-[45px] lg:ml-0">
-                        <Link href={href}>{title}</Link>
-                      </h2>
-                      <p className="mx-auto max-w-[530px] mb-4 text-sm leading-[24px] text-body-color lg:ml-0">
-                        {resumirTexto(description, 200)}
-                      </p>
-                      <TecnologiesProyect />
+                      <span className="body-medium lg:body-largemd:w-10/12">
+                        {resumirTexto(description, 140)}
+                      </span>
+                    </div>
+                    <TecnologiesProyect />
+                    <div className="flex gap-3 flex-wrap">
+                      <button
+                        className="cursor-pointer flex none box-border select-none hover:opacity-80 items-center gap-2 border px-4 py-2 rounded-[14px]  w-fit  dark:border-white/[0.12] border-black/[0.05] bg-gray-F7 dark:bg-[#303030]"
+                        data-projection-id={2997}
+                      >
+                        <span className="body-medium font-sans !font-medium ">
+                          View on GitHub
+                        </span>
+                        <img
+                          srcSet="https://cdn.sanity.io/images/sdd9dua4/production/9b1e47098fd7b242fc4f534c89390bbb8c6053a2-20x20.svg?fit=max&auto=format 1x, https://cdn.sanity.io/images/sdd9dua4/production/9b1e47098fd7b242fc4f534c89390bbb8c6053a2-20x20.svg?fit=max&auto=format 2x"
+                          src="https://cdn.sanity.io/images/sdd9dua4/production/9b1e47098fd7b242fc4f534c89390bbb8c6053a2-20x20.svg?fit=max&auto=format"
+                          width={20}
+                          height={20}
+                          decoding="async"
+                          data-nimg={1}
+                          loading="lazy"
+                          style={{ color: "transparent" }}
+                        />
+                      </button>
+                      <button
+                        className="cursor-pointer flex none box-border select-none hover:opacity-80 items-center gap-2 border px-4 py-2 rounded-[14px]  w-fit dark:border-white/[0.12] border-black/[0.05] bg-gray-F7 dark:bg-[#303030] "
+                        data-projection-id={2998}
+                      >
+                        <Link href={href}>
+                          <span className="body-medium font-sans !font-medium ">
+                            Ver proyecto
+                          </span>
+                        </Link>
+                      </button>
+                      <button
+                        className="cursor-pointer flex none box-border select-none hover:opacity-80 items-center gap-2 border px-4 py-2 rounded-[14px]  w-fit dark:border-white/[0.12] border-black/[0.05] bg-gray-F7 dark:bg-[#303030] "
+                        data-projection-id={2998}
+                      >
+                        <span className="body-medium font-sans !font-medium ">
+                          Live Preview
+                        </span>
+                      </button>
                     </div>
                   </div>
-                  <div className="w-full h-[40vw]">
-                    <div className="container  transform translate-y-[70%]">
-                      <div className="grid grid-cols-12 gap-x-6">
-                        <img
-                          loading="lazy"
-                          width={1030}
-                          height={1300}
-                          decoding="async"
-                          data-nimg={1}
-                          className="rounded-2xl border-2 border-gray-15 relative z-10 border-opacity-10 shadow-image-fix col-span-5"
-                          style={{ color: "transparent" }}
-                          src={cover}
-                        />
-                        <div className="col-span-9 relative col-start-4 -mt-[50%]">
-                          <img
-                            loading="lazy"
-                            width={1896}
-                            height={1140}
-                            decoding="async"
-                            data-nimg={1}
-                            className="rounded-2xl border-2 border-gray-15  border-opacity-10 shadow-image-fix"
-                            style={{ color: "transparent" }}
-                            src={cover}
-                          />
-                          <span className="block text-xs-flat text-sm   leading-4 mt-2 absolute max-w-[45%]">
-                            Capturas.
-                          </span>
-                        </div>
-                        <img
-                          loading="lazy"
-                          width={816}
-                          height={468}
-                          decoding="async"
-                          data-nimg={1}
-                          className="rounded-2xl border-2 border-opacity-10 border-gray-15 col-start-8 z-10  shadow-image-fix col-span-4 -mt-[32%]"
-                          src={cover}
-                          style={{ color: "transparent" }}
-                        />
-                      </div>
+                  <div className="relative md:ml-0 md:inline">
+                    <img
+                      src="https://res.cloudinary.com/ddksrkond/image/upload/v1699843371/621shots_so_h42it4.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 gap-5  py-10 sm:grid-cols-2 ">
+                  <div className="p-7  hover:-translate-y-3 transform transition-all duration-200  overflow-hidden pb-0 pr-0 relative border-1 border-solid  dark:border-white/[0.12] border-black/[0.05] bg-gray-F7 dark:bg-[#303030]  rounded-2xl cursor-pointer">
+                    <div className="w-full">
+                      <p className="font-headings text-2xl">Skill Mail</p>
+                      <p className="pb-8 pr-5">
+                        Skiff Mail's client is completely open-source, giving
+                        you the confidence to communicate freely.
+                      </p>
+                    </div>
+                    <img
+                      className=""
+                      src="https://res.cloudinary.com/ddksrkond/image/upload/v1700146709/568shots_so_nrmjk3.png"
+                    />
+                    <div className="justify-center-center absolute right-[3%] top-[3%]  flex aspect-square flex-col items-center rounded-full border p-0.5  border-white/[0.12] dark:border-white/[0.12]  bg-white dark:bg-[#242424]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="30"
+                        height="29"
+                      >
+                        <path
+                          className="fill-black dark:fill-white"
+                          fill-rule="evenodd"
+                          d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="p-7  hover:-translate-y-3 transform transition-all duration-200  overflow-hidden pb-0 pr-0 relative border-1 border-solid dark:border-white/[0.12] border-black/[0.05]  bg-gray-F7 dark:bg-[#303030] rounded-2xl cursor-pointer">
+                    <div className="w-full">
+                      <p className="font-headings text-2xl">Skill Mail</p>
+                      <p className="pb-8 pr-5">
+                        Skiff Mail's client is completely open-source, giving
+                        you the confidence to communicate freely.
+                      </p>
+                    </div>
+                    <img
+                      className=""
+                      src="https://res.cloudinary.com/ddksrkond/image/upload/v1700147450/334shots_so_zmfm4d.png"
+                    />
+                    <div className="justify-center-center absolute right-[3%] top-[3%]  flex aspect-square flex-col items-center rounded-full border p-0.5  border-white/[0.12] dark:border-white/[0.12]  bg-white dark:bg-[#242424]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="30"
+                        height="29"
+                      >
+                        <path
+                          className="fill-black dark:fill-white"
+                          fill-rule="evenodd"
+                          d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
                     </div>
                   </div>
                 </div>

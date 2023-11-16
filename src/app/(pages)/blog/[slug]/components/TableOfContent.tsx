@@ -87,7 +87,7 @@ const TableOfContent = ({ content, id }: any) => {
         <header className="pb-4">
           <button className="flex justify-between items-center w-full">
             <Title className=" scroll-mt-[120px] text-xl font-medium">
-              Table of contents
+              Contenido
             </Title>
             <div onClick={() => scrollToTop()}>
               <svg

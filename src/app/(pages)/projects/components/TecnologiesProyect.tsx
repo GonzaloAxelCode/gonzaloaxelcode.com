@@ -32,8 +32,8 @@ const TecnologiesProyect = () => {
       style={{
         display: "flex",
         flexWrap: "wrap",
-        columnGap: "25px",
-        rowGap: "25px",
+        columnGap: "10px",
+        rowGap: "10px",
       }}
     >
       {toolsArray.map(([tech, url]) => (
