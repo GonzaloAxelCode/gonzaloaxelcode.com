@@ -8,7 +8,6 @@ import TextChange from "./about/components/TextChange";
 import RecentArticles from "./about/components/RecentArticles";
 import MyTools from "./about/components/MyTools";
 import siteMetadata from "@/shared/settings/sitemetdata";
-import Keyboard from "./components/Keyboard";
 
 export const metadata: Metadata = {
   title: "Gonzalo Axel Web Junior Developer",

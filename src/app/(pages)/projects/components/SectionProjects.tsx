@@ -91,8 +91,8 @@ const SectionProjects = () => {
                     <div className="w-full">
                       <p className="font-headings text-2xl">Skill Mail</p>
                       <p className="pb-8 pr-5">
-                        Skiff Mail's client is completely open-source, giving
-                        you the confidence to communicate freely.
+                        Skiff Mails client is completely open-source, giving you
+                        the confidence to communicate freely.
                       </p>
                     </div>
                     <img
@@ -118,8 +118,8 @@ const SectionProjects = () => {
                     <div className="w-full">
                       <p className="font-headings text-2xl">Skill Mail</p>
                       <p className="pb-8 pr-5">
-                        Skiff Mail's client is completely open-source, giving
-                        you the confidence to communicate freely.
+                        Skiff Mails client is completely open-source, giving you
+                        the confidence to communicate freely.
                       </p>
                     </div>
                     <img
