@@ -15,20 +15,8 @@ import useTheme from "@/shared/hooks/useTheme";
 
 export const pathsNavHeader = [
   {
-    text: "Inicio",
-    path: "/",
-  },
-  {
     text: "Blog",
     path: "/blog",
-  },
-  {
-    text: "Proyectos",
-    path: "/projects",
-  },
-  {
-    text: "Academia",
-    path: "/academy",
   },
 ];
 const Header = () => {
@@ -154,11 +142,7 @@ const Header = () => {
         <Flex full itemscenter between className="mx-auto px-3  md:px-8 py-0">
           <Flex>
             <div className="relative flex items-center z-10  self-stretch  lg:pr-8">
-              <Link
-                className="focus:outline-none flex items-center"
-                href="/"
-                onMouseEnter={handleHoverStart}
-              >
+              <Link className="focus:outline-none flex items-center" href="/">
                 <Logo />
                 <span className="text-lg ml-1">{""}onzalo</span>
                 <span></span>
@@ -167,14 +151,23 @@ const Header = () => {
             </div>
           </Flex>
 
-          <Flex full className="hidden lg:flex space-x-8 ml-auto justify-end">
+          <Flex
+            full
+            className="hidden lg:flex space-x-8 ml-auto justify-end pr-4"
+          >
             {pathsNavHeader.map((el: any, index: any) => {
               return (
-                <Link key={index} href={el.path} className="">
+                <Link key={index} href={el.path}>
                   <P className={cn("text-sm", "")}>{el.text}</P>
                 </Link>
               );
             })}
+            <span
+              className="mr-4 cursor-pointer"
+              onMouseEnter={handleHoverStart}
+            >
+              <P className={cn("text-sm", "")}>Descubre mas</P>
+            </span>
           </Flex>
           <Flex itemscenter className="space-x-4">
             <div className="mx-2">
@@ -182,6 +175,7 @@ const Header = () => {
             </div>
             <button
               className="lg:hidden w-12 h-12 relative -mr-2 z-20"
+              onClick={() => handleHoverStart()}
               aria-label="Toggle menu"
             >
               <svg
@@ -217,65 +211,187 @@ const Header = () => {
         initial={{ height: "0%", opacity: 0 }}
         animate={controls}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="fixed overflow-hidden w-screen top-0 left-0 z-[9999] text-white bg-blackbg"
+        className="fixed overflow-hidden w-screen top-0 left-0 z-[99999] text-white bg-blackbg"
       >
         <div className="w-full h-full">
-          <Flex
-            full
-            col
-            className={cn(
-              "lg:max-w-screen sticky top-0 z-30",
-              " bg-blackbg text-white "
-            )}
+          <div
+            className="flex flex-col w-full  h-[50%]"
+            onMouseLeave={handleHoverEnd}
           >
             <Flex
               full
-              itemscenter
-              between
-              className="mx-auto px-3  md:px-8 py-0"
+              col
+              className={cn(
+                "lg:max-w-screen sticky top-0 z-30",
+                " bg-blackbg text-white "
+              )}
             >
-              <Flex>
-                <div className="relative flex items-center z-10  self-stretch  lg:pr-8">
-                  <Link
-                    className="focus:outline-none"
-                    href="/"
-                    onMouseEnter={handleHoverStart}
+              <Flex
+                full
+                itemscenter
+                between
+                className="mx-auto px-3  md:px-8 relative py-0"
+              >
+                <Flex>
+                  <div className="relative flex items-center z-10  self-stretch  lg:pr-8">
+                    <span className="focus:outline-none flex gap-0 items-center cursor-pointer  text-white">
+                      <span className="filter invert">
+                        <Logo />
+                      </span>
+                      <span className="text-white text-lg ml-1">
+                        {""}onzalo
+                      </span>
+                      <span></span>
+                      <span className="text-white text-xs ml-1">Beta</span>
+                    </span>
+                  </div>
+                </Flex>
+                <button
+                  onClick={() => handleHoverEnd()}
+                  className="absolute top-2 h-[30px] w-[30px] right-5  "
+                  type="button"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className=" h-[30px] w-[30px] text-white"
                   >
-                    <Logo />
-                  </Link>
-                </div>
+                    <path
+                      d="m7.757 7.757 8.486 8.486M7.757 16.243l8.486-8.486"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                    />
+                  </svg>
+                </button>
               </Flex>
             </Flex>
-          </Flex>
-          <div
-            className="flex w-full my-10 h-[50%]"
-            onMouseLeave={handleHoverEnd}
-          >
-            <div className="flex items-center flex-wrap md:flex-nowrap">
-              <div className="flex-1 w-[300px] border-r-1 h-full  border-solid border-graydark pl-6 flex-2 text-gray-F7 ">
+            <div className="flex items-center h-screen">
+              <div className="flex-1 max-w-[250px] border-r-1 h-full  border-solid border-graydark pl-8 pt-6 flex-2 text-gray-F7 ">
                 <div className="flex flex-col w-auto">
                   <ul className="flex flex-col gap-1">
-                    <Link href="#">
-                      <li className="font-headings text-2xl">Inicio</li>
+                    <Link href="/" onClick={() => handleHoverEnd()}>
+                      <li className="font-headings text-2xl flex">
+                        Inicio{" "}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="30"
+                          height="29"
+                          className="fill-white"
+                        >
+                          <path
+                            className="fill-white"
+                            fill-rule="evenodd"
+                            d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>{" "}
+                      </li>
                     </Link>
-                    <Link href="#">
-                      <li className="font-headings text-2xl">Contacto</li>
+                    <Link href="#" onClick={() => handleHoverEnd()}>
+                      <li className="flex font-headings text-2xl">
+                        Contacto{" "}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="30"
+                          height="29"
+                          className="fill-white"
+                        >
+                          <path
+                            className="fill-white"
+                            fill-rule="evenodd"
+                            d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>{" "}
+                      </li>
                     </Link>
-                    <Link href="#">
-                      <li className="font-headings text-2xl">Academy</li>
+                    <Link href="/academy" onClick={() => handleHoverEnd()}>
+                      <li className="flex font-headings text-2xl">
+                        Academy{" "}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="30"
+                          height="29"
+                          className="fill-white"
+                        >
+                          <path
+                            className="fill-white"
+                            fill-rule="evenodd"
+                            d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>{" "}
+                      </li>
                     </Link>
-                    <Link href="#">
-                      <li className="font-headings text-2xl">Blog</li>
+                    <Link href="/blog" onClick={() => handleHoverEnd()}>
+                      <li className="flex font-headings text-2xl">
+                        Blog{" "}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="30"
+                          height="29"
+                          className="fill-white"
+                        >
+                          <path
+                            className="fill-white"
+                            fill-rule="evenodd"
+                            d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>{" "}
+                      </li>
                     </Link>
-                    <Link href="#">
-                      <li className="font-headings text-2xl">Proyectos</li>
+                    <Link href="/projects" onClick={() => handleHoverEnd()}>
+                      <li className=" flex font-headings text-2xl">
+                        Proyectos{" "}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="30"
+                          height="29"
+                          className="fill-white"
+                        >
+                          <path
+                            className="fill-white"
+                            fill-rule="evenodd"
+                            d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>{" "}
+                      </li>
+                    </Link>
+                    <Link
+                      onClick={() => handleHoverEnd()}
+                      href="/blog"
+                      className="flex md:hidden flex-col h-[300px] max-w-[200px] relative  mt-5 bg-[#292929] rounded-xl"
+                    >
+                      <span className="justify-center-center absolute right-[3%] top-[3%]  flex aspect-square flex-col items-center rounded-full border p-0.5  border-white/[0.12] dark:border-white/[0.12]  bg-white ">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="30"
+                          height="29"
+                        >
+                          <path
+                            className="fill-black"
+                            fill-rule="evenodd"
+                            d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                      </span>
+                      <span className="p-5 absolute font-headings  bottom-0 leading-title left-0 text-2xl">
+                        Leer <br />
+                        mi Blog
+                      </span>
                     </Link>
                   </ul>
                 </div>
               </div>
-              <div className=" flex-5 grid grid-cols-3 flex-shrink col-span-8 gap-3 p-4 flex-6">
-                <div
-                  className="max-w-[200px] flex flex-col h-full bg-[#292929] rounded-xl"
+              <div className=" flex-5 grid   h-screen md:h-full sm:grid-cols-2 md:grid-cols-3  flex-shrink col-span-8 gap-3 p-4 flex-6">
+                <Link
+                  onClick={() => handleHoverEnd()}
+                  href="/blog"
+                  className="max-w-[200px] max-h-[300px] flex flex-col h-full bg-[#292929] rounded-xl"
                   style={{
                     backgroundImage: `
       linear-gradient(to bottom, transparent, #000000),
@@ -285,16 +401,13 @@ const Header = () => {
                     backgroundPosition: "center",
                   }}
                 >
-                  <div className="h-full"></div>
-                  <div className=" p-4 pt-0 pb-6">
-                    <p className="font-headings font-normal pr-4 text-xl py-3">
+                  <span className="h-full"></span>
+                  <span className="flex flex-col p-4 pt-0 pb-6">
+                    <span className="font-headings font-normal pr-4 text-xl py-3">
                       How to utilize business loans for expansion
-                    </p>
-                    <button className="bg-[#616161] w-auto px-4 py-2 rounded-3xl">
-                      Ver articulo
-                    </button>
-                  </div>
-                </div>
+                    </span>
+                  </span>
+                </Link>
                 <div className="max-w-[200px] flex flex-col h-fit bg-[#292929] rounded-xl">
                   <div className="p-0 pb-0">
                     <img
@@ -303,17 +416,21 @@ const Header = () => {
                       alt=""
                     />
                   </div>
-                  <div className=" p-4 pt-0 pb-6">
+                  <div className="flex flex-col p-4 pt-0 pb-6">
                     <p className="font-headings font-normal pr-4 text-xl py-3">
                       How to utilize business loans for expansion
                     </p>
                     <button className="bg-[#616161] w-auto px-4 py-2 rounded-3xl">
-                      Ver articulo
+                      <Link href="/blog">Ver articulo</Link>
                     </button>
                   </div>
                 </div>
-                <div className="max-w-[200px] flex flex-col relative h-full bg-[#292929] rounded-xl">
-                  <div className="justify-center-center absolute right-[3%] top-[3%]  flex aspect-square flex-col items-center rounded-full border p-0.5  border-white/[0.12] dark:border-white/[0.12]  bg-white ">
+                <Link
+                  onClick={() => handleHoverEnd()}
+                  href="/blog"
+                  className="hidden md:flex flex-col max-w-[200px]  relative h-full bg-[#292929] rounded-xl"
+                >
+                  <span className="justify-center-center absolute right-[3%] top-[3%]  flex aspect-square flex-col items-center rounded-full border p-0.5  border-white/[0.12] dark:border-white/[0.12]  bg-white ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="30"
@@ -326,12 +443,12 @@ const Header = () => {
                         clip-rule="evenodd"
                       ></path>
                     </svg>
-                  </div>
-                  <h1 className="p-5 absolute  bottom-0 leading-title left-0 text-2xl">
+                  </span>
+                  <span className="p-5 absolute font-headings  bottom-0 leading-title left-0 text-2xl">
                     Leer <br />
                     mi Blog
-                  </h1>
-                </div>
+                  </span>
+                </Link>
               </div>
             </div>
           </div>
