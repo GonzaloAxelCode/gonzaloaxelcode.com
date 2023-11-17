@@ -366,7 +366,7 @@ export default async function ProjectPage({ params }: any) {
               <div className="grid grid-cols-3">
                 {imagesMovil.slice(0, 3).map((el: any, index: any) => {
                   return (
-                    <div>
+                    <div key={index}>
                       <img
                         key={index}
                         alt=""

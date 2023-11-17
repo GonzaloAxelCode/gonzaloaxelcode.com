@@ -11,7 +11,7 @@ const SectionProjects = () => {
   const { data: projects } = useSWR("/api/projects", fetcherCache);
 
   return (
-    <section className="pt-14 md:pt-32 max-w-[768px]  lg:max-w-[1280px]  mx-auto  px-8">
+    <section className="pt-14 md:pt-32 max-w-[768px] lg:max-w-[1280px]  mx-auto  px-8">
       <div className="flex flex-col gap-6 justify-center items-center">
         {projects &&
           projects?.map((project: any, index: any) => {
