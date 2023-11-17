@@ -48,7 +48,7 @@ const ContentArticle = ({ content, id, similarArticles }: any) => {
           height={1126}
           decoding="async"
           data-nimg={1}
-          className="w-20 h-20 rounded-full"
+          className="w-20 h-20 rounded-full filter dark:invert object-contain"
           style={{ color: "transparent" }}
           src={siteMetadata.avatarImage}
         />

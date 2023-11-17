@@ -16,7 +16,7 @@ const ArticleCard = ({ article }: any) => {
     `/api/views?postId=${suglifyTitle(title)}`,
     fetcherCache
   );
- 
+
   return (
     <div
       className="flex w-full"
@@ -101,7 +101,7 @@ const ArticleCard = ({ article }: any) => {
                     height={64}
                     decoding="async"
                     data-nimg={1}
-                    className="rounded-full w-6 h-6"
+                    className="rounded-full w-6 h-6 filter dark:invert object-contain"
                     src={siteMetadata.avatarImage}
                     style={{ color: "transparent" }}
                   />

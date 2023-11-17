@@ -85,7 +85,7 @@ const CardArticle2 = ({ article }: any) => {
                   height={64}
                   decoding="async"
                   data-nimg={1}
-                  className="rounded-full w-6 h-6"
+                  className="w-6 h-6 object-contain filter dark:invert"
                   src={siteMetadata.avatarImage}
                   style={{ color: "transparent" }}
                 />

@@ -7,8 +7,11 @@ const siteMetadata = {
   language: "es-PE",
   siteUrl: "https://gonzaloaxel.online/",
   siteRepo: "https://github.com/GonzaloAxelCode",
+  logoUrl:
+    "https://res.cloudinary.com/ddksrkond/image/upload/v1700192103/Capture-removebg-preview_xtbln0.png",
+
   avatarImage:
-    "https://res.cloudinary.com/djzt16xpp/image/upload/v1698185915/Colorful_Modern_Infinity_Technology_Free_Logo_oo4mlq.png",
+    "https://res.cloudinary.com/ddksrkond/image/upload/v1700192103/Capture-removebg-preview_xtbln0.png",
   socialBanner:
     "https://res.cloudinary.com/ddksrkond/image/upload/v1675056242/Blog/cover_coszac.png",
   email: "gonzaloaxelh@gmail.com",

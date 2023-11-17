@@ -63,16 +63,16 @@ const CardArticle = ({ article }: any) => {
             </p>
             <p className="text-sm text-gray-500">{formatDate(createdAt)}</p>
           </footer>
-          <h3 className="font-headings tracking-tight scroll-mt-[120px] text-xl-tight 2xl:2xl-tight font-medium mt-4">
-            <Link
-              href={`/blog/${suglifyTitle(title)}`}
-              target="_blank"
-              className="after:absolute after:inset-0"
-              rel="noopener noreferrer"
-            >
-              <div>{title}</div>
-            </Link>
-          </h3>
+          <Link
+            href={`/blog/${suglifyTitle(title)}`}
+            target="_blank"
+            className="after:absolute after:inset-0"
+            rel="noopener noreferrer"
+          >
+            <p className="font-headings tracking-tight scroll-mt-[120px] dark:text-white text-lg 2xl:2xl-tight font-medium">
+              {title}
+            </p>
+          </Link>
         </div>
       </article>
     </Flex>

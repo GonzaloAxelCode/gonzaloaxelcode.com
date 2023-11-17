@@ -101,7 +101,7 @@ const ArticleCardBig = ({ article }: any) => {
                     height={64}
                     decoding="async"
                     data-nimg={1}
-                    className="rounded-full w-8 h-8"
+                    className="rounded-full w-8 h-8 filter dark:invert object-contain"
                     src={siteMetadata.avatarImage}
                     style={{ color: "transparent" }}
                   />

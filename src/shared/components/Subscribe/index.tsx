@@ -37,8 +37,8 @@ const Subscribe = () => {
             Manténgase al día de las nuevas herramientas, frameworks, liberias y
             mucho más.
           </h2>
-          <div className="font-copy text-base 2xl:text-md font-medium print:text-[12px] print:text-justify copy-muted mt-3">
-            <p className="my-6 first:mt-0 last:mb-0 print:my-2">
+          <div className="font-copy text-sm font-medium print:text-[12px] print:text-justify copy-muted mt-3">
+            <p className="my-6  first:mt-0 last:mb-0 print:my-2">
               Los estudios demuestran que aprendemos mejor haciendo. Sumérgete
               en un tutorial mensual con el boletín Dev Newsletter que te
               ayudará a decidir qué nuevas herramientas de desarrollo web merece
@@ -62,7 +62,7 @@ const Subscribe = () => {
               </div>
               <div />
               <button
-                className="text-blackbg rounded-lg font-bold whitespace-nowrap focus:outline-none focus:ring-tertiary-purple disabled:opacity-50 group border-2 focus:ring-4 transition-opacity transition-colors hover:bg-opacity-75 disabled:hover:bg-opacity-100 border-white py-3 px-6 text-sm-flat leading-5 2xl:text-base-flat 2xl:leading-5 bg-white text-gray-15 mt-4"
+                className="text-white dark:text-blackbg rounded-lg font-bold whitespace-nowrap focus:outline-none focus:ring-tertiary-purple disabled:opacity-50 group border-2 focus:ring-4 transition-opacity transition-colors hover:bg-opacity-75 disabled:hover:bg-opacity-100 border-white py-3 px-6 text-sm-flat leading-5 2xl:text-base-flat 2xl:leading-5 bg-black dark:bg-white  mt-4"
                 type="button"
                 name="subscribe"
               >

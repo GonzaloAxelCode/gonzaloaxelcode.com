@@ -1,3 +1,4 @@
+import siteMetadata from "@/shared/settings/sitemetdata";
 import { FC } from "react";
 
 type Props = {};
@@ -5,8 +6,8 @@ type Props = {};
 const Logo: FC<Props> = () => {
   return (
     <img
-      className=" w-[30px] sm:w-[40px] object-contain h-[50px]"
-      src="https://res.cloudinary.com/djzt16xpp/image/upload/v1698185915/Colorful_Modern_Infinity_Technology_Free_Logo_oo4mlq.png"
+      className=" w-[40px] filter dark:invert sm:w-[40px] object-contain h-[50px]"
+      src={siteMetadata.logoUrl}
       alt="logo"
     />
   );

@@ -32,17 +32,6 @@ export const metadata: Metadata = {
 const PageAboutHome = () => {
   return (
     <main className="w-full max-w-[768px] lg:max-w-[1200px]  mx-auto  px-8">
-      <div
-        className="absolute top-0 right-0"
-        style={{
-          backgroundImage: "url()",
-          backgroundSize: "cover",
-          backgroundPosition: "top",
-          backgroundRepeat: "no-repeat",
-          height: "100vh",
-          width: "100vw",
-        }}
-      ></div>
       <section>
         <div className="relative z-20 w-full  mt-10 sm:mt-0 md:mt-24 mb-12   xl:px-0 ">
           <div className="flex  flex-col-reverse items-center md:flex-row justify-between  ">

@@ -6,6 +6,9 @@ import ArticlesByTopic from "./components/ArticlesByTopic";
 import BlogGridPresentation from "./components/BlogPresentation";
 import ChooseTechStack from "./components/ChooseTechStack";
 import LastestContent from "./components/LatestContent";
+import { motion } from "framer-motion";
+import { useState } from "react";
+
 export const metadata: Metadata = {
   ...defaultMetadata,
 };

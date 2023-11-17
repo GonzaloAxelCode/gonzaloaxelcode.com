@@ -4,6 +4,7 @@ import { fetcherCache } from "@/shared/services/fetcher";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import useSWR from "swr";
 import CardArticle from "../CardArticle";
+import CardArticle2 from "../CardArticle2";
 const LastestContent = () => {
   const { data: articles } = useSWR("/api/blog", fetcherCache);
   return (
@@ -34,7 +35,7 @@ const LastestContent = () => {
                     key={index}
                     className="max-w-[314px] py-4 transform translate-x-11"
                   >
-                    <CardArticle article={article} />
+                    <CardArticle2 article={article} />
                   </SplideSlide>
                 ))}{" "}
               </SplideTrack>

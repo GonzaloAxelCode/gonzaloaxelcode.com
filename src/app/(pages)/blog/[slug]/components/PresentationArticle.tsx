@@ -66,7 +66,7 @@ const PresentationArticle = ({ article }: any) => {
         </Title>
         <Flex full itemscenter className="space-x-3">
           <Image
-            className="rounded-full object-cover"
+            className="rounded-full  filter dark:invert object-contain"
             src={siteMetadata.avatarImage}
             width={30}
             height={30}

@@ -4,11 +4,15 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#F3F4F7] dark:bg-[#05060F]">
-      <div className="text-sm lg:px-5 text-[#363D4E] dark:text-neutral-200  mx-auto ">
-        <div className="px-5 pt-9 flex flex-col lg:flex-row justify-between items-center lg:items-end border-t border-neutral-300/10">
+    <footer className="">
+      <div className="text-sm lg:px-5 text-[#363D4E] dark:text-neutral-200  mx-auto border-t border-neutral-300/10">
+        <div className="px-5 pt-9 flex flex-col lg:flex-row justify-between items-center lg:items-end ">
           <div>
-            <img src={siteMetadata.avatarImage} className="h-10 w-10" alt="" />{" "}
+            <img
+              src={siteMetadata.logoUrl}
+              className="filter dark:invert object-contain h-10 w-10"
+              alt=""
+            />{" "}
             <span>Gonzalo Axel - Fullstack junior developer.</span>
             <p className="mt-3 hidden lg:block max-w-[342px]">
               El equilibrio entre forma y función en desarrollo fullstack.
