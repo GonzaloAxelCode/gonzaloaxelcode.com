@@ -2,13 +2,17 @@
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import React from "react";
 
-const CarrouselPage = ({ images = [] }) => {
+const CarrouselMovil = ({ images }: any) => {
   return (
-    <div className="">
+    <div>
       <Splide
         hasTrack={false}
         options={{
           gap: "0.5rem",
+          loop: true,
+
+          autoplay: true,
+          drag: true,
           perPage: 1,
           rewind: true,
         }}
@@ -23,15 +27,17 @@ const CarrouselPage = ({ images = [] }) => {
             className="splide__arrow splide__arrow--next"
           ></div>
         </div>
-
         <SplideTrack>
           {images.map((el: any, index: any) => {
             return (
-              <SplideSlide key={index} className="">
+              <SplideSlide key={index}>
                 <img
-                  className="object-contain mx-auto w-full px-5 py-2 sm:px-10"
-                  src={el?.external?.url}
+                  key={index}
                   alt=""
+                  width={1640}
+                  height={2360}
+                  className="object-contain cursor-grabbing"
+                  src={el?.external?.url}
                 />
               </SplideSlide>
             );
@@ -42,4 +48,4 @@ const CarrouselPage = ({ images = [] }) => {
   );
 };
 
-export default CarrouselPage;
+export default CarrouselMovil;

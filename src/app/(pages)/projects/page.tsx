@@ -1,10 +1,13 @@
 import LogosBg from "@/shared/components/LogosBg";
-import defaultMetadata from "@/shared/settings/default-metadata";
+import defaultMetadata, {
+  iconsMetadata,
+} from "@/shared/settings/default-metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 import SectionProjects from "./components/SectionProjects";
 export const metadata: Metadata = {
   ...defaultMetadata,
+  ...iconsMetadata,
 };
 
 const PageProjects = () => {

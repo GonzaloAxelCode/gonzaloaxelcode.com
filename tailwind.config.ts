@@ -63,6 +63,10 @@ const config: Config = {
         "7xl": "3.5rem",
         "xl-tight": "1.375rem",
       },
+      filter: {
+        "custom-invert": "invert(0.5)",
+        // Agrega más filtros personalizados según sea necesario
+      },
       letterSpacing: {
         "250": "-0.2px",
         "125": "-0.1px",

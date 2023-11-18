@@ -210,7 +210,7 @@ const Header = () => {
       <motion.div
         initial={{ height: "0%", opacity: 0 }}
         animate={controls}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
+        transition={{ duration: 0.35, ease: "easeInOut" }}
         className="fixed overflow-hidden w-screen top-0 left-0 z-[99999] text-white bg-blackbg"
       >
         <div className="w-full h-full">
@@ -235,7 +235,7 @@ const Header = () => {
                 <Flex>
                   <div className="relative flex items-center z-10  self-stretch  lg:pr-8">
                     <span className="focus:outline-none flex gap-0 items-center cursor-pointer  text-white">
-                      <span className="filter invert">
+                      <span className="">
                         <Logo />
                       </span>
                       <span className="text-white text-lg ml-1">
@@ -270,7 +270,11 @@ const Header = () => {
               <div className="flex-1 max-w-[250px] border-r-1 h-full  border-solid border-graydark pl-8 pt-6 flex-2 text-gray-F7 ">
                 <div className="flex flex-col w-auto">
                   <ul className="flex flex-col gap-1">
-                    <Link href="/" onClick={() => handleHoverEnd()}>
+                    <Link
+                      href="/"
+                      onClick={() => handleHoverEnd()}
+                      className="hover:translate-x-2 transition-all duration-100 "
+                    >
                       <li className="font-headings text-2xl flex">
                         Inicio{" "}
                         <svg
@@ -288,7 +292,11 @@ const Header = () => {
                         </svg>{" "}
                       </li>
                     </Link>
-                    <Link href="#" onClick={() => handleHoverEnd()}>
+                    <Link
+                      className="hover:translate-x-2 transition-all duration-100 "
+                      href="#"
+                      onClick={() => handleHoverEnd()}
+                    >
                       <li className="flex font-headings text-2xl">
                         Contacto{" "}
                         <svg
@@ -306,7 +314,11 @@ const Header = () => {
                         </svg>{" "}
                       </li>
                     </Link>
-                    <Link href="/academy" onClick={() => handleHoverEnd()}>
+                    <Link
+                      className="hover:translate-x-2 transition-all duration-100 "
+                      href="/academy"
+                      onClick={() => handleHoverEnd()}
+                    >
                       <li className="flex font-headings text-2xl">
                         Academy{" "}
                         <svg
@@ -324,7 +336,11 @@ const Header = () => {
                         </svg>{" "}
                       </li>
                     </Link>
-                    <Link href="/blog" onClick={() => handleHoverEnd()}>
+                    <Link
+                      className="hover:translate-x-2 transition-all duration-100 "
+                      href="/blog"
+                      onClick={() => handleHoverEnd()}
+                    >
                       <li className="flex font-headings text-2xl">
                         Blog{" "}
                         <svg
@@ -342,7 +358,11 @@ const Header = () => {
                         </svg>{" "}
                       </li>
                     </Link>
-                    <Link href="/projects" onClick={() => handleHoverEnd()}>
+                    <Link
+                      className="hover:translate-x-2 transition-all duration-100 "
+                      href="/projects"
+                      onClick={() => handleHoverEnd()}
+                    >
                       <li className=" flex font-headings text-2xl">
                         Proyectos{" "}
                         <svg

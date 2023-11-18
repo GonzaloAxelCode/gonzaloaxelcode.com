@@ -7,6 +7,22 @@ import suglifyTitle from "@/shared/utils/suglify-title";
 import Link from "next/link";
 import useSWR from "swr";
 import TecnologiesProyect from "./TecnologiesProyect";
+import extractContentProyect from "@/shared/hooks/extractContentProyect";
+function extraerInformacion(texto) {
+  const regex =
+    /\[(.*?)\](.*?)\s*"(https?:\/\/[^"]*\.(?:png|jpg|jpeg|gif|svg))"\s*$/;
+  const matches = texto.match(regex);
+
+  if (matches && matches.length === 4) {
+    return {
+      title: matches[1].trim(),
+      description: matches[2].trim(),
+      urlImage: matches[3],
+    };
+  } else {
+    return { title: "", description: "", urlImage: "" };
+  }
+}
 const SectionProjects = () => {
   const { data: projects } = useSWR("/api/projects", fetcherCache);
 
@@ -15,15 +31,9 @@ const SectionProjects = () => {
       <div className="flex flex-col gap-6 justify-center items-center">
         {projects &&
           projects?.map((project: any, index: any) => {
-            let description =
-              project?.properties?.Description.rich_text[0]?.plain_text ||
-              "Articulo aun no terminado.Intenta mas tarde.";
-            const title =
-              project?.properties.Name?.title[0]?.plain_text ||
-              "Articulo sin Titulo";
-            const tags = project?.properties?.Tags?.multi_select || [];
-            const cover =
-              project?.cover?.file?.url || project?.cover?.external?.url || "";
+            const { description, cover, title, indicadores } =
+              extractContentProyect(project);
+
             const href = `/projects/${suglifyTitle(title)}`;
             return (
               <div key={index} className="flex flex-col">
@@ -82,24 +92,27 @@ const SectionProjects = () => {
                         </div>
                       </div>
                       <div className="relative md:ml-0 md:inline">
-                        <img
-                          src="https://res.cloudinary.com/ddksrkond/image/upload/v1699843371/621shots_so_h42it4.png"
-                          alt=""
-                        />
+                        <img src={cover} alt="" />
                       </div>
                     </div>
                     <div className="grid grid-cols-1 gap-5 px-5 sm:grid-cols-2 ">
                       <div className="p-7  hover:-translate-y-3 transform transition-all duration-200  overflow-hidden pb-0 pr-0 relative border-1 border-solid  dark:border-white/[0.12] border-black/[0.05] bg-[#e9e9e9] hover:bg-[#e2e2e2] dark:bg-[#282828]  rounded-2xl cursor-pointer">
                         <div className="w-full">
-                          <p className="font-headings text-2xl">Skill Mail</p>
+                          <p className="font-headings text-2xl">
+                            {" "}
+                            {indicadores.indicador1?.title || "Sin titulo"}
+                          </p>
                           <p className="pb-8 pr-5">
-                            Skiff Mails client is completely open-source, giving
-                            you the confidence to communicate freely.
+                            {indicadores.indicador1?.description ||
+                              "Sin descripccion"}
                           </p>
                         </div>
                         <img
                           className=""
-                          src="https://res.cloudinary.com/ddksrkond/image/upload/v1700146709/568shots_so_nrmjk3.png"
+                          src={
+                            indicadores.indicador1?.urlImage ||
+                            "https://res.cloudinary.com/ddksrkond/image/upload/v1699679048/features-image_a3k8sd.png"
+                          }
                         />
                         <div className="justify-center-center absolute right-[3%] top-[3%]  flex aspect-square flex-col items-center rounded-full border p-0.5  border-white/[0.12] dark:border-white/[0.12]  bg-white dark:bg-[#242424]">
                           <svg
@@ -118,15 +131,20 @@ const SectionProjects = () => {
                       </div>
                       <div className="p-7  hover:-translate-y-3 transform transition-all duration-200  overflow-hidden pb-0 pr-0 relative border-1 border-solid dark:border-white/[0.12] border-black/[0.05]  bg-[#e9e9e9] hover:bg-[#e2e2e2] dark:bg-[#282828] rounded-2xl cursor-pointer">
                         <div className="w-full">
-                          <p className="font-headings text-2xl">Skill Mail</p>
+                          <p className="font-headings text-2xl">
+                            {indicadores.indicador2?.title || "Sin titulo"}
+                          </p>
                           <p className="pb-8 pr-5">
-                            Skiff Mails client is completely open-source, giving
-                            you the confidence to communicate freely.
+                            {indicadores.indicador2?.description ||
+                              "Sin descripccion"}
                           </p>
                         </div>
                         <img
                           className=""
-                          src="https://res.cloudinary.com/ddksrkond/image/upload/v1700147450/334shots_so_zmfm4d.png"
+                          src={
+                            indicadores.indicador2?.urlImage ||
+                            "https://res.cloudinary.com/ddksrkond/image/upload/v1699679048/features-image_a3k8sd.png"
+                          }
                         />
                         <div className="justify-center-center absolute right-[3%] top-[3%]  flex aspect-square flex-col items-center rounded-full border p-0.5  border-white/[0.12] dark:border-white/[0.12]  bg-white dark:bg-[#242424]">
                           <svg

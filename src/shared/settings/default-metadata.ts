@@ -141,3 +141,13 @@ const defaultMetadata: Metadata = {
 };
 
 export default defaultMetadata;
+
+export const iconsMetadata = {
+  icons: {
+    icon: "https://res.cloudinary.com/ddksrkond/image/upload/v1700192308/channels4_profile-removebg-preview_gsrqy7.png",
+    shortcut:
+      "https://res.cloudinary.com/ddksrkond/image/upload/v1700192308/channels4_profile-removebg-preview_gsrqy7.png",
+    apple:
+      "https://res.cloudinary.com/ddksrkond/image/upload/v1700192308/channels4_profile-removebg-preview_gsrqy7.png",
+  },
+};

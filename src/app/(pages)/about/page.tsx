@@ -1,7 +1,11 @@
-import defaultMetadata from "@/shared/settings/default-metadata";
+import defaultMetadata, {
+  iconsMetadata,
+} from "@/shared/settings/default-metadata";
 import type { Metadata } from "next";
+
 export const metadata: Metadata = {
   ...defaultMetadata,
+  ...iconsMetadata,
 };
 import TextChange from "./components/TextChange";
 import siteMetadata from "@/shared/settings/sitemetdata";

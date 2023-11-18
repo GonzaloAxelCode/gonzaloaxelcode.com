@@ -1,6 +1,8 @@
 import { getFullArticlesByCategorySlug } from "@/shared/hooks/functions-notion";
 import { getAllArticles } from "@/shared/services/notion-services";
-import defaultMetadata from "@/shared/settings/default-metadata";
+import defaultMetadata, {
+  iconsMetadata,
+} from "@/shared/settings/default-metadata";
 import COLORS_NOTION from "@/shared/utils/colors-notion";
 import suglifyTitle from "@/shared/utils/suglify-title";
 import { Metadata } from "next";
@@ -15,16 +17,21 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   const description = `Categoria - ${params.categoryslug}`;
   const ogImage = `${process.env.NEXTAUTH_URL}/api/og?title${title}`;
   return {
-    ...defaultMetadata,
-    title,
+    title: `Blog ${title} - Gonzalo Axel`,
     description,
     openGraph: {
+      title: `Blog ${title} - Gonzalo Axel`,
+      description,
+      siteName: "Gonzalo's Blog",
+      url: suglifyTitle(title),
       images: [
         {
           url: ogImage,
         },
       ],
     },
+
+    ...iconsMetadata,
   };
 }
 

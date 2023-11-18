@@ -1,8 +1,12 @@
 import Title from "@/shared/UIComponents/Base/Title";
-import defaultMetadata from "@/shared/settings/default-metadata";
+import defaultMetadata, {
+  iconsMetadata,
+} from "@/shared/settings/default-metadata";
 import type { Metadata } from "next";
+
 export const metadata: Metadata = {
   ...defaultMetadata,
+  ...iconsMetadata,
 };
 const PageTutorials = () => {
   return (

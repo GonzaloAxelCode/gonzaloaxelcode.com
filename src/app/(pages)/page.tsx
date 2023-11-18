@@ -1,4 +1,6 @@
-import defaultMetadata from "@/shared/settings/default-metadata";
+import defaultMetadata, {
+  iconsMetadata,
+} from "@/shared/settings/default-metadata";
 import type { Metadata } from "next";
 
 import LogosBg from "@/shared/components/LogosBg";
@@ -27,6 +29,7 @@ export const metadata: Metadata = {
     locale: "es_PE",
     type: "website",
   },
+  ...iconsMetadata,
 };
 
 const PageAboutHome = () => {
