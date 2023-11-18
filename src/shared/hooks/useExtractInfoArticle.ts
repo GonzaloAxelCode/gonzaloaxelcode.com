@@ -7,13 +7,14 @@ const useExtractInfoArticle = (article: any) => {
     "Articulo aun no terminado.Intenta mas tarde.";
 
   let category = article.properties?.Category?.select?.name;
-  let categoryColor = article.properties?.Category?.select?.color
+  let categoryColor = article.properties?.Category?.select?.color;
   let createdAt = article.properties?.Created?.created_time;
   let updatedLast = article.last_edited_time;
+
   let minRead = article?.properties?.MinRead?.rich_text[0]?.plain_text;
 
   const tags = article?.properties?.Tags?.multi_select || [];
-  
+
   return {
     tags,
     categoryColor,

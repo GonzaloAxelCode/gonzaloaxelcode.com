@@ -24,7 +24,11 @@ const BodyArticle = ({ content, article, category }: any) => {
           id={article.id}
         />
       </div>
-      <TableOfContent content={content} id={article.id} />
+      <TableOfContent
+        slug={article?.properties?.Name?.title[0]?.plain_text}
+        content={content}
+        id={article.id}
+      />
     </div>
   );
 };

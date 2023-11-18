@@ -107,7 +107,7 @@ const PageAboutHome = () => {
             </div>
 
             <div className="py-5 p-1  mx-auto lg:m-auto lg:mt-0 lg:ml-0">
-              <div className="d-flex justify-content-center">
+              <div className="d-flex justify-content-center ">
                 <div className="image_outer_container">
                   <div className="green_icon"></div>
                   <div className="image_inner_container">

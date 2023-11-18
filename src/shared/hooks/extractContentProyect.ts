@@ -20,12 +20,7 @@ const extractContentProyect = (proyect: any) => {
   let category = proyect?.properties?.Category?.select?.name;
   let progress = proyect.properties?.Progreso?.rich_text[0].plain_text;
   let linkpreview = proyect?.properties?.LivePreview?.url || "#";
-  let urlimage1 = proyect?.properties?.Image1?.url;
-  let urlimage2 = proyect?.properties?.Image2?.url;
-  let urlimage3 = proyect?.properties?.Image3?.url;
-
   let imagesMovil = proyect?.properties?.ImagesMovil?.files;
-  let imagesTablet = proyect?.properties?.ImagesTablet?.files;
   let imagesDesktop = proyect?.properties?.ImagesDesktop?.files;
 
   let imagesPages = proyect?.properties?.ImagesPages?.files;
@@ -40,25 +35,7 @@ const extractContentProyect = (proyect: any) => {
   let indicador2 = JSON.parse(
     proyect?.properties?.Indicador2?.rich_text[0]?.plain_text
   );
-  let indicador3 = JSON.parse(
-    proyect?.properties?.Indicador3?.rich_text[0]?.plain_text
-  );
 
-  let caracteristicas = extractFeatures(
-    proyect?.properties?.ListCaracteristicas?.rich_text || ""
-  );
-  function extractFeatures(cadena) {
-    var patron = /\[{(.*?)}(.*?)\]/g;
-    var resultados = [];
-    var coincidencia;
-    while ((coincidencia = patron.exec(cadena)) !== null) {
-      resultados.push({
-        titulo: coincidencia[1],
-        texto: coincidencia[2].trim(),
-      });
-    }
-    return resultados;
-  }
   let component1 = JSON.parse(
     proyect?.properties?.Componente1?.rich_text[0]?.plain_text
   );
@@ -90,27 +67,21 @@ const extractContentProyect = (proyect: any) => {
     indicadores: {
       indicador1,
       indicador2,
-      indicador3,
     },
     links: {
       linkGithubBackend,
       linkGithubFull,
       linkGithubFrontEnd,
     },
-    imagesURL: {
-      urlimage1,
-      urlimage2,
-      urlimage3,
-    },
+
     imagesPlatforms: {
       imagesMovil,
-      imagesTablet,
+
       imagesDesktop,
     },
     peoples,
     level,
     status,
-    caracteristicas,
     title,
     cover,
     createdtime,
@@ -121,7 +92,7 @@ const extractContentProyect = (proyect: any) => {
     description,
     progress,
     tags,
-    imagesTablet,
+
     imagesPages,
   };
 };

@@ -236,8 +236,7 @@ const Text = ({ texts }: any) => {
           "",
           bold && "font-bold",
           italic && "font-italic",
-          code &&
-            "inline-code  p-[3px] leading-[1] bg-primary-orange rounded bg-opacity-20 text-primary-orange font-mono  font-medium",
+          code && "",
           strikethrough && "",
           underline && "underline",
         ].join(" ")}
@@ -251,6 +250,10 @@ const Text = ({ texts }: any) => {
           >
             {text?.content}
           </a>
+        ) : code ? (
+          <code className="truncate   overflow-x-auto break-all whitespace-normal p-[3px] leading-[1] bg-primary-orange rounded bg-opacity-20 text-primary-orange font-mono  font-medium">
+            {text?.content || ""}
+          </code>
         ) : (
           text?.content || ""
         )}

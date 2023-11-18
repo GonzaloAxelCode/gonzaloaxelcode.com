@@ -15,6 +15,7 @@ import Link from "next/link";
 import CarrouselPage from "./components/CarrouselPage";
 import Funcionalities from "./components/Funcionalities";
 import CarrouselMovil from "./components/CarrouselMovil";
+import TecnologiesProyect from "../components/TecnologiesProyect";
 export const dynamicParams = false;
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
@@ -50,13 +51,15 @@ export default async function ProjectPage({ params }: any) {
     category,
 
     description,
+    tecnologias,
 
     imagesPlatforms,
     imagesPages,
     links,
     components,
   } = extractContentProyect(project);
-  console.log(components);
+
+  console.log(tecnologias);
   return (
     <main>
       <section>
@@ -95,10 +98,13 @@ export default async function ProjectPage({ params }: any) {
               <h2 className="text-3xl sm:text-4xl font-medium  leading-title">
                 {title}
               </h2>
-              <div className="flex w-full object-contain  text-center sm:text-left my-4 gap-2 flex-wrap">
+              <div className="flex w-full flex-col object-contain  text-center sm:text-left my-4 gap-2 flex-wrap">
                 <p className="max-w-3xl mt-4  text-sm sm:text-md ">
                   {description}
                 </p>
+
+                <TecnologiesProyect tecnologias={tecnologias} />
+
                 <div className="flex gap-2 my-3">
                   <Link
                     href={linkpreview}

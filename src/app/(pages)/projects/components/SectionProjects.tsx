@@ -8,42 +8,28 @@ import Link from "next/link";
 import useSWR from "swr";
 import TecnologiesProyect from "./TecnologiesProyect";
 import extractContentProyect from "@/shared/hooks/extractContentProyect";
-function extraerInformacion(texto) {
-  const regex =
-    /\[(.*?)\](.*?)\s*"(https?:\/\/[^"]*\.(?:png|jpg|jpeg|gif|svg))"\s*$/;
-  const matches = texto.match(regex);
 
-  if (matches && matches.length === 4) {
-    return {
-      title: matches[1].trim(),
-      description: matches[2].trim(),
-      urlImage: matches[3],
-    };
-  } else {
-    return { title: "", description: "", urlImage: "" };
-  }
-}
 const SectionProjects = () => {
   const { data: projects } = useSWR("/api/projects", fetcherCache);
 
   return (
-    <section className="pt-14 md:pt-32 max-w-[768px] lg:max-w-[1280px]  mx-auto  px-8">
+    <section className="pt-14 md:pt-32 max-w-[768px] lg:max-w-[1280px]  mx-auto  px-2 md:px-8">
       <div className="flex flex-col gap-6 justify-center items-center">
         {projects &&
           projects?.map((project: any, index: any) => {
-            const { description, cover, title, indicadores } =
+            const { description, cover, title, indicadores, tecnologias } =
               extractContentProyect(project);
 
             const href = `/projects/${suglifyTitle(title)}`;
             return (
               <div key={index} className="flex flex-col">
-                <div className="grid w-full grid-cols-1 gap-1 items-center py-6  border-solid border-1 dark:border-white/[0.12] border-black/[0.05] bg-gray-F7 dark:bg-[#303030] rounded-xl">
+                <div className="grid w-full grid-cols-1 gap-1 items-center pb-6   rounded-xl">
                   <div className="flex flex-col w-full">
-                    <div className="grid w-full grid-cols-1 lg:grid-cols-2 gap-1 items-center py-10">
+                    <div className="grid w-full grid-cols-1 lg:grid-cols-2 gap-1 items-center pt-8">
                       <div className="flex flex-col gap-6 px-8 lg:px-10 lg:pr-0 lg:pt-10">
                         <div className="flex flex-col gap-3">
                           <div className="lg:max-w-[511px]">
-                            <h3 className="text-3xl md:text-4xl leading-title ">
+                            <h3 className="text-3xl sm:text-3xl md:text-4xl leading-title ">
                               {title}
                             </h3>
                           </div>
@@ -51,7 +37,9 @@ const SectionProjects = () => {
                             {resumirTexto(description, 140)}
                           </span>
                         </div>
-                        <TecnologiesProyect />
+
+                        <TecnologiesProyect tecnologias={tecnologias} />
+
                         <div className="flex gap-3 flex-wrap">
                           <button
                             className="cursor-pointer flex none box-border select-none hover:opacity-80 items-center gap-2 border px-4 py-2 rounded-[14px]  w-fit  dark:border-white/[0.12] border-black/[0.05] bg-gray-F7 dark:bg-[#303030]"
@@ -61,14 +49,10 @@ const SectionProjects = () => {
                               View on GitHub
                             </span>
                             <img
-                              srcSet="https://cdn.sanity.io/images/sdd9dua4/production/9b1e47098fd7b242fc4f534c89390bbb8c6053a2-20x20.svg?fit=max&auto=format 1x, https://cdn.sanity.io/images/sdd9dua4/production/9b1e47098fd7b242fc4f534c89390bbb8c6053a2-20x20.svg?fit=max&auto=format 2x"
-                              src="https://cdn.sanity.io/images/sdd9dua4/production/9b1e47098fd7b242fc4f534c89390bbb8c6053a2-20x20.svg?fit=max&auto=format"
                               width={20}
                               height={20}
-                              decoding="async"
-                              data-nimg={1}
-                              loading="lazy"
-                              style={{ color: "transparent" }}
+                              className="filter invert dark:invert-0"
+                              src="https://cdn.sanity.io/images/sdd9dua4/production/9b1e47098fd7b242fc4f534c89390bbb8c6053a2-20x20.svg?fit=max&auto=format"
                             />
                           </button>
                           <button
@@ -92,15 +76,25 @@ const SectionProjects = () => {
                         </div>
                       </div>
                       <div className="relative md:ml-0 md:inline">
-                        <img src={cover} alt="" />
+                        <Link
+                          href={href}
+                          className="after:absolute after:inset-0"
+                        >
+                          <img src={cover} alt="" />
+                        </Link>
                       </div>
                     </div>
-                    <div className="grid grid-cols-1 gap-5 px-5 sm:grid-cols-2 ">
-                      <div className="p-7  hover:-translate-y-3 transform transition-all duration-200  overflow-hidden pb-0 pr-0 relative border-1 border-solid  dark:border-white/[0.12] border-black/[0.05] bg-[#e9e9e9] hover:bg-[#e2e2e2] dark:bg-[#282828]  rounded-2xl cursor-pointer">
+                    <div className="grid grid-cols-1 gap-5 px-5 pt-6 sm:grid-cols-2 ">
+                      <div className="p-6  hover:-translate-y-1 transform transition-all duration-150  overflow-hidden  relative border-1 border-solid  dark:border-white/[0.12] border-black/[0.05] bg-[#f0f0f0] hover:bg-[#e9e9e9] dark:bg-[#282828]  rounded-xl cursor-pointer">
                         <div className="w-full">
                           <p className="font-headings text-2xl">
                             {" "}
-                            {indicadores.indicador1?.title || "Sin titulo"}
+                            <Link
+                              href={indicadores.indicador1?.href || "#d"}
+                              className="after:absolute after:inset-0"
+                            >
+                              {indicadores.indicador1?.title || "Sin titulo"}
+                            </Link>
                           </p>
                           <p className="pb-8 pr-5">
                             {indicadores.indicador1?.description ||
@@ -129,10 +123,15 @@ const SectionProjects = () => {
                           </svg>
                         </div>
                       </div>
-                      <div className="p-7  hover:-translate-y-3 transform transition-all duration-200  overflow-hidden pb-0 pr-0 relative border-1 border-solid dark:border-white/[0.12] border-black/[0.05]  bg-[#e9e9e9] hover:bg-[#e2e2e2] dark:bg-[#282828] rounded-2xl cursor-pointer">
+                      <div className="p-6  hover:-translate-y-1 transform transition-all duration-150  overflow-hidden  relative border-1 border-solid dark:border-white/[0.12] border-black/[0.05]  bg-[#f0f0f0] hover:bg-[#e9e9e9] dark:bg-[#282828] rounded-xl cursor-pointer">
                         <div className="w-full">
                           <p className="font-headings text-2xl">
-                            {indicadores.indicador2?.title || "Sin titulo"}
+                            <Link
+                              href={indicadores.indicador1?.href || "#d"}
+                              className="after:absolute after:inset-0"
+                            >
+                              {indicadores.indicador2?.title || "Sin titulo"}
+                            </Link>
                           </p>
                           <p className="pb-8 pr-5">
                             {indicadores.indicador2?.description ||

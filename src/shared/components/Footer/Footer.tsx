@@ -7,7 +7,12 @@ const Footer = () => {
     <footer className="">
       <div className="text-sm lg:px-5 text-[#363D4E] dark:text-neutral-200  mx-auto border-t border-neutral-300/10">
         <div className="px-5 pt-9 flex flex-col lg:flex-row justify-between items-center lg:items-end ">
-          <div>
+          <div className="relative">
+            <img
+              className="absolute w-[40px]  -top-2 -left-2 z-10"
+              src="https://i.pinimg.com/originals/20/d1/b1/20d1b1182b7f6a2007da2ccbe719b1d8.png"
+              alt=""
+            />
             <img
               src={siteMetadata.logoUrl}
               className="filter dark:invert object-contain h-10 w-10"

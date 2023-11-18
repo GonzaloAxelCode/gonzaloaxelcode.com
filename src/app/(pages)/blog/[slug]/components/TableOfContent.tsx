@@ -34,7 +34,7 @@ function extractHeading1Text(inputArray: any) {
     }));
   return extractedArray;
 }
-const TableOfContent = ({ content, id }: any) => {
+const TableOfContent = ({ content, id, slug }: any) => {
   const extractedArray = extractHeading1Text(content);
   const [title, setTitle] = useState("");
   const { themeGlobal } = useTheme();
@@ -191,7 +191,9 @@ const TableOfContent = ({ content, id }: any) => {
             <div className="flex gap-2.5 items-center">
               <Link
                 className="block cursor-pointer w-10 h-10  p-2 dark:text-white text-black"
-                href="#"
+                href={`https://twitter.com/intent/tweet?url=https://gonzaloaxelcode.vercel.app/blog/${suglifyTitle(
+                  slug
+                )}&text=Texto+para+tweet`}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Share on Twitter"
@@ -210,7 +212,9 @@ const TableOfContent = ({ content, id }: any) => {
               </Link>
               <Link
                 className="block cursor-pointer w-10 h-10 p-2  dark:text-white text-black"
-                href="#"
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=https://gonzaloaxelcode.vercel.app/blog/${suglifyTitle(
+                  slug
+                )}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Share on LinkedIn"
@@ -229,10 +233,11 @@ const TableOfContent = ({ content, id }: any) => {
               </Link>
               <Link
                 className="block cursor-pointer w-10 h-10  p-2  dark:text-white text-black"
-                href="#"
+                href={`mailto:?subject=Asunto+del+correo&body=Aquí+está+el+enlace+de+mi+blog:%0D%0Ahttps://gonzaloaxelcode.vercel.app/blog/${suglifyTitle(
+                  slug
+                )} `}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Share by email"
               >
                 <svg
                   viewBox="0 0 64 64"

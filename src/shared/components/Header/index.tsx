@@ -12,6 +12,10 @@ import Switcher from "../SwitcherDark";
 import Sidebar from "./Sidebar";
 import useScrollCalc from "@/shared/hooks/useScrollCalc";
 import useTheme from "@/shared/hooks/useTheme";
+import { fetcherCache } from "@/shared/services/fetcher";
+import useSWR from "swr";
+import suglifyTitle from "@/shared/utils/suglify-title";
+import sortByCreatedTime from "@/shared/utils/sort-createdtime";
 
 export const pathsNavHeader = [
   {
@@ -55,7 +59,8 @@ const Header = () => {
   const { scrolledPast } = useScrollCalc();
   const [news, setNews] = useState(true);
   const controls = useAnimation();
-
+  const { data: articles } = useSWR("/api/blog", fetcherCache);
+  const sortArticlesByDate = articles?.sort(sortByCreatedTime) || [];
   const handleHoverStart = () => {
     controls.start({
       height: "100%",
@@ -96,14 +101,23 @@ const Header = () => {
               </svg>
               <span>Nuevo articulo</span>
             </div>
-            <div className="py-4 sm:py-1  items-center px-4 sm:px-6 flex flex-wrap gap-x-4 gap-y-2">
+            <div className="py-4 sm:py-1  items-center px-4 sm:px-6  flex flex-wrap gap-x-4 gap-y-2">
               <span>
-                👉 5 errores que cometí al comenzar mi primer proyecto de React
+                👉{" "}
+                {(articles &&
+                  sortArticlesByDate[0]?.properties.Name?.title[0]
+                    ?.plain_text) ||
+                  "Articulo sin Titulo"}
               </span>
               <Link
                 className="font-bold underline inline-block underline-offset-4 hover:underline-offset-2"
-                rel="noreferrer"
-                href="/blog"
+                onClick={() => setNews(false)}
+                href={`/blog/${suglifyTitle(
+                  (articles &&
+                    sortArticlesByDate[0]?.properties.Name?.title[0]
+                      ?.plain_text) ||
+                    "Articulo sin Titulo"
+                )}`}
               >
                 Ver
               </Link>
@@ -143,6 +157,11 @@ const Header = () => {
           <Flex>
             <div className="relative flex items-center z-10  self-stretch  lg:pr-8">
               <Link className="focus:outline-none flex items-center" href="/">
+                <img
+                  className="absolute w-[40px]  -top-1 -left-2 z-10"
+                  src="https://i.pinimg.com/originals/20/d1/b1/20d1b1182b7f6a2007da2ccbe719b1d8.png"
+                  alt=""
+                />
                 <Logo />
                 <span className="text-lg ml-1">{""}onzalo</span>
                 <span></span>
@@ -233,9 +252,14 @@ const Header = () => {
                 className="mx-auto px-3  md:px-8 relative py-0"
               >
                 <Flex>
-                  <div className="relative flex items-center z-10  self-stretch  lg:pr-8">
+                  <div className=" relative flex items-center z-10  self-stretch  lg:pr-8">
                     <span className="focus:outline-none flex gap-0 items-center cursor-pointer  text-white">
                       <span className="">
+                        <img
+                          className="absolute w-[40px]  -top-1 -left-2 z-10"
+                          src="https://i.pinimg.com/originals/20/d1/b1/20d1b1182b7f6a2007da2ccbe719b1d8.png"
+                          alt=""
+                        />
                         <Logo />
                       </span>
                       <span className="text-white text-lg ml-1">
@@ -410,12 +434,20 @@ const Header = () => {
               <div className=" flex-5 grid   h-screen md:h-full sm:grid-cols-2 md:grid-cols-3  flex-shrink col-span-8 gap-3 p-4 flex-6">
                 <Link
                   onClick={() => handleHoverEnd()}
-                  href="/blog"
-                  className="max-w-[200px] max-h-[300px] flex flex-col h-full bg-[#292929] rounded-xl"
+                  href={`/blog/${suglifyTitle(
+                    (articles &&
+                      sortArticlesByDate[0]?.properties.Name?.title[0]
+                        ?.plain_text) ||
+                      "Articulo sin Titulo"
+                  )}`}
+                  className="max-w-[150px] sm:max-w-[200px]  flex flex-col h-[350px] bg-[#292929] rounded-xl"
                   style={{
                     backgroundImage: `
       linear-gradient(to bottom, transparent, #000000),
-      url(https://res.cloudinary.com/ddksrkond/image/upload/v1691328449/banner_suofgv.png)
+      url(${
+        sortArticlesByDate[0]?.cover?.file?.url ||
+        sortArticlesByDate[0]?.cover?.external?.url
+      })
     `,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
@@ -424,27 +456,44 @@ const Header = () => {
                   <span className="h-full"></span>
                   <span className="flex flex-col p-4 pt-0 pb-6">
                     <span className="font-headings font-normal pr-4 text-xl py-3">
-                      How to utilize business loans for expansion
+                      {(articles &&
+                        sortArticlesByDate[0]?.properties.Name?.title[0]
+                          ?.plain_text) ||
+                        "Articulo sin Titulo"}
                     </span>
                   </span>
                 </Link>
-                <div className="max-w-[200px] flex flex-col h-fit bg-[#292929] rounded-xl">
-                  <div className="p-0 pb-0">
-                    <img
-                      className="rounded-t-2xl object-cover grid w-full h-[150px]"
-                      src="https://res.cloudinary.com/ddksrkond/image/upload/v1699561105/hq720_cfrkrb.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div className="flex flex-col p-4 pt-0 pb-6">
-                    <p className="font-headings font-normal pr-4 text-xl py-3">
-                      How to utilize business loans for expansion
-                    </p>
-                    <button className="bg-[#616161] w-auto px-4 py-2 rounded-3xl">
-                      <Link href="/blog">Ver articulo</Link>
-                    </button>
-                  </div>
-                </div>
+                <Link
+                  onClick={() => handleHoverEnd()}
+                  href={`/blog/${suglifyTitle(
+                    (articles &&
+                      sortArticlesByDate[1]?.properties.Name?.title[0]
+                        ?.plain_text) ||
+                      "Articulo sin Titulo"
+                  )}`}
+                  className="max-w-[150px] sm:max-w-[200px] flex flex-col h-[350px] bg-[#292929] rounded-xl"
+                  style={{
+                    backgroundImage: `
+      linear-gradient(to bottom, transparent, #000000),
+      url(${
+        sortArticlesByDate[1]?.cover?.file?.url ||
+        sortArticlesByDate[1]?.cover?.external?.url
+      })
+    `,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+                  <span className="h-full"></span>
+                  <span className="flex flex-col p-4 pt-0 pb-6">
+                    <span className="font-headings font-normal pr-4 text-xl py-3">
+                      {(articles &&
+                        sortArticlesByDate[1]?.properties.Name?.title[0]
+                          ?.plain_text) ||
+                        "Articulo sin Titulo"}
+                    </span>
+                  </span>
+                </Link>
                 <Link
                   onClick={() => handleHoverEnd()}
                   href="/blog"

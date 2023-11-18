@@ -33,15 +33,10 @@ const Banner = ({ colorCategory, titleCategory }: any) => {
             fill="currentColor"
           />
         </svg>
-        <h1 className=" text-blackbg dark:text-white font-headings  tracking-tight scroll-mt-[120px] text-4xl lg:text-5xl 2xl:text-6xl font-bold mt-6">
+        <h1 className=" text-blackbg dark:text-white font-headings  tracking-tight scroll-mt-[120px] text-3xl  lg:text-5xl 2xl:text-6xl font-bold mt-6">
           {titleCategory}
         </h1>
-        <div className="font-copy text-base 2xl:text-md font-medium print:text-[12px] print:text-justify copy-muted mt-6 max-w-xl mx-auto">
-          <p className=" text-blackbg dark:text-white my-6 first:mt-0 last:mb-0 print:my-2">
-            Tech comparisons, guides, and tutorials to optimize your website
-            load speed and user experience.
-          </p>
-        </div>
+        <div className="font-copy text-base 2xl:text-md font-medium print:text-[12px] print:text-justify copy-muted mt-6 max-w-xl mx-auto"></div>
       </div>
     </div>
   );

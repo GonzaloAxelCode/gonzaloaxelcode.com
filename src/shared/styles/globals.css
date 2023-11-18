@@ -715,8 +715,9 @@ iframe body .haAclf {
         background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
        }
        .image_inner_container img{
-       	height: 200px;
-       	width: 200px;
+       	height: 170px;
+       	width: 170px;
+        
        	border-radius: 50%;
        	border: 4px solid white;
        }
