@@ -37,7 +37,7 @@ const PageAboutHome = () => {
             <div className="relative w-full md:w-1/2 lg:w-3/4">
               <h1 className="mb-5 leading-title text-center md:text-left mt-5 md:mt-0 w-full text-3xl sm:text-4xl font-bold md:text-5xl lg:text-5xl dark:text-white">
                 Hola 👋, soy{" "}
-                <span className="relative ">
+                <span className="relative s ">
                   <svg
                     className="absolute -top-6 left-0 h-8 transform -rotate-12"
                     viewBox="0 0 244 243"
