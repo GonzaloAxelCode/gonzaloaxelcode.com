@@ -15,7 +15,12 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   const title =
     articles[0].properties.Category?.select?.name || "Articulo sin Titulo";
   const description = `Categoria - ${params.categoryslug}`;
+  let cover =
+    articles[0]?.cover?.file?.url || articles[0]?.cover?.external?.url;
+
+  /*
   const ogImage = `${process.env.NEXTAUTH_URL}/api/og?title${title}`;
+  */
   return {
     title: `Blog ${title} - Gonzalo Axel`,
     description,
@@ -23,12 +28,20 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
       title: `Blog ${title} - Gonzalo Axel`,
       description,
       siteName: "Gonzalo's Blog",
-      url: suglifyTitle(title),
       images: [
         {
-          url: ogImage,
+          url: cover,
         },
       ],
+    },
+    twitter: {
+      card: "player",
+      title: title,
+      description,
+      siteId: "1467726470533754880",
+      creator: "Gonzalo Axel",
+      creatorId: "1467726470533754880",
+      images: [cover],
     },
 
     ...iconsMetadata,

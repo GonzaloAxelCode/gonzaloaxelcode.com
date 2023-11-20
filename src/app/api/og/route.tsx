@@ -12,69 +12,99 @@ export async function GET(req: NextRequest) {
   const category = searchParams.get("category");
   const createdAt = searchParams.get("createdat");
   const categoryColor = searchParams.get("categorycolor");
-
+  console.log({
+    xd: "",
+    title,
+    cover,
+    category,
+    categoryColor,
+    createdAt,
+  });
   return new ImageResponse(
     (
       <div
-        className="overflow-hidden flex py-16  rounded-3xl  items-center justify-center flex-row my-8  mx-auto px-8"
         style={{
-          width: 680,
-          height: 357,
+          color: "white",
+          boxSizing: "border-box",
+          overflow: "hidden",
+          display: "flex",
+
+          borderRadius: "1.5rem",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
+
+          width: "680px",
+          height: "357px",
           backgroundImage:
             "url(https://res.cloudinary.com/ddksrkond/image/upload/v1700444328/Presentacion_Propuesta_de_Proyecto_de_Startup_Empresarial_Profesional_negro_y_celeste_1_lrshjz.png)",
           backgroundSize: "cover",
         }}
       >
-        <div className="flex  flex-col space-y-3 w-[85%]">
-          <div className="flex w-full items-center gap-2 flex-wrap">
-            <p>
-              <svg
-                width={64}
-                height={64}
-                viewBox="0 0 64 64"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-5 h-5 shrink-0"
-                style={{
-                  color: COLORS_NOTION[categoryColor],
-                }}
-              >
-                <path
-                  opacity="0.2"
-                  d="M0 16C0 7.16344 7.16344 0 16 0H48C56.8366 0 64 7.16344 64 16V48C64 56.8366 56.8366 64 48 64H16C7.16344 64 0 56.8366 0 48V16Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M20 18C17.7938 18 16 19.7938 16 22V26C16 28.2063 17.7938 30 20 30H44C46.2063 30 48 28.2063 48 26V22C48 19.7938 46.2063 18 44 18H20ZM20 34C17.7938 34 16 35.7938 16 38V42C16 44.2063 17.7938 46 20 46H44C46.2063 46 48 44.2063 48 42V38C48 35.7938 46.2063 34 44 34H20Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </p>
-            <p className="text-xs ">{category}</p>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "0.75rem",
+            width: "85%",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              width: "100%",
+              alignItems: "center",
+              gap: "0.5rem",
+              flexWrap: "wrap",
+            }}
+          >
+            <p style={{ fontSize: "0.75rem" }}>{category}</p>
             <p>&middot;</p>
-            <p className="text-xs">{formatDate(createdAt)}</p>
+            <p style={{ fontSize: "0.75rem" }}>{createdAt}</p>
           </div>
           <h1
-            style={{
-              fontSize: "30px",
-            }}
-            className="leading-title pr-6 w-full"
+            style={{ fontSize: "30px", paddingRight: "1.5rem", width: "100%" }}
           >
             {title}
           </h1>
-          <div className="w-full flex items-center gap-3 flex-wrap">
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.75rem",
+              flexWrap: "wrap",
+              width: "100%",
+            }}
+          >
             <img
-              className="rounded-full  filter invert object-contain"
+              style={{
+                borderRadius: "50%",
+                filter: "invert(0)",
+                objectFit: "contain",
+              }}
               src={siteMetadata.avatarImage}
               width={25}
               height={25}
               alt={siteMetadata.author}
             />
-            <p className="m-0 text-xs">Por {siteMetadata.author}</p>
-            <div className="flex items-center">
-              <p className="text-xs flex items-center ">
+            <p style={{ margin: "0", fontSize: "0.75rem" }}>
+              Por {siteMetadata.author}
+            </p>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <p
+                style={{
+                  fontSize: "0.75rem",
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
                 <img
-                  className="h-6 w-6 object-contain filter invert"
+                  style={{
+                    height: "1.5rem",
+                    width: "1.5rem",
+                    objectFit: "contain",
+                    filter: "invert(0)",
+                  }}
                   src="https://res.cloudinary.com/ddksrkond/image/upload/v1699381028/ChatGPT-Logo_xghvfd.png"
                   alt=""
                 />{" "}
@@ -83,13 +113,23 @@ export async function GET(req: NextRequest) {
             </div>
           </div>
         </div>
-        <div className="flex w-full flex-col my-4">
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            marginTop: "1rem",
+          }}
+        >
           <picture>
             <img
-              width={1440}
-              height={810}
+              width={300}
+              height={160}
               src={cover}
-              className="object-contain rounded-xl transform  scale-105"
+              style={{
+                objectFit: "contain",
+                borderRadius: "1rem",
+                transform: "scale(1.05)",
+              }}
               alt={title}
             />
           </picture>

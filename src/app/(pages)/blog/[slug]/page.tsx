@@ -9,20 +9,28 @@ import { Metadata } from "next";
 import BodyArticle from "./components/BodyArticle";
 import PresentationArticle from "./components/PresentationArticle";
 import PresentationArticle2 from "./components/PresentationArticle2";
+import { format } from "path";
+import formatDate from "@/shared/utils/format-date";
 export const dynamicParams = false;
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
   const { article } = await getFullArticleBySlug(params.slug);
-  const { title, description, cover, category, createdAt, categoryColor } =
-    extractInfoArticle(article);
-  const ogImage = `${process.env.NEXTAUTH_URL}/api/og?title=${title}&cover=${cover}&category=${category}&createdat=${createdAt}&categorycolor=${categoryColor}`;
+  const { title, description, cover } = extractInfoArticle(article);
+  /*
+  const ogImage = `${
+    process.env.NEXTAUTH_URL
+  }/api/og?title=${title}&cover=${cover}&category=${category}&createdat=${formatDate(
+    createdAt
+  )}&categorycolor=${categoryColor}`;
+  console.log(ogImage);
+*/
   return {
     title,
     description,
     openGraph: {
       images: [
         {
-          url: ogImage,
+          url: cover,
         },
       ],
     },
@@ -33,7 +41,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
       siteId: "1467726470533754880",
       creator: "Gonzalo Axel",
       creatorId: "1467726470533754880",
-      images: [ogImage],
+      images: [cover],
     },
     ...iconsMetadata,
   };

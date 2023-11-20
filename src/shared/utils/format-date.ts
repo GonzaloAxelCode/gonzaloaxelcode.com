@@ -1,4 +1,4 @@
- const formatDate = (date: any) => {
+const formatDate = (date: any) => {
   return new Date(date).toLocaleDateString("es-PE", {
     year: "numeric",
     month: "long",
@@ -6,5 +6,4 @@
   });
 };
 
-
-export default formatDate
+export default formatDate;
