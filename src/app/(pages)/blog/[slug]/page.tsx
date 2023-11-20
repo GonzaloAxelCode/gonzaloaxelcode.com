@@ -8,12 +8,14 @@ import suglifyTitle from "@/shared/utils/suglify-title";
 import { Metadata } from "next";
 import BodyArticle from "./components/BodyArticle";
 import PresentationArticle from "./components/PresentationArticle";
+import PresentationArticle2 from "./components/PresentationArticle2";
 export const dynamicParams = false;
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
   const { article } = await getFullArticleBySlug(params.slug);
-  const { title, description, cover } = extractInfoArticle(article);
-  const ogImage = `${process.env.NEXTAUTH_URL}/api/og?title${title}`;
+  const { title, description, cover, category, createdAt, categoryColor } =
+    extractInfoArticle(article);
+  const ogImage = `${process.env.NEXTAUTH_URL}/api/og?title=${title}&cover=${cover}&category=${category}&createdat=${createdAt}&categorycolor=${categoryColor}`;
   return {
     title,
     description,
@@ -25,7 +27,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
       ],
     },
     twitter: {
-      card: "summary_large_image",
+      card: "player",
       title: title,
       description,
       siteId: "1467726470533754880",

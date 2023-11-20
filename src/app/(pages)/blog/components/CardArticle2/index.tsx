@@ -9,10 +9,7 @@ import useSWR from "swr";
 const CardArticle2 = ({ article }: any) => {
   const { tags, title, description, category, createdAt, cover } =
     extractInfoArticle(article);
-  const { data } = useSWR(
-    `/api/views?postId=${suglifyTitle(title)}`,
-    fetcherCache
-  );
+
   return (
     <article className="overflow-hidden flex w-full grow h-full relative border-1 rounded-xl flex-col bg-white border-gray-EE text-gray-15 dark:bg-gray-1F dark:border-gray-1F">
       <div className="">
@@ -70,7 +67,7 @@ const CardArticle2 = ({ article }: any) => {
             target="_blank"
             className="after:absolute after:inset-0"
           >
-            <p className="font-headings tracking-tight scroll-mt-[120px] dark:text-white text-lg 2xl:2xl-tight font-medium">
+            <p className="font-headings scroll-mt-[120px] dark:text-white text-lg 2xl:2xl-tight font-medium">
               {title}
             </p>
           </Link>

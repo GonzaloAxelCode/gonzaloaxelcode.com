@@ -1,21 +1,18 @@
 "use client";
-import Flex from "@/shared/UIComponents/Base/Flex";
+
 import P from "@/shared/UIComponents/Base/P";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { cn } from "tailwind-cn";
 import Logo from "../Logo/Index";
 import { motion, useAnimation } from "framer-motion";
-
 import Switcher from "../SwitcherDark";
-import Sidebar from "./Sidebar";
 import useScrollCalc from "@/shared/hooks/useScrollCalc";
-import useTheme from "@/shared/hooks/useTheme";
 import { fetcherCache } from "@/shared/services/fetcher";
 import useSWR from "swr";
 import suglifyTitle from "@/shared/utils/suglify-title";
 import sortByCreatedTime from "@/shared/utils/sort-createdtime";
+import News from "./News";
 
 export const pathsNavHeader = [
   {
@@ -24,40 +21,8 @@ export const pathsNavHeader = [
   },
 ];
 const Header = () => {
-  const fulpath = usePathname();
-  const statePage: any = (path: any) => {
-    if (path.startsWith("/blog")) {
-      return {
-        path: "/blog",
-        name: "Blog",
-      };
-    }
-    if (path.startsWith("/academy")) {
-      return {
-        path: "/academy",
-        name: "Academy",
-      };
-    }
-    if (path.startsWith("/about")) {
-      return {
-        path: "/about",
-        name: "About",
-      };
-    }
-    if (path.startsWith("/projects")) {
-      return {
-        path: "/projects",
-        name: "Projects",
-      };
-    }
-    return {
-      path: "/",
-      name: "",
-    };
-  };
-  const path = statePage(fulpath);
   const { scrolledPast } = useScrollCalc();
-  const [news, setNews] = useState(true);
+
   const controls = useAnimation();
   const { data: articles } = useSWR("/api/blog", fetcherCache);
   const sortArticlesByDate = articles?.sort(sortByCreatedTime) || [];
@@ -65,96 +30,33 @@ const Header = () => {
     controls.start({
       height: "100%",
       opacity: 1,
+      scale: "1",
+      transition: { duration: 0.35, ease: "easeInOut" },
     });
   };
 
   const handleHoverEnd = () => {
     controls.start({
-      height: "0%",
+      height: "100%",
       opacity: 0,
+      scale: "0.0000001",
+      transition: { duration: 0.35, ease: "easeInOut" },
     });
   };
 
   return (
     <>
-      {news && (
-        <Flex>
-          <div className="w-[93%] font-medium my-4 text-sm sm:text-sm rounded-lg sm:rounded-3xl flex flex-col sm:flex-row overflow-hidden relative justify-between mx-auto bg-gray-30 bg-gray-F7 dark:bg-[#323232]">
-            <div className="py-1 px-4 my-2 sm:px-6 text-center flex shrink-0 items-center ">
-              <svg
-                viewBox="0 0 64 64"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 mr-2 text-primary-purple"
-              >
-                <path
-                  opacity="0.2"
-                  d="M0 16C0 7.163 7.163 0 16 0h32c8.837 0 16 7.163 16 16v32c0 8.837-7.163 16-16 16H16C7.163 64 0 56.837 0 48V16Z"
-                  fill="currentColor"
-                />
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M18.565 15.435a2 2 0 0 1 0 2.828c-7.42 7.42-7.42 19.45 0 26.87a2 2 0 0 1-2.829 2.829c-8.982-8.982-8.982-23.545 0-32.527a2 2 0 0 1 2.829 0Zm26.87 0a2 2 0 0 1 2.828 0c8.983 8.982 8.983 23.545 0 32.527a2 2 0 1 1-2.828-2.829c7.42-7.42 7.42-19.45 0-26.87a2 2 0 0 1 0-2.828Zm-4.95 5.05a2 2 0 0 1 2.829 0c6.248 6.249 6.248 16.38 0 22.628a2 2 0 0 1-2.829-2.829c4.687-4.686 4.687-12.284 0-16.97a2 2 0 0 1 0-2.829Zm-16.97 2.829a2 2 0 1 0-2.829-2.829c-6.248 6.249-6.248 16.38 0 22.628a2 2 0 0 0 2.829-2.829c-4.687-4.686-4.687-12.284 0-16.97ZM32 38a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"
-                  fill="currentColor"
-                />
-              </svg>
-              <span>Nuevo articulo</span>
-            </div>
-            <div className="py-4 sm:py-1  items-center px-4 sm:px-6  flex flex-wrap gap-x-4 gap-y-2">
-              <span>
-                👉{" "}
-                {(articles &&
-                  sortArticlesByDate[0]?.properties.Name?.title[0]
-                    ?.plain_text) ||
-                  "Articulo sin Titulo"}
-              </span>
-              <Link
-                className="font-bold underline inline-block underline-offset-4 hover:underline-offset-2"
-                onClick={() => setNews(false)}
-                href={`/blog/${suglifyTitle(
-                  (articles &&
-                    sortArticlesByDate[0]?.properties.Name?.title[0]
-                      ?.plain_text) ||
-                    "Articulo sin Titulo"
-                )}`}
-              >
-                Ver
-              </Link>
-            </div>
-            <button
-              onClick={() => setNews(false)}
-              className="absolute top-2 right-2 sm:relative sm:top-0 sm:right-0 sm:mr-4"
-              type="button"
-              aria-label="Close banner"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-black dark:text-gray-EE"
-              >
-                <path
-                  d="m7.757 7.757 8.486 8.486M7.757 16.243l8.486-8.486"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                />
-              </svg>
-            </button>
-          </div>
-        </Flex>
-      )}
-      <Flex
-        full
-        col
+      <News article={articles && sortArticlesByDate[0]} />
+      <div
         className={cn(
-          "lg:max-w-screen sticky  top-0 z-30  sm:bg-opacity-70 sm:backdrop-blur-lg",
+          "flex flex-col w-full",
+          "lg:max-w-screen sticky  py-1 top-0 z-30  sm:bg-opacity-70 sm:backdrop-blur-lg",
           " bg-opacity-1 dark:bg-opacity-1 sm:bg-opacity-50   dark:sm:bg-opacity-70",
           !scrolledPast ? "bg-transparent" : " bg-white dark:bg-blackbg"
         )}
       >
-        <Flex full itemscenter between className="mx-auto px-3  md:px-8 py-0">
-          <Flex>
+        <div className="flex items-center justify-between w-full  mx-auto px-3  md:px-8 py-0">
+          <div className="flex">
             <div className="relative flex items-center z-10  self-stretch  lg:pr-8">
               <Link className="focus:outline-none flex items-center" href="/">
                 <img
@@ -168,12 +70,15 @@ const Header = () => {
                 <span className="text-xs ml-1">Beta</span>
               </Link>
             </div>
-          </Flex>
+          </div>
 
-          <Flex
-            full
-            className="hidden lg:flex space-x-8 ml-auto justify-end pr-4"
-          >
+          <div className="w-full hidden lg:flex space-x-8 ml-auto justify-end pr-4">
+            <span
+              className="mr-4 cursor-pointer"
+              onMouseEnter={handleHoverStart}
+            >
+              <span className={cn("text-sm", "")}>Descubre mas</span>
+            </span>
             {pathsNavHeader.map((el: any, index: any) => {
               return (
                 <Link key={index} href={el.path}>
@@ -181,19 +86,13 @@ const Header = () => {
                 </Link>
               );
             })}
-            <span
-              className="mr-4 cursor-pointer"
-              onMouseEnter={handleHoverStart}
-            >
-              <P className={cn("text-sm", "")}>Descubre mas</P>
-            </span>
-          </Flex>
-          <Flex itemscenter className="space-x-4">
+          </div>
+          <div className="flex items-center">
             <div className="mx-2">
               <Switcher />
             </div>
             <button
-              className="lg:hidden w-12 h-12 relative -mr-2 z-20"
+              className="lg:hidden w-12 h-12 relative  z-20"
               onClick={() => handleHoverStart()}
               aria-label="Toggle menu"
             >
@@ -222,45 +121,45 @@ const Header = () => {
                 />
               </svg>
             </button>
-          </Flex>
-        </Flex>
-      </Flex>
+          </div>
+        </div>
+      </div>
 
       <motion.div
-        initial={{ height: "0%", opacity: 0 }}
+        initial={{
+          height: "100%",
+          opacity: 0,
+          scale: "0.0000001",
+        }}
         animate={controls}
         transition={{ duration: 0.35, ease: "easeInOut" }}
-        className="fixed overflow-hidden w-screen top-0 left-0 z-[99999] text-white bg-blackbg"
+        className="transition-all duration-100 fixed overflow-hidden w-screen top-0 left-0 z-[99999] text-white bg-blackbg"
       >
         <div className="w-full h-full">
           <div
             className="flex flex-col w-full  h-[50%]"
             onMouseLeave={handleHoverEnd}
           >
-            <Flex
-              full
-              col
+            <div
               className={cn(
+                "flex flex-col w-full",
                 "lg:max-w-screen sticky top-0 z-30",
                 " bg-blackbg text-white "
               )}
             >
-              <Flex
-                full
-                itemscenter
-                between
-                className="mx-auto px-3  md:px-8 relative py-0"
-              >
-                <Flex>
+              <div className="flex w-full items-center justify-between mx-auto px-3  md:px-8 relative py-0">
+                <div className="flex">
                   <div className=" relative flex items-center z-10  self-stretch  lg:pr-8">
                     <span className="focus:outline-none flex gap-0 items-center cursor-pointer  text-white">
                       <span className="">
                         <img
-                          className="absolute w-[40px]  -top-1 -left-2 z-10"
+                          className="absolute w-[35px] -top-1 -left-2 z-10"
                           src="https://i.pinimg.com/originals/20/d1/b1/20d1b1182b7f6a2007da2ccbe719b1d8.png"
                           alt=""
                         />
-                        <Logo />
+                        <span className="filter invert">
+                          <Logo />
+                        </span>
                       </span>
                       <span className="text-white text-lg ml-1">
                         {""}onzalo
@@ -269,7 +168,7 @@ const Header = () => {
                       <span className="text-white text-xs ml-1">Beta</span>
                     </span>
                   </div>
-                </Flex>
+                </div>
                 <button
                   onClick={() => handleHoverEnd()}
                   className="absolute top-2 h-[30px] w-[30px] right-5  "
@@ -288,8 +187,8 @@ const Header = () => {
                     />
                   </svg>
                 </button>
-              </Flex>
-            </Flex>
+              </div>
+            </div>
             <div className="flex items-center h-screen">
               <div className="flex-1 max-w-[250px] border-r-1 h-full  border-solid border-graydark pl-8 pt-6 flex-2 text-gray-F7 ">
                 <div className="flex flex-col w-auto">
@@ -309,9 +208,9 @@ const Header = () => {
                         >
                           <path
                             className="fill-white"
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                           ></path>
                         </svg>{" "}
                       </li>
@@ -331,9 +230,9 @@ const Header = () => {
                         >
                           <path
                             className="fill-white"
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                           ></path>
                         </svg>{" "}
                       </li>
@@ -353,9 +252,9 @@ const Header = () => {
                         >
                           <path
                             className="fill-white"
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                           ></path>
                         </svg>{" "}
                       </li>
@@ -375,9 +274,9 @@ const Header = () => {
                         >
                           <path
                             className="fill-white"
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                           ></path>
                         </svg>{" "}
                       </li>
@@ -397,9 +296,9 @@ const Header = () => {
                         >
                           <path
                             className="fill-white"
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                           ></path>
                         </svg>{" "}
                       </li>
@@ -407,7 +306,7 @@ const Header = () => {
                     <Link
                       onClick={() => handleHoverEnd()}
                       href="/blog"
-                      className="flex md:hidden flex-col h-[300px] max-w-[200px] relative  mt-5 bg-[#292929] rounded-xl"
+                      className="flex md:hidden flex-col h-[200px] w-[150px] px-2 relative  mt-5 bg-[#292929] rounded-xl"
                     >
                       <span className="justify-center-center absolute right-[3%] top-[3%]  flex aspect-square flex-col items-center rounded-full border p-0.5  border-white/[0.12] dark:border-white/[0.12]  bg-white ">
                         <svg
@@ -417,9 +316,9 @@ const Header = () => {
                         >
                           <path
                             className="fill-black"
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                           ></path>
                         </svg>
                       </span>
@@ -431,7 +330,7 @@ const Header = () => {
                   </ul>
                 </div>
               </div>
-              <div className=" flex-5 grid   h-screen md:h-full sm:grid-cols-2 md:grid-cols-3  flex-shrink col-span-8 gap-3 p-4 flex-6">
+              <div className=" flex-5 grid  h-screen md:h-full sm:grid-cols-2 md:grid-cols-3  flex-shrink col-span-8 gap-3 p-4 sm:pr-8 flex-6">
                 <Link
                   onClick={() => handleHoverEnd()}
                   href={`/blog/${suglifyTitle(
@@ -440,7 +339,7 @@ const Header = () => {
                         ?.plain_text) ||
                       "Articulo sin Titulo"
                   )}`}
-                  className="max-w-[150px] sm:max-w-[200px]  flex flex-col h-[350px] bg-[#292929] rounded-xl"
+                  className="max-w-[150px] sm:max-w-[200px]  flex flex-col max-h-[250px] h-[350px] bg-[#292929] rounded-xl"
                   style={{
                     backgroundImage: `
       linear-gradient(to bottom, transparent, #000000),
@@ -471,7 +370,7 @@ const Header = () => {
                         ?.plain_text) ||
                       "Articulo sin Titulo"
                   )}`}
-                  className="max-w-[150px] sm:max-w-[200px] flex flex-col h-[350px] bg-[#292929] rounded-xl"
+                  className="max-w-[150px] sm:max-w-[200px] flex flex-col max-h-[250px] h-[350px] bg-[#292929] rounded-xl"
                   style={{
                     backgroundImage: `
       linear-gradient(to bottom, transparent, #000000),
@@ -507,9 +406,9 @@ const Header = () => {
                     >
                       <path
                         className="fill-black"
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                         d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                       ></path>
                     </svg>
                   </span>

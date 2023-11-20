@@ -6,6 +6,7 @@ import ArticlesByTopic from "./components/ArticlesByTopic";
 import BlogGridPresentation from "./components/BlogPresentation";
 import ChooseTechStack from "./components/ChooseTechStack";
 import LastestContent from "./components/LatestContent";
+import BestArticle from "./components/BestArticle";
 
 export const metadata: Metadata = {
   title: "Blog | Gonzalo Axel",
@@ -34,6 +35,8 @@ const PageBlog = () => {
       <section className="w-full">
         <BlogGridPresentation />
       </section>
+      <BestArticle />
+
       <LastestContent />
       <ChooseTechStack />
 

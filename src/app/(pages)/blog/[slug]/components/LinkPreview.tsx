@@ -13,24 +13,21 @@ export default function LinkPreview({ url }: any) {
     <>
       {metadata && (
         <Link href={metadata.requestUrl || "#"} target="_blank">
-          <Flex
-            full
-            className="border-2 p-6 rounded-2xl border-gray-100 dark:border-darkborder space-y-3  sm:space-x-3  flex-wrap sm:flex-nowrap"
-          >
-            <Flex col className="space-y-2">
+          <div className="flex w-full border-2 p-6 rounded-2xl border-gray-100 dark:border-darkborder space-y-3  sm:space-x-3  flex-wrap sm:flex-nowrap">
+            <div className="flex flex-col space-y-2">
               <Title className="text-lg">{metadata?.title}</Title>
               <P className="text-sm">
                 {resumirTexto(metadata?.description || "")}
               </P>
               <P className="text-sm">{metadata?.domain}</P>
-            </Flex>
+            </div>
             <img
               src={metadata?.img || ""}
               height={127}
               className="rounded-xl object-cover w-full  sm:w-[250px]"
               alt=""
             />
-          </Flex>
+          </div>
         </Link>
       )}
     </>

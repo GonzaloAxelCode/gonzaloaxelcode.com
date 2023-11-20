@@ -116,9 +116,9 @@ const SectionProjects = () => {
                           >
                             <path
                               className="fill-black dark:fill-white"
-                              fill-rule="evenodd"
+                              fillRule="evenodd"
                               d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
-                              clip-rule="evenodd"
+                              clipRule="evenodd"
                             ></path>
                           </svg>
                         </div>
@@ -153,9 +153,9 @@ const SectionProjects = () => {
                           >
                             <path
                               className="fill-black dark:fill-white"
-                              fill-rule="evenodd"
+                              fillRule="evenodd"
                               d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
-                              clip-rule="evenodd"
+                              clipRule="evenodd"
                             ></path>
                           </svg>
                         </div>

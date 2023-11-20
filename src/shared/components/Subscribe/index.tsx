@@ -6,14 +6,8 @@ const Subscribe = () => {
     <div className="container  ">
       <div
         className={cn(
-          "flex justify-between  dark:text-white border-1 text-gray-15  items-center gap-12 relative p-12 rounded-xl object-cover",
-          BoxBgOpacityClasses
+          "flex justify-between  dark:text-white  text-gray-15  bg-[#f8f8f8] dark:bg-[#292929]  items-center gap-12 relative p-6 md:p-12 rounded-xl object-cover"
         )}
-        style={{
-          backgroundImage: "url()",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
       >
         <div className="flex flex-col light-copy max-w-xl light-copy">
           <div className="text-primary-blue w-12 h-12">
@@ -40,9 +34,9 @@ const Subscribe = () => {
           <div className="font-copy text-sm font-medium print:text-[12px] print:text-justify copy-muted mt-3">
             <p className="my-6  first:mt-0 last:mb-0 print:my-2">
               Los estudios demuestran que aprendemos mejor haciendo. Sumérgete
-              en un tutorial mensual con el boletín Dev Newsletter que te
-              ayudará a decidir qué nuevas herramientas de desarrollo web merece
-              la pena aprender.
+              en un tutorial mensual con el boletín Newsletter que te ayudará a
+              decidir qué nuevas herramientas de desarrollo web merece la pena
+              aprender.
             </p>
           </div>
           <div className="mt-6 ">

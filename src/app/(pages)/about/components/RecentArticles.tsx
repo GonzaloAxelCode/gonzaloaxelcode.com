@@ -8,21 +8,21 @@ import CardArticle from "../../blog/components/CardArticle";
 const RecentArticles = () => {
   const { data: articles } = useSWR("/api/blog", fetcherCache);
   return (
-    <div className=" mt-8 2xl:mt-14 flex w-full overflow-hidden">
+    <div className=" mt-8 2xl:mt-14  w-screen overflow-hidden">
       <Splide
         hasTrack={false}
         options={{
-          drag: "free",
+          perPage: 1,
           gap: "0.5rem",
           arrows: false,
         }}
       >
-        <div className="w-full">
+        <div className="w-full ">
           <SplideTrack>
             {articles?.map((article: any, index: number) => (
               <SplideSlide
                 key={index}
-                className="max-w-[314px] py-4  dark:text-white text-gray-1F"
+                className=" sm:translate-x-0 max-w-[300px] mr-2 py-4  dark:text-white text-gray-1F"
               >
                 <CardArticle article={article} />
               </SplideSlide>

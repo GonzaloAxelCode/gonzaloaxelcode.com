@@ -66,7 +66,7 @@ const ArticlesByTopic = () => {
         <div className="">
           <div className="relative z-10 flex justify-between items-end">
             <div className="max-w-lg">
-              <h2 className="font-headings leading-title text-4xl  font-bold">
+              <h2 className="font-headings leading-title text-3xl md:text-4xl  font-bold">
                 Articulos por categoria
               </h2>
               <div className="font-copy text-base 2xl:text-md font-medium print:text-[12px] print:text-justify mt-6 copy-muted">
@@ -79,18 +79,19 @@ const ArticlesByTopic = () => {
           </div>
         </div>
         <div className="mt-12">
-          <div className="relative z-3">
+          <div className="relative z-3  w-screen ">
             <div className="absolute -bottom-0 z-28   h-[1px] border-t-2 dark:border-darkborder  border-gray-EE w-full grid bg-transparent"></div>
-            <div className="" role="tablist" aria-orientation="horizontal">
-              <Splide
-                hasTrack
-                options={{
-                  drag: "free",
-                  gap: "0.5rem",
-                  arrows: false,
-                }}
-              >
-                <SplideTrack className="">
+
+            <Splide
+              hasTrack={false}
+              options={{
+                perPage: 1,
+                gap: "0.5rem",
+                arrows: false,
+              }}
+            >
+              <div className="w-full ">
+                <SplideTrack>
                   {categorias &&
                     categorias?.map((el: any, index: number) => {
                       const colorCategory =
@@ -103,11 +104,11 @@ const ArticlesByTopic = () => {
                             setChangeTag("all-tags");
                           }}
                           key={index}
-                          className="max-w-[264px]"
+                          className="max-w-[200px]"
                         >
                           <button
                             className={cn(
-                              "relative z-10 px-6 py-4 pb-5 lg:px-12 lg:py-6 mr-4 border-1   focus:outline-none rounded-t-xl flex items-center gap-3 h-full",
+                              "w-[200px] relative z-10 px-6 py-4 pb-5 lg:px-12 lg:py-6  border-1   focus:outline-none rounded-t-xl flex items-center gap-3 h-full",
                               BoxBgOpacityClasses,
                               changeCategorySlug === suglifyTitle(el.name) &&
                                 "border-b-0"
@@ -140,8 +141,8 @@ const ArticlesByTopic = () => {
                       );
                     })}
                 </SplideTrack>
-              </Splide>
-            </div>
+              </div>
+            </Splide>
           </div>
 
           <div
@@ -192,12 +193,13 @@ const ArticlesByTopic = () => {
             <Splide
               hasTrack={false}
               options={{
-                drag: "free",
+                perPage: 1,
                 gap: "0.5rem",
+                arrows: false,
               }}
             >
-              <Flex full>
-                <Flex className="ml-auto space-x-2 splide__arrows">
+              <div className="flex w-full">
+                <div className="flex ml-auto space-x-2 splide__arrows">
                   <button className="splide__arrow splide__arrow--prev disabled:opacity-30 dark:text-white">
                     <svg
                       className="w-[18px] h-[18px]"
@@ -218,17 +220,18 @@ const ArticlesByTopic = () => {
                       <path d="M15.225 20.775 24 12l-8.775-8.775-1.498 1.407 6.421 6.267H0v2.202h20.148l-6.421 6.267 1.498 1.407Z"></path>
                     </svg>
                   </button>
-                </Flex>
-              </Flex>
-
-              <SplideTrack>
-                {filterArticles &&
-                  filterArticles?.map((article: any, index: number) => (
-                    <SplideSlide key={index} className="max-w-[274px] py-4">
-                      <CardArticle2 article={article} key={index} />
-                    </SplideSlide>
-                  ))}
-              </SplideTrack>
+                </div>
+              </div>
+              <div className="w-full">
+                <SplideTrack>
+                  {filterArticles &&
+                    filterArticles?.map((article: any, index: number) => (
+                      <SplideSlide key={index} className="max-w-[274px] py-4">
+                        <CardArticle2 article={article} key={index} />
+                      </SplideSlide>
+                    ))}
+                </SplideTrack>
+              </div>
             </Splide>
           </div>
         </div>

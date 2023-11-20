@@ -16,10 +16,10 @@ const CardArticle = ({ article }: any) => {
     fetcherCache
   );
   return (
-    <Flex col>
+    <div className="flex flex-col">
       <article
         className={cn(
-          "rounded-xl overflow-hidden border-1 relative w-full",
+          "rounded-xl  overflow-hidden border-1 relative w-full",
           BoxBgOpacityClasses
         )}
       >
@@ -75,7 +75,7 @@ const CardArticle = ({ article }: any) => {
           </Link>
         </div>
       </article>
-    </Flex>
+    </div>
   );
 };
 

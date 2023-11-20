@@ -13,17 +13,21 @@ const LastestContent = () => {
         <div className="container max-w-[768px] lg:max-w-[1280px]  mx-auto  px-8">
           <div className="md:flex md:items-center md:justify-between">
             <div className="max-w-[740px] pr-6">
-              <h2 className="font-headings leading-title scroll-mt-[120px] text-4xl font-bold mt-4 mb-3 first:mt-0 title-limiter">
+              <h2 className="font-headings leading-title scroll-mt-[120px] text-3xl md:text-4xl font-bold mt-4 mb-3 first:mt-0 title-limiter">
                 Los articulos mas vistos
               </h2>
+              <p>
+                Este es el listado de los articuloas mas vistos de mi blog.Con
+                todas las categorias.
+              </p>
             </div>
           </div>
         </div>
-        <div className=" mt-8 2xl:mt-14 flex w-full overflow-hidden">
+        <div className=" mt-8 2xl:mt-14 flex w-screen overflow-hidden">
           <Splide
             hasTrack={false}
             options={{
-              drag: "free",
+              perPage: 1,
               gap: "0.5rem",
               arrows: false,
             }}

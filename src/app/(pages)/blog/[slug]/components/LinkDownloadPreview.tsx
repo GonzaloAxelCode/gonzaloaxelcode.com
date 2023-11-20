@@ -9,22 +9,15 @@ export default function LinkDownloadPreview({ url, caption }: any) {
 
   return (
     <Link href={url} target="_blank" className="w-full">
-      <Flex
-        full
-        className="border-2 p-4 rounded-2xl border-gray-100 dark:border-darkborder space-x-3"
-      >
-        <Flex full col className="">
+      <div className="flex w-full border-2 p-4 rounded-2xl border-gray-100 dark:border-darkborder space-x-3">
+        <div className="flex w-full flex-col">
           <P className="text-md font-bold-500 whitespace-normal">
             {nombreArchivo} - {tipoArchivo}
           </P>
           <P className="text-xs whitespace-normal">{caption}</P>
           <P className="text-xs whitespace-normal">{nombreArchivo}</P>
-        </Flex>
-        <Flex
-          itemscenter
-          justifycenter
-          className="rounded-2xl  w-[60px] h-[60px] border-gray-100 dark:border-darkborder "
-        >
+        </div>
+        <div className="flex items-center justify-center rounded-2xl  w-[60px] h-[60px] border-gray-100 dark:border-darkborder ">
           <img
             src={
               "https://cdn1.iconfinder.com/data/icons/hawcons/32/698392-icon-129-cloud-download-512.png"
@@ -32,8 +25,8 @@ export default function LinkDownloadPreview({ url, caption }: any) {
             className=" object-contain   w-[60px] h-[60px]"
             alt=""
           />
-        </Flex>
-      </Flex>
+        </div>
+      </div>
     </Link>
   );
 }

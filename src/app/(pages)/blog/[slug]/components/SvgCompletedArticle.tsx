@@ -5,7 +5,7 @@ const SvgCompletedArticle = ({ active }: any) => {
 
   useEffect(() => {
     if (active) {
-      const animationDuration = 0.3; 
+      const animationDuration = 0.3;
       const targetValue = 1;
 
       const interval = setInterval(() => {
@@ -30,7 +30,7 @@ const SvgCompletedArticle = ({ active }: any) => {
           setStrokeDashValue(0);
           clearInterval(interval);
         }
-      }, (animationDuration * 1000) / 20); 
+      }, (animationDuration * 1000) / 20);
 
       return () => clearInterval(interval);
     }

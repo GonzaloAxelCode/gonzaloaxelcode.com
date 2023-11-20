@@ -1,4 +1,5 @@
-import Span from "@/shared/UIComponents/Base/Span";
+"use client";
+
 import siteMetadata from "@/shared/settings/sitemetdata";
 import Link from "next/link";
 

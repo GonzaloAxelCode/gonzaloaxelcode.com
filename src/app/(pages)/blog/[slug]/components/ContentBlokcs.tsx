@@ -122,36 +122,17 @@ const ContentBlock = ({ block }: any) => {
       );
 
     case "callout":
+      console.log(value);
+      const text = value?.rich_text
+        ?.map((el: any, index: number) => {
+          return `${el.text?.content} `;
+        })
+        .join("");
       return (
-        <div className="w-full my-12 first:mt-0 last:mb-0 p-4 md:p-6 rounded-2xl flex flex-col  bg-quaternary-blue dark:bg-gray-1F">
-          <div className="flex flex-col sm:flex-row gap-6 sm:items-center">
-            <svg
-              width={64}
-              height={64}
-              viewBox="0 0 64 64"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-12 h-12 text-primary-blue shrink-0"
-            >
-              <path
-                opacity="0.2"
-                d="M0 16C0 7.16344 7.16344 0 16 0H48C56.8366 0 64 7.16344 64 16V48C64 56.8366 56.8366 64 48 64H16C7.16344 64 0 56.8366 0 48V16Z"
-                fill="currentColor"
-              />
-              <path
-                d="M39.8394 18.788C40.2081 17.9317 39.9331 16.9318 39.1769 16.3818C38.4207 15.8318 37.3895 15.8818 36.6833 16.4943L20.6838 30.4938C20.0588 31.0438 19.8338 31.925 20.1276 32.7C20.4213 33.4749 21.1713 33.9999 22.0025 33.9999H28.971L24.1649 45.212C23.7962 46.0683 24.0712 47.0682 24.8274 47.6182C25.5836 48.1682 26.6149 48.1182 27.3211 47.5057L43.3205 33.5062C43.9455 32.9562 44.1705 32.075 43.8767 31.3C43.583 30.5251 42.8393 30.0063 42.0018 30.0063H35.0333L39.8394 18.788Z"
-                fill="currentColor"
-              />
-            </svg>
-            <h2 className="mb-3 text-black dark:text-white tracking-tight text-xl 2xl:text-4xl font-2xl">
-              Nota
-            </h2>
-          </div>
-
-          <div className=" sm:pl-[72px]  2xl:text-md  print:text-[12px] print:text-justify">
-            <P className="dark:text-white text-graydark my-4 first:mt-0 last:mb-0 print:my-2 text-md ">
-              XDDDD
-            </P>
+        <div className="w-full p-4 md:p-6 rounded-lg mt-5 mb-6 flex flex-col  bg-quaternary-blue dark:bg-gray-1F">
+          <div className="flex flex-col sm:flex-row gap-6 ">
+            <span className="text-2xl">{value?.emoji || "💡"}</span>
+            <p>{text}</p>
           </div>
         </div>
       );
@@ -181,20 +162,20 @@ const ContentBlock = ({ block }: any) => {
       return <></>;
     case "file":
       return (
-        <Flex full className="my-3">
+        <div className="my-3 flex w-full">
           <LinkDownloadPreview
             url={value.file.url}
             caption={
               value?.caption[0]?.plain_text || "File is download caption."
             }
           />
-        </Flex>
+        </div>
       );
     case "bookmark":
       return (
-        <Flex className="my-3">
+        <div className="flex my-3">
           <LinkPreview url={value.url} />
-        </Flex>
+        </div>
       );
     default:
       return <></>;

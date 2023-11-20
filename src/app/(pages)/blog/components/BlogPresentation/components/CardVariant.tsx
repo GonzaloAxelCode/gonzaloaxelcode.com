@@ -50,7 +50,7 @@ const CardVariant = ({ article, type }: { article: any; type: TYPE }) => {
               />
             </div>
           </div>
-          <div className="flex h-full gap-4 f p-4 flex-col">
+          <div className="flex h-full gap-2 f p-3 flex-col">
             <div className="flex justify-between items-center gap-4">
               <span className="flex tracking-tight items-center gap-1.5 relative h-6 font-bold text-sm-flat overflow-auto relative z-10 text-gray-15">
                 <Link
@@ -75,18 +75,18 @@ const CardVariant = ({ article, type }: { article: any; type: TYPE }) => {
                       fill="currentColor"
                     />
                   </svg>
-                  <span className="dark:text-white whitespace-nowrap overflow-ellipsis overflow-hidden">
+                  <span className="dark:text-white font-normal whitespace-nowrap text-sm overflow-ellipsis overflow-hidden">
                     {category}
                   </span>
                 </Link>
               </span>
             </div>
-            <div className="flex flex-col gap-4 flex-grow">
+            <div className="flex flex-col gap-2 flex-grow">
               <Link
                 className="after:absolute after:inset-0"
                 href={`/blog/${suglifyTitle(title)}`}
               >
-                <h2 className="font-headings tracking-tight scroll-mt-[120px] text-md-tight 2xl:text-lg font-medium">
+                <h2 className="font-headings tracking-tight scroll-mt-[120px] leading-title text-md-tight 2xl:text-lg font-medium">
                   {title}
                 </h2>
               </Link>
@@ -115,9 +115,9 @@ const CardVariant = ({ article, type }: { article: any; type: TYPE }) => {
                   className="after:absolute after:inset-0"
                   href={`/blog/${suglifyTitle(title)}`}
                 >
-                  <h2 className="font-headings tracking-tight scroll-mt-[120px] text-base-tight 2xl:md-tight font-medium max-w-md">
-                    Tailwind CSS vs. Bootstrap: Which is better?
-                  </h2>
+                  <p className="font-headings scroll-mt-[120px] dark:text-white text-lg 2xl:2xl-tight font-medium">
+                    {title}
+                  </p>
                 </Link>
               </div>
             </div>
@@ -162,7 +162,7 @@ const CardVariant = ({ article, type }: { article: any; type: TYPE }) => {
                       fill="currentColor"
                     />
                   </svg>
-                  <span className="dark:text-white whitespace-nowrap overflow-ellipsis overflow-hidden">
+                  <span className="dark:text-white whitespace-nowrap font-normal text-sm overflow-ellipsis overflow-hidden">
                     {category}
                   </span>
                 </Link>
@@ -180,9 +180,9 @@ const CardVariant = ({ article, type }: { article: any; type: TYPE }) => {
             </div>
             <footer className="flex items-center">
               <div className="relative z-10">
-                <div className="flex items-center gap-2 text-sm-flat">
+                <div className="flex items-center gap-2 text-xs">
                   <Link
-                    className="flex items-center gap-2 text-sm-flat focus:outline-none focus:ring-2 ring-offset-4 rounded-2xl ring-offset-white ring-gray-EE"
+                    className="flex items-center gap-2  focus:outline-none focus:ring-2 ring-offset-4 rounded-2xl ring-offset-white ring-gray-EE"
                     href={`/blog/${suglifyTitle(title)}`}
                   >
                     <img
@@ -192,7 +192,7 @@ const CardVariant = ({ article, type }: { article: any; type: TYPE }) => {
                       height={64}
                       decoding="async"
                       data-nimg={1}
-                      className="rounded-full w-6 h-6"
+                      className="rounded-full w-6 h-6 filter dark:invert object-contain"
                       style={{ color: "transparent" }}
                       src={siteMetadata.avatarImage}
                     />
@@ -203,13 +203,13 @@ const CardVariant = ({ article, type }: { article: any; type: TYPE }) => {
                   </Link>
                 </div>
               </div>
-              <div className="flex items-center justify-end grow text-sm-flat font-bold gap-3">
+              <div className="flex items-center justify-end grow text-xs gap-3">
                 <div className="flex items-center">
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="inline-block w-6 h-6 mr-1"
+                    className="inline-block w-4 h-4 mr-1"
                   >
                     <path
                       d="M2.958 12.251c-.001 0 .001-.006.007-.02a.125.125 0 0 1-.007.02ZM3.096 12c.12-.19.301-.446.542-.75A18.495 18.495 0 0 1 5.775 9C7.598 7.374 9.86 6 12 6c2.15 0 4.417 1.332 6.231 2.924.888.779 1.622 1.58 2.127 2.228a7.39 7.39 0 0 1 .583.848 7.39 7.39 0 0 1-.583.848 16.89 16.89 0 0 1-2.127 2.228C16.417 16.668 14.151 18 12 18c-2.14 0-4.402-1.374-6.225-3a18.5 18.5 0 0 1-2.137-2.25 8.932 8.932 0 0 1-.542-.75Zm17.927.173-.003-.012a.087.087 0 0 1 .003.012Zm-.003-.334a.096.096 0 0 1 0 0Zm-18.055-.07a.105.105 0 0 1-.007-.02l.007.02Z"

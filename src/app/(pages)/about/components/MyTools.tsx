@@ -60,6 +60,7 @@ const Tool = ({ url, name }: any) => {
       style={{
         width: "100px",
         height: "100px",
+        margin: "5px",
       }}
     >
       <img alt={name} aria-hidden src={url} className="background" />
@@ -78,8 +79,6 @@ const MyTools = () => {
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "center",
-        columnGap: "25px",
-        rowGap: "25px",
       }}
     >
       {toolsArray.map(([tech, url]) => (

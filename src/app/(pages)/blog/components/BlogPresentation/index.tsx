@@ -16,6 +16,7 @@ import { TypeAnimation } from "react-type-animation";
 import useSWR from "swr";
 import { cn } from "tailwind-cn";
 import CardVariant from "./components/CardVariant";
+import CardArticle2 from "../CardArticle2";
 
 const BlogGridPresentation = () => {
   const { data: articles } = useSWR("/api/blog", fetcherCache);
@@ -98,7 +99,7 @@ const BlogGridPresentation = () => {
               sortArticlesByRecents
                 .slice(1, 4)
                 .map((el: any, index: number) => {
-                  return <CardVariant article={el} key={index} type="normal" />;
+                  return <CardArticle2 key={index} article={el} />;
                 })}
           </div>
           <div className="col-span-1 lg:col-span-3 grid grid-cols-1 md:grid-cols-9 lg:grid-cols-3 gap-6 order-1 xl:order-2 xl:row-span-1">
@@ -108,10 +109,6 @@ const BlogGridPresentation = () => {
                   "overflow-hidden flex w-full grow h-full relative border-1 rounded-xl flex-col    text-gray-15 dark:text-white",
                   BoxBgOpacityClasses
                 )}
-                style={{
-                  backgroundImage: "url()",
-                  backgroundSize: "contain",
-                }}
               >
                 <div className="">
                   <div className="aspect-[258/145] overflow-hidden relative">
@@ -179,9 +176,9 @@ const BlogGridPresentation = () => {
                   <footer className="flex items-center">
                     <div className="relative z-10">
                       <div className="flex items-center gap-2 text-sm-flat">
-                        <a
+                        <Link
                           className="flex items-center gap-2 text-sm-flat focus:outline-none focus:ring-2 ring-offset-4 rounded-2xl ring-offset-white ring-gray-EE"
-                          href="/blog/authors/emmanuel-uchenna"
+                          href="/"
                         >
                           <img
                             loading="lazy"
@@ -189,7 +186,7 @@ const BlogGridPresentation = () => {
                             height={64}
                             decoding="async"
                             data-nimg={1}
-                            className="rounded-full w-8 h-8"
+                            className="rounded-full w-8 h-8 filter dark:invert object-contain"
                             style={{ color: "transparent" }}
                             src={siteMetadata.avatarImage}
                           />
@@ -197,7 +194,7 @@ const BlogGridPresentation = () => {
                             Por {/* */}
                             {siteMetadata.author}
                           </span>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     <div className="flex items-center justify-end grow text-sm-flat font-bold gap-3">

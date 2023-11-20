@@ -14,9 +14,9 @@ const ContentArticle = ({ content, id, similarArticles }: any) => {
         {content &&
           content?.map((block: any, index: number) => {
             return (
-              <Flex key={index}>
+              <div className="flex" key={index}>
                 <ContentBlock block={block} />
-              </Flex>
+              </div>
             );
           })}
       </div>
@@ -75,8 +75,8 @@ const ContentArticle = ({ content, id, similarArticles }: any) => {
                 className="overflow-hidden flex w-full grow h-full relative border-2 rounded-xl flex-col bg-white dark:bg-gray-1F border-gray-EE dark:border-gray-1F dark:text-white text-gray-15"
               >
                 <div className="hidden sm:block">
-                  <div className="aspect-[258/145] bg-quaternary-purple">
-                    <img src={cover} alt="" />
+                  <div className=" bg-quaternary-purple">
+                    <img src={cover} alt="h-full" />
                   </div>
                 </div>
                 <div className="flex h-full gap-4 f p-4 flex-col">

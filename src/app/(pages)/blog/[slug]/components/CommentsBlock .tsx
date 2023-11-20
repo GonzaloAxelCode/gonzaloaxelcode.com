@@ -40,8 +40,6 @@ const CommentsBlock = ({ idArticle }: any) => {
     openRes: false,
     idRes: "",
   });
-  let { id } = openReply;
-  let { idRes } = openReplyRes;
 
   useEffect(() => {
     loadCommentsByArticle();
@@ -132,7 +130,7 @@ const CommentsBlock = ({ idArticle }: any) => {
         id="commentsSection"
         className="font-headings text-blackbg dark:text-white tracking-tight  text-2xl-tight lg:text-3xl-tight 2xl:text-4xl font-medium mt-12 scroll-mt-[120px]"
       >
-        {allComments ? allComments.length || 0 : 0} comnetarios
+        {allComments ? allComments.length || 0 : 0} comentarios
       </h2>
       <form
         className="flex gap-4 flex-col mt-6 relative"
@@ -141,11 +139,8 @@ const CommentsBlock = ({ idArticle }: any) => {
         <div className="flex flex-col gap-4 items-start">
           <div className="w-full">
             <textarea
-              id="commentBox"
-              placeholder="Your comment"
-              style={{ paddingTop: 12 }}
+              placeholder="Deja tu comentario si te ha sido interesante."
               className="rounded-lg text-blackbg dark:text-white border-2 px-4 py-2 leading-7 focus:outline-none focus:ring-4 focus:ring-tertiary-purple w-full block h-36 bg-white dark:bg-gray-1F border-gray-15"
-              defaultValue={""}
               onChange={(e: any) =>
                 setNewComment({
                   ...newComment,
@@ -153,10 +148,9 @@ const CommentsBlock = ({ idArticle }: any) => {
                 })
               }
               name="comment"
-              maxLength={65525}
               required
               value={commentString}
-            />
+            ></textarea>
           </div>
 
           <div className="flex w-full">
@@ -193,7 +187,7 @@ const CommentsBlock = ({ idArticle }: any) => {
             return (
               <div
                 key={index}
-                className="border-gray-EE rounded-xl p-7  border-b scroll-mt-[120px] dark-copy bg-gray-F7"
+                className="rounded-xl p-7  dark:text-white text-gray-1F border-b scroll-mt-[120px] dark-copybg-white border-gray-EE text-gray-15 dark:bg-gray-1F dark:border-gray-1F"
               >
                 <div className="flex items-center gap-2">
                   <Image

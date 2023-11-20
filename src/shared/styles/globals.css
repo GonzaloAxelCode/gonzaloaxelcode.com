@@ -534,8 +534,8 @@ pre {
 .video-container iframe {
   display: grid;
   width: 100%;
-  height: 400px;
-  min-height: 400px;
+  height: 399px;
+  min-height: 399px;
   background-size: cover;
 }
 
@@ -610,7 +610,7 @@ iframe body .haAclf {
   }
 
   100% {
-    transform: translateY(-400px) translateX(300px) rotate(1turn);
+    transform: translateY(-399px) translateX(299px) rotate(1turn);
   }
 }
 
@@ -637,23 +637,9 @@ iframe body .haAclf {
 
 /* All tools */
 .all-tools {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-
-  grid-gap: 1em;
-  place-items: center;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-
-  @media (max-width: 560px) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  @media (max-width: 400px) {
-    grid-template-columns: 1fr 1fr;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .all-tools .avatar {
@@ -673,12 +659,9 @@ iframe body .haAclf {
 
 .all-tools .avatar img,
 .all-tools .avatar-small img {
-  height: 70%;
-  width: 70%;
+  height: 50%;
+  width: 50%;
   z-index: 2;
-
-  /* Optionally add a drop shadow to the main image	 */
-  /* to make it feel "lifted"	 */
   filter: drop-shadow(0 1px 4px rgba(116, 116, 116, 0.12));
 }
 
@@ -732,3 +715,56 @@ iframe body .haAclf {
          border:3px solid white;
          border-radius: 50%;
        }
+
+       /*border google */
+
+
+ .border-google{
+  position: relative;
+  width: 61vw;
+  height: 31vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  z-index: 0;
+  overflow: hidden;
+}
+.border-google .image {
+  position: absolute;
+  width: 60vw;
+  height: 30vw;
+  z-index: -2;
+  border-radius: 27px;
+}
+
+.border-google::before,
+.border-google::after {
+  content: "";
+  position: absolute;
+  z-index: -2;
+}
+
+.border-google::before {
+  border: 90vw solid;
+  border-top-color: #db4437;
+  border-bottom-color: #0f9d58;
+  border-left-color: #4285f4;
+  border-right-color: #f4b400;
+  z-index: -2;
+  animation: rotate 6s linear infinite;
+}
+
+.border-google::after {
+  z-index: -1;
+  width: calc(90vw) - 10px;
+  height: calc(90vw) - 10px;
+border-radius: 25px;  
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -25,14 +25,9 @@ const PresentationArticle = ({ article }: any) => {
   console.log(article);
   const viewCount = usePostViews(suglifyTitle(title));
   return (
-    <Flex
-      full
-      itemscenter
-      justifycenter
-      className="flex-col lg:flex-row my-8 max-w-[768px] lg:max-w-[1280px] mx-auto px-8"
-    >
-      <Flex col full className="space-y-3">
-        <Flex full itemscenter className="gap-2 flex-wrap">
+    <div className="flex w-full items-center justify-center flex-col lg:flex-row my-8 max-w-[768px] lg:max-w-[1280px] mx-auto px-8">
+      <div className="flex w-full flex-col space-y-3">
+        <div className="flex w-full items-center gap-2 flex-wrap">
           <P>
             <svg
               width={64}
@@ -60,11 +55,11 @@ const PresentationArticle = ({ article }: any) => {
           <P className="text-sm sm:text-md">{formatDate(createdAt)}</P>
           <P>&middot;</P>
           <P className="text-sm sm:text-md">{minRead} min read</P>
-        </Flex>
+        </div>
         <Title className="text-3xl  lg:text-5xl max-w-lg lg:max-w-none">
           {title}
         </Title>
-        <Flex full itemscenter className="space-x-3">
+        <div className="w-full flex items-center gap-3 flex-wrap">
           <Image
             className="rounded-full  filter dark:invert object-contain"
             src={siteMetadata.avatarImage}
@@ -73,7 +68,7 @@ const PresentationArticle = ({ article }: any) => {
             alt={siteMetadata.author}
           />
           <P className="m-0 text-xs sm:text-sm">Por {siteMetadata.author}</P>
-          <Flex itemscenter>
+          <div className="flex items-center">
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -97,16 +92,16 @@ const PresentationArticle = ({ article }: any) => {
               {" "}
               | {viewCount} views |{" "}
               <img
-                className="h-8 w-8 object-contain"
+                className="h-8 w-8 object-contain filter dark:invert"
                 src="https://res.cloudinary.com/ddksrkond/image/upload/v1699381028/ChatGPT-Logo_xghvfd.png"
                 alt=""
               />{" "}
               Generado y revisado{" "}
             </P>
-          </Flex>
-        </Flex>
-      </Flex>
-      <Flex full col className="my-4">
+          </div>
+        </div>
+      </div>
+      <div className="flex w-full flex-col my-4">
         <picture>
           <Image
             width={1280}
@@ -119,8 +114,8 @@ const PresentationArticle = ({ article }: any) => {
         <P className="text-sm italic font-light my-2">
           Article updated on {formatDate(updatedLast)}
         </P>
-      </Flex>
-    </Flex>
+      </div>
+    </div>
   );
 };
 

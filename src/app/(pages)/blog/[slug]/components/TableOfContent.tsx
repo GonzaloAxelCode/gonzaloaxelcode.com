@@ -54,7 +54,7 @@ const TableOfContent = ({ content, id, slug }: any) => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Llama a handleScroll inicialmente para establecer el título
+    handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -64,7 +64,7 @@ const TableOfContent = ({ content, id, slug }: any) => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // Agrega un desplazamiento suave para una transición más agradable.
+      behavior: "smooth",
     });
   };
 
@@ -254,7 +254,7 @@ const TableOfContent = ({ content, id, slug }: any) => {
             </div>
           </nav>
         </div>
-        <Flex className="gap-3 my-1 ">
+        <div className="flex gap-3 my-1 ">
           <button onClick={() => handleToggleLike("like")}>
             <div
               className="w-16 py-3 h-20 relative rounded-lg shrink-0 bg-gray-F7 dark:bg-gray-1F font-headings flex flex-col items-center justify-center overflow-hidden"
@@ -302,7 +302,7 @@ const TableOfContent = ({ content, id, slug }: any) => {
             </div>
           </button>
 
-          <button onClick={() => handleToggleLike("confetti")}>
+          <button onClick={() => handleToggleLike("confetti")} className="">
             <div
               className="w-16 py-3 h-20 relative rounded-lg shrink-0 bg-gray-F7 dark:bg-gray-1F font-headings flex flex-col items-center justify-center overflow-hidden"
               style={{
@@ -313,11 +313,20 @@ const TableOfContent = ({ content, id, slug }: any) => {
                   : "black",
               }}
             >
+              {/*
               <span className="text-2xl">🎉</span>
-              <P className="text-sm relative z-10"> {ratings.confetti}</P>
+               */}
+              <span className="text-2xl">
+                <img
+                  src="https://res.cloudinary.com/ddksrkond/image/upload/v1700430086/dancing-duck-acegifcom-37_lji80g.gif"
+                  className="w-[40px] h-[40px] object-contain"
+                  alt=""
+                />
+              </span>
+              <P className="text-sm relative z-10">{ratings.confetti}</P>
             </div>
           </button>
-        </Flex>
+        </div>
       </div>
     </div>
   );

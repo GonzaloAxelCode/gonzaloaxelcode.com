@@ -28,17 +28,8 @@ const defaultMetadata: Metadata = {
     locale: "es_PE",
     type: "website",
   },
-  icons: {
-    icon: "/icon.png",
-    shortcut: "/shortcut-icon.png",
-    apple: "/apple-icon.png",
-    other: {
-      rel: "apple-touch-icon-precomposed",
-      url: "/apple-touch-icon-precomposed.png",
-    },
-  },
+
   themeColor: "black",
-  manifest: "/manifest.json",
 
   twitter: {
     card: "app",
