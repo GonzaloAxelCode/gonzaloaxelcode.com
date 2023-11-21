@@ -4,12 +4,8 @@ import { UIContext } from "../contexts/UIContext";
 
 const useTheme = () => {
   const themeGlobal = useContext(UIContext);
-  const { toggleDarkMode, darkSide } = themeGlobal;
 
-  return {
-    toggleDarkMode,
-    darkSide,
-  };
+  return themeGlobal;
 };
 
 export default useTheme;
