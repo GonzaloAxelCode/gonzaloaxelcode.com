@@ -2,7 +2,7 @@ const useExtractInfoTutorial = (tutorial: any, content: any = []) => {
   let tags = tutorial?.properties.Tags?.multi_select;
   let cover = tutorial?.cover?.external?.url;
   const title = tutorial?.properties.Name.title[0].plain_text;
-  const description = tutorial?.properties.Summary.rich_text[0].plain_text;
+  const description = tutorial?.properties?.Summary?.rich_text[0].plain_text;
   const topic = tutorial?.properties.Asignatura.select?.name;
   const createdAt = tutorial?.properties?.Created?.created_time;
   const level = tutorial?.properties?.Nivel?.select?.name;
@@ -13,7 +13,7 @@ const useExtractInfoTutorial = (tutorial: any, content: any = []) => {
 
   const contenido = content.reduce((acc: any, item: any) => {
     if (item.heading_2) {
-      const text = item.heading_2.rich_text[0].text.content;
+      const text = item.heading_2?.rich_text[0].text.content;
       acc.push({
         name: text,
         link: "#",

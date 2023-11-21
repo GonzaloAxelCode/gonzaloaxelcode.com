@@ -1,4 +1,8 @@
-import { iconsMetadata } from "@/shared/settings/default-metadata";
+import {
+  iconsMetadata,
+  robotsDefault,
+  othersMetadata,
+} from "@/shared/settings/default-metadata";
 import type { Metadata } from "next";
 import LogosBg from "@/shared/components/LogosBg";
 import Link from "next/link";
@@ -14,18 +18,47 @@ export const metadata: Metadata = {
     title: "Gonzalo Axel Web Junior Developer",
     description: "Pagina de inicio de portfolio personal.",
     siteName: "Gonzalo's Portfolio",
+    type: "website",
     url: "https://gonzaloaxelcode.vercel.app",
     images: [
       {
         url: "https://res.cloudinary.com/ddksrkond/image/upload/v1700444221/Presentacion_Propuesta_de_Proyecto_de_Startup_Empresarial_Profesional_negro_y_celeste_wtlsfn.png",
-        width: 1366,
-        height: 768,
+        width: 800,
+        height: 600,
+      },
+      {
+        url: "https://res.cloudinary.com/ddksrkond/image/upload/v1700444221/Presentacion_Propuesta_de_Proyecto_de_Startup_Empresarial_Profesional_negro_y_celeste_wtlsfn.png",
+        width: 1800,
+        height: 1600,
+        alt: "Gonzalo Portfolio",
       },
     ],
     locale: "es_PE",
-    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gonzalo Axel Web Junior Developer",
+    description: "Pagina de inicio de portfolio personal.",
+    siteId: "1467726470533754880",
+    creator: "@GonzaloAxel",
+    creatorId: "1467726470533754880",
+    images: [
+      {
+        url: "https://res.cloudinary.com/ddksrkond/image/upload/v1700444221/Presentacion_Propuesta_de_Proyecto_de_Startup_Empresarial_Profesional_negro_y_celeste_wtlsfn.png",
+        width: 800,
+        height: 600,
+      },
+      {
+        url: "https://res.cloudinary.com/ddksrkond/image/upload/v1700444221/Presentacion_Propuesta_de_Proyecto_de_Startup_Empresarial_Profesional_negro_y_celeste_wtlsfn.png",
+        width: 1800,
+        height: 1600,
+        alt: "Gonzalo Portfolio",
+      },
+    ],
   },
   ...iconsMetadata,
+  ...robotsDefault,
+  ...othersMetadata,
 };
 
 const PageAboutHome = () => {

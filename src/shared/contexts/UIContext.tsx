@@ -11,9 +11,9 @@ export const UIProvider = ({ children }: any) => {
     colorTheme === "light" ? true : false
   );
 
-  const toggleDarkMode = (checked: any) => {
+  const toggleDarkMode = () => {
     setToggleTheme();
-    setDarkSide(checked);
+    setDarkSide(!darkSide);
   };
 
   const state: any = {

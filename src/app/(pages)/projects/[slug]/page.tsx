@@ -5,6 +5,8 @@ import extractContentProyect from "@/shared/hooks/extractContentProyect";
 import { getAllArticles } from "@/shared/services/notion-services";
 import defaultMetadata, {
   iconsMetadata,
+  robotsDefault,
+  othersMetadata,
 } from "@/shared/settings/default-metadata";
 import suglifyTitle from "@/shared/utils/suglify-title";
 import { Metadata } from "next";
@@ -16,26 +18,62 @@ import CarrouselPage from "./components/CarrouselPage";
 import Funcionalities from "./components/Funcionalities";
 import CarrouselMovil from "./components/CarrouselMovil";
 import TecnologiesProyect from "../components/TecnologiesProyect";
+import extractInfoArticle from "@/shared/hooks/extract-info-article";
 export const dynamicParams = false;
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
   const { article } = await getFullProjectBySlug(params.slug);
-  let title = article.properties.Name.title[0]?.plain_text;
-  let description = article.properties.Description?.rich_text[0]?.plain_text;
 
-  const ogImage = `${process.env.NEXTAUTH_URL}/api/og?title${title}`;
+  const { title, description, cover } = extractInfoArticle(article);
+
   return {
-    ...defaultMetadata,
     title,
     description,
     openGraph: {
+      title,
+      description,
+      siteName: "Gonzalo's Projects",
+      type: "article",
+      url: `https://gonzaloaxelcode.vercel.app/projects/${suglifyTitle(title)}`,
       images: [
         {
-          url: ogImage,
+          url: cover,
+          width: 800,
+          height: 600,
+        },
+        {
+          url: cover,
+          width: 1800,
+          height: 1600,
+          alt: title,
+        },
+      ],
+      locale: "es_PE",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      siteId: "1467726470533754889",
+      creator: "@GonzaloAxel",
+      creatorId: "1467726470533754880",
+      images: [
+        {
+          url: cover,
+          width: 800,
+          height: 600,
+        },
+        {
+          url: cover,
+          width: 1800,
+          height: 1600,
+          alt: "Gonzalo Projects",
         },
       ],
     },
     ...iconsMetadata,
+    ...robotsDefault,
+    ...othersMetadata,
   };
 }
 

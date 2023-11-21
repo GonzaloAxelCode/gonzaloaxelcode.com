@@ -3,47 +3,70 @@ import { getFullArticleBySlug } from "@/shared/hooks/functions-notion";
 import { getAllArticles } from "@/shared/services/notion-services";
 import defaultMetadata, {
   iconsMetadata,
+  robotsDefault,
+  othersMetadata,
 } from "@/shared/settings/default-metadata";
 import suglifyTitle from "@/shared/utils/suglify-title";
 import { Metadata } from "next";
 import BodyArticle from "./components/BodyArticle";
 import PresentationArticle from "./components/PresentationArticle";
-import PresentationArticle2 from "./components/PresentationArticle2";
-import { format } from "path";
-import formatDate from "@/shared/utils/format-date";
 export const dynamicParams = false;
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
   const { article } = await getFullArticleBySlug(params.slug);
   const { title, description, cover } = extractInfoArticle(article);
-  /*
-  const ogImage = `${
-    process.env.NEXTAUTH_URL
-  }/api/og?title=${title}&cover=${cover}&category=${category}&createdat=${formatDate(
-    createdAt
-  )}&categorycolor=${categoryColor}`;
-  console.log(ogImage);
-*/
+
   return {
     title,
     description,
     openGraph: {
+      title,
+      description,
+      siteName: "Gonzalo's Blog",
+      type: "website",
+      url: "https://gonzaloaxelcode.vercel.app",
       images: [
         {
           url: cover,
+          width: 800,
+          height: 600,
+        },
+        {
+          url: cover,
+
+          width: 1800,
+          height: 1600,
+          alt: "Gonzalo Blog",
+        },
+      ],
+      locale: "es_PE",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      siteId: "1467726470533754880",
+      creator: "@GonzaloAxel",
+      creatorId: "1467726470533754880",
+      images: [
+        {
+          url: cover,
+
+          width: 800,
+          height: 600,
+        },
+        {
+          url: cover,
+
+          width: 1800,
+          height: 1600,
+          alt: "Gonzalo Blog",
         },
       ],
     },
-    twitter: {
-      card: "player",
-      title: title,
-      description,
-      siteId: "1467726470533754880",
-      creator: "Gonzalo Axel",
-      creatorId: "1467726470533754880",
-      images: [cover],
-    },
     ...iconsMetadata,
+    ...robotsDefault,
+    ...othersMetadata,
   };
 }
 

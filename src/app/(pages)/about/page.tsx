@@ -1,18 +1,65 @@
-import defaultMetadata, {
+import {
   iconsMetadata,
+  robotsDefault,
+  othersMetadata,
 } from "@/shared/settings/default-metadata";
 import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "About - Gonzalo Axel",
-  ...iconsMetadata,
-};
+import LogosBg from "@/shared/components/LogosBg";
+import Link from "next/link";
 import TextChange from "./components/TextChange";
 import siteMetadata from "@/shared/settings/sitemetdata";
-import LogosBg from "@/shared/components/LogosBg";
 import RecentArticles from "./components/RecentArticles";
 import MyTools from "./components/MyTools";
-import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Gonzalo Axel Web Junior Developer",
+  description: siteMetadata.description,
+  openGraph: {
+    title: "Gonzalo Axel Web Junior Developer",
+    description: "Pagina de inicio de portfolio personal.",
+    siteName: "Gonzalo's Portfolio",
+    type: "website",
+    url: "https://gonzaloaxelcode.vercel.app",
+    images: [
+      {
+        url: "https://res.cloudinary.com/ddksrkond/image/upload/v1700444221/Presentacion_Propuesta_de_Proyecto_de_Startup_Empresarial_Profesional_negro_y_celeste_wtlsfn.png",
+        width: 800,
+        height: 600,
+      },
+      {
+        url: "https://res.cloudinary.com/ddksrkond/image/upload/v1700444221/Presentacion_Propuesta_de_Proyecto_de_Startup_Empresarial_Profesional_negro_y_celeste_wtlsfn.png",
+        width: 1800,
+        height: 1600,
+        alt: "Gonzalo Portfolio",
+      },
+    ],
+    locale: "es_PE",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gonzalo Axel Web Junior Developer",
+    description: "Pagina de inicio de portfolio personal.",
+    siteId: "1467726470533754880",
+    creator: "@GonzaloAxel",
+    creatorId: "1467726470533754880",
+    images: [
+      {
+        url: "https://res.cloudinary.com/ddksrkond/image/upload/v1700444221/Presentacion_Propuesta_de_Proyecto_de_Startup_Empresarial_Profesional_negro_y_celeste_wtlsfn.png",
+        width: 800,
+        height: 600,
+      },
+      {
+        url: "https://res.cloudinary.com/ddksrkond/image/upload/v1700444221/Presentacion_Propuesta_de_Proyecto_de_Startup_Empresarial_Profesional_negro_y_celeste_wtlsfn.png",
+        width: 1800,
+        height: 1600,
+        alt: "Gonzalo Portfolio",
+      },
+    ],
+  },
+  ...iconsMetadata,
+  ...robotsDefault,
+  ...othersMetadata,
+};
 
 const PageAbout = () => {
   return (
@@ -23,7 +70,7 @@ const PageAbout = () => {
             <div className="relative w-full md:w-1/2 lg:w-3/4">
               <h1 className="mb-5 leading-title text-center md:text-left mt-5 md:mt-0 w-full text-3xl sm:text-4xl font-bold md:text-5xl lg:text-5xl dark:text-white">
                 Hola 👋, soy{" "}
-                <span className="relative ">
+                <span className="relative s ">
                   <svg
                     className="absolute -top-6 left-0 h-8 transform -rotate-12"
                     viewBox="0 0 244 243"
@@ -38,7 +85,7 @@ const PageAbout = () => {
                   Gonzalo Axel
                 </span>{" "}
                 desarrollador de software <br />
-                <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent   from-[#3a3a3a]  to-[#d3d3d3] dark:to-[#ffffff]">
+                <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent from-[#3a3a3a]  to-[#d3d3d3] dark:to-[#ffffff]">
                   <TextChange />
                   <span
                     className="absolute top-13 right-0"
@@ -50,7 +97,6 @@ const PageAbout = () => {
                         width: 26,
                         height: 26,
                         display: "block",
-
                         flexShrink: 0,
                       }}
                       className="fill-black dark:fill-white "
@@ -81,7 +127,7 @@ const PageAbout = () => {
                 <Link
                   href="/CURRICULUM2.pdf"
                   target="_blank"
-                  className="inline-flex w-auto px-4 py-2 mt-5 text-sm sm:text-md  duration-300 ease-out  rounded-full   dark:text-neutral-900  border-neutral-700 dark:border-neutral-300 bg-white dark:bg-black dark>text-white dark:text-white text-neutral-900 "
+                  className="inline-flex w-auto px-4 py-2 mt-5 text-sm sm:text-md font-bold duration-300 ease-out border rounded-full   dark:text-neutral-900  border-neutral-700 dark:border-neutral-300 bg-white dark:bg-black dark>text-white dark:text-white text-neutral-900"
                 >
                   Descarga mi CV
                 </Link>
@@ -89,7 +135,7 @@ const PageAbout = () => {
             </div>
 
             <div className="py-5 p-1  mx-auto lg:m-auto lg:mt-0 lg:ml-0">
-              <div className="d-flex justify-content-center">
+              <div className="d-flex justify-content-center ">
                 <div className="image_outer_container">
                   <div className="green_icon"></div>
                   <div className="image_inner_container">
@@ -252,7 +298,7 @@ const PageAbout = () => {
               className="w-full text-base font-normal leading-relaxed text-body-color"
               style={{ maxWidth: 600 }}
             >
-              Te presento mi corta experiencia profesional en desarollo.
+              Te presento mi corta experiencia profesional en desarrollo.
             </p>
           </div>
           <div className="pb-10 ml-6 border-l border-gray-200 dark:border-neutral-700">
@@ -260,11 +306,11 @@ const PageAbout = () => {
               <div className="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700">
                 <img
                   src="https://res.cloudinary.com/ddksrkond/image/upload/v1686753544/samu/logosamuhd_a8atbw.png"
-                  alt="DevDojo"
+                  alt=""
                   className="w-8 h-8"
                 />
               </div>
-              <p className="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest">
+              <p className="text-xs uppercase dark:text-neutral-100 text-neutral-500 trackign-widest">
                 Abril 2023 · Julio 2023
               </p>
               <h3 className="my-1 text-lg font-bold dark:text-neutral-100">
@@ -331,7 +377,7 @@ const PageAbout = () => {
           <div className="ml-6 flex flex-col">
             <div className="pb-10  border-l border-gray-200 dark:border-neutral-700">
               <div className="relative flex flex-col justify-start pl-12">
-                <div className="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700">
+                <div className="absolute top-0 left-0  flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700">
                   <img
                     src="https://res.cloudinary.com/ddksrkond/image/upload/v1699125504/Meta-Symbol_doxi6x.png"
                     alt="DevDojo"
@@ -376,7 +422,7 @@ const PageAbout = () => {
 
             <div className="pb-10 border-l border-gray-200 dark:border-neutral-700">
               <div className="relative flex flex-col justify-start pl-12">
-                <div className="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700">
+                <div className="absolute top-0 left-0  flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700">
                   <img
                     src="https://res.cloudinary.com/ddksrkond/image/upload/v1699125504/Meta-Symbol_doxi6x.png"
                     alt="DevDojo"
@@ -420,7 +466,7 @@ const PageAbout = () => {
             </div>
             <div className="pb-10 border-l border-gray-200 dark:border-neutral-700">
               <div className="relative flex flex-col justify-start pl-12">
-                <div className="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700">
+                <div className="absolute top-0 left-0  flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700">
                   <img
                     src="https://res.cloudinary.com/ddksrkond/image/upload/v1699125504/Meta-Symbol_doxi6x.png"
                     alt="DevDojo"
@@ -465,7 +511,7 @@ const PageAbout = () => {
         </div>
       </section>
 
-      <section className="container mx-auto flex flex-col items-center max-w-[950px]">
+      <section className=" mx-auto flex flex-col items-center ">
         <h2
           className="font-bold text-center  text-3xl     sm:text-4xl sm:leading-tight md:text-[40px]                 leading-title aos-init aos-animate"
           data-aos="fade-up"
@@ -507,30 +553,8 @@ const PageAbout = () => {
           Descubre mi blog personal, aqui es donde escribo sobre algunas
           novedades, curiosidades y sobre tecnologia.Puedes hecharle un vistazo.
         </p>
+
         <RecentArticles />
-        <div className="mt-5 mb-9 md:hidden flex gap-1">
-          <a
-            aria-label="A Complete Guide to Task Scheduling in Laravel"
-            className="py-2 block"
-            href="#laravel-task-scheduling"
-          >
-            <div className="rounded transition bg-[#E0E4EB] target:bg-[#363D4E] w-[39px] h-[2px]" />
-          </a>
-          <a
-            aria-label="6 Factors to Consider When Choosing a Logging Framework"
-            className="py-2 block"
-            href="#logging-framework"
-          >
-            <div className="rounded transition bg-[#E0E4EB] target:bg-[#363D4E] w-[39px] h-[2px]" />
-          </a>
-          <a
-            aria-label="Terraform provider for Better Stack"
-            className="py-2 block"
-            href="#terraform-provider-better-uptime"
-          >
-            <div className="rounded transition bg-[#E0E4EB] target:bg-[#363D4E] w-[39px] h-[2px]" />
-          </a>
-        </div>
       </section>
       <section className="relative z-20 overflow-hidden my-10">
         <div className="mt-4">

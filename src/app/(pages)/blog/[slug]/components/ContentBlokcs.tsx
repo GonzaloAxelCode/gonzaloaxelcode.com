@@ -23,7 +23,7 @@ const ContentBlock = ({ block }: any) => {
     case "paragraph":
       return (
         <P className="text-md my-3">
-          <Text texts={value.rich_text} />
+          <Text texts={value?.rich_text} />
         </P>
       );
     case "heading_1":
@@ -37,7 +37,7 @@ const ContentBlock = ({ block }: any) => {
           id={suglifyTitle(textReferenceH1)}
           className="wrap-balance  tracking-tight text-3xl lg:text-4xl font-bold mb-2 mt-2 my-4"
         >
-          <Text texts={value.rich_text} />
+          <Text texts={value?.rich_text} />
         </Title>
       );
     case "heading_2":
@@ -51,13 +51,13 @@ const ContentBlock = ({ block }: any) => {
           id={suglifyTitle(textReferenceH2)}
           className="wrap-balance  tracking-tight text-2xl lg:text-2xl font-bold mb-2 mt-1 my-2"
         >
-          <Text texts={value.rich_text} />
+          <Text texts={value?.rich_text} />
         </Subtitle>
       );
     case "heading_3":
       return (
         <Subtitle className=" tracking-tight text-2xl-tight lg:text-3xl-tight 2xl:text-4xl font-bold mb-6 mt-12 first:mt-0 scroll-mt-[120px]">
-          <Text texts={value.rich_text} />
+          <Text texts={value?.rich_text} />
         </Subtitle>
       );
 
@@ -67,7 +67,7 @@ const ContentBlock = ({ block }: any) => {
         <li className="my-2 flex">
           {" - "}{" "}
           <P className="text-md ml-2">
-            <Text texts={value.rich_text || ""} />
+            <Text texts={value?.rich_text || ""} />
           </P>
         </li>
       );

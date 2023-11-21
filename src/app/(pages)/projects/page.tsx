@@ -1,13 +1,61 @@
 import LogosBg from "@/shared/components/LogosBg";
 import defaultMetadata, {
   iconsMetadata,
+  robotsDefault,
+  othersMetadata,
 } from "@/shared/settings/default-metadata";
 import type { Metadata } from "next";
-import Link from "next/link";
+
 import SectionProjects from "./components/SectionProjects";
+import siteMetadata from "@/shared/settings/sitemetdata";
 export const metadata: Metadata = {
-  ...defaultMetadata,
+  title: "Gonzalo Axel Project",
+  description: "Pagina de de proyectos personales.",
+  openGraph: {
+    title: "Gonzalo Axel Projects",
+    description: "Pagina de de proyectos personales.",
+    siteName: "Gonzalo's Projects",
+    type: "website",
+    url: "https://gonzaloaxelcode.vercel.app/projects",
+    images: [
+      {
+        url: "https://res.cloudinary.com/ddksrkond/image/upload/v1700444221/Presentacion_Propuesta_de_Proyecto_de_Startup_Empresarial_Profesional_negro_y_celeste_wtlsfn.png",
+        width: 800,
+        height: 600,
+      },
+      {
+        url: "https://res.cloudinary.com/ddksrkond/image/upload/v1700444221/Presentacion_Propuesta_de_Proyecto_de_Startup_Empresarial_Profesional_negro_y_celeste_wtlsfn.png",
+        width: 1800,
+        height: 1600,
+        alt: "Gonzalo Projects",
+      },
+    ],
+    locale: "es_PE",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gonzalo Axel Projects",
+    description: "Pagina de de proyectos personales.",
+    siteId: "1467726470533754881",
+    creator: "@GonzaloAxel",
+    creatorId: "1467726470533754880",
+    images: [
+      {
+        url: "https://res.cloudinary.com/ddksrkond/image/upload/v1700444221/Presentacion_Propuesta_de_Proyecto_de_Startup_Empresarial_Profesional_negro_y_celeste_wtlsfn.png",
+        width: 800,
+        height: 600,
+      },
+      {
+        url: "https://res.cloudinary.com/ddksrkond/image/upload/v1700444221/Presentacion_Propuesta_de_Proyecto_de_Startup_Empresarial_Profesional_negro_y_celeste_wtlsfn.png",
+        width: 1800,
+        height: 1600,
+        alt: "Gonzalo Ael Projects",
+      },
+    ],
+  },
   ...iconsMetadata,
+  ...robotsDefault,
+  ...othersMetadata,
 };
 
 const PageProjects = () => {

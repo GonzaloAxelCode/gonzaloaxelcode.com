@@ -5,8 +5,12 @@ import Subheader from "@/shared/components/Header/Subheader";
 import "@/shared/styles/globals.css";
 import "@/shared/styles/tailwindcss-custom.css";
 import "@splidejs/react-splide/css/core";
+import { Metadata } from "next";
 
 import GlobalProviders from "../providers";
+export const metadata: Metadata = {
+  metadataBase: new URL("https://gonzaloaxelcode.vercel.app"),
+};
 export default function RootLayout({
   children,
 }: {

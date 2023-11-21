@@ -1,12 +1,18 @@
 import Title from "@/shared/UIComponents/Base/Title";
 import defaultMetadata, {
   iconsMetadata,
+  robotsDefault,
+  othersMetadata,
 } from "@/shared/settings/default-metadata";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  ...defaultMetadata,
+  title: "Gonzalo Axel Academy",
+  description: "Academia Personal de Cursos Online (No disponible)",
+
   ...iconsMetadata,
+  ...robotsDefault,
+  ...othersMetadata,
 };
 const PageTutorials = () => {
   return (

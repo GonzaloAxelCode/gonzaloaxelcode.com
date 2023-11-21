@@ -257,7 +257,7 @@ const TableOfContent = ({ content, id, slug }: any) => {
         <div className="flex gap-3 my-1 ">
           <button onClick={() => handleToggleLike("like")}>
             <div
-              className="w-16 py-3 h-20 relative rounded-lg shrink-0 bg-gray-F7 dark:bg-gray-1F font-headings flex flex-col items-center justify-center overflow-hidden"
+              className="w-16 py-3 h-20 relative rounded-lg shrink-0 bg-gray-F7 dark:bg-gray-1F  font-headings flex flex-col items-center justify-center overflow-hidden"
               style={{
                 backgroundColor: !isLiked("like")
                   ? ""
