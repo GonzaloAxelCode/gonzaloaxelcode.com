@@ -281,7 +281,7 @@ export default async function ProjectPage({ params }: any) {
                 <h3 className="mt-8 leading-title lg:mt-6 text-neutrals-opaque-13 font-chromatic-grotesque text-3xl md:text-4xl lg:text-4xl font-medium">
                   Aplicacion responsiva a telefonos moviles
                 </h3>
-                <div className="mt-10 space-y-4">
+                <div className="mt-10 space-y-4 d">
                   <div>
                     <p className="text-neutrals-opaque-10">
                       Con un diseño muy cuidado, logre hacer que la aplicacion
