@@ -14,7 +14,6 @@ import suglifyTitle from "@/shared/utils/suglify-title";
 import { atomOneDark as theme } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import LinkDownloadPreview from "./LinkDownloadPreview";
 import LinkPreview from "./LinkPreview";
-
 const ContentBlock = ({ block }: any) => {
   const { type } = block;
   const value = block[type];
@@ -250,12 +249,52 @@ const CodeBlock = ({ code, language, caption }: any) => {
 
   return (
     <div className="w-full">
-      <div className="grid bg-[#151515] p-4  text-sm rounded-xl w-full">
+      <div
+        className="grid bg-[#151515] p-5 text-sm sm:text-md rounded-xl w-full "
+        style={{
+          fontFamily: "Anonymous Pro",
+        }}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="54"
+          height="14"
+          viewBox="0 0 54 14"
+          className="mb-2"
+        >
+          <g fill="none" fillRule="evenodd" transform="translate(1 1)">
+            <circle
+              cx="6"
+              cy="6"
+              r="6"
+              fill="#FF5F56"
+              stroke="#E0443E"
+              strokeWidth=".5"
+            ></circle>
+            <circle
+              cx="26"
+              cy="6"
+              r="6"
+              fill="#FFBD2E"
+              stroke="#DEA123"
+              strokeWidth=".5"
+            ></circle>
+            <circle
+              cx="46"
+              cy="6"
+              r="6"
+              fill="#27C93F"
+              stroke="#1AAB29"
+              strokeWidth=".5"
+            ></circle>
+          </g>
+        </svg>
         <SyntaxHighlighter
           language={language}
           customStyle={{
             background: "transparent",
             width: "100%",
+            fontFamily: "Anonymous Pro",
           }}
           style={theme}
           wrapLines={true}
@@ -266,64 +305,8 @@ const CodeBlock = ({ code, language, caption }: any) => {
         </SyntaxHighlighter>
       </div>
       <P className="text-center text-xs w-ful m-1">
-        <Text texts={caption || "Description to code"} />
+        <Text texts={caption || { value: { text: "Caption to code" } }} />
       </P>
     </div>
   );
 };
-
-/*
-
-   lineProps={(lineNumber: any) => {
-          let style: any = { display: "flex" };
-          style.paddingLeft = "30px";
-          style.paddingRight = "30px";
-          if (ADDED.includes(lineNumber)) {
-            style.backgroundColor = "rgba(53,175,31,0.10)";
-
-            style.width = "130%";
-          } else if (REMOVED.includes(lineNumber)) {
-            style.backgroundColor = "rgba(229,83,75,0.10)";
-
-            style.width = "130%";
-          }
-
-          return { style };
-        }}
- */
-
-function extraerValores(cadena: any) {
-  const regex = /\[(.*?)\]/g;
-  const matches = [];
-  let match;
-
-  while ((match = regex.exec(cadena)) !== null) {
-    matches.push(match[1]);
-  }
-
-  if (matches.length === 4) {
-    const addedLinesMatches = matches[2].match(/\((.*?)\)/);
-    const removeLinesMatches = matches[3].match(/\((.*?)\)/);
-
-    if (addedLinesMatches && removeLinesMatches) {
-      const addedLines = addedLinesMatches[1]
-        .split(",")
-        .map((val) => parseInt(val))
-        .filter((val) => !isNaN(val));
-
-      const removeLines = removeLinesMatches[1]
-        .split(",")
-        .map((val) => parseInt(val))
-        .filter((val) => !isNaN(val));
-
-      return {
-        caption: matches[0],
-        language: matches[1],
-        addedLines,
-        removeLines,
-      };
-    }
-  }
-
-  return null; // La cadena de entrada no tiene el formato esperado.
-}

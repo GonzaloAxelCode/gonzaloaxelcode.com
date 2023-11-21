@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap");
 
 /* Satoshi Black */
@@ -148,12 +148,7 @@
   src: url("/fonts/Rational/OFT/0fbd23e00a994d89-s.p.woff2") format("woff2");
 }
 
-@font-face {
-  font-family: "Mono Code";
-  font-style: normal;
-  font-weight: normal;
-  src: url("/fonts/Mono/2ebb03f221700c9b-s.p.woff2") format("woff2");
-}
+
 
 * {
   margin: 0;
@@ -182,7 +177,7 @@ li {
 }
 code,
 pre {
-  font-family: "Mono Code", monospace !important;
+  font-family: 'Anonymous Pro', monospace !important;
 }
 a {
   cursor: pointer !important;
