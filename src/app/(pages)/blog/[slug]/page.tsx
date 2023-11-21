@@ -19,22 +19,6 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   return {
     title,
     description,
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      siteId: "1467726470533754880",
-      creator: "@GonzaloAxel",
-      creatorId: "1467726470533754880",
-      images: [
-        {
-          url: cover,
-          width: 1200,
-          height: 630,
-          alt: "Gonzalo Blog",
-        },
-      ],
-    },
     openGraph: {
       title,
       description,
@@ -49,6 +33,22 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
         },
       ],
       locale: "es_PE",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+
+      creator: "@GonzaloAxel",
+
+      images: [
+        {
+          url: cover,
+          width: 1200,
+          height: 630,
+          alt: "Gonzalo Blog",
+        },
+      ],
     },
 
     ...iconsMetadata,
