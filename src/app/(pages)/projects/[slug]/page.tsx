@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
       locale: "es_PE",
     },
     twitter: {
-      card: "summary_large_image",
+      card: "app",
       title,
       description,
       siteId: "1467726470533754889",
@@ -97,7 +97,6 @@ export default async function ProjectPage({ params }: any) {
     components,
   } = extractContentProyect(project);
 
-  console.log(tecnologias);
   return (
     <main>
       <section>
