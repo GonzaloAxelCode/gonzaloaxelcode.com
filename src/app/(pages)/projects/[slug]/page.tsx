@@ -29,27 +29,6 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   return {
     title,
     description,
-    openGraph: {
-      title,
-      description,
-      siteName: "Gonzalo's Projects",
-      type: "article",
-      url: `https://gonzaloaxelcode.vercel.app/projects/${suglifyTitle(title)}`,
-      images: [
-        {
-          url: cover,
-          width: 800,
-          height: 600,
-        },
-        {
-          url: cover,
-          width: 1800,
-          height: 1600,
-          alt: title,
-        },
-      ],
-      locale: "es_PE",
-    },
     twitter: {
       card: "app",
       title,
@@ -71,6 +50,28 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
         },
       ],
     },
+    openGraph: {
+      title,
+      description,
+      siteName: "Gonzalo's Projects",
+      type: "article",
+      url: `https://gonzaloaxelcode.vercel.app/projects/${suglifyTitle(title)}`,
+      images: [
+        {
+          url: cover,
+          width: 800,
+          height: 600,
+        },
+        {
+          url: cover,
+          width: 1800,
+          height: 1600,
+          alt: title,
+        },
+      ],
+      locale: "es_PE",
+    },
+
     ...iconsMetadata,
     ...robotsDefault,
     ...othersMetadata,

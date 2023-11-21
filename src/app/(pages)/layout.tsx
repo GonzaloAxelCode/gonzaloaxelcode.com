@@ -10,6 +10,10 @@ import { Metadata } from "next";
 import GlobalProviders from "../providers";
 export const metadata: Metadata = {
   metadataBase: new URL("https://gonzaloaxelcode.vercel.app"),
+  title: {
+    template: "%s | Gonzalo Axel",
+    default: "Gonzalo Axel Fullstack Developer",
+  },
 };
 export default function RootLayout({
   children,
