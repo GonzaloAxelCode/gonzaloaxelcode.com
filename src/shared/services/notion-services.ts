@@ -7,10 +7,19 @@ export const notion = new Client({
 });
 
 export const getAllArticles = cache(
-  async (database_id: any = process.env.NOTION_DATABASE, query: any = {}) => {
+  async (
+    database_id: any = process.env.NOTION_DATABASE_BLOG,
+    query: any = {}
+  ) => {
     const articles: any = [];
     const fullOrPartialPages = await notion.databases.query({
       database_id: database_id || "",
+      filter: {
+        property: "Status",
+        status: {
+          equals: "Done",
+        },
+      },
     });
 
     for (const page of fullOrPartialPages.results) {
@@ -62,7 +71,7 @@ export const getArticle = async (id: string) => {
 };
 
 export const findArticleBySlug = async (
-  database_id: any = process.env.NOTION_DATABASE,
+  database_id: any = process.env.NOTION_DATABASE_BLOG,
   slug: string
 ) => {
   const pages = await getAllArticles(database_id, {});

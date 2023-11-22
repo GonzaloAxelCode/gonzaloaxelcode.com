@@ -22,7 +22,7 @@ const PresentationArticle = ({ article }: any) => {
     createdAt,
     categoryColor,
   } = useExtractInfoArticle(article);
-  console.log(article);
+
   const viewCount = usePostViews(suglifyTitle(title));
   return (
     <div className="flex w-full items-center justify-center flex-col lg:flex-row my-8 max-w-[768px] lg:max-w-[1280px] mx-auto px-8">
@@ -107,12 +107,12 @@ const PresentationArticle = ({ article }: any) => {
             width={1280}
             height={720}
             src={cover}
-            className="object-contain border-2 border-black rounded-2xl border-solid"
+            className="object-contain border-1 dark:border-graywhite border-graydark border-opacity-75 rounded-3xl border-solid"
             alt={title}
           />
         </picture>
-        <P className="text-sm italic font-light my-2">
-          Article updated on {formatDate(updatedLast)}
+        <P className="text-xs italic font-light my-2">
+          Articulo actualizado el {formatDate(updatedLast)}
         </P>
       </div>
     </div>

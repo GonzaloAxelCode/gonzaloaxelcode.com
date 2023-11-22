@@ -8,7 +8,7 @@ import suglifyTitle from "../utils/suglify-title";
 
 export const getFullArticleBySlug = async (slug: any) => {
   const { idPage, article } = await findArticleBySlug(
-    process.env.NOTION_DATABASE,
+    process.env.NOTION_DATABASE_BLOG,
     slug
   );
 
@@ -17,7 +17,7 @@ export const getFullArticleBySlug = async (slug: any) => {
 };
 
 export const getFullArticlesByCategorySlug = async (categoryslug: any) => {
-  const allpages = await getAllArticles(process.env.NOTION_DATABASE, {});
+  const allpages = await getAllArticles(process.env.NOTION_DATABASE_BLOG, {});
 
   const filterpages = allpages.filter((page: any) => {
     return (
@@ -47,16 +47,6 @@ export const getFullProjectBySlug = async (slug: any) => {
   return { content, article, idPage };
 };
 
-export const getFullTopicBySlug = async (slug: any) => {
-  const { idPage } = await findArticleBySlug(
-    process.env.NOTION_DATABASE_TECNOLOGY,
-    slug
-  );
-  const topic = await getArticle(idPage);
-  return topic;
-};
-
-
 export function obtenerCategoriasUnicas(data: any) {
   const categoriasUnicas: any = new Set();
   data?.forEach((item: any) => {
@@ -74,7 +64,11 @@ export function obtenerCategoriasUnicas(data: any) {
   return categoriasArray;
 }
 
-export function filterByTagAndCategory(data: any, tagName: any, categoryName: any) {
+export function filterByTagAndCategory(
+  data: any,
+  tagName: any,
+  categoryName: any
+) {
   if (
     tagName === "all-tags" ||
     tagName === "" ||

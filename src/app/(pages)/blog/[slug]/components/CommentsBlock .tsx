@@ -54,36 +54,6 @@ const CommentsBlock = ({ idArticle }: any) => {
     setAllComments(comments);
   };
 
-  const addResponseComment = async (id: any, type = "", nameResponse = "") => {
-    if (commentString === "") {
-      alert("coloca algo en los comentarios !!");
-    } else {
-      setLoaderBtn(true);
-      await addSubComment(
-        {
-          ...newComment,
-          nameResponse: type === "re-response" ? `@${nameResponse} ` : null,
-          user: user,
-          dateCreated: new Date(Date.now()).toISOString(),
-          emailUser: email,
-        },
-        id
-      );
-      setLoaderBtn(false);
-
-      setOpenReply({
-        ...openReply,
-        id: "",
-      });
-      setOpenReplyRes({
-        ...openReplyRes,
-        idRes: "",
-      });
-      setNewComment({ ...newComment, comment: "" });
-      setChange(!change);
-    }
-  };
-
   const addComm = async () => {
     if (commentString === "") {
       alert("coloca algo en los comentarios !!");
@@ -92,7 +62,6 @@ const CommentsBlock = ({ idArticle }: any) => {
       await addComment({
         ...newComment,
         user: user,
-
         dateCreated: new Date(Date.now()).toISOString(),
         emailUser: email,
       });
@@ -156,6 +125,7 @@ const CommentsBlock = ({ idArticle }: any) => {
           <div className="flex w-full">
             {email && (
               <ButtonPostComment
+                user={user}
                 handleClick={() => addComm()}
                 loaderBtn={loaderBtn}
                 commentString={commentString}
@@ -187,7 +157,7 @@ const CommentsBlock = ({ idArticle }: any) => {
             return (
               <div
                 key={index}
-                className="rounded-xl p-7  dark:text-white text-gray-1F border-b scroll-mt-[120px] dark-copybg-white border-gray-EE text-gray-15 dark:bg-gray-1F dark:border-gray-1F"
+                className="rounded-xl p-7  dark:text-white text-gray-1F border-b scroll-mt-[120px] dark-copybg-white border-gray-EE  dark:bg-gray-1F bg-gray-F7 dark:border-gray-1F"
               >
                 <div className="flex items-center gap-2">
                   <Image
@@ -204,10 +174,10 @@ const CommentsBlock = ({ idArticle }: any) => {
                   </h4>
                 </div>
 
-                <div className="font-copy text-md font-medium  print:text-justify copy-muted mt-4 overflow-hidden">
+                <div className="text-md font-medium  print:text-justify copy-muted mt-4 overflow-hidden">
                   <p className="whitespace-normal">{comment.comment}</p>
                 </div>
-                <div className="flex text-sm gap-2 mt-2 mb-8">
+                <div className="flex  text-xs sm:text-sm gap-2 mt-2">
                   <span className="text-gray-A4 first-letter:uppercase">
                     {moment(comment.dateCreated).fromNow()}
                   </span>
@@ -227,19 +197,28 @@ const ButtonPostComment = ({
   loaderBtn,
   commentString,
   email,
+  user,
   ...args
 }: any) => {
   return (
     <button
-      className="rounded-lg font-bold whitespace-nowrap focus:outline-none focus:ring-tertiary-purple disabled:opacity-50 group border-2 focus:ring-4 transition-opacity transition-colors hover:bg-opacity-75 disabled:hover:bg-opacity-100 border-gray-15 py-3 px-6 text-sm-flat leading-5 2xl:text-base-flat 2xl:leading-5 bg-gray-15 text-white"
+      className="rounded-3xl w-full  whitespace-nowrap focus:outline-none focus:ring-tertiary-purple disabled:opacity-90 group border-2 focus:ring-4  border-gray-15 py-2 px-6 text-sm-flat leading-5 2xl:text-base-flat 2xl:leading-5 bg-black dark:bg-white   text-white dark:text-black"
       type="submit"
       onClick={() => handleClick()}
       disabled={loaderBtn || commentString === ""}
     >
-      {loaderBtn && <span className="loader"></span>}
-
-      <span>
-        Post with <i>{email || ""}</i>
+      <span className="flex items-center w-full justify-center">
+        {loaderBtn && <span className="loader">...</span>}
+        {!loaderBtn && (
+          <span>
+            Enviar comentario <i>{user?.photoUrl || ""}</i>{" "}
+          </span>
+        )}
+        <img
+          src="https://res.cloudinary.com/ddksrkond/image/upload/v1700430086/dancing-duck-acegifcom-37_lji80g.gif"
+          className="w-[25px] h-[25px] object-contain"
+          alt=""
+        />
       </span>
     </button>
   );

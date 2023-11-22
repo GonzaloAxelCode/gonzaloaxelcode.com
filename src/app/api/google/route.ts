@@ -4,6 +4,7 @@ import { NextResponse } from "next/server";
 export async function POST(request: Request) {
   const body = await request.json();
   const client = new OAuth2Client(process.env.CLIENT_ID || "");
+
   if (!body) {
     const response = NextResponse.json(
       {
@@ -17,11 +18,12 @@ export async function POST(request: Request) {
   }
 
   async function verify(body: any) {
+    console.log(process.env.GOOGLE_ID);
     const ticket = await client.verifyIdToken({
       idToken: body.token,
-      audience: process.env.CLIENT_ID || "",
+      audience: process.env.GOOGLE_ID || "",
     });
-    
+
     const payload = ticket.getPayload();
     return payload;
   }

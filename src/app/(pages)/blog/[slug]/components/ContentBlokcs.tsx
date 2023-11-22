@@ -121,15 +121,14 @@ const ContentBlock = ({ block }: any) => {
       );
 
     case "callout":
-      console.log(value);
       const text = value?.rich_text
         ?.map((el: any, index: number) => {
           return `${el.text?.content} `;
         })
         .join("");
       return (
-        <div className="w-full p-4 md:p-6 rounded-lg mt-5 mb-6 flex flex-col  bg-quaternary-blue dark:bg-gray-1F">
-          <div className="flex flex-col sm:flex-row gap-6 ">
+        <div className="w-full p-4 md:p-6 rounded-lg mt-5 mb-6 flex flex-col  bg-gray-F7 dark:bg-[#323232]">
+          <div className="flex  sm:flex-row gap-3 ">
             <span className="text-2xl">{value?.emoji || "💡"}</span>
             <p>{text}</p>
           </div>
@@ -156,7 +155,19 @@ const ContentBlock = ({ block }: any) => {
         </div>
       );
     case "quote":
-      return <></>;
+      const textq = value?.rich_text
+        ?.map((el: any, index: number) => {
+          return `${el.text?.content} `;
+        })
+        .join("");
+      return (
+        <div className="w-full p-4 md:p-8 border-l-4 border-solid border-black dark:border-graywhite  mt-5 mb-6 flex flex-col  bg-gray-F7 dark:bg-[#323232]">
+          <div className="flex flex-col sm:flex-row gap-6 ">
+            <p>{textq}</p>
+          </div>
+        </div>
+      );
+
     case "divider":
       return <></>;
     case "file":

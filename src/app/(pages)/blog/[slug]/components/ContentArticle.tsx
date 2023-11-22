@@ -6,6 +6,7 @@ import siteMetadata from "@/shared/settings/sitemetdata";
 import extractInfoArticle from "@/shared/hooks/extract-info-article";
 import COLORS_NOTION from "@/shared/utils/colors-notion";
 import Link from "next/link";
+import suglifyTitle from "@/shared/utils/suglify-title";
 
 const ContentArticle = ({ content, id, similarArticles }: any) => {
   return (
@@ -72,19 +73,20 @@ const ContentArticle = ({ content, id, similarArticles }: any) => {
             return (
               <article
                 key={index}
-                className="overflow-hidden flex w-full grow h-full relative border-2 rounded-xl flex-col bg-white dark:bg-gray-1F border-gray-EE dark:border-gray-1F dark:text-white text-gray-15"
+                className="overflow-hidden flex w-full grow h-full relative border-2 rounded-xl flex-col bg-gray-F7 dark:bg-[#242424] border-gray-EE dark:border-gray-1F dark:text-white text-gray-15"
               >
-                <div className="hidden sm:block">
+                <div className="">
                   <div className=" bg-quaternary-purple">
                     <img src={cover} alt="h-full" />
                   </div>
                 </div>
                 <div className="flex h-full gap-4 f p-4 flex-col">
                   <div className="flex justify-between items-center gap-4">
-                    <span className="flex tracking-tight items-center gap-1.5 relative h-6 font-bold text-sm-flat overflow-auto relative z-10 text-gray-15">
-                      <a
+                    <span className="flex tracking-tight font-normal items-center gap-1.5  h-6  text-sm overflow-auto relative z-10 text-gray-15">
+                      <Link
                         className="flex items-center gap-1.5 focus:outline-none focus:ring-2 ring-offset-2 rounded-sm max-w-full ring-offset-white ring-gray-EE"
-                        href="/blog/category/performance-and-ux"
+                        href={`/blog/${suglifyTitle(title)}`}
+                        target="_blank"
                       >
                         <svg
                           width={64}
@@ -94,7 +96,9 @@ const ContentArticle = ({ content, id, similarArticles }: any) => {
                           xmlns="http://www.w3.org/2000/svg"
                           className="w-5 h-5 shrink-0"
                           style={{
-                            color: COLORS_NOTION[categoryColor],
+                            color:
+                              COLORS_NOTION[categoryColor] ||
+                              COLORS_NOTION["default"].colorDM,
                           }}
                         >
                           <path
@@ -110,7 +114,7 @@ const ContentArticle = ({ content, id, similarArticles }: any) => {
                         <span className="  dark:text-white text-gray-15 whitespace-nowrap overflow-ellipsis overflow-hidden">
                           {category}
                         </span>
-                      </a>
+                      </Link>
                     </span>
                   </div>
                   <div className="flex flex-col gap-4 flex-grow">

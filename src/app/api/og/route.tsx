@@ -11,15 +11,7 @@ export async function GET(req: NextRequest) {
   const cover = searchParams.get("cover");
   const category = searchParams.get("category");
   const createdAt = searchParams.get("createdat");
-  const categoryColor = searchParams.get("categorycolor");
-  console.log({
-    xd: "",
-    title,
-    cover,
-    category,
-    categoryColor,
-    createdAt,
-  });
+
   return new ImageResponse(
     (
       <div

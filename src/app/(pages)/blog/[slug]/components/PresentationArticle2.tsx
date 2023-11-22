@@ -13,7 +13,6 @@ import Image from "next/image";
 const PresentationArticle2 = ({ article }: any) => {
   const { title, cover, category, createdAt, categoryColor } =
     useExtractInfoArticle(article);
-  console.log(article);
 
   return (
     <div

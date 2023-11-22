@@ -3,12 +3,11 @@ import { UIProvider } from "@/shared/contexts/UIContext";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const GlobalProviders = ({ children }: any) => {
-  //xd
+  // eslint-disable-next-line
+  const uri = process.env["NEXT_PUBLIC_GOOGLE_ID"];
   return (
     <UIProvider>
-      <GoogleOAuthProvider clientId="157232541478-1dgf60smuro9tevfo0o4lbg5igk7jmnm.apps.googleusercontent.com">
-        {children}
-      </GoogleOAuthProvider>
+      <GoogleOAuthProvider clientId={uri || ""}>{children}</GoogleOAuthProvider>
     </UIProvider>
   );
 };
