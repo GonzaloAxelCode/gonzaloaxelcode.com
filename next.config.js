@@ -14,8 +14,17 @@ const nextConfig = {
         protocol: "https",
         hostname: "cdn.builder.io",
       },
-
-      
+      {
+        protocol: "https",
+        port: "",
+        hostname: "www.notion.so",
+      },
+    ],
+    domains: [
+      "www.notion.so",
+      "lh3.googleusercontent.com",
+      "cdn.builder.io",
+      "res.cloudinary.com",
     ],
   },
 };

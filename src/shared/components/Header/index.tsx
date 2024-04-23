@@ -19,6 +19,10 @@ export const pathsNavHeader = [
     text: "Blog",
     path: "/blog",
   },
+  {
+    text: "Proyectos",
+    path: "/projects",
+  },
 ];
 const Header = () => {
   const { scrolledPast } = useScrollCalc();
@@ -59,26 +63,15 @@ const Header = () => {
           <div className="flex">
             <div className="relative flex items-center z-10  self-stretch  lg:pr-8">
               <Link className="focus:outline-none flex items-center" href="/">
-                <img
-                  className="absolute w-[40px]  -top-1 -left-2 z-10"
-                  src="https://i.pinimg.com/originals/20/d1/b1/20d1b1182b7f6a2007da2ccbe719b1d8.png"
-                  alt=""
-                />
                 <Logo />
                 <span className="text-lg ml-1">{""}onzalo</span>
                 <span></span>
-                <span className="text-xs ml-1">Beta</span>
+                <span className="text-xs ml-1"></span>
               </Link>
             </div>
           </div>
 
           <div className="w-full hidden lg:flex space-x-8 ml-auto justify-end pr-4">
-            <span
-              className="mr-4 cursor-pointer"
-              onMouseEnter={handleHoverStart}
-            >
-              <span className={cn("text-sm", "")}>Descubre mas</span>
-            </span>
             {pathsNavHeader.map((el: any, index: any) => {
               return (
                 <Link key={index} href={el.path}>
@@ -152,11 +145,6 @@ const Header = () => {
                   <div className=" relative flex items-center z-10  self-stretch  lg:pr-8">
                     <span className="focus:outline-none flex gap-0 items-center cursor-pointer  text-white">
                       <span className="">
-                        <img
-                          className="absolute w-[35px] -top-1 -left-2 z-10"
-                          src="https://i.pinimg.com/originals/20/d1/b1/20d1b1182b7f6a2007da2ccbe719b1d8.png"
-                          alt=""
-                        />
                         <span className="filter invert">
                           <Logo />
                         </span>
@@ -165,7 +153,6 @@ const Header = () => {
                         {""}onzalo
                       </span>
                       <span></span>
-                      <span className="text-white text-xs ml-1">Beta</span>
                     </span>
                   </div>
                 </div>

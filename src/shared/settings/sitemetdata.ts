@@ -1,6 +1,8 @@
 const siteMetadata = {
   title: "Gonzalo Axel – Full-stack junior, writer, creative developer.",
   author: "Gonzalo Axel",
+  photo:
+    "https://res.cloudinary.com/ddksrkond/image/upload/c_crop,ar_1:1/v1700110843/SEO/WhatsApp_Image_2023-11-15_at_11.58.48_PM_pvgump.jpg",
   headerTitle: "Gonzalo's Portfolio",
   description:
     "Desarrollador/Programador Web Fullstack Junior en Peru, especializado en en el desarrollo Frontend con Nextjs y Angular 16.",

@@ -10,6 +10,7 @@ import TextChange from "./about/components/TextChange";
 import siteMetadata from "@/shared/settings/sitemetdata";
 import RecentArticles from "./about/components/RecentArticles";
 import MyTools from "./about/components/MyTools";
+import P from "@/shared/UIComponents/Base/P";
 
 export const metadata: Metadata = {
   title: "Gonzalo Axel Web Junior Developer",
@@ -70,7 +71,7 @@ const PageAboutHome = () => {
             <div className="relative w-full md:w-1/2 lg:w-3/4">
               <h1 className="mb-5 leading-title text-center md:text-left mt-5 md:mt-0 w-full text-3xl sm:text-4xl font-bold md:text-5xl lg:text-5xl dark:text-white">
                 Hola 👋, soy{" "}
-                <span className="relative s ">
+                <span className="relative">
                   <svg
                     className="absolute -top-6 left-0 h-8 transform -rotate-12"
                     viewBox="0 0 244 243"
@@ -110,10 +111,10 @@ const PageAboutHome = () => {
                 </span>
               </h1>
               <p className="mb-6 text-md text-neutral-600  text-center md:text-left dark:text-neutral-400">
-                Desarrollador / Programador Fullstack Junior en Peru.
+                Desarrollador / Programador de software fullstack.
                 <br className="hidden lg:block" />
-                Me especializo en en el desarrollo Frontend con Nextjs y Angular
-                16.
+                Me especializo en en el desarrollo Fullstack con Nextjs y Django
+                RestFramework
               </p>
 
               <div className="flex gap-2 justify-center md:justify-normal lg:justify-normal">
@@ -187,75 +188,40 @@ const PageAboutHome = () => {
           <div className="container md:grid md:grid-cols-12 md:gap-x-6">
             <div className="md:col-span-5 mb-10 md:mb-20 flex flex-col gap-6">
               <div className="text-base 2xl:text-md font-medium copy-muted">
-                <p className="my-6  text-md first:mt-0 last:mb-0 text-neutral-600 dark:text-neutral-400">
-                  Mi nombre es Gonzalo Axel Valdez Quispe, soy un desarrollador
-                  de Peru, actualmente egresado de la carrera de Ingeneria de
-                  sistemas e informatica. He establecido este sitio web con el
-                  propósito de documentar mis proyectos y compartir mis
-                  experiencias en el ámbito de desarrollo web. Aquí, encontrarás
-                  contenido relacionado con mi aprendizaje constante en cuanto a
-                  frameworks, bibliotecas y otras tecnologías de gran relevancia
-                  en la actualidad.
-                </p>
-                <p className="my-6 text-md first:mt-0 last:mb-0 text-neutral-600 dark:text-neutral-400">
-                  Actualemnte cuento con una corta experiencia en el desarrollo
-                  de software pero con muchas ganas de seguir aprendiendo y
-                  tener muchas experiencias desarrollando todo tipo de
-                  aplicaciones.
-                </p>
+                <div className="text-md text-neutral-600 dark:text-neutral-400">
+                  <p className="my-6">
+                    ¡Saludos! Mi nombre es Gonzalo Axel Valdez Quispe, y me
+                    dedico al fascinante mundo del desarrollo de software.
+                    Recientemente me gradué en Ingeniería de Sistemas e
+                    Informática. Este espacio web lo he creado con el propósito
+                    de documentar mis proyectos y compartir mis experiencias en
+                    el campo del desarrollo web.
+                  </p>
+
+                  <p className="my-6">
+                    Aunque mi trayectoria en el desarrollo de software es breve,
+                    estoy lleno de entusiasmo y ansias de seguir aprendiendo y
+                    creciendo profesionalmente. Aquí, podrás encontrar contenido
+                    relacionado con mi constante aprendizaje en frameworks,
+                    bibliotecas y otras tecnologías relevantes en la actualidad.
+                  </p>
+                </div>
               </div>
             </div>
             <div className="md:col-span-5 md:col-start-7 md:mt-[0%] mb-10 md:-mb-32 ">
               <div className="text-md 2xl:text-md font-medium print:text-[12px] bg-gray-F7 dark:bg-blackbg  print:text-justify copy-muted p-12  rounded-xl">
                 <p className="my-6 first:mt-0 last:mb-0 print:my-2 text-neutral-600 dark:text-neutral-400">
-                  A lo largo de mis estudios he desarrollado habilidades
-                  teorico/practico que me permiten desarrollar sistemas
-                  completos. Como aspirante a desarrollador de software
-                  profesional, me dedico a mejorar cada dia aprendiendo nuevas
-                  tecnologias desde el lado del frontend, backend,
-                  infraestructura, diseño UI UX, Devops,bases de datos y muchas
-                  cosas mas.
+                  <p className="my-6">
+                    Durante mis estudios, he adquirido habilidades tanto
+                    teóricas como prácticas que me capacitan para desarrollar
+                    sistemas completos. Como aspirante a desarrollador de
+                    software profesional, me comprometo a mejorar continuamente,
+                    explorando nuevas tecnologías en áreas como frontend,
+                    backend, infraestructura, diseño UI/UX, DevOps, bases de
+                    datos y mucho más cada día.
+                  </p>
                 </p>
               </div>
-            </div>
-          </div>
-          <div className="container">
-            <div className="grid grid-cols-12 gap-x-6">
-              <img
-                loading="lazy"
-                width={1030}
-                height={1300}
-                decoding="async"
-                data-nimg={1}
-                className="rounded-2xl border-2 border-gray-15 relative z-10 border-opacity-10 shadow-image-fix col-span-5"
-                style={{ color: "transparent" }}
-                src="https://res.cloudinary.com/ddksrkond/image/upload/v1699376918/Capture_xbif1k.png"
-              />
-              <div className="col-span-9 relative col-start-4 -mt-[50%]">
-                <img
-                  loading="lazy"
-                  width={1896}
-                  height={1140}
-                  decoding="async"
-                  data-nimg={1}
-                  className="rounded-2xl border-2 border-gray-15  border-opacity-10 shadow-image-fix"
-                  style={{ color: "transparent" }}
-                  src="https://res.cloudinary.com/ddksrkond/image/upload/v1675868776/Blog/fastfood_uqvurg.png"
-                />
-                <span className="block text-xs-flat text-sm   leading-4 mt-2 absolute max-w-[45%]">
-                  Algunos de mis proyectos personales.
-                </span>
-              </div>
-              <img
-                loading="lazy"
-                width={816}
-                height={768}
-                decoding="async"
-                data-nimg={1}
-                className="rounded-2xl border-2 border-opacity-10 border-gray-15 col-start-8 z-10  shadow-image-fix col-span-4 -mt-[32%]"
-                style={{ color: "transparent" }}
-                src="https://res.cloudinary.com/ddksrkond/image/upload/v1699377009/dddd_onuqbj.png"
-              />
             </div>
           </div>
         </div>
@@ -331,7 +297,228 @@ const PageAboutHome = () => {
             </div>
           </div>
         </div>
+        <div className="container">
+          <div className="grid grid-cols-12 gap-x-6">
+            <img
+              loading="lazy"
+              width={1030}
+              height={1300}
+              decoding="async"
+              data-nimg={1}
+              className="rounded-2xl border-2 border-gray-15 relative z-10 border-opacity-10 shadow-image-fix col-span-5"
+              style={{ color: "transparent" }}
+              src="https://res.cloudinary.com/ddksrkond/image/upload/v1699377009/dddd_onuqbj.png"
+            />
+            <div className="col-span-9 relative col-start-4 -mt-[50%]">
+              <img
+                loading="lazy"
+                width={1896}
+                height={1140}
+                decoding="async"
+                data-nimg={1}
+                className="rounded-2xl border-2 border-gray-15  border-opacity-10 shadow-image-fix"
+                style={{ color: "transparent" }}
+                src="https://res.cloudinary.com/ddksrkond/image/upload/v1675868776/Blog/fastfood_uqvurg.png"
+              />
+              <P>
+                <span className="block text-xs-flat text-sm   leading-4 mt-2 absolute max-w-[45%]">
+                  Imagenes captura del proyecto realizado.
+                </span>
+              </P>
+            </div>
+
+            <img
+              loading="lazy"
+              width={816}
+              height={768}
+              decoding="async"
+              data-nimg={1}
+              className="rounded-2xl border-2 border-opacity-10 border-gray-15 col-start-8 z-10  shadow-image-fix col-span-4 -mt-[32%]"
+              style={{ color: "transparent" }}
+              src="https://res.cloudinary.com/ddksrkond/image/upload/v1699377009/dddd_onuqbj.png"
+            />
+          </div>
+        </div>
       </section>
+
+      <section>
+        <div className=" py-10">
+          <div className="mb-8">
+            <h2
+              className="mt-0  mb-3 text-3xl font-black leading-tight sm:text-4xl sm:leading-tight md:text-[40px] md:leading-tight  "
+              style={{ maxWidth: 500 }}
+            >
+              Aplicaciones y proyectos
+              <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent   from-[#3a3a3a]  to-[#d3d3d3] dark:to-[#ffffff]">
+                {" "}
+                creados por mi
+                <span
+                  className="absolute -top-3 right-0"
+                  style={{ display: "inline-block", verticalAlign: "top" }}
+                >
+                  <svg
+                    viewBox="0 0 24 23"
+                    style={{
+                      width: 26,
+                      height: 26,
+                      display: "block",
+
+                      flexShrink: 0,
+                    }}
+                    className="fill-black dark:fill-white "
+                  >
+                    <g>
+                      <path d="M10.4563 5.72844C10.9113 5.57094 10.9113 5.29094 10.4563 5.11594L7.98881 4.17094C7.55131 4.01344 7.04381 3.50594 6.86881 3.05094L5.92381 0.583437C5.76631 0.128438 5.48631 0.128438 5.31131 0.583437L4.36631 3.05094C4.20881 3.48844 3.70131 3.99594 3.24631 4.17094L0.778811 5.11594C0.323811 5.27344 0.323811 5.55344 0.778811 5.72844L3.24631 6.67344C3.68381 6.83094 4.19131 7.33844 4.36631 7.79344L5.31131 10.2609C5.46881 10.7159 5.74881 10.7159 5.92381 10.2609L6.86881 7.79344C7.02631 7.35594 7.53381 6.84844 7.98881 6.67344L10.4563 5.72844Z" />
+                      <path d="M22.4788 14.3734C23.8788 14.0234 23.8788 13.4459 22.4788 13.0959L19.3813 12.3259C17.9813 11.9759 16.5463 10.5409 16.1963 9.14091L15.4263 6.04341C15.0763 4.64341 14.4988 4.64341 14.1488 6.04341L13.3788 9.14091C13.0288 10.5409 11.5938 11.9759 10.1938 12.3259L7.09631 13.0959C5.69631 13.4459 5.69631 14.0234 7.09631 14.3734L10.1938 15.1434C11.5938 15.4934 13.0288 16.9284 13.3788 18.3284L14.1488 21.4259C14.4988 22.8259 15.0763 22.8259 15.4263 21.4259L16.1963 18.3284C16.5463 16.9284 17.9813 15.4934 19.3813 15.1434L22.4788 14.3734Z" />
+                    </g>
+                  </svg>
+                </span>
+              </span>
+            </h2>
+            <p
+              className="w-full text-base font-normal leading-relaxed text-body-color "
+              style={{ maxWidth: 600 }}
+            >
+              Algunas de las aplicaciones que he creado
+            </p>
+          </div>
+
+          <div className="ml-6 flex flex-col">
+            <div className="  border-l border-gray-200 dark:border-neutral-700">
+              <div className="max-w-5xl mx-auto ">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <div className="md:col-span-2">
+                    <div className="card-neumorphic p-8 grid grid-cols-3 gap-6">
+                      <div>
+                        <Link href="#" className="flex  space-x-4">
+                          <img
+                            className="img-neumorphic block rounded-100"
+                            src="https://res.cloudinary.com/ddksrkond/image/upload/v1700274329/10shots_so_bgt2yc.png"
+                            alt=""
+                          />
+                        </Link>
+                      </div>
+                      <div className="col-span-2">
+                        <div className="font-medium text-xl ">
+                          <P className="font-semibold">
+                            <Link
+                              href="#"
+                              className="flex  space-x-4 underline-offset-4 underline"
+                            >
+                              Clon de Udemy solo frontend
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                id="root"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                                className="w-5 h-5"
+                                aria-hidden="true"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                                  clipRule="evenodd"
+                                />
+                              </svg>{" "}
+                            </Link>
+                          </P>
+                        </div>
+                        <div className="pt-3 pb-5">
+                          <P className="text-sm">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Voluptatibus quia, nulla! Maiores et
+                            perferendis eaque, exercitationem praesentium nihil.
+                          </P>
+                        </div>
+                        <div className="flex">
+                          <img
+                            className="user-neumorphic w-10 h-10 rounded-full object-contain"
+                            src={siteMetadata.photo}
+                            alt=""
+                          />
+                          <div className="ml-5">
+                            <span className="text-sm  block">Gonzalo Axel</span>
+                            <span className="text-xs  font-medium block">
+                              Desarrollador
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="md:col-span-2">
+                    <div className="card-neumorphic p-8 grid grid-cols-3 gap-6">
+                      <div>
+                        <Link href="#" className="flex  space-x-4">
+                          <img
+                            className="img-neumorphic block rounded-100"
+                            src="https://res.cloudinary.com/ddksrkond/image/upload/v1675868776/Blog/fastfood_uqvurg.png"
+                            alt=""
+                          />
+                        </Link>
+                      </div>
+                      <div className="col-span-2">
+                        <div className=" text-xl ">
+                          <P className="font-semibold">
+                            <Link
+                              href="#"
+                              className="flex  space-x-4 underline-offset-4 underline"
+                            >
+                              Aplicacion de comida rapida Fastfood
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                id="root"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                                className="w-5 h-5"
+                                aria-hidden="true"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                                  clipRule="evenodd"
+                                />
+                              </svg>{" "}
+                            </Link>
+                          </P>
+                        </div>
+                        <div className="pt-3 pb-5">
+                          <P className="text-sm">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Voluptatibus quia, nulla! Maiores et
+                            perferendis eaque, exercitationem praesentium nihil.
+                          </P>
+                        </div>
+
+                        <div className="flex">
+                          <img
+                            className="user-neumorphic w-10 h-10 rounded-full"
+                            src={siteMetadata.photo}
+                            alt=""
+                          />
+                          <div className="ml-5">
+                            <span className="text-sm  block">Gonzalo Axel</span>
+                            <span className="text-xs  font-medium block">
+                              Desarrollador
+                            </span>
+                          </div>
+                        </div>
+                        <p className="text-sm font-light mt-5 text-neutral-600 dark:text-neutral-400">
+                          <span>Aptitudes:</span>{" "}
+                          <span>
+                            Desarrollo de software · Desarrollo web back end
+                          </span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section>
         <div className=" py-10">
           <div className="mb-16">

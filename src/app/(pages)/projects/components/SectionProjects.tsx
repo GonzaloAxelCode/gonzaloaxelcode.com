@@ -92,6 +92,7 @@ const SectionProjects = () => {
                             <Link
                               href={indicadores.indicador1?.href || "#d"}
                               className="after:absolute after:inset-0"
+                              target="_blank"
                             >
                               {indicadores.indicador1?.title || "Sin titulo"}
                             </Link>
@@ -127,7 +128,8 @@ const SectionProjects = () => {
                         <div className="w-full">
                           <p className="font-headings text-2xl">
                             <Link
-                              href={indicadores.indicador1?.href || "#d"}
+                              href={indicadores.indicador2?.href || "#d"}
+                              target="_blank"
                               className="after:absolute after:inset-0"
                             >
                               {indicadores.indicador2?.title || "Sin titulo"}
