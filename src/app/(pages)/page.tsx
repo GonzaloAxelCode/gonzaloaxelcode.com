@@ -429,7 +429,7 @@ const PageAboutHome = () => {
                             Este proyecto es un clon de la reconocida plataforma
                             de aprendizaje en línea Udemy, centrándose
                             exclusivamente en la recreación de su interfaz de
-                            usuario (UI) en el lado del frontend.
+                            usuario UI en el lado del frontend.
                           </P>
                         </div>
                         <div className="flex">
@@ -495,9 +495,9 @@ const PageAboutHome = () => {
                         <div className="pt-3 pb-5">
                           <P className="text-sm">
                             Este proyecto es un clon de una web de Themeforest
-                            de comida rápida en línea "FastFood Lafka" ,con un
+                            de comida rápida en línea FastFood Lafka ,con un
                             enfoque principal en recrear fielmente su interfaz
-                            de usuario (UI) en el lado del frontend.
+                            de usuario UI en el lado del frontend.
                           </P>
                         </div>
 
