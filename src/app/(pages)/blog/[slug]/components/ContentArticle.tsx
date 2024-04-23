@@ -118,14 +118,14 @@ const ContentArticle = ({ content, id, similarArticles }: any) => {
                     </span>
                   </div>
                   <div className="flex flex-col gap-4 flex-grow">
-                    <a
+                    <Link
                       className="after:absolute after:inset-0"
-                      href="/blog/nextjs-image-component-optimization"
+                      href={`/blog/${suglifyTitle(title)}`}
                     >
                       <h2 className="font-headings tracking-tight scroll-mt-[120px] text-md-tight 2xl:text-lg font-medium">
                         {title}
                       </h2>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </article>
