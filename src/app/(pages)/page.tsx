@@ -432,7 +432,7 @@ const PageAboutHome = () => {
                             usuario UI en el lado del frontend.
                           </P>
                         </div>
-                        <div className="flex">
+                        <div className="flex flex-col">
                           <img
                             className="user-neumorphic w-10 h-10 rounded-full object-contain"
                             src={siteMetadata.photo}
