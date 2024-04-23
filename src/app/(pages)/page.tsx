@@ -402,7 +402,8 @@ const PageAboutHome = () => {
                         <div className="font-medium text-xl ">
                           <P className="font-semibold">
                             <Link
-                              href="#"
+                              href="https://udemycloneplus.vercel.app/"
+                              target="_blank"
                               className="flex  space-x-4 underline-offset-4 underline"
                             >
                               Clon de Udemy solo frontend UI
@@ -425,9 +426,10 @@ const PageAboutHome = () => {
                         </div>
                         <div className="pt-3 pb-5">
                           <P className="text-sm">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Voluptatibus quia, nulla! Maiores et
-                            perferendis eaque, exercitationem praesentium nihil.
+                            Este proyecto es un clon de la reconocida plataforma
+                            de aprendizaje en línea Udemy, centrándose
+                            exclusivamente en la recreación de su interfaz de
+                            usuario (UI) en el lado del frontend.
                           </P>
                         </div>
                         <div className="flex">
@@ -468,7 +470,8 @@ const PageAboutHome = () => {
                         <div className=" text-xl ">
                           <P className="font-semibold">
                             <Link
-                              href="#"
+                              href="https://fastfoodilo.vercel.app/fastfood"
+                              target="_blank"
                               className="flex  space-x-4 underline-offset-4 underline"
                             >
                               Aplicacion de comida rapida solo frontend UI
@@ -491,9 +494,10 @@ const PageAboutHome = () => {
                         </div>
                         <div className="pt-3 pb-5">
                           <P className="text-sm">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Voluptatibus quia, nulla! Maiores et
-                            perferendis eaque, exercitationem praesentium nihil.
+                            Este proyecto es un clon de una web de Themeforest
+                            de comida rápida en línea "FastFood Lafka" ,con un
+                            enfoque principal en recrear fielmente su interfaz
+                            de usuario (UI) en el lado del frontend.
                           </P>
                         </div>
 
@@ -535,7 +539,8 @@ const PageAboutHome = () => {
                         <div className=" text-xl ">
                           <P className="font-semibold">
                             <Link
-                              href="#"
+                              href="https://samusystem.vercel.app/"
+                              target="_blank"
                               className="flex  space-x-4 underline-offset-4 underline"
                             >
                               Aplicacion de reportes SAMU Fullstack
@@ -558,9 +563,9 @@ const PageAboutHome = () => {
                         </div>
                         <div className="pt-3 pb-5">
                           <P className="text-sm">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Voluptatibus quia, nulla! Maiores et
-                            perferendis eaque, exercitationem praesentium nihil.
+                            Sistema para organizar los reportes y automatizacion
+                            de subida de informacion y reportes de errores de
+                            datos, con modulos de autenticacion JWT y OTP.
                           </P>
                         </div>
 
