@@ -23,6 +23,14 @@ export const pathsNavHeader = [
     text: "Proyectos",
     path: "/projects",
   },
+  {
+    text: "Academy",
+    path: "/academy",
+  },
+  {
+    text: "Inicio",
+    path: "/",
+  },
 ];
 const Header = () => {
   const { scrolledPast } = useScrollCalc();
@@ -126,13 +134,10 @@ const Header = () => {
         }}
         animate={controls}
         transition={{ duration: 0.35, ease: "easeInOut" }}
-        className="transition-all duration-100 fixed overflow-hidden w-screen top-0 left-0 z-[99999] text-white bg-blackbg"
+        className="transition-all duration-100 fixed  w-screen top-0 left-0 z-[99999] text-white bg-blackbg overflow-y-auto h-[100vh] "
       >
         <div className="w-full h-full">
-          <div
-            className="flex flex-col w-full  h-[50%]"
-            onMouseLeave={handleHoverEnd}
-          >
+          <div className="flex flex-col w-full ">
             <div
               className={cn(
                 "flex flex-col w-full",
@@ -176,148 +181,102 @@ const Header = () => {
                 </button>
               </div>
             </div>
-            <div className="flex items-center h-screen">
-              <div className="flex-1 max-w-[250px] border-r-1 h-full  border-solid border-graydark pl-8 pt-6 flex-2 text-gray-F7 ">
-                <div className="flex flex-col w-auto">
-                  <ul className="flex flex-col gap-1">
-                    <Link
-                      href="/"
-                      onClick={() => handleHoverEnd()}
-                      className="hover:translate-x-2 transition-all duration-100 "
-                    >
-                      <li className="font-headings text-2xl flex">
-                        Inicio{" "}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="30"
-                          height="29"
+            <div className="flex  gap-4 p-[2rem] flex-col sm:flex-row">
+              <div className="flex-2 w-[250px] border-r-0 sm:border-r-1  h-full  border-solid border-graydark  flex-2 text-gray-F7 ">
+                <ul className="flex flex-col gap-1">
+                  <Link
+                    href="/"
+                    onClick={() => handleHoverEnd()}
+                    className="hover:translate-x-2 transition-all duration-100 "
+                  >
+                    <li className="font-headings text-2xl flex">
+                      Inicio{" "}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="30"
+                        height="29"
+                        className="fill-white"
+                      >
+                        <path
                           className="fill-white"
-                        >
-                          <path
-                            className="fill-white"
-                            fillRule="evenodd"
-                            d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
-                            clipRule="evenodd"
-                          ></path>
-                        </svg>{" "}
-                      </li>
-                    </Link>
-                    <Link
-                      className="hover:translate-x-2 transition-all duration-100 "
-                      href="#"
-                      onClick={() => handleHoverEnd()}
-                    >
-                      <li className="flex font-headings text-2xl">
-                        Contacto{" "}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="30"
-                          height="29"
+                          fillRule="evenodd"
+                          d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>{" "}
+                    </li>
+                  </Link>
+
+                  <Link
+                    className="hover:translate-x-2 transition-all duration-100 "
+                    href="/academy"
+                    onClick={() => handleHoverEnd()}
+                  >
+                    <li className="flex font-headings text-2xl">
+                      Academy{" "}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="30"
+                        height="29"
+                        className="fill-white"
+                      >
+                        <path
                           className="fill-white"
-                        >
-                          <path
-                            className="fill-white"
-                            fillRule="evenodd"
-                            d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
-                            clipRule="evenodd"
-                          ></path>
-                        </svg>{" "}
-                      </li>
-                    </Link>
-                    <Link
-                      className="hover:translate-x-2 transition-all duration-100 "
-                      href="/academy"
-                      onClick={() => handleHoverEnd()}
-                    >
-                      <li className="flex font-headings text-2xl">
-                        Academy{" "}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="30"
-                          height="29"
+                          fillRule="evenodd"
+                          d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>{" "}
+                    </li>
+                  </Link>
+                  <Link
+                    className="hover:translate-x-2 transition-all duration-100 "
+                    href="/blog"
+                    onClick={() => handleHoverEnd()}
+                  >
+                    <li className="flex font-headings text-2xl">
+                      Blog{" "}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="30"
+                        height="29"
+                        className="fill-white"
+                      >
+                        <path
                           className="fill-white"
-                        >
-                          <path
-                            className="fill-white"
-                            fillRule="evenodd"
-                            d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
-                            clipRule="evenodd"
-                          ></path>
-                        </svg>{" "}
-                      </li>
-                    </Link>
-                    <Link
-                      className="hover:translate-x-2 transition-all duration-100 "
-                      href="/blog"
-                      onClick={() => handleHoverEnd()}
-                    >
-                      <li className="flex font-headings text-2xl">
-                        Blog{" "}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="30"
-                          height="29"
+                          fillRule="evenodd"
+                          d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>{" "}
+                    </li>
+                  </Link>
+                  <Link
+                    className="hover:translate-x-2 transition-all duration-100 "
+                    href="/projects"
+                    onClick={() => handleHoverEnd()}
+                  >
+                    <li className=" flex font-headings text-2xl">
+                      Proyectos{" "}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="30"
+                        height="29"
+                        className="fill-white"
+                      >
+                        <path
                           className="fill-white"
-                        >
-                          <path
-                            className="fill-white"
-                            fillRule="evenodd"
-                            d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
-                            clipRule="evenodd"
-                          ></path>
-                        </svg>{" "}
-                      </li>
-                    </Link>
-                    <Link
-                      className="hover:translate-x-2 transition-all duration-100 "
-                      href="/projects"
-                      onClick={() => handleHoverEnd()}
-                    >
-                      <li className=" flex font-headings text-2xl">
-                        Proyectos{" "}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="30"
-                          height="29"
-                          className="fill-white"
-                        >
-                          <path
-                            className="fill-white"
-                            fillRule="evenodd"
-                            d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
-                            clipRule="evenodd"
-                          ></path>
-                        </svg>{" "}
-                      </li>
-                    </Link>
-                    <Link
-                      onClick={() => handleHoverEnd()}
-                      href="/blog"
-                      className="flex md:hidden flex-col h-[200px] w-[150px] px-2 relative  mt-5 bg-[#292929] rounded-xl"
-                    >
-                      <span className="justify-center-center absolute right-[3%] top-[3%]  flex aspect-square flex-col items-center rounded-full border p-0.5  border-white/[0.12] dark:border-white/[0.12]  bg-white ">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="30"
-                          height="29"
-                        >
-                          <path
-                            className="fill-black"
-                            fillRule="evenodd"
-                            d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
-                            clipRule="evenodd"
-                          ></path>
-                        </svg>
-                      </span>
-                      <span className="p-5 absolute font-headings  bottom-0 leading-title left-0 text-2xl">
-                        Leer <br />
-                        mi Blog
-                      </span>
-                    </Link>
-                  </ul>
-                </div>
+                          fillRule="evenodd"
+                          d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>{" "}
+                    </li>
+                  </Link>
+                </ul>
               </div>
-              <div className=" flex-5 grid  h-screen md:h-full sm:grid-cols-2 md:grid-cols-3  flex-shrink col-span-8 gap-3 p-4 sm:pr-8 flex-6">
+
+              <div className="flex max-w-[500px] flex-wrap  gap-4">
                 <Link
                   onClick={() => handleHoverEnd()}
                   href={`/blog/${suglifyTitle(
@@ -326,26 +285,44 @@ const Header = () => {
                         ?.plain_text) ||
                       "Articulo sin Titulo"
                   )}`}
-                  className="max-w-[150px] sm:max-w-[200px]  flex flex-col max-h-[250px] h-[350px] bg-[#292929] rounded-xl"
+                  className="flex flex-col w-full  h-[350px] bg-[#292929] rounded-xl"
                   style={{
-                    backgroundImage: `
-      linear-gradient(to bottom, transparent, #000000),
-      url(${
-        sortArticlesByDate[0]?.cover?.file?.url ||
-        sortArticlesByDate[0]?.cover?.external?.url
-      })
-    `,
+                    backgroundImage: `url(${
+                      sortArticlesByDate[0]?.cover?.file?.url ||
+                      sortArticlesByDate[0]?.cover?.external?.url
+                    })`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                   }}
                 >
-                  <span className="h-full"></span>
-                  <span className="flex flex-col p-4 pt-0 pb-6">
-                    <span className="font-headings font-normal pr-4 text-xl py-3">
-                      {(articles &&
-                        sortArticlesByDate[0]?.properties.Name?.title[0]
-                          ?.plain_text) ||
-                        "Articulo sin Titulo"}
+                  <span className="flex flex-col w-full p-4 ">
+                    <span className="text-black bg-white font-bold rounded-max px-3 py-2 text-md flex items-center">
+                      <span>
+                        <svg
+                          viewBox="0 0 64 64"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-6 w-6 mr-2 text-primary-purple"
+                        >
+                          <path
+                            opacity="0.2"
+                            d="M0 16C0 7.163 7.163 0 16 0h32c8.837 0 16 7.163 16 16v32c0 8.837-7.163 16-16 16H16C7.163 64 0 56.837 0 48V16Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M18.565 15.435a2 2 0 0 1 0 2.828c-7.42 7.42-7.42 19.45 0 26.87a2 2 0 0 1-2.829 2.829c-8.982-8.982-8.982-23.545 0-32.527a2 2 0 0 1 2.829 0Zm26.87 0a2 2 0 0 1 2.828 0c8.983 8.982 8.983 23.545 0 32.527a2 2 0 1 1-2.828-2.829c7.42-7.42 7.42-19.45 0-26.87a2 2 0 0 1 0-2.828Zm-4.95 5.05a2 2 0 0 1 2.829 0c6.248 6.249 6.248 16.38 0 22.628a2 2 0 0 1-2.829-2.829c4.687-4.686 4.687-12.284 0-16.97a2 2 0 0 1 0-2.829Zm-16.97 2.829a2 2 0 1 0-2.829-2.829c-6.248 6.249-6.248 16.38 0 22.628a2 2 0 0 0 2.829-2.829c-4.687-4.686-4.687-12.284 0-16.97ZM32 38a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </span>
+                      <span>
+                        {(articles &&
+                          sortArticlesByDate[0]?.properties.Name?.title[0]
+                            ?.plain_text) ||
+                          "Articulo sin Titulo"}
+                      </span>
                     </span>
                   </span>
                 </Link>
@@ -357,10 +334,10 @@ const Header = () => {
                         ?.plain_text) ||
                       "Articulo sin Titulo"
                   )}`}
-                  className="max-w-[150px] sm:max-w-[200px] flex flex-col max-h-[250px] h-[350px] bg-[#292929] rounded-xl"
+                  className="flex flex-col w-full  h-[350px] bg-[#292929] rounded-xl"
                   style={{
                     backgroundImage: `
-      linear-gradient(to bottom, transparent, #000000),
+     
       url(${
         sortArticlesByDate[1]?.cover?.file?.url ||
         sortArticlesByDate[1]?.cover?.external?.url
@@ -370,38 +347,35 @@ const Header = () => {
                     backgroundPosition: "center",
                   }}
                 >
-                  <span className="h-full"></span>
-                  <span className="flex flex-col p-4 pt-0 pb-6">
-                    <span className="font-headings font-normal pr-4 text-xl py-3">
-                      {(articles &&
-                        sortArticlesByDate[1]?.properties.Name?.title[0]
-                          ?.plain_text) ||
-                        "Articulo sin Titulo"}
+                  <span className="flex flex-col w-full p-4 ">
+                    <span className="text-black bg-white font-bold rounded-max px-3 py-2 text-md flex items-center">
+                      <span>
+                        <svg
+                          viewBox="0 0 64 64"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-6 w-6 mr-2 text-primary-purple"
+                        >
+                          <path
+                            opacity="0.2"
+                            d="M0 16C0 7.163 7.163 0 16 0h32c8.837 0 16 7.163 16 16v32c0 8.837-7.163 16-16 16H16C7.163 64 0 56.837 0 48V16Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M18.565 15.435a2 2 0 0 1 0 2.828c-7.42 7.42-7.42 19.45 0 26.87a2 2 0 0 1-2.829 2.829c-8.982-8.982-8.982-23.545 0-32.527a2 2 0 0 1 2.829 0Zm26.87 0a2 2 0 0 1 2.828 0c8.983 8.982 8.983 23.545 0 32.527a2 2 0 1 1-2.828-2.829c7.42-7.42 7.42-19.45 0-26.87a2 2 0 0 1 0-2.828Zm-4.95 5.05a2 2 0 0 1 2.829 0c6.248 6.249 6.248 16.38 0 22.628a2 2 0 0 1-2.829-2.829c4.687-4.686 4.687-12.284 0-16.97a2 2 0 0 1 0-2.829Zm-16.97 2.829a2 2 0 1 0-2.829-2.829c-6.248 6.249-6.248 16.38 0 22.628a2 2 0 0 0 2.829-2.829c-4.687-4.686-4.687-12.284 0-16.97ZM32 38a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </span>
+                      <span>
+                        {(articles &&
+                          sortArticlesByDate[1]?.properties.Name?.title[0]
+                            ?.plain_text) ||
+                          "Articulo sin Titulo"}
+                      </span>
                     </span>
-                  </span>
-                </Link>
-                <Link
-                  onClick={() => handleHoverEnd()}
-                  href="/blog"
-                  className="hidden md:flex flex-col max-w-[200px]  relative h-full bg-[#292929] rounded-xl"
-                >
-                  <span className="justify-center-center absolute right-[3%] top-[3%]  flex aspect-square flex-col items-center rounded-full border p-0.5  border-white/[0.12] dark:border-white/[0.12]  bg-white ">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="30"
-                      height="29"
-                    >
-                      <path
-                        className="fill-black"
-                        fillRule="evenodd"
-                        d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                  </span>
-                  <span className="p-5 absolute font-headings  bottom-0 leading-title left-0 text-2xl">
-                    Leer <br />
-                    mi Blog
                   </span>
                 </Link>
               </div>

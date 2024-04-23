@@ -18,7 +18,7 @@ const extractContentProyect = (proyect: any) => {
   let description = proyect.properties?.Description?.rich_text[0]?.plain_text;
   let tecnologias = proyect?.properties?.Tecnologias?.multi_select || [];
   let category = proyect?.properties?.Category?.select?.name;
-  let progress = proyect.properties?.Progreso?.rich_text[0].plain_text;
+  let progress = proyect.properties?.Progreso?.rich_text[0]?.plain_text;
   let linkpreview = proyect?.properties?.LivePreview?.url || "#";
   let imagesMovil = proyect?.properties?.ImagesMovil?.files;
   let imagesDesktop = proyect?.properties?.ImagesDesktop?.files;
@@ -30,25 +30,25 @@ const extractContentProyect = (proyect: any) => {
   let linkGithubFrontEnd = proyect?.properties?.LinkGithubFrontend?.url;
 
   let indicador1 = JSON.parse(
-    proyect?.properties?.Indicador1?.rich_text[0]?.plain_text
+    proyect?.properties?.Indicador1?.rich_text[0]?.plain_text || "{}"
   );
   let indicador2 = JSON.parse(
-    proyect?.properties?.Indicador2?.rich_text[0]?.plain_text
+    proyect?.properties?.Indicador2?.rich_text[0]?.plain_text || "{}"
   );
 
   let component1 = JSON.parse(
-    proyect?.properties?.Componente1?.rich_text[0]?.plain_text
+    proyect?.properties?.Componente1?.rich_text[0]?.plain_text || "{}"
   );
 
   let component2 = JSON.parse(
-    proyect?.properties?.Componente2?.rich_text[0]?.plain_text
+    proyect?.properties?.Componente2?.rich_text[0]?.plain_text || "{}"
   );
   let component3 = JSON.parse(
-    proyect?.properties?.Componente3?.rich_text[0]?.plain_text
+    proyect?.properties?.Componente3?.rich_text[0]?.plain_text || "{}"
   );
 
   let status = proyect?.properties?.Status?.status;
-
+  let isLocked = proyect?.properties?.Locked.status?.name === "Loked";
   let level = proyect?.properties?.Level?.select?.name;
   let peoples = proyect?.properties?.Person?.people;
   return {
@@ -73,7 +73,7 @@ const extractContentProyect = (proyect: any) => {
       linkGithubFull,
       linkGithubFrontEnd,
     },
-
+    linkGithubFull,
     imagesPlatforms: {
       imagesMovil,
 
@@ -92,6 +92,7 @@ const extractContentProyect = (proyect: any) => {
     description,
     progress,
     tags,
+    isLocked,
 
     imagesPages,
   };

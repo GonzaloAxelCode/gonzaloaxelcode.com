@@ -81,7 +81,7 @@ const PageTutorials = () => {
               </div>
 
               <img
-                src="https://cdn.svgator.com/assets/main-page/fold7/export-settings-2.png"
+                src="https://res.cloudinary.com/ddksrkond/image/upload/v1713846319/1-12_cfidv1.png"
                 alt=""
               />
             </div>

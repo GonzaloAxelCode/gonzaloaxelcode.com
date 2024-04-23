@@ -19,6 +19,7 @@ import Funcionalities from "./components/Funcionalities";
 import CarrouselMovil from "./components/CarrouselMovil";
 import TecnologiesProyect from "../components/TecnologiesProyect";
 import extractInfoArticle from "@/shared/hooks/extract-info-article";
+import { useEffect } from "react";
 export const dynamicParams = false;
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
@@ -95,8 +96,13 @@ export default async function ProjectPage({ params }: any) {
     imagesPlatforms,
     imagesPages,
     links,
+    isLocked,
     components,
   } = extractContentProyect(project);
+
+  if (isLocked) {
+    return null;
+  }
 
   return (
     <main>
@@ -240,7 +246,7 @@ export default async function ProjectPage({ params }: any) {
               <span className="ml-2 text-lg ">Desktop-Ready</span>
             </div>
             <h3 className="mt-8 leading-title lg:mt-6 text-neutrals-opaque-13 font-chromatic-grotesque text-3xl md:text-4xl lg:text-4xl font-medium">
-              Un festival de paginas
+              Paginas principales
             </h3>
             <div className="mt-10 space-y-4">
               <div>

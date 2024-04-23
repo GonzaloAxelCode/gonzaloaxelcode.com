@@ -17,8 +17,16 @@ const SectionProjects = () => {
       <div className="flex flex-col gap-6 justify-center items-center">
         {projects &&
           projects?.map((project: any, index: any) => {
-            const { description, cover, title, indicadores, tecnologias } =
-              extractContentProyect(project);
+            const {
+              description,
+              cover,
+              title,
+              linkpreview,
+              indicadores,
+              tecnologias,
+              isLocked,
+              linkGithubFull,
+            } = extractContentProyect(project);
 
             const href = `/projects/${suglifyTitle(title)}`;
             return (
@@ -39,130 +47,221 @@ const SectionProjects = () => {
                         </div>
 
                         <TecnologiesProyect tecnologias={tecnologias} />
+                        {isLocked ? (
+                          <div className="flex items-center gap-3 flex-wrap">
+                            <div className=" flex items-center gap-2  px-4 py-2  w-fi">
+                              <img
+                                width={20}
+                                height={20}
+                                className=""
+                                src="https://cdn-icons-png.flaticon.com/512/456/456112.png"
+                              />
+                              <span>Acceso Privado</span>
+                            </div>
 
-                        <div className="flex gap-3 flex-wrap">
-                          <button
-                            className="cursor-pointer flex none box-border select-none hover:opacity-80 items-center gap-2 border px-4 py-2 rounded-[14px]  w-fit  dark:border-white/[0.12] border-black/[0.05] bg-gray-F7 dark:bg-[#303030]"
-                            data-projection-id={2997}
-                          >
-                            <span className="body-medium font-sans !font-medium ">
-                              View on GitHub
-                            </span>
-                            <img
-                              width={20}
-                              height={20}
-                              className="filter invert dark:invert-0"
-                              src="https://cdn.sanity.io/images/sdd9dua4/production/9b1e47098fd7b242fc4f534c89390bbb8c6053a2-20x20.svg?fit=max&auto=format"
-                            />
-                          </button>
-                          <button
-                            className="cursor-pointer flex none box-border select-none hover:opacity-80 items-center gap-2 border px-4 py-2 rounded-[14px]  w-fit dark:border-white/[0.12] border-black/[0.05] bg-gray-F7 dark:bg-[#303030] "
-                            data-projection-id={2998}
-                          >
-                            <Link href={href}>
-                              <span className="body-medium font-sans !font-medium ">
-                                Ver proyecto
-                              </span>
-                            </Link>
-                          </button>
-                          <button
-                            className="cursor-pointer flex none box-border select-none hover:opacity-80 items-center gap-2 border px-4 py-2 rounded-[14px]  w-fit dark:border-white/[0.12] border-black/[0.05] bg-gray-F7 dark:bg-[#303030] "
-                            data-projection-id={2998}
-                          >
-                            <span className="body-medium font-sans !font-medium ">
-                              Live Preview
-                            </span>
-                          </button>
-                        </div>
+                            <button className="cursor-pointer flex items-center gap-2  px-4 py-2  w-fi">
+                              <Link
+                                target="_blank"
+                                href={linkpreview}
+                                className=" hover:underline"
+                              >
+                                <span className="flex items-center body-medium font-sans !font-medium ">
+                                  Live Preview
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    id="root"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                    className="w-5 h-5"
+                                    aria-hidden="true"
+                                  >
+                                    <path
+                                      fillRule="evenodd"
+                                      d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                                      clipRule="evenodd"
+                                    />
+                                  </svg>
+                                </span>
+                              </Link>
+                            </button>
+                          </div>
+                        ) : null}
+                        {!isLocked ? (
+                          <div className="flex gap-3 flex-wrap">
+                            <button className="cursor-pointer flex items-center gap-2  px-4 py-2  w-fi">
+                              <Link
+                                href={linkGithubFull}
+                                target="_blank"
+                                className=" flex items-center hover:underline"
+                              >
+                                <span className="flex items-center body-medium font-sans !font-medium ">
+                                  <span className="mx-3">
+                                    Ver repositorio GitHub
+                                  </span>
+                                  <img
+                                    width={20}
+                                    height={20}
+                                    className="filter invert dark:invert-0"
+                                    src="https://cdn.sanity.io/images/sdd9dua4/production/9b1e47098fd7b242fc4f534c89390bbb8c6053a2-20x20.svg?fit=max&auto=format"
+                                  />
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    id="root"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                    className="w-5 h-5"
+                                    aria-hidden="true"
+                                  >
+                                    <path
+                                      fillRule="evenodd"
+                                      d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                                      clipRule="evenodd"
+                                    />
+                                  </svg>
+                                </span>
+                              </Link>
+                            </button>
+
+                            <button className="cursor-pointer flex items-center gap-2  px-4 py-2  w-fi">
+                              <Link href={href} className=" hover:underline">
+                                <span className="flex items-center body-medium font-sans !font-medium ">
+                                  Detalles
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    id="root"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                    className="w-5 h-5"
+                                    aria-hidden="true"
+                                  >
+                                    <path
+                                      fillRule="evenodd"
+                                      d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                                      clipRule="evenodd"
+                                    />
+                                  </svg>
+                                </span>
+                              </Link>
+                            </button>
+
+                            <button className="cursor-pointer flex items-center gap-2  px-4 py-2  w-fi">
+                              <Link
+                                target="_blank"
+                                href={linkpreview}
+                                className=" hover:underline"
+                              >
+                                <span className="flex items-center body-medium font-sans !font-medium ">
+                                  Live Preview
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    id="root"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                    className="w-5 h-5"
+                                    aria-hidden="true"
+                                  >
+                                    <path
+                                      fillRule="evenodd"
+                                      d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                                      clipRule="evenodd"
+                                    />
+                                  </svg>
+                                </span>
+                              </Link>
+                            </button>
+                          </div>
+                        ) : null}
                       </div>
                       <div className="relative md:ml-0 md:inline">
                         <Link
-                          href={href}
+                          href={isLocked ? "#" : href}
                           className="after:absolute after:inset-0"
                         >
                           <img src={cover} alt="" />
                         </Link>
                       </div>
                     </div>
-                    <div className="grid grid-cols-1 gap-5 px-5 pt-6 sm:grid-cols-2 ">
-                      <div className="p-6  hover:-translate-y-1 transform transition-all duration-150  overflow-hidden  relative border-1 border-solid  dark:border-white/[0.12] border-black/[0.05] bg-[#f0f0f0] hover:bg-[#e9e9e9] dark:bg-[#282828]  rounded-xl cursor-pointer">
-                        <div className="w-full">
-                          <p className="font-headings text-2xl">
-                            {" "}
-                            <Link
-                              href={indicadores.indicador1?.href || "#d"}
-                              className="after:absolute after:inset-0"
-                              target="_blank"
+                    {!isLocked ? (
+                      <div className="grid grid-cols-1 gap-5 px-5 pt-6 sm:grid-cols-2 ">
+                        <div className="p-6  hover:-translate-y-1 transform transition-all duration-150  overflow-hidden  relative border-1 border-solid  dark:border-white/[0.12] border-black/[0.05] bg-[#f0f0f0] hover:bg-[#e9e9e9] dark:bg-[#282828]  rounded-xl cursor-pointer">
+                          <div className="w-full">
+                            <p className="font-headings text-2xl">
+                              {" "}
+                              <Link
+                                href={indicadores.indicador1?.href || "#d"}
+                                className="after:absolute after:inset-0"
+                                target="_blank"
+                              >
+                                {indicadores.indicador1?.title || "Sin titulo"}
+                              </Link>
+                            </p>
+                            <p className="pb-8 pr-5">
+                              {indicadores.indicador1?.description ||
+                                "Sin descripccion"}
+                            </p>
+                          </div>
+                          <img
+                            className=""
+                            src={
+                              indicadores.indicador1?.urlImage ||
+                              "https://res.cloudinary.com/ddksrkond/image/upload/v1699679048/features-image_a3k8sd.png"
+                            }
+                          />
+                          <div className="justify-center-center absolute right-[3%] top-[3%]  flex aspect-square flex-col items-center rounded-full border p-0.5  border-white/[0.12] dark:border-white/[0.12]  bg-white dark:bg-[#242424]">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="30"
+                              height="29"
                             >
-                              {indicadores.indicador1?.title || "Sin titulo"}
-                            </Link>
-                          </p>
-                          <p className="pb-8 pr-5">
-                            {indicadores.indicador1?.description ||
-                              "Sin descripccion"}
-                          </p>
+                              <path
+                                className="fill-black dark:fill-white"
+                                fillRule="evenodd"
+                                d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
+                                clipRule="evenodd"
+                              ></path>
+                            </svg>
+                          </div>
                         </div>
-                        <img
-                          className=""
-                          src={
-                            indicadores.indicador1?.urlImage ||
-                            "https://res.cloudinary.com/ddksrkond/image/upload/v1699679048/features-image_a3k8sd.png"
-                          }
-                        />
-                        <div className="justify-center-center absolute right-[3%] top-[3%]  flex aspect-square flex-col items-center rounded-full border p-0.5  border-white/[0.12] dark:border-white/[0.12]  bg-white dark:bg-[#242424]">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="30"
-                            height="29"
-                          >
-                            <path
-                              className="fill-black dark:fill-white"
-                              fillRule="evenodd"
-                              d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
-                              clipRule="evenodd"
-                            ></path>
-                          </svg>
+                        <div className="p-6  hover:-translate-y-1 transform transition-all duration-150  overflow-hidden  relative border-1 border-solid dark:border-white/[0.12] border-black/[0.05]  bg-[#f0f0f0] hover:bg-[#e9e9e9] dark:bg-[#282828] rounded-xl cursor-pointer">
+                          <div className="w-full">
+                            <p className="font-headings text-2xl">
+                              <Link
+                                href={indicadores.indicador2?.href || "#d"}
+                                target="_blank"
+                                className="after:absolute after:inset-0"
+                              >
+                                {indicadores.indicador2?.title || "Sin titulo"}
+                              </Link>
+                            </p>
+                            <p className="pb-8 pr-5">
+                              {indicadores.indicador2?.description ||
+                                "Sin descripccion"}
+                            </p>
+                          </div>
+                          <img
+                            className=""
+                            src={
+                              indicadores.indicador2?.urlImage ||
+                              "https://res.cloudinary.com/ddksrkond/image/upload/v1699679048/features-image_a3k8sd.png"
+                            }
+                          />
+                          <div className="justify-center-center absolute right-[3%] top-[3%]  flex aspect-square flex-col items-center rounded-full border p-0.5  border-white/[0.12] dark:border-white/[0.12]  bg-white dark:bg-[#242424]">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="30"
+                              height="29"
+                            >
+                              <path
+                                className="fill-black dark:fill-white"
+                                fillRule="evenodd"
+                                d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
+                                clipRule="evenodd"
+                              ></path>
+                            </svg>
+                          </div>
                         </div>
                       </div>
-                      <div className="p-6  hover:-translate-y-1 transform transition-all duration-150  overflow-hidden  relative border-1 border-solid dark:border-white/[0.12] border-black/[0.05]  bg-[#f0f0f0] hover:bg-[#e9e9e9] dark:bg-[#282828] rounded-xl cursor-pointer">
-                        <div className="w-full">
-                          <p className="font-headings text-2xl">
-                            <Link
-                              href={indicadores.indicador2?.href || "#d"}
-                              target="_blank"
-                              className="after:absolute after:inset-0"
-                            >
-                              {indicadores.indicador2?.title || "Sin titulo"}
-                            </Link>
-                          </p>
-                          <p className="pb-8 pr-5">
-                            {indicadores.indicador2?.description ||
-                              "Sin descripccion"}
-                          </p>
-                        </div>
-                        <img
-                          className=""
-                          src={
-                            indicadores.indicador2?.urlImage ||
-                            "https://res.cloudinary.com/ddksrkond/image/upload/v1699679048/features-image_a3k8sd.png"
-                          }
-                        />
-                        <div className="justify-center-center absolute right-[3%] top-[3%]  flex aspect-square flex-col items-center rounded-full border p-0.5  border-white/[0.12] dark:border-white/[0.12]  bg-white dark:bg-[#242424]">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="30"
-                            height="29"
-                          >
-                            <path
-                              className="fill-black dark:fill-white"
-                              fillRule="evenodd"
-                              d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
-                              clipRule="evenodd"
-                            ></path>
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
+                    ) : null}
                   </div>
                 </div>
               </div>

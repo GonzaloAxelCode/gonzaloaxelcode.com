@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 const News = ({ article }: any) => {
-  const [news, setNews] = useState(true);
+  const [news, setNews] = useState(false);
 
   if (!news) {
     return null;
@@ -33,13 +33,6 @@ const News = ({ article }: any) => {
             />
           </svg>
           <span>Nuevo articulo</span>
-          <span>
-            <img
-              src="https://res.cloudinary.com/ddksrkond/image/upload/v1700430086/dancing-duck-acegifcom-37_lji80g.gif"
-              className="w-[25px] h-[25px] object-contain"
-              alt=""
-            />
-          </span>
         </div>
         <div className="sm:py-4 sm:pb-3 pb-4 py-1  items-center px-4 sm:px-6  flex flex-wrap gap-x-4 gap-y-2">
           <span>

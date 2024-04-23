@@ -102,12 +102,6 @@ const FilterArticles = ({ articles, tags }: any) => {
             );
           })}
       </div>
-      <button
-        className="rounded-lg font-bold whitespace-nowrap focus:outline-none focus:ring-tertiary-purple disabled:opacity-50 group border-2 focus:ring-4 transition-opacity transition-colors hover:bg-opacity-75 disabled:hover:bg-opacity-100 border-gray-15 py-3 px-6 text-sm-flat leading-5 2xl:text-base-flat 2xl:leading-5 bg-gray-15 text-white mt-12 mx-auto block border transition-all dark:border-white"
-        type="button"
-      >
-        Load more
-      </button>
     </div>
   );
 };

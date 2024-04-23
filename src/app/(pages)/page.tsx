@@ -307,9 +307,9 @@ const PageAboutHome = () => {
               data-nimg={1}
               className="rounded-2xl border-2 border-gray-15 relative z-10 border-opacity-10 shadow-image-fix col-span-5"
               style={{ color: "transparent" }}
-              src="https://res.cloudinary.com/ddksrkond/image/upload/v1699377009/dddd_onuqbj.png"
+              src="https://res.cloudinary.com/ddksrkond/image/upload/v1713839604/SAMUAPPCAPTURE_nub9ca.png"
             />
-            <div className="col-span-9 relative col-start-4 -mt-[50%]">
+            <div className="col-span-9 relative col-start-4 -mt-[30%]">
               <img
                 loading="lazy"
                 width={1896}
@@ -322,7 +322,7 @@ const PageAboutHome = () => {
               />
               <P>
                 <span className="block text-xs-flat text-sm   leading-4 mt-2 absolute max-w-[45%]">
-                  Imagenes captura del proyecto realizado.
+                  Imagenes de algunas aplicaciones creadas.
                 </span>
               </P>
             </div>
@@ -405,7 +405,7 @@ const PageAboutHome = () => {
                               href="#"
                               className="flex  space-x-4 underline-offset-4 underline"
                             >
-                              Clon de Udemy solo frontend
+                              Clon de Udemy solo frontend UI
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 id="root"
@@ -442,6 +442,13 @@ const PageAboutHome = () => {
                               Desarrollador
                             </span>
                           </div>
+                          <p className="text-sm font-light mt-5 text-neutral-600 dark:text-neutral-400">
+                            <span>Aptitudes:</span>{" "}
+                            <span>
+                              Desarrollo de software · Desarrollo Frontend ·
+                              React 18 · Nextjs 12 · Tailwindcss
+                            </span>
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -464,7 +471,7 @@ const PageAboutHome = () => {
                               href="#"
                               className="flex  space-x-4 underline-offset-4 underline"
                             >
-                              Aplicacion de comida rapida Fastfood
+                              Aplicacion de comida rapida solo frontend UI
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 id="root"
@@ -506,7 +513,76 @@ const PageAboutHome = () => {
                         <p className="text-sm font-light mt-5 text-neutral-600 dark:text-neutral-400">
                           <span>Aptitudes:</span>{" "}
                           <span>
-                            Desarrollo de software · Desarrollo web back end
+                            Desarrollo de software · Desarrollo Frontend ·
+                            FullCSS · Nextjs 12
+                          </span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="md:col-span-2">
+                    <div className="card-neumorphic p-8 grid grid-cols-3 gap-6">
+                      <div>
+                        <Link href="#" className="flex  space-x-4">
+                          <img
+                            className="img-neumorphic block rounded-100"
+                            src="https://res.cloudinary.com/ddksrkond/image/upload/v1713839604/SAMUAPPCAPTURE_nub9ca.png"
+                            alt=""
+                          />
+                        </Link>
+                      </div>
+                      <div className="col-span-2">
+                        <div className=" text-xl ">
+                          <P className="font-semibold">
+                            <Link
+                              href="#"
+                              className="flex  space-x-4 underline-offset-4 underline"
+                            >
+                              Aplicacion de reportes SAMU Fullstack
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                id="root"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                                className="w-5 h-5"
+                                aria-hidden="true"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                                  clipRule="evenodd"
+                                />
+                              </svg>{" "}
+                            </Link>
+                          </P>
+                        </div>
+                        <div className="pt-3 pb-5">
+                          <P className="text-sm">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Voluptatibus quia, nulla! Maiores et
+                            perferendis eaque, exercitationem praesentium nihil.
+                          </P>
+                        </div>
+
+                        <div className="flex">
+                          <img
+                            className="user-neumorphic w-10 h-10 rounded-full"
+                            src={siteMetadata.photo}
+                            alt=""
+                          />
+                          <div className="ml-5">
+                            <span className="text-sm  block">Gonzalo Axel</span>
+                            <span className="text-xs  font-medium block">
+                              Desarrollador
+                            </span>
+                          </div>
+                        </div>
+                        <p className="text-sm font-light mt-5 text-neutral-600 dark:text-neutral-400">
+                          <span>Aptitudes:</span>{" "}
+                          <span>
+                            Desarrollo de software · Desarrollo web backend ·
+                            Django RestFramework · Angular 16 · Taiga UI · RXJS
+                            · JWT · PostgreSQL · Docker
                           </span>
                         </p>
                       </div>

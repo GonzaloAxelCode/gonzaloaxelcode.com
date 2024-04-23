@@ -108,7 +108,7 @@ const PageProjects = () => {
             Explora mis proyectos
             <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent   from-[#3a3a3a]  to-[#d3d3d3] dark:to-[#ffffff]">
               {" "}
-              mas recientes.
+              mas recientes en desarrollo.
               <span
                 className="absolute top-13 right-0"
                 style={{ display: "inline-block", verticalAlign: "top" }}
@@ -134,7 +134,7 @@ const PageProjects = () => {
           </h1>
           <p className="max-w-[550px] text-center">
             Estos son mis proyectos mas recientes que he desarrollado hasta
-            ahora, puedes verlos y cada uno tiene su demo y su repositorio.
+            ahora,aun estan en desarriollo pero puedes verlos.
           </p>
         </div>
       </div>
