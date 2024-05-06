@@ -19,12 +19,13 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   return {
     title,
     description,
+
     openGraph: {
       title,
       description,
       siteName: "Gonzalo's Blog",
       type: "website",
-      url: "https://gonzaloaxelcode.vercel.app",
+      url: `https://gonzaloaxelcode.vercel.app/blog/${suglifyTitle(title)}`,
       images: [
         {
           url: cover,
@@ -38,9 +39,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
       card: "summary_large_image",
       title,
       description,
-
       creator: "@GonzaloAxel",
-
       images: [
         {
           url: cover,
