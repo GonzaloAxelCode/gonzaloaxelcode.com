@@ -1,9 +1,9 @@
 import { getFullArticlesByCategorySlug } from "@/shared/hooks/functions-notion";
 import { getAllArticles } from "@/shared/services/notion-services";
-import defaultMetadata, {
-  iconsMetadata,
-  robotsDefault,
-  othersMetadata,
+import {
+    iconsMetadata,
+    othersMetadata,
+    robotsDefault,
 } from "@/shared/settings/default-metadata";
 import COLORS_NOTION from "@/shared/utils/colors-notion";
 import suglifyTitle from "@/shared/utils/suglify-title";
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
       description: `Articulos de la categoria de ${category}`,
       siteName: "Gonzalo's Blog",
       type: "website",
-      url: `https://gonzaloaxelcode.vercel.app/category/${suglifyTitle(
+      url: `https://gonzaloaxelcode.com/category/${suglifyTitle(
         category
       )}`,
       images: [

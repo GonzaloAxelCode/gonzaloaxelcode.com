@@ -1,4 +1,3 @@
-import Flex from "@/shared/UIComponents/Base/Flex";
 import Footer from "@/shared/components/Footer/Footer";
 import Header from "@/shared/components/Header";
 import Subheader from "@/shared/components/Header/Subheader";
@@ -9,7 +8,7 @@ import { Metadata } from "next";
 
 import GlobalProviders from "../providers";
 export const metadata: Metadata = {
-  metadataBase: new URL("https://gonzaloaxelcode.vercel.app"),
+  metadataBase: new URL("https://gonzaloaxelcode.com"),
   title: {
     template: "%s | Gonzalo Axel",
     default: "Gonzalo Axel Fullstack Developer",

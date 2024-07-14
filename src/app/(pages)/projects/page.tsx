@@ -1,13 +1,11 @@
-import LogosBg from "@/shared/components/LogosBg";
-import defaultMetadata, {
-  iconsMetadata,
-  robotsDefault,
-  othersMetadata,
+import {
+    iconsMetadata,
+    othersMetadata,
+    robotsDefault,
 } from "@/shared/settings/default-metadata";
 import type { Metadata } from "next";
 
 import SectionProjects from "./components/SectionProjects";
-import siteMetadata from "@/shared/settings/sitemetdata";
 export const metadata: Metadata = {
   title: "Gonzalo Axel Project",
   description: "Pagina de de proyectos personales.",
@@ -16,7 +14,7 @@ export const metadata: Metadata = {
     description: "Pagina de de proyectos personales.",
     siteName: "Gonzalo's Projects",
     type: "website",
-    url: "https://gonzaloaxelcode.vercel.app/projects",
+    url: "https://gonzaloaxelcode.com/projects",
     images: [
       {
         url: "https://res.cloudinary.com/ddksrkond/image/upload/v1700444221/Presentacion_Propuesta_de_Proyecto_de_Startup_Empresarial_Profesional_negro_y_celeste_wtlsfn.png",

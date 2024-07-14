@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description: "Pagina de mi blog personal.",
     siteName: "Gonzalo's Blog",
     type: "website",
-    url: "https://gonzaloaxelcode.vercel.app/blog",
+    url: "https://gonzaloaxelcode.com/blog",
     images: [
       {
         url: "https://res.cloudinary.com/ddksrkond/image/upload/v1700444221/Presentacion_Propuesta_de_Proyecto_de_Startup_Empresarial_Profesional_negro_y_celeste_wtlsfn.png",

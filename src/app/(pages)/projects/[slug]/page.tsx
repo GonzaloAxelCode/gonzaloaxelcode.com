@@ -1,25 +1,23 @@
-import Title from "@/shared/UIComponents/Base/Title";
 
-import { getFullProjectBySlug } from "@/shared/hooks/functions-notion";
+import extractInfoArticle from "@/shared/hooks/extract-info-article";
 import extractContentProyect from "@/shared/hooks/extractContentProyect";
+import { getFullProjectBySlug } from "@/shared/hooks/functions-notion";
 import { getAllArticles } from "@/shared/services/notion-services";
-import defaultMetadata, {
-  iconsMetadata,
-  robotsDefault,
-  othersMetadata,
+import {
+    iconsMetadata,
+    othersMetadata,
+    robotsDefault,
 } from "@/shared/settings/default-metadata";
+import COLORS_NOTION from "@/shared/utils/colors-notion";
 import suglifyTitle from "@/shared/utils/suglify-title";
 import { Metadata } from "next";
-import RelatedArticles from "../components/RelatedArticles";
-import BGradient from "./components/BGradient";
-import COLORS_NOTION from "@/shared/utils/colors-notion";
 import Link from "next/link";
+import RelatedArticles from "../components/RelatedArticles";
+import TecnologiesProyect from "../components/TecnologiesProyect";
+import BGradient from "./components/BGradient";
+import CarrouselMovil from "./components/CarrouselMovil";
 import CarrouselPage from "./components/CarrouselPage";
 import Funcionalities from "./components/Funcionalities";
-import CarrouselMovil from "./components/CarrouselMovil";
-import TecnologiesProyect from "../components/TecnologiesProyect";
-import extractInfoArticle from "@/shared/hooks/extract-info-article";
-import { useEffect } from "react";
 export const dynamicParams = false;
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
@@ -35,7 +33,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
       description,
       siteName: "Gonzalo's Projects",
       type: "article",
-      url: `https://gonzaloaxelcode.vercel.app/projects/${suglifyTitle(title)}`,
+      url: `https://gonzaloaxelcode.com/projects/${suglifyTitle(title)}`,
       images: [
         {
           url: cover,

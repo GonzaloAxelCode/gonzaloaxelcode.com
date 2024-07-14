@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description: "Pagina de inicio de portfolio personal.",
     siteName: "Gonzalo's Portfolio",
     type: "website",
-    url: "https://gonzaloaxelcode.vercel.app",
+    url: "https://gonzaloaxelcode.com",
     images: [
       {
         url: "https://res.cloudinary.com/ddksrkond/image/upload/v1700444221/Presentacion_Propuesta_de_Proyecto_de_Startup_Empresarial_Profesional_negro_y_celeste_wtlsfn.png",
@@ -402,7 +402,7 @@ const PageAboutHome = () => {
                         <div className="font-medium text-xl ">
                           <P className="font-semibold">
                             <Link
-                              href="https://udemycloneplus.vercel.app/"
+                              href="https://udemycloneplus.com/"
                               target="_blank"
                               className="flex  space-x-4 underline-offset-4 underline"
                             >
@@ -474,7 +474,7 @@ const PageAboutHome = () => {
                         <div className=" text-xl ">
                           <P className="font-semibold">
                             <Link
-                              href="https://fastfoodilo.vercel.app/fastfood"
+                              href="https://fastfoodilo.com/fastfood"
                               target="_blank"
                               className="flex  space-x-4 underline-offset-4 underline"
                             >
@@ -543,7 +543,7 @@ const PageAboutHome = () => {
                         <div className=" text-xl ">
                           <P className="font-semibold">
                             <Link
-                              href="https://samusystem.vercel.app/"
+                              href="https://samusystem.com/"
                               target="_blank"
                               className="flex  space-x-4 underline-offset-4 underline"
                             >

@@ -1,10 +1,10 @@
 import extractInfoArticle from "@/shared/hooks/extract-info-article";
 import { getFullArticleBySlug } from "@/shared/hooks/functions-notion";
 import { getAllArticles } from "@/shared/services/notion-services";
-import defaultMetadata, {
+import {
   iconsMetadata,
-  robotsDefault,
   othersMetadata,
+  robotsDefault,
 } from "@/shared/settings/default-metadata";
 import suglifyTitle from "@/shared/utils/suglify-title";
 import { Metadata } from "next";
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
       description,
       siteName: "Gonzalo's Blog",
       type: "website",
-      url: `https://gonzaloaxelcode.vercel.app/blog/${suglifyTitle(title)}`,
+      url: `https://gonzaloaxelcode.com/blog/${suglifyTitle(title)}`,
       images: [
         {
           url: cover,

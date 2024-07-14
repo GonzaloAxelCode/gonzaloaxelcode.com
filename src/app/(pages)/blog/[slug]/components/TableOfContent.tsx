@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 import { cn } from "tailwind-cn";
 import SvgCompletedArticle from "./SvgCompletedArticle";
 //@ts-ignore
-import Flex from "@/shared/UIComponents/Base/Flex";
 import usePostRatings from "@/shared/hooks/usePostRatings";
 import useTheme from "@/shared/hooks/useTheme";
 import Confetti from "./Confetti";
@@ -191,7 +190,7 @@ const TableOfContent = ({ content, id, slug }: any) => {
             <div className="flex gap-2.5 items-center">
               <Link
                 className="block cursor-pointer w-10 h-10  p-2 dark:text-white text-black"
-                href={`https://twitter.com/intent/tweet?url=https://gonzaloaxelcode.vercel.app/blog/${suglifyTitle(
+                href={`https://twitter.com/intent/tweet?url=https://gonzaloaxelcode.com/blog/${suglifyTitle(
                   slug
                 )}&text=Texto+para+tweet`}
                 target="_blank"
@@ -212,7 +211,7 @@ const TableOfContent = ({ content, id, slug }: any) => {
               </Link>
               <Link
                 className="block cursor-pointer w-10 h-10 p-2  dark:text-white text-black"
-                href={`https://www.linkedin.com/sharing/share-offsite/?url=https://gonzaloaxelcode.vercel.app/blog/${suglifyTitle(
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=https://gonzaloaxelcode.com/blog/${suglifyTitle(
                   slug
                 )}`}
                 target="_blank"
@@ -233,7 +232,7 @@ const TableOfContent = ({ content, id, slug }: any) => {
               </Link>
               <Link
                 className="block cursor-pointer w-10 h-10  p-2  dark:text-white text-black"
-                href={`mailto:?subject=Asunto+del+correo&body=Aquí+está+el+enlace+de+mi+blog:%0D%0Ahttps://gonzaloaxelcode.vercel.app/blog/${suglifyTitle(
+                href={`mailto:?subject=Asunto+del+correo&body=Aquí+está+el+enlace+de+mi+blog:%0D%0Ahttps://gonzaloaxelcode.com/blog/${suglifyTitle(
                   slug
                 )} `}
                 target="_blank"

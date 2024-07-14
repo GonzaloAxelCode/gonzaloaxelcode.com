@@ -1,15 +1,15 @@
+import LogosBg from "@/shared/components/LogosBg";
 import {
   iconsMetadata,
-  robotsDefault,
   othersMetadata,
+  robotsDefault,
 } from "@/shared/settings/default-metadata";
-import type { Metadata } from "next";
-import LogosBg from "@/shared/components/LogosBg";
-import Link from "next/link";
-import TextChange from "./components/TextChange";
 import siteMetadata from "@/shared/settings/sitemetdata";
-import RecentArticles from "./components/RecentArticles";
+import type { Metadata } from "next";
+import Link from "next/link";
 import MyTools from "./components/MyTools";
+import RecentArticles from "./components/RecentArticles";
+import TextChange from "./components/TextChange";
 
 export const metadata: Metadata = {
   title: "Gonzalo Axel Web Junior Developer",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description: "Pagina de inicio de portfolio personal.",
     siteName: "Gonzalo's Portfolio",
     type: "website",
-    url: "https://gonzaloaxelcode.vercel.app",
+    url: "https://gonzaloaxelcode.com",
     images: [
       {
         url: "https://res.cloudinary.com/ddksrkond/image/upload/v1700444221/Presentacion_Propuesta_de_Proyecto_de_Startup_Empresarial_Profesional_negro_y_celeste_wtlsfn.png",
