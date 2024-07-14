@@ -1,4 +1,3 @@
-import { BoxBgOpacityClasses } from "@/shared/styles/custom-tw-classes";
 import { cn } from "tailwind-cn";
 
 const Subscribe = () => {
@@ -60,7 +59,7 @@ const Subscribe = () => {
                 type="button"
                 name="subscribe"
               >
-                Subscribe
+                Subscribe (aun no disponible)
               </button>
             </form>
           </div>

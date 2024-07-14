@@ -1,20 +1,24 @@
 "use client";
 
-import P from "@/shared/UIComponents/Base/P";
-import Link from "next/link";
-import { useState } from "react";
-import { cn } from "tailwind-cn";
-import Logo from "../Logo/Index";
-import { motion, useAnimation } from "framer-motion";
-import Switcher from "../SwitcherDark";
 import useScrollCalc from "@/shared/hooks/useScrollCalc";
 import { fetcherCache } from "@/shared/services/fetcher";
-import useSWR from "swr";
-import suglifyTitle from "@/shared/utils/suglify-title";
+import siteMetadata from "@/shared/settings/sitemetdata";
+import P from "@/shared/UIComponents/Base/P";
 import sortByCreatedTime from "@/shared/utils/sort-createdtime";
+import suglifyTitle from "@/shared/utils/suglify-title";
+import { motion, useAnimation } from "framer-motion";
+import Link from "next/link";
+import useSWR from "swr";
+import { cn } from "tailwind-cn";
+import Logo from "../Logo/Index";
+import Switcher from "../SwitcherDark";
 import News from "./News";
 
 export const pathsNavHeader = [
+    {
+    text: "Inicio",
+    path: "/",
+  },
   {
     text: "Blog",
     path: "/blog",
@@ -27,8 +31,9 @@ export const pathsNavHeader = [
     text: "Academy",
     path: "/academy",
   },
-  {
-    text: "Inicio",
+
+   {
+    text: "Servicios",
     path: "/",
   },
 ];
@@ -150,8 +155,12 @@ const Header = () => {
                   <div className=" relative flex items-center z-10  self-stretch  lg:pr-8">
                     <span className="focus:outline-none flex gap-0 items-center cursor-pointer  text-white">
                       <span className="">
-                        <span className="filter invert">
-                          <Logo />
+                        <span className="">
+                          <img
+      className=" w-[40px] filter invert sm:w-[40px] object-contain h-[50px]"
+      src={siteMetadata.logoUrl}
+      alt="logo"
+            />
                         </span>
                       </span>
                       <span className="text-white text-lg ml-1">
@@ -207,28 +216,7 @@ const Header = () => {
                     </li>
                   </Link>
 
-                  <Link
-                    className="hover:translate-x-2 transition-all duration-100 "
-                    href="/academy"
-                    onClick={() => handleHoverEnd()}
-                  >
-                    <li className="flex font-headings text-2xl">
-                      Academy{" "}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="30"
-                        height="29"
-                        className="fill-white"
-                      >
-                        <path
-                          className="fill-white"
-                          fillRule="evenodd"
-                          d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
-                          clipRule="evenodd"
-                        ></path>
-                      </svg>{" "}
-                    </li>
-                  </Link>
+                
                   <Link
                     className="hover:translate-x-2 transition-all duration-100 "
                     href="/blog"
@@ -251,6 +239,28 @@ const Header = () => {
                       </svg>{" "}
                     </li>
                   </Link>
+                   <Link
+                    className="hover:translate-x-2 transition-all duration-100 "
+                    href="/academy"
+                    onClick={() => handleHoverEnd()}
+                  >
+                    <li className="flex font-headings text-2xl">
+                      Academy{" "}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="30"
+                        height="29"
+                        className="fill-white"
+                      >
+                        <path
+                          className="fill-white"
+                          fillRule="evenodd"
+                          d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>{" "}
+                    </li>
+                  </Link> 
                   <Link
                     className="hover:translate-x-2 transition-all duration-100 "
                     href="/projects"
@@ -258,6 +268,28 @@ const Header = () => {
                   >
                     <li className=" flex font-headings text-2xl">
                       Proyectos{" "}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="30"
+                        height="29"
+                        className="fill-white"
+                      >
+                        <path
+                          className="fill-white"
+                          fillRule="evenodd"
+                          d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>{" "}
+                    </li>
+                  </Link>
+                   <Link
+                    className="hover:translate-x-2 transition-all duration-100 "
+                    href="/"
+                    onClick={() => handleHoverEnd()}
+                  >
+                    <li className="flex font-headings text-2xl">
+                      Servicios{" "}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="30"

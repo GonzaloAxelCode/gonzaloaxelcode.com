@@ -3,7 +3,6 @@ import { fetcherCache } from "@/shared/services/fetcher";
 //@ts-ignore
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import useSWR from "swr";
-import CardArticle from "../CardArticle";
 import CardArticle2 from "../CardArticle2";
 const LastestContent = () => {
   const { data: articles } = useSWR("/api/blog", fetcherCache);
@@ -23,25 +22,31 @@ const LastestContent = () => {
             </div>
           </div>
         </div>
-        <div className=" mt-8 2xl:mt-14 flex w-screen overflow-hidden">
+        <div className=" mt-8 2xl:mt-14 flex   overflow-hidden container max-w-[1024px] lg:max-w-[1280px]">
           <Splide
             hasTrack={false}
             options={{
-              perPage: 1,
+              perPage: 4,
               gap: "0.5rem",
               arrows: false,
             }}
           >
-            <div className="w-full ">
+            <div className="w-screen">
               <SplideTrack>
                 {articles?.map((article: any, index: number) => (
                   <SplideSlide
                     key={index}
-                    className="max-w-[314px] py-4 transform translate-x-11"
+                    className="max-w-[270px] py-4 transform translate-x-11"
                   >
                     <CardArticle2 article={article} />
                   </SplideSlide>
                 ))}{" "}
+                 <SplideSlide
+                 
+                    className="max-w-[90px] py-4 transform translate-x-11"
+                  >
+                  
+                  </SplideSlide> 
               </SplideTrack>
             </div>
           </Splide>

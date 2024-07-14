@@ -1,4 +1,3 @@
-import Flex from "@/shared/UIComponents/Base/Flex";
 import extractInfoArticle from "@/shared/hooks/extract-info-article";
 import { fetcherCache } from "@/shared/services/fetcher";
 import { BoxBgOpacityClasses } from "@/shared/styles/custom-tw-classes";

@@ -1,10 +1,10 @@
 "use client";
 import suglifyTitle from "@/shared/utils/suglify-title";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const News = ({ article }: any) => {
-  const [news, setNews] = useState(false);
+  const [news, setNews] = useState(true);
 
   if (!news) {
     return null;

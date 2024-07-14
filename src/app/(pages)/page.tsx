@@ -1,16 +1,16 @@
+import LogosBg from "@/shared/components/LogosBg";
 import {
   iconsMetadata,
-  robotsDefault,
   othersMetadata,
+  robotsDefault,
 } from "@/shared/settings/default-metadata";
-import type { Metadata } from "next";
-import LogosBg from "@/shared/components/LogosBg";
-import Link from "next/link";
-import TextChange from "./about/components/TextChange";
 import siteMetadata from "@/shared/settings/sitemetdata";
-import RecentArticles from "./about/components/RecentArticles";
-import MyTools from "./about/components/MyTools";
 import P from "@/shared/UIComponents/Base/P";
+import type { Metadata } from "next";
+import Link from "next/link";
+import MyTools from "./about/components/MyTools";
+import RecentArticles from "./about/components/RecentArticles";
+import TextChange from "./about/components/TextChange";
 
 export const metadata: Metadata = {
   title: "Gonzalo Axel Web Junior Developer",
@@ -385,7 +385,7 @@ const PageAboutHome = () => {
 
           <div className="ml-6 flex flex-col">
             <div className="  border-l border-gray-200 dark:border-neutral-700">
-              <div className="max-w-5xl mx-auto ">
+              <div className="max-w-7xl mx-auto ">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   <div className="md:col-span-2">
                     <div className="card-neumorphic p-8 grid grid-cols-3 gap-6">
@@ -433,16 +433,20 @@ const PageAboutHome = () => {
                           </P>
                         </div>
                         <div className="flex flex-col">
-                          <img
+                          
+                          <div className="flex">
+                            <img
                             className="user-neumorphic w-10 h-10 rounded-full object-contain"
                             src={siteMetadata.photo}
                             alt=""
                           />
                           <div className="ml-5">
+
                             <span className="text-sm  block">Gonzalo Axel</span>
                             <span className="text-xs  font-medium block">
                               Desarrollador
                             </span>
+                          </div>
                           </div>
                           <p className="text-sm font-light mt-5 text-neutral-600 dark:text-neutral-400">
                             <span>Aptitudes:</span>{" "}
@@ -821,8 +825,10 @@ const PageAboutHome = () => {
           Descubre mi blog personal, aqui es donde escribo sobre algunas
           novedades, curiosidades y sobre tecnologia.Puedes hecharle un vistazo.
         </p>
+        
 
         <RecentArticles />
+        
       </section>
       <section className="relative z-20 overflow-hidden my-10">
         <div className="mt-4">

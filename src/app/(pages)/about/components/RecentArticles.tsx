@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { fetcherCache } from "@/shared/services/fetcher";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import useSWR from "swr";
@@ -15,6 +14,7 @@ const RecentArticles = () => {
           perPage: 1,
           gap: "0.5rem",
           arrows: false,
+          marginLeft:20
         }}
       >
         <div className="w-full ">

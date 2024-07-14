@@ -2,15 +2,14 @@ import Subscribe from "@/shared/components/Subscribe";
 
 import {
   iconsMetadata,
-  robotsDefault,
   othersMetadata,
+  robotsDefault,
 } from "@/shared/settings/default-metadata";
 import type { Metadata } from "next";
 import ArticlesByTopic from "./components/ArticlesByTopic";
 import BlogGridPresentation from "./components/BlogPresentation";
 import ChooseTechStack from "./components/ChooseTechStack";
 import LastestContent from "./components/LatestContent";
-import BestArticle from "./components/BestArticle";
 
 export const metadata: Metadata = {
   title: "Gonzalo Axel Blog",
@@ -68,7 +67,7 @@ const PageBlog = () => {
       <section className="w-full">
         <BlogGridPresentation />
       </section>
-      <BestArticle />
+      
 
       <LastestContent />
       <ChooseTechStack />
