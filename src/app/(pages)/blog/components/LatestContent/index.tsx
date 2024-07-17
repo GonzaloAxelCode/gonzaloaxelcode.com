@@ -22,35 +22,30 @@ const LastestContent = () => {
             </div>
           </div>
         </div>
-        <div className=" mt-8 2xl:mt-14 flex   overflow-hidden container max-w-[1024px] lg:max-w-[1280px]">
-          <Splide
-            hasTrack={false}
-            options={{
-              perPage: 4,
-              gap: "0.5rem",
-              arrows: false,
-            }}
-          >
-            <div className="w-screen">
-              <SplideTrack>
-                {articles?.map((article: any, index: number) => (
-                  <SplideSlide
-                    key={index}
-                    className="max-w-[270px] py-4 transform translate-x-11"
-                  >
-                    <CardArticle2 article={article} />
-                  </SplideSlide>
-                ))}{" "}
-                 <SplideSlide
-                 
-                    className="max-w-[90px] py-4 transform translate-x-11"
-                  >
-                  
-                  </SplideSlide> 
-              </SplideTrack>
-            </div>
-          </Splide>
-        </div>{" "}
+     <Splide
+      hasTrack={false}
+      options={{
+        perPage: 1,
+        gap: "0.5rem",
+        arrows: false,
+      }}
+    >
+      <section className="w-full  text-gray-15 dark:text-white py-10 md:py-16 2xl:py-20 overflow-hidden dark-copy ">
+        <div className=" grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-6 max-w-[768px] lg:max-w-[1280px]  mx-auto  px-8">
+         
+        
+          <div className="w-full">
+            <SplideTrack>
+              {articles?.map((article: any, index: number) => (
+                <SplideSlide key={index} className="max-w-[286px] py-4">
+                  <CardArticle2 article={article} />
+                </SplideSlide>
+              ))}
+            </SplideTrack>
+          </div>
+        </div>
+      </section>
+    </Splide>
       </div>
     </section>
   );

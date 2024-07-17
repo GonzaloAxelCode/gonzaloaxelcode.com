@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 const News = ({ article }: any) => {
-  const [news, setNews] = useState(true);
+  const [news, setNews] = useState(false);
 
   if (!news) {
     return null;
@@ -12,13 +12,13 @@ const News = ({ article }: any) => {
 
   return (
     <div className="flex">
-      <div className="w-[93%] font-medium my-4 text-sm sm:text-sm rounded-lg sm:rounded-3xl flex flex-col sm:flex-row overflow-hidden relative justify-between mx-auto bg-gray-30 bg-gray-F7 dark:bg-[#323232]">
-        <div className="py-1 px-4 sm:my-2 sm:px-6 text-center flex shrink-0 items-center ">
+      <div className="w-[93%] pl-6 pr-1 py-1 mt-2 text-xs rounded-lg sm:rounded-3xl flex flex-col sm:flex-row overflow-hidden relative md:justify-between mx-auto bg-gray-30 bg-gray-F7 dark:bg-[#323232]">
+        <div className="text-center justify-center flex flex-row items-center ">
           <svg
             viewBox="0 0 64 64"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 mr-2 text-primary-purple"
+            className="h-4 w-4 mr-2 text-primary-purple"
           >
             <path
               opacity="0.2"
@@ -32,14 +32,14 @@ const News = ({ article }: any) => {
               fill="currentColor"
             />
           </svg>
-          <span>Nuevo articulo</span>
+          <span>Nuevo Articulo</span>
         </div>
-        <div className="sm:py-4 sm:pb-3 pb-4 py-1  items-center px-4 sm:px-6  flex flex-wrap gap-x-4 gap-y-2">
-          <span>
+        <div className="items-center flex justify-center flex-wrap gap-x-4 gap-y-2">
+          <span className="text-center m-auto flex">
             👉{" "}
             {article?.properties.Name?.title[0]?.plain_text ||
-              "Articulo sin Titulo"}
-          </span>
+              "Articulo sin Titulo"}<span>
+
 
           <Link
             className="font-bold underline inline-block underline-offset-4 hover:underline-offset-2"
@@ -50,9 +50,11 @@ const News = ({ article }: any) => {
             )}`}
           >
             Ver
-          </Link>
+          </Link></span>
+          </span>
+
         </div>
-        <button
+       <button
           onClick={() => setNews(false)}
           className="absolute top-2 right-2 sm:relative sm:top-0 sm:right-0 sm:mr-4"
           type="button"
@@ -70,8 +72,9 @@ const News = ({ article }: any) => {
               strokeWidth="1.5"
             />
           </svg>
-        </button>
+        </button> 
       </div>
+      
     </div>
   );
 };

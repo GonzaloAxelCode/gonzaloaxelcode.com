@@ -191,7 +191,7 @@ const Header = () => {
               </div>
             </div>
             <div className="flex  gap-4 p-[2rem] flex-col sm:flex-row">
-              <div className="flex-2 w-[250px] border-r-0 sm:border-r-1  h-full  border-solid border-graydark  flex-2 text-gray-F7 ">
+              <div className="flex-2 w-[250px] border-r-0   h-full  border-solid border-graydark  flex-2 text-gray-F7 ">
                 <ul className="flex flex-col gap-1">
                   <Link
                     href="/"
@@ -308,7 +308,7 @@ const Header = () => {
                 </ul>
               </div>
 
-              <div className="flex max-w-[500px] flex-wrap  gap-4">
+              <div className="hidden md:flex max-w-[500px] flex-wrap  gap-4">
                 <Link
                   onClick={() => handleHoverEnd()}
                   href={`/blog/${suglifyTitle(
