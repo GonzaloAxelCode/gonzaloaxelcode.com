@@ -1,12 +1,18 @@
 import defaultMetadata from "@/shared/settings/default-metadata";
 import type { Metadata } from "next";
+import HeaderService from "./components/HeaderService";
 export const metadata: Metadata = {
   ...defaultMetadata,
 };
-const PageContact = () => {
+const ServicesPage = () => {
   return (
-    <main>page</main>
+    <main>
+
+
+       <HeaderService />
+      
+    </main>
   )
 }
 
-export default PageContact
+export default ServicesPage

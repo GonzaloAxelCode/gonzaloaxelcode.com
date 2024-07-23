@@ -67,11 +67,8 @@ const PageBlog = () => {
       <section className="w-full">
         <BlogGridPresentation />
       </section>
-      
-
       <LastestContent />
       <ChooseTechStack />
-
       <ArticlesByTopic />
       <div className="max-w-[768px] lg:max-w-[1280px]  mx-auto my-10 px-8">
         <Subscribe />

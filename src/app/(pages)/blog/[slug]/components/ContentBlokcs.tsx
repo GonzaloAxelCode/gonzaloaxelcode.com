@@ -3,7 +3,6 @@ import P from "@/shared/UIComponents/Base/P";
 import Subtitle from "@/shared/UIComponents/Base/Subtitle";
 import Image from "next/image";
 
-import Flex from "@/shared/UIComponents/Base/Flex";
 //@ts-ignore
 import Title from "@/shared/UIComponents/Base/Title";
 //@ts-ignore
@@ -261,7 +260,7 @@ const CodeBlock = ({ code, language, caption }: any) => {
   return (
     <div className="w-full">
       <div
-        className="grid bg-[#151515] p-5 text-sm sm:text-md rounded-xl w-full "
+        className="grid dark:bg-[#202020] bg-[#f7f7f7] p-5 text-sm sm:text-md rounded-xl w-full "
         style={{
           fontFamily: "Anonymous Pro",
         }}

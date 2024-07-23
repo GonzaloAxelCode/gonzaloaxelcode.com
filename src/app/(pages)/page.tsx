@@ -128,7 +128,7 @@ const PageAboutHome = () => {
                 <Link
                   href="/CURRICULUM2.pdf"
                   target="_blank"
-                  className="inline-flex w-auto px-4 py-2 mt-5 text-sm sm:text-md font-bold duration-300 ease-out border rounded-full   dark:text-neutral-900  border-neutral-700 dark:border-neutral-300 bg-white dark:bg-black dark>text-white dark:text-white text-neutral-900"
+                  className="inline-flex w-auto px-4 py-2 mt-5 text-sm sm:text-md font-bold duration-300 ease-out border rounded-full   dark:text-neutral-900  border-neutral-700 border-2 dark:border-neutral-300 bg-white dark:bg-black dark>text-white dark:text-white text-neutral-900"
                 >
                   Descarga mi CV
                 </Link>

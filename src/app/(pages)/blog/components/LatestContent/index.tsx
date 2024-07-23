@@ -30,6 +30,7 @@ const LastestContent = () => {
         arrows: false,
       }}
     >
+      
       <section className="w-full  text-gray-15 dark:text-white py-10 md:py-16 2xl:py-20 overflow-hidden dark-copy ">
         <div className=" grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-6 max-w-[768px] lg:max-w-[1280px]  mx-auto  px-8">
          

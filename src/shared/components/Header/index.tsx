@@ -34,7 +34,7 @@ export const pathsNavHeader = [
 
    {
     text: "Servicios",
-    path: "/",
+    path: "/services",
   },
 ];
 const Header = () => {
@@ -285,7 +285,7 @@ const Header = () => {
                   </Link>
                    <Link
                     className="hover:translate-x-2 transition-all duration-100 "
-                    href="/"
+                    href="/services"
                     onClick={() => handleHoverEnd()}
                   >
                     <li className="flex font-headings text-2xl">

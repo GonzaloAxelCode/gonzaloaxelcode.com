@@ -1,5 +1,4 @@
 "use client";
-import Flex from "@/shared/UIComponents/Base/Flex";
 import P from "@/shared/UIComponents/Base/P";
 import Title from "@/shared/UIComponents/Base/Title";
 import useExtractInfoArticle from "@/shared/hooks/useExtractInfoArticle";
@@ -107,7 +106,7 @@ const PresentationArticle = ({ article }: any) => {
             width={1280}
             height={720}
             src={cover}
-            className="object-contain border-1 dark:border-graywhite border-graydark border-opacity-75 rounded-3xl border-solid"
+            className="object-contain  border-2  border-gray-100 dark:border-darkborder rounded-3xl border-solid"
             alt={title}
           />
         </picture>

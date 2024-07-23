@@ -82,7 +82,7 @@ const TableOfContent = ({ content, id, slug }: any) => {
   };
   return (
     <div className="pb-6 lg:col-span-4 order-1 lg:sticky  lg:top-[55px] lg:h-[700px]">
-      <div className="bg-white  dark:bg-blackbg overflow-hidden pt-6 px-6 pb-2.5 relative border-2 rounded-xl border-gray-100 dark:border-darkborder  ">
+      <div className=" overflow-hidden pt-6 px-6 pb-2.5 relative rounded-xl  border-2  border-gray-100 dark:border-darkborder bg-white  dark:bg-blackbg ">
         <header className="pb-4">
           <button className="flex justify-between items-center w-full">
             <Title className=" scroll-mt-[120px] text-xl font-medium">
