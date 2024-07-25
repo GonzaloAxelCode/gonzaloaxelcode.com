@@ -5,17 +5,16 @@ import {
   othersMetadata,
   robotsDefault,
 } from "@/shared/settings/default-metadata";
-import COLORS_NOTION from "@/shared/utils/colors-notion";
 import suglifyTitle from "@/shared/utils/suglify-title";
 import { Metadata } from "next";
-import Banner from "./components/Banner";
-import FilterArticles from "./components/FilterArticles";
+import FilterByTagAcademy from "../../blog/category/[categoryslug]/components/FilterByTagAcademy";
+
 export const dynamicParams = false;
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
-  const { articles } = await getFullArticlesByCategorySlug(params.categoryslug);
+  const { articles } = await getFullArticlesByCategorySlug(params.categoryslug, process.env.NOTION_DATABASE_ACADEMY);
 
-  let category = articles[0].properties?.Category?.select?.name;
+  let category = articles[0]?.properties?.Category?.select?.name;
 
   return {
     title: category,
@@ -23,7 +22,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
     openGraph: {
       title: category,
       description: `Articulos de la categoria de ${category}`,
-      siteName: "Gonzalo's Blog",
+      siteName: "Gonzalo's Academy",
       type: "website",
       url: `https://gonzaloaxelcode.com/category/${suglifyTitle(
         category
@@ -38,7 +37,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
           url: "https://res.cloudinary.com/ddksrkond/image/upload/v1700444328/Presentacion_Propuesta_de_Proyecto_de_Startup_Empresarial_Profesional_negro_y_celeste_1_lrshjz.png",
           width: 1800,
           height: 1600,
-          alt: "Gonzalo Blog",
+          alt: "Gonzalo Academy",
         },
       ],
       locale: "es_PE",
@@ -60,7 +59,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
           url: "https://res.cloudinary.com/ddksrkond/image/upload/v1700444328/Presentacion_Propuesta_de_Proyecto_de_Startup_Empresarial_Profesional_negro_y_celeste_1_lrshjz.png",
           width: 1800,
           height: 1600,
-          alt: "Gonzalo Blog",
+          alt: "Gonzalo Academy",
         },
       ],
     },
@@ -70,30 +69,26 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   };
 }
 
-export default async function PageCategory({ params }: any) {
-  const { articles, tags } = await getFullArticlesByCategorySlug(
-    params.categoryslug
-  );
-  const titleCategory =
-    articles[0].properties.Category?.select?.name || "Articulo sin Titulo";
-  const colorCategory =
-    COLORS_NOTION[articles[0].properties.Category?.select?.color || "default"];
 
-  return (
-    <main className="w-full mb-20 ">
-      <Banner colorCategory={colorCategory} titleCategory={titleCategory} />
-      <div className="w-full pt-12 pb-20 ">
-        <FilterArticles articles={articles} tags={tags} />
-      </div>
+export default async function PageSlugAcademy({ params }: any) {
+  
+  
+ const { articles, tags } = await getFullArticlesByCategorySlug(
+    params.categoryslug,process.env.NOTION_DATABASE_ACADEMY
+  );
+    return (
+     <main className="w-full mb-20 ">
+    <FilterByTagAcademy articles={articles}/>
     </main>
   );
 }
 
 export async function generateStaticParams() {
-  const articles = await getAllArticles();
+  const articles = await getAllArticles(
+     process.env.NOTION_DATABASE_ACADEMY,
+  );
   return articles.map((el: any) => ({
     categoryslug: suglifyTitle(el.properties.Category?.select?.name),
   }));
 }
-
 

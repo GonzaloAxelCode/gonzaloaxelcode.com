@@ -6,18 +6,50 @@ import {
 } from "@/shared/services/notion-services";
 import suglifyTitle from "../utils/suglify-title";
 
-export const getFullArticleBySlug = async (slug: any) => {
+
+
+export const getFullAcademyArticleBySlug = async (slug: any,database_id:any = process.env.NOTION_DATABASE_ACADEMY) => {
+
+
   const { idPage, article } = await findArticleBySlug(
-    process.env.NOTION_DATABASE_BLOG,
+    database_id,
     slug
   );
-
+  
+  
   const content = await getArticle(idPage);
   return { content, article, idPage };
 };
 
-export const getFullArticlesByCategorySlug = async (categoryslug: any) => {
-  const allpages = await getAllArticles(process.env.NOTION_DATABASE_BLOG, {});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export const getFullArticleBySlug = async (slug: any,database_id:any = process.env.NOTION_DATABASE_BLOG) => {
+
+
+  const { idPage, article } = await findArticleBySlug(
+    database_id,
+    slug
+  );
+  
+  
+  const content = await getArticle(idPage);
+  return { content, article, idPage };
+};
+
+export const getFullArticlesByCategorySlug = async (categoryslug: any,database_id=process.env.NOTION_DATABASE_BLOG) => {
+  const allpages = await getAllArticles(database_id, {});
 
   const filterpages = allpages.filter((page: any) => {
     return (

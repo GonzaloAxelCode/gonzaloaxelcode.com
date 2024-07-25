@@ -1,13 +1,12 @@
 import extractInfoArticle from "@/shared/hooks/extract-info-article";
-import siteMetadata from "@/shared/settings/sitemetdata";
 import formatDate from "@/shared/utils/format-date";
 import suglifyTitle from "@/shared/utils/suglify-title";
 import Link from "next/link";
 
-const CardArticle2 = ({ article }: any) => {
+const CardAcademyTopic = ({ article }: any) => {
   const { tags, title, description, category, createdAt, cover } =
     extractInfoArticle(article);
-
+    
   return (
     <article className="overflow-hidden flex w-full grow h-full relative border-1 rounded-xl flex-col bg-white border-gray-EE text-gray-15 dark:bg-gray-1F dark:border-gray-1F">
       <div className="">
@@ -26,7 +25,7 @@ const CardArticle2 = ({ article }: any) => {
         </div>
       </div>
       <div className="flex h-full gap-1 p-6 pb-3 flex-col">
-        <div className="flex flex-col justify-between gap-1">
+        <div className="flex  justify-between gap-1">
           <span className="flex tracking-tight items-center gap-1.5 relative h-6 font-bold text-sm-flat overflow-auto relative z-10 text-gray-15 dark:text-white">
             <Link
               className="flex items-center gap-1.5 focus:outline-none focus:ring-2 ring-offset-2 rounded-sm max-w-full ring-offset-white ring-gray-EE"
@@ -61,7 +60,7 @@ const CardArticle2 = ({ article }: any) => {
         </div>
         <div className="flex flex-col flex-grow">
           <Link
-            href={`/blog/${suglifyTitle(title)}`}
+            href={`/academy/${suglifyTitle(category)}/${suglifyTitle(title)}`}
             target="_blank"
             className="after:absolute after:inset-0"
           >
@@ -70,30 +69,13 @@ const CardArticle2 = ({ article }: any) => {
             </p>
           </Link>
         </div>
-        <footer className="flex items-center">
-          <div className="relative z-10">
-            <div className="flex items-center gap-2 text-sm-flat">
-              <div className="flex items-center gap-2 text-sm-flat focus:outline-none focus:ring-2 ring-offset-4 rounded-2xl ring-offset-white ring-gray-EE">
-                <img
-                  loading="lazy"
-                  width={64}
-                  height={64}
-                  decoding="async"
-                  data-nimg={1}
-                  className="w-6 h-6 object-contain filter dark:invert"
-                  src={siteMetadata.avatarImage}
-                  style={{ color: "transparent" }}
-                />
-                <span className="overflow-hidden text-xs dark:text-graywhite text-ellipsis whitespace-nowrap">
-                  By {siteMetadata.author}
-                </span>
-              </div>
-            </div>
-          </div>
-        </footer>
+       
       </div>
     </article>
+
+
+
   );
 };
 
-export default CardArticle2;
+export default CardAcademyTopic;

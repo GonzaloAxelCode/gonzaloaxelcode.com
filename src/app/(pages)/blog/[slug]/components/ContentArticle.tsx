@@ -1,14 +1,13 @@
 "use client";
-import Flex from "@/shared/UIComponents/Base/Flex";
+import extractInfoArticle from "@/shared/hooks/extract-info-article";
+import siteMetadata from "@/shared/settings/sitemetdata";
+import COLORS_NOTION from "@/shared/utils/colors-notion";
+import suglifyTitle from "@/shared/utils/suglify-title";
+import Link from "next/link";
 import CommentsBlock from "./CommentsBlock ";
 import ContentBlock from "./ContentBlokcs";
-import siteMetadata from "@/shared/settings/sitemetdata";
-import extractInfoArticle from "@/shared/hooks/extract-info-article";
-import COLORS_NOTION from "@/shared/utils/colors-notion";
-import Link from "next/link";
-import suglifyTitle from "@/shared/utils/suglify-title";
 
-const ContentArticle = ({ content, id, similarArticles }: any) => {
+const ContentArticle = ({ content, id, similarArticles=[],isAcademy=false }: any) => {
   return (
     <div>
       <div className="w-full">
@@ -22,7 +21,7 @@ const ContentArticle = ({ content, id, similarArticles }: any) => {
           })}
       </div>
       <div id="end-id" />
-      <div className="bg-gray-F7 dark:bg-gray-1F text-blackbg dark:text-white  rounded-xl p-8 dark-copy flex gap-4 my-12">
+      {!isAcademy && <div className="bg-gray-F7 dark:bg-gray-1F text-blackbg dark:text-white  rounded-xl p-8 dark-copy flex gap-4 my-12">
         <div>
           <span className="text-sm">Articulo escrito por</span>
           <h3 className="text-blackbg dark:text-white font-headings tracking-tight scroll-mt-[120px] text-xl-tight 2xl:2xl-tight font-medium mt-1">
@@ -53,7 +52,8 @@ const ContentArticle = ({ content, id, similarArticles }: any) => {
           style={{ color: "transparent" }}
           src={siteMetadata.avatarImage}
         />
-      </div>
+      </div>}
+ {!isAcademy &&
       <div className="my-12 first:mt-0 last:mb-0 bg-gray-F7 dark:bg-blackbg p-6 rounded-xl">
         <h2 className="text-blackbg dark:text-white font-headings tracking-tight scroll-mt-[120px] text-md-tight 2xl:text-lg font-medium">
           También podría gustarte
@@ -133,8 +133,10 @@ const ContentArticle = ({ content, id, similarArticles }: any) => {
           })}
         </div>
       </div>
+}
 
-      <CommentsBlock idArticle={id} />
+ {!isAcademy &&
+      <CommentsBlock idArticle={id} />}
     </div>
   );
 };

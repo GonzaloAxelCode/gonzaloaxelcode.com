@@ -15,8 +15,8 @@ import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
 import useSWR from "swr";
 import { cn } from "tailwind-cn";
-import CardVariant from "./components/CardVariant";
 import CardArticle2 from "../CardArticle2";
+import CardVariant from "./components/CardVariant";
 
 const BlogGridPresentation = () => {
   const { data: articles } = useSWR("/api/blog", fetcherCache);

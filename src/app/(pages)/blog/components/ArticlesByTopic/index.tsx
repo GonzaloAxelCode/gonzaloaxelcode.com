@@ -1,5 +1,4 @@
 "use client";
-import Flex from "@/shared/UIComponents/Base/Flex";
 import { fetcherCache } from "@/shared/services/fetcher";
 //@ts-ignore
 import COLORS_NOTION from "@/shared/utils/colors-notion";

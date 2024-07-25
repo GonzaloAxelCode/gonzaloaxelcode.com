@@ -5,216 +5,206 @@ import {
 } from "@/shared/settings/default-metadata";
 import Title from "@/shared/UIComponents/Base/Title";
 import type { Metadata } from "next";
+import ListCategories from "./components/ListCategories";
 
 export const metadata: Metadata = {
   title: "Gonzalo Axel Academy",
-  description: "Academia Personal de Cursos Online (No disponible)",
+  description: "Academia",
 
   ...iconsMetadata,
   ...robotsDefault,
   ...othersMetadata,
 };
-const PageTutorials = () => {
+const PageAcademy = () => {
   return (
     <main className="w-full ">
       <section
-  
-  className="mx-[4%]"
->
-  
-  <div className="slice-layout w-full text-gray-15  py-12 ">
-    <div className="container">
-      <div className="relative px-12 rounded-xl  border-2  border-gray-100 dark:border-darkborder bg-white  dark:bg-blackbg overflow-hidden  py-12">
-        <div className="relative z-10">
-          <div className="w-full max-w-[564px] sm:w-[80%] md:w-[50%]">
-            <Title>
-              Academy: Explorando el universo de la tecnología
 
+        className="mx-[4%]"
+      >
 
+        <div className="slice-layout w-full text-gray-15  py-8 ">
+          <div className="container">
+            <div className="relative p-7 md:p-12  rounded-xl  border-2  border-gray-100 dark:border-darkborder bg-white  dark:bg-[#272727] overflow-hidden  ">
+              <div className="relative z-10">
+                <div className="w-full max-w-[564px] sm:w-[80%] md:w-[50%]">
+                  <img
+                    alt=""
+                    className="block sm:hidden object-contain object-left w-[250px] h-[250px] m-auto"
+                    src="https://holbertonschoolpr.com/images/web_2.webp"
+                    style={{
+                      color: "transparent"
+                    }}
+                  />
+                  <Title>
+                    Academy: Explorando el universo de la tecnología
+                  </Title>
+                  <div className="font-copy text-base 2xl:text-md font-medium print:text-[12px] print:text-justify mt-4">
+                    <p className="my-6 first:mt-0 last:mb-0 print:my-2 dark:text-white text-black">
+                      Explorando el universo de la tecnología: Desde conceptos básicos hasta innovaciones avanzadas.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="block -mr-12 ml-12 -mb-12 -mt-24 sm:m-0 sm:h-auto absolute sm:top-0 sm:bottom-0 sm:-right-[10%] sm:left-[60%] lg:left-[40%]">
+                <img
+                  alt=""
+                  className="object-cover object-left"
+                  src="https://holbertonschoolpr.com/images/web_2.webp"
+                  style={{
+                    position: "absolute",
+                    height: "100%",
+                    width: "100%",
 
-            </Title>
-            <div className="font-copy text-base 2xl:text-md font-medium print:text-[12px] print:text-justify mt-4">
-              <p className="my-6 first:mt-0 last:mb-0 print:my-2 dark:text-white text-black">
-                              Explorando el universo de la tecnología: Desde conceptos básicos hasta innovaciones avanzadas.
-              </p>
+                    color: "transparent"
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
-        <div className="hidden md:block h-[300px] relative -mr-12 ml-12 -mb-12 -mt-24 sm:m-0 sm:h-auto sm:absolute sm:top-0 sm:bottom-0 sm:-right-[10%] sm:left-[60%] lg:left-[40%]">
-          <img
-            alt=""
-            loading="lazy"
-            decoding="async"
-            data-nimg="fill"
-            className="object-cover object-left"
-            sizes="50vw"
-            srcSet="https://prismic-main.cdn.prismic.io/prismic-main/ZiokBPPdc1huKx2C_release.svg?auto=compress%2Cformat&fit=max&w=384 384w, https://prismic-main.cdn.prismic.io/prismic-main/ZiokBPPdc1huKx2C_release.svg?auto=compress%2Cformat&fit=max&w=640 640w, https://prismic-main.cdn.prismic.io/prismic-main/ZiokBPPdc1huKx2C_release.svg?auto=compress%2Cformat&fit=max&w=750 750w, https://prismic-main.cdn.prismic.io/prismic-main/ZiokBPPdc1huKx2C_release.svg?auto=compress%2Cformat&fit=max&w=828 828w, https://prismic-main.cdn.prismic.io/prismic-main/ZiokBPPdc1huKx2C_release.svg?auto=compress%2Cformat&fit=max&w=1080 1080w, https://prismic-main.cdn.prismic.io/prismic-main/ZiokBPPdc1huKx2C_release.svg?auto=compress%2Cformat&fit=max&w=1200 1200w, https://prismic-main.cdn.prismic.io/prismic-main/ZiokBPPdc1huKx2C_release.svg?auto=compress%2Cformat&fit=max&w=1920 1920w, https://prismic-main.cdn.prismic.io/prismic-main/ZiokBPPdc1huKx2C_release.svg?auto=compress%2Cformat&fit=max&w=2048 2048w, https://prismic-main.cdn.prismic.io/prismic-main/ZiokBPPdc1huKx2C_release.svg?auto=compress%2Cformat&fit=max&w=3840 3840w"
-            src="https://prismic-main.cdn.prismic.io/prismic-main/ZiokBPPdc1huKx2C_release.svg?auto=compress%2Cformat&fit=max&w=3840"
-            style={{
-              position: "absolute",
-              height: "100%",
-              width: "100%",
-              inset: 0,
-              color: "transparent"
-            }}
-          />
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div className="container relative z-10" id="developers">
-  <div className="flex flex-col xl:grid xl:grid-cols-5 gap-12 pb-20 relative">
-    <form className="xl:col-span-1 z-10 xl:z-auto" data-cb-wrapper="true">
-      <div className="flex gap-6 flex-col md:flex-row xl:flex-col sticky xl:top-[120px]">
-        <div className="w-full z-20">
-          <label className=" block mb-3">Lenguajes</label>
-          <div className="relative">
-            <button
-              className="relative cursor-pointer w-full rounded-lg border-2 px-4 py-2 leading-7 pr-10 text-left focus:outline-none focus:ring-4 focus:ring-tertiary-purple border-gray-50"
-              id="headlessui-listbox-button-:r6j:"
-              type="button"
-              aria-haspopup="true"
-              aria-expanded="false"
-              data-headlessui-state=""
-            >
-              <span className="block truncate">Python</span>
-              <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                  className="w-5 h-5 text-gray-400"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </span>
-            </button>
-          </div>
-        </div>
-        <div className="w-full z-10">
-          <label className=" block mb-3">Tecnologias & Frameworks</label>
-          <div className="relative">
-            <button
-              className="relative cursor-pointer w-full rounded-lg border-2 px-4 py-2 leading-7 pr-10 text-left focus:outline-none focus:ring-4 focus:ring-tertiary-purple border-gray-50"
-              id="headlessui-listbox-button-:r6k:"
-              type="button"
-              aria-haspopup="true"
-              aria-expanded="false"
-              data-headlessui-state=""
-            >
-              <span className="block truncate">Django RestFramework</span>
-              <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                  className="w-5 h-5 text-gray-400"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </form>
-    <div className="xl:col-span-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
-      
-     
-      <div className="flex flex-col" style={{ opacity: 1 }}>
-        <div className="border-2 p-4 rounded-2xl relative grow flex flex-col transition-colors max-h-[100px] border-gray-50">
-          <header className="flex gap-4 justify-between items-center relative grow">
-            <div className="flex items-start sm:items-center gap-3">
-              <a
-                className="shrink-0 after:absolute after:inset-0"
-                href="#/hire-a-developer/julius"
+        <ListCategories />
+        <div className="slice-layout w-full text-gray-15 py-12 md:py-20 2xl:py-24">
+          <div className="container">
+            <div className="sm:flex justify-between items-center relative z-10">
+
+              <Title className="text-3xl">
+                Nuevos temas para profundizar
+              </Title>
+
+            </div>
+
+            <div className=" h-full mt-6 lg:mt-12 ">
+              <div
+                className="grid gap-5 grid-cols-1 w-full md:grid-cols-2 lg:grid-cols-3"
               >
-                <img
-                  alt="Julius logo "
-                  loading="lazy"
-                  width={512}
-                  height={512}
-                
-                  className="rounded-full w-12 h-12"
-                  
-                  src="https://www.pngall.com/wp-content/uploads/5/Python-PNG.png"
-                  style={{ color: "transparent" }}
-                />
-              </a>
-              <div className="flex flex-col gap-0.5 mt-2 sm:mt-0">
-                <div className="flex flex-wrap gap-x-3 items-baseline">
-                  <h2 className="font-headings tracking-tight scroll-mt-[120px] text-xl-tight 2xl:2xl-tight font-medium wrap-balance">
-                    Python 3
-                  </h2>
+                <div
+                  className=" swiper-slide flex h-full flex-col items-center group swiper-slide-active"
+
+                >
+                  <div className="bg-gray-15 text-base-flat relative text-white py-4 px-6 rounded-xl whitespace-nowrap after:content-[''] after:block after:w-3 after:h-3 after:bg-gray-15 after:rotate-45 after:absolute after:-bottom-1.5 after:left-1/2 after:-translate-x-1/2 after:z-10">
+                    July 9, 2024
+                  </div>
+                  <div className="flex items-center relative mt-5 mb-7 h-[6px] w-full">
+                    <div className="h-4 w-4 bg-white border-4 border-secondary-purple rounded-full z-10 absolute left-1/2 -translate-x-1/2" />
+                    <div className="absolute top-0 bottom-0 flex justify-end h-[6px] group-first:left-0 group-first:right-0 rounded-l-full bg-secondary-purple">
+                      <div className="w-1/2 hidden group-last:block bg-secondary-purple" />
+                      <div className="w-1/2 grid-cols-[repeat(19,_minmax(0,_1fr))] hidden group-last:grid overflow-hidden">
+                        <div className="bg-secondary-purple col-span-2 h-[6px] rounded-full" />
+                        <div className="bg-secondary-purple col-span-2 col-start-4 h-[6px] rounded-full" />
+                        <div className="bg-secondary-purple col-span-2 col-start-7 h-[6px] rounded-full" />
+                        <div className="bg-secondary-purple col-span-2 col-start-10 h-[6px] rounded-full" />
+                        <div className="bg-secondary-purple col-span-2 col-start-[13] h-[6px] rounded-full" />
+                        <div className="bg-secondary-purple col-span-2 col-start-[16] h-[6px] rounded-full" />
+                        <div className="bg-secondary-purple col-span-2 col-start-[19] h-[6px] rounded-full" />
+                      </div>
+                    </div>
+                  </div>
+                  <article className="overflow-hidden flex w-full grow h-full relative border-2 rounded-xl flex-col bg-white border-gray-EE text-gray-15">
+                    <div className="flex h-full gap-4 f p-8 flex-col">
+                      <div className="flex flex-col gap-4 flex-grow">
+
+                        <p className=" scroll-mt-[120px]  text-xl">
+                          Translate with AI and Next.js 15 / Svelte 5 support! - June
+                          Chronicles 2024
+                        </p>
+
+                        <p className="text-gray-50" />
+                      </div>
+
+                    </div>
+                  </article>
                 </div>
-                <div className="flex flex-col text-xs-flat gap-x-3 gap-y-1 whitespace-nowrap text-ellipsis text-gray-50">
-                  <span className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                      className="w-4 h-4 mr-1"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.842 11.842 0 00.976.544l.062.029.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                   Python 2024
-                  </span>
+                <div
+                  className="swiper-slide flex h-full flex-col items-center group swiper-slide-next"
+
+                >
+                  <div className="bg-gray-15 text-base-flat relative text-white py-4 px-6 rounded-xl whitespace-nowrap after:content-[''] after:block after:w-3 after:h-3 after:bg-gray-15 after:rotate-45 after:absolute after:-bottom-1.5 after:left-1/2 after:-translate-x-1/2 after:z-10">
+                    June 10, 2024
+                  </div>
+                  <div className="flex items-center relative mt-5 mb-7 h-[6px] w-full">
+                    <div className="h-4 w-4 bg-white border-4 border-secondary-purple rounded-full z-10 absolute left-1/2 -translate-x-1/2" />
+                    <div className="absolute top-0 bottom-0 flex justify-end h-[6px] -left-6 -right-6 bg-secondary-purple">
+                      <div className="w-1/2 hidden group-last:block bg-secondary-purple" />
+                      <div className="w-1/2 grid-cols-[repeat(19,_minmax(0,_1fr))] hidden group-last:grid overflow-hidden">
+                        <div className="bg-secondary-purple col-span-2 h-[6px] rounded-full" />
+                        <div className="bg-secondary-purple col-span-2 col-start-4 h-[6px] rounded-full" />
+                        <div className="bg-secondary-purple col-span-2 col-start-7 h-[6px] rounded-full" />
+                        <div className="bg-secondary-purple col-span-2 col-start-10 h-[6px] rounded-full" />
+                        <div className="bg-secondary-purple col-span-2 col-start-[13] h-[6px] rounded-full" />
+                        <div className="bg-secondary-purple col-span-2 col-start-[16] h-[6px] rounded-full" />
+                        <div className="bg-secondary-purple col-span-2 col-start-[19] h-[6px] rounded-full" />
+                      </div>
+                    </div>
+                  </div>
+                  <article className="overflow-hidden flex w-full grow h-full relative border-2 rounded-xl flex-col bg-white border-gray-EE text-gray-15">
+                    <div className="flex h-full gap-4 f p-8 flex-col">
+                      <div className="flex flex-col gap-4 flex-grow">
+
+                        <p className="scroll-mt-[120px]  text-xl">
+                          Advanced Slice Modeling and Team Spaces in the Page Builder
+                          - May 2024 Product Updates
+                        </p>
+
+                        <p className="text-gray-50" />
+                      </div>
+
+                    </div>
+                  </article>
+                </div>
+                <div
+                  className="swiper-slide flex h-full flex-col items-center group"
+
+                >
+                  <div className="bg-gray-15 text-base-flat relative text-white py-4 px-6 rounded-xl whitespace-nowrap after:content-[''] after:block after:w-3 after:h-3 after:bg-gray-15 after:rotate-45 after:absolute after:-bottom-1.5 after:left-1/2 after:-translate-x-1/2 after:z-10">
+                    April 30, 2024
+                  </div>
+                  <div className="flex items-center relative mt-5 mb-7 h-[6px] w-full">
+                    <div className="h-4 w-4 bg-white border-4 border-secondary-purple rounded-full z-10 absolute left-1/2 -translate-x-1/2" />
+                    <div className="absolute top-0 bottom-0 flex justify-end h-[6px] group-last:left-0 group-last:right-0 rounded-r-full">
+                      <div className="w-1/2 hidden group-last:block bg-secondary-purple" />
+                      <div className="w-1/2 grid-cols-[repeat(19,_minmax(0,_1fr))] hidden group-last:grid overflow-hidden">
+                        <div className="bg-secondary-purple col-span-2 h-[6px] rounded-full" />
+                        <div className="bg-secondary-purple col-span-2 col-start-4 h-[6px] rounded-full" />
+                        <div className="bg-secondary-purple col-span-2 col-start-7 h-[6px] rounded-full" />
+                        <div className="bg-secondary-purple col-span-2 col-start-10 h-[6px] rounded-full" />
+                        <div className="bg-secondary-purple col-span-2 col-start-[13] h-[6px] rounded-full" />
+                        <div className="bg-secondary-purple col-span-2 col-start-[16] h-[6px] rounded-full" />
+                        <div className="bg-secondary-purple col-span-2 col-start-[19] h-[6px] rounded-full" />
+                      </div>
+                    </div>
+                  </div>
+                  <article className="overflow-hidden flex w-full grow h-full relative border-2 rounded-xl flex-col bg-white border-gray-EE text-gray-15">
+                    <div className="flex h-full gap-4 f p-8 flex-col">
+                      <div className="flex flex-col gap-4 flex-grow">
+
+                        <p className="scroll-mt-[120px]  text-xl">
+
+
+
+
+                          New Revision History &amp; Media Library Search. What About
+                          an AI Copywriter? – April 2024 Product Updates
+                        </p>
+
+                        <p className="text-gray-50" />
+                      </div>
+
+                    </div>
+                  </article>
                 </div>
               </div>
             </div>
-          </header>
-          <a className="mt-4 block" href="#/hire-a-developer/julius">
-            <div className="relative aspect-w-16 aspect-h-9 rounded-md overflow-hidden">
-              <img
-                loading="lazy"
-                decoding="async"
-                data-nimg="fill"
-                className="object-cover object-top"
-                sizes="(max-width: 639px) 70vw, 33vw"
-                srcSet="https://images.prismic.io/prismic-main/ZnSjkZm069VX1728_Agency_website_image_2_-1-.png?auto=format%2Ccompress&rect=0%2C0%2C1600%2C1200&w=256&fit=max 256w, https://images.prismic.io/prismic-main/ZnSjkZm069VX1728_Agency_website_image_2_-1-.png?auto=format%2Ccompress&rect=0%2C0%2C1600%2C1200&w=384&fit=max 384w, https://images.prismic.io/prismic-main/ZnSjkZm069VX1728_Agency_website_image_2_-1-.png?auto=format%2Ccompress&rect=0%2C0%2C1600%2C1200&w=640&fit=max 640w, https://images.prismic.io/prismic-main/ZnSjkZm069VX1728_Agency_website_image_2_-1-.png?auto=format%2Ccompress&rect=0%2C0%2C1600%2C1200&w=750&fit=max 750w, https://images.prismic.io/prismic-main/ZnSjkZm069VX1728_Agency_website_image_2_-1-.png?auto=format%2Ccompress&rect=0%2C0%2C1600%2C1200&w=828&fit=max 828w, https://images.prismic.io/prismic-main/ZnSjkZm069VX1728_Agency_website_image_2_-1-.png?auto=format%2Ccompress&rect=0%2C0%2C1600%2C1200&w=1080&fit=max 1080w, https://images.prismic.io/prismic-main/ZnSjkZm069VX1728_Agency_website_image_2_-1-.png?auto=format%2Ccompress&rect=0%2C0%2C1600%2C1200&w=1200&fit=max 1200w, https://images.prismic.io/prismic-main/ZnSjkZm069VX1728_Agency_website_image_2_-1-.png?auto=format%2Ccompress&rect=0%2C0%2C1600%2C1200&w=1920&fit=max 1920w, https://images.prismic.io/prismic-main/ZnSjkZm069VX1728_Agency_website_image_2_-1-.png?auto=format%2Ccompress&rect=0%2C0%2C1600%2C1200&w=2048&fit=max 2048w, https://images.prismic.io/prismic-main/ZnSjkZm069VX1728_Agency_website_image_2_-1-.png?auto=format%2Ccompress&rect=0%2C0%2C1600%2C1200&w=3840&fit=max 3840w"
-                src="https://images.prismic.io/prismic-main/ZnSjkZm069VX1728_Agency_website_image_2_-1-.png?auto=format%2Ccompress&rect=0%2C0%2C1600%2C1200&w=3840&fit=max"
-                style={{
-                  position: "absolute",
-                  height: "100%",
-                  width: "100%",
-                  inset: 0,
-                  color: "transparent"
-                }}
-              />
-            </div>
-          </a>
+          </div>
         </div>
-      </div>
-      
-    
-   
-      
-    </div>
-  </div>
-  
-</div>
 
-</section>
+      </section>
 
     </main>
   );
 };
 
-export default PageTutorials;
+
+export default PageAcademy;
 

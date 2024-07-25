@@ -62,6 +62,7 @@ export const getTags = (articles: any) => {
 };
 
 export const getArticle = async (id: string) => {
+      console.log({idddd:id})
   let blocks = await notion?.blocks?.children?.list({
     block_id: id,
   });
@@ -75,10 +76,11 @@ export const findArticleBySlug = async (
   slug: string
 ) => {
   const pages = await getAllArticles(database_id, {});
-
+  
   const page = pages.find((page: any) => {
+    
     return (
-      suglifyTitle(page.properties?.Name?.title[0]?.plain_text) ===
+            suglifyTitle(page.properties?.Name?.title[0]?.plain_text || page.properties?.Nombre?.title[0]?.plain_text) ===
       suglifyTitle(slug)
     );
   });

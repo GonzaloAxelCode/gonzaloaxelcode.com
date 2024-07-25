@@ -1,9 +1,9 @@
 "use client";
 import { fetcherCache } from "@/shared/services/fetcher";
+import suglifyTitle from "@/shared/utils/suglify-title";
+import useSWR from "swr";
 import ContentArticle from "./ContentArticle";
 import TableOfContent from "./TableOfContent";
-import useSWR from "swr";
-import suglifyTitle from "@/shared/utils/suglify-title";
 
 const BodyArticle = ({ content, article, category }: any) => {
   const { data: articles } = useSWR("/api/blog", fetcherCache);
@@ -22,6 +22,7 @@ const BodyArticle = ({ content, article, category }: any) => {
           similarArticles={similarArticles}
           content={content}
           id={article.id}
+          
         />
       </div>
       <TableOfContent

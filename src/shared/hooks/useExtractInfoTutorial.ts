@@ -20,7 +20,7 @@ const useExtractInfoTutorial = (tutorial: any, content: any = []) => {
       });
     }
     return acc;
-  }, [] || []);
+  }, []);
 
   return {
     contenido,

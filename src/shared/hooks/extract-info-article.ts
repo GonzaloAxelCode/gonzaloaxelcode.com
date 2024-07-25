@@ -1,7 +1,9 @@
 const extractInfoArticle = (article: any) => {
   const id = article?.id;
   const title =
-    article?.properties.Name?.title[0]?.plain_text || "Articulo sin Titulo";
+    article?.properties.Name?.title[0]?.plain_text ||  article?.properties.Nombre?.title[0]?.plain_text || "Articulo sin Titulo";
+
+    console.log( article?.properties)
   let cover = article?.cover?.file?.url || article?.cover?.external?.url;
   let description =
     article?.properties?.Summary?.rich_text[0]?.plain_text ||

@@ -33,7 +33,7 @@ function extractHeading1Text(inputArray: any) {
     }));
   return extractedArray;
 }
-const TableOfContent = ({ content, id, slug }: any) => {
+const TableOfContent = ({ content, id, slug ,disable_raitings=false }: any) => {
   const extractedArray = extractHeading1Text(content);
   const [title, setTitle] = useState("");
   const { themeGlobal } = useTheme();
@@ -181,7 +181,7 @@ const TableOfContent = ({ content, id, slug }: any) => {
           <div style={{ position: "relative" }} />
         </div>
       </div>
-      <div className="flex flex-col items-center">
+     {!disable_raitings &&   <div className="flex flex-col items-center">
         <div className="mt-1 flex items-center justify-between">
           <nav className="flex gap-2.5 items-center flex-wrap">
             <P className="font-semibold text-sm leading-tight">
@@ -253,6 +253,7 @@ const TableOfContent = ({ content, id, slug }: any) => {
             </div>
           </nav>
         </div>
+       
         <div className="flex gap-3 my-1 ">
           <button onClick={() => handleToggleLike("like")}>
             <div
@@ -326,7 +327,7 @@ const TableOfContent = ({ content, id, slug }: any) => {
             </div>
           </button>
         </div>
-      </div>
+      </div>}
     </div>
   );
 };

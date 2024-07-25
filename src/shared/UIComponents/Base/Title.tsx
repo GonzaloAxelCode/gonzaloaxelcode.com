@@ -8,7 +8,7 @@ const Title = ({ children, className = "", id = null, ...args }: any) => {
         lineHeight: 1.083,
       }}
       className={cn(
-        "text-3xl md:text-4xl font-bold dark:text-white text-black",
+        "text-4xl font-bold dark:text-white text-black",
         id === null ? "" : "id-ref",
         className
       )}
