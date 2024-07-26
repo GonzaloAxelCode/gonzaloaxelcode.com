@@ -8,6 +8,19 @@ const extractInfoArticle = (article: any) => {
   let description =
     article?.properties?.Summary?.rich_text[0]?.plain_text ||
     "Articulo aun no terminado.Intenta mas tarde.";
+let lessons =
+    article?.properties?.Lessons?.rich_text[0]?.plain_text ||
+    "0 Lessons";
+let duration =
+    article?.properties?.Duration?.rich_text[0]?.plain_text ||
+    "0 Lessons";
+
+let subtitle=
+    article?.properties?.Subtitle?.rich_text[0]?.plain_text ||
+    "";
+
+
+
 
   let category = article?.properties?.Category?.select?.name;
   let categoryColor = article?.properties?.Category?.select?.color;
@@ -18,6 +31,7 @@ const extractInfoArticle = (article: any) => {
 
   return {
     id,
+    lessons,duration,subtitle,
     categoryColor,
     tags,
     title,

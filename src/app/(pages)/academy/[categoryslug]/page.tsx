@@ -1,4 +1,4 @@
-import { getFullArticlesByCategorySlug } from "@/shared/hooks/functions-notion";
+import { getFullArticleBySlug, getFullArticlesByCategorySlug } from "@/shared/hooks/functions-notion";
 import { getAllArticles } from "@/shared/services/notion-services";
 import {
   iconsMetadata,
@@ -76,9 +76,14 @@ export default async function PageSlugAcademy({ params }: any) {
  const { articles, tags } = await getFullArticlesByCategorySlug(
     params.categoryslug,process.env.NOTION_DATABASE_ACADEMY
   );
+
+  const {article,content} = await getFullArticleBySlug(params.categoryslug,
+    process.env.NOTION_DATABASE_ACADEMY_TOPIC
+  )
+
     return (
      <main className="w-full mb-20 ">
-    <FilterByTagAcademy articles={articles}/>
+    <FilterByTagAcademy articles={articles} articleTopic={article} articleTopicContent={content}/>
     </main>
   );
 }
