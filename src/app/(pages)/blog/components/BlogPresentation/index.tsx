@@ -48,6 +48,9 @@ const BlogGridPresentation = () => {
             />
           </svg>
           <div data-projection-id={123} style={{ opacity: 1 }}>
+             <span className="block font-bold text-base md:text-md text-primary-pink mb-4">
+         Blog
+        </span>
             <div data-projection-id={124} className="leading-title ">
               Conectando el mundo a través <br />
               <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent   from-[#3a3a3a]  to-[#d3d3d3] dark:to-[#ffffff]">

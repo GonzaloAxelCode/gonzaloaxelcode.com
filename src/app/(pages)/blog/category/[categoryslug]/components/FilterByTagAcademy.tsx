@@ -31,6 +31,13 @@ const FilterByTagAcademy = ({ articles,  articleTopic, articleTopicContent }: an
                     {title}
                   </strong>
                 </p>
+                <div className="dark-copy pb-3">
+              <div className="font-copy text-base lg:text-md 2xl:text-xl font-medium print:text-[14px] print:text-justify">
+                <P className="font-medium my-6 text-md first:mt-0 last:mb-0 print:my-2 ">
+                  {description}
+                </P>
+              </div>
+            </div>
                 <a
                   className="rounded-lg  whitespace-nowrap focus:outline-none focus:ring-tertiary-purple disabled:opacity-50 group border-2 focus:ring-4 transition-opacity transition-colors hover:bg-opacity-75 disabled:hover:bg-opacity-100 border-white py-3 px-6 text-sm-flat leading-5 2xl:text-base-flat 2xl:leading-5 bg-black dark:bg-white dark:text-gray-15 text-white inline-block mb-5"
                   href="/academy/prismic-and-nextjs/1-overview/1-intro"
@@ -94,14 +101,9 @@ const FilterByTagAcademy = ({ articles,  articleTopic, articleTopicContent }: an
         </div>
         <div className="container pt-12 lg:pt-24">
           <div className="lg:max-w-[46rem] pb-24 mx-auto">
-            <div className="dark-copy pb-12">
-              <div className="font-copy text-base lg:text-md 2xl:text-xl font-medium print:text-[14px] print:text-justify">
-                <P className="font-medium my-6 text-md first:mt-0 last:mb-0 print:my-2 ">
-                  {description}
-                </P>
-              </div>
-            </div>
+            
             <div className="flex flex-col gap-4 p-8 -mx-8 rounded-2xl bg-gray-F7 dark:bg-blackbgsection">
+              <h2>{articles.length} Lecciones</h2>
               {articles?.map((el: any, index: any) => {
                 const { tags, title, description, category, createdAt, cover } =
                   extractInfoArticle(el);
@@ -128,13 +130,15 @@ const FilterByTagAcademy = ({ articles,  articleTopic, articleTopicContent }: an
                         className="after:absolute after:inset-0"
                         href={`/academy/${suglifyTitle(category)}/${suglifyTitle(title)}`}
                       >
-                        <P className="dark:text-white text-gray-15  scroll-mt-[120px]  2xl:md-tight  max-w-[320px] wrap-balance">
+                        <P className="dark:text-white text-gray-15 font-headings scroll-mt-[120px]  2xl:md-tight  max-w-[320px] wrap-balance">
                           {title}
                         </P>
+                        <P className="text-xs">{description}</P>  
                       </Link>
+                      
                     </div>
                     <div className="rounded-lg -mr-2 -my-2 ">
-                     <img src={cover} className="rounded-lg w-[100px]" alt="" />
+                    
                     </div>
                   </div>
                 </article>

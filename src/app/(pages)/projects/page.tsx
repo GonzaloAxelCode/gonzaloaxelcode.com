@@ -1,7 +1,7 @@
 import {
-    iconsMetadata,
-    othersMetadata,
-    robotsDefault,
+  iconsMetadata,
+  othersMetadata,
+  robotsDefault,
 } from "@/shared/settings/default-metadata";
 import type { Metadata } from "next";
 
@@ -99,9 +99,9 @@ const PageProjects = () => {
         </svg>
 
         <div className="w-full px-4 flex flex-col  items-center">
-          <p className=" text-center  uppercase  px-10 mb-1">
-            ⚡️ Proyectos ⚡️
-          </p>
+           <span className="block font-bold text-base md:text-md text-primary-green mb-4">
+         Proyectos
+        </span>
           <h1 className="text-center text-3xl md:text-5xl mt-10 mb-5  title-limiter leading-title">
             Explora mis proyectos
             <span className="relative inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent   from-[#3a3a3a]  to-[#d3d3d3] dark:to-[#ffffff]">
@@ -132,7 +132,7 @@ const PageProjects = () => {
           </h1>
           <p className="max-w-[550px] text-center">
             Estos son mis proyectos mas recientes que he desarrollado hasta
-            ahora,aun estan en desarriollo pero puedes verlos.
+            ahora,aun estan en desarrollo pero puedes verlos.
           </p>
         </div>
       </div>

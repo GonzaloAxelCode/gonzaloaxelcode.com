@@ -64,6 +64,7 @@ export const metadata: Metadata = {
 const PageBlog = () => {
   return (
     <main className="w-full overflow-x-hidden">
+      
       <section className="w-full">
         <BlogGridPresentation />
       </section>

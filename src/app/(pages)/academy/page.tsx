@@ -19,52 +19,60 @@ const PageAcademy = () => {
   return (
     <main className="w-full ">
       <section
+  
+>
+  <div className="slice-layout w-full text-gray-15 py-12 md:py-20 2xl:py-24 relative overflow-hidden">
+    <div className="container items-center relative z-10 md:py-[5vh] 2xl:py-[9vh]">
+      <div className="mx-auto text-center flex flex-col items-center relative z-10">
+        <span className="block font-bold text-base md:text-md text-primary-blue mb-4">
+          Academia
+        </span>
+        <h1 className="font-headings tracking-tight scroll-mt-[120px] text-6xl lg:text-7xl 2xl:text-8xl font-bold max-w-[14em] wrap-balance">
+          Create on-brand pages faster
+        </h1>
+        <div className="font-copy text-base lg:text-md 2xl:text-xl font-medium print:text-[14px] print:text-justify mt-4 lg:mt-6">
+          <p className="my-6 first:mt-0 last:mb-0 print:my-2 max-w-xl mx-auto text-gray-50">
+            Get a page builder, configured to your needs.<strong> </strong>
+            Easily create fast, brand consistent website pages. Release more to
+            attract more visitors and convert quality leads.
+          </p>
+        </div>
+        <div className="flex items-center flex-wrap gap-4 mt-6 lg:mt-10">
+         
+          <a
+            target="_blank"
+            className="rounded-lg font-bold whitespace-nowrap focus:outline-none focus:ring-tertiary-purple disabled:opacity-50 group underline underline-offset-8 focus:ring-4 hover:underline-offset-4 border-gray-15 py-3 text-sm-flat leading-5 2xl:text-base-flat 2xl:leading-5 -mx-2.5 px-2.5"
+            rel="noreferrer"
+            href="#"
+          >
+            Comenzar
+          </a>
+        </div>
+      </div>
+    </div>
+    <img
+      alt=""
+      
+      width={1440}
+      height={642}
+      decoding="async"
+      data-nimg={1}
+      className="absolute right-0 left-0 w-full hidden sm:block bottom-0"
+      
+      src="https://prismic-main.cdn.prismic.io/prismic-main/81550ec4-8233-4742-a56c-79e151342fe1_marketer-background+%282%29.svg?fit=max&w=3840"
+      style={{ color: "transparent" }}
+    />
+  </div>
+</section>
+
+      <div
 
         className="mx-[4%]"
       >
 
-        <div className="slice-layout w-full text-gray-15  py-8 ">
-          <div className="container">
-            <div className="relative p-7 md:p-12  rounded-xl  border-2  border-gray-100 dark:border-darkborder bg-white  dark:bg-[#272727] overflow-hidden  ">
-              <div className="relative z-10">
-                <div className="w-full max-w-[564px] sm:w-[80%] md:w-[50%]">
-                  <img
-                    alt=""
-                    className="block sm:hidden object-contain object-left w-[250px] h-[250px] m-auto"
-                    src="https://holbertonschoolpr.com/images/web_2.webp"
-                    style={{
-                      color: "transparent"
-                    }}
-                  />
-                  <Title>
-                    Academy: Explorando el universo de la tecnología
-                  </Title>
-                  <div className="font-copy text-base 2xl:text-md font-medium print:text-[12px] print:text-justify mt-4">
-                    <p className="my-6 first:mt-0 last:mb-0 print:my-2 dark:text-white text-black">
-                      Explorando el universo de la tecnología: Desde conceptos básicos hasta innovaciones avanzadas.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="block -mr-12 ml-12 -mb-12 -mt-24 sm:m-0 sm:h-auto absolute sm:top-0 sm:bottom-0 sm:-right-[10%] sm:left-[60%] lg:left-[40%]">
-                <img
-                  alt=""
-                  className="object-cover object-left"
-                  src="https://holbertonschoolpr.com/images/web_2.webp"
-                  style={{
-                    position: "absolute",
-                    height: "100%",
-                    width: "100%",
+           <ListCategories />
 
-                    color: "transparent"
-                  }}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <ListCategories />
         <div className="slice-layout w-full text-gray-15 py-12 md:py-20 2xl:py-24">
           <div className="container">
             <div className="sm:flex justify-between items-center relative z-10">
@@ -199,7 +207,7 @@ const PageAcademy = () => {
           </div>
         </div>
 
-      </section>
+      </div>
 
     </main>
   );
