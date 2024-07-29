@@ -80,7 +80,7 @@ const FilterByTagAcademy = ({ articles,  articleTopic, articleTopicContent }: an
 
             </div>
             <div className="col-span-6 relative">
-              <div className="rounded-2xl border-2 border-gray-15 overflow-hidden">
+              <div className="rounded-2xl border-0 border-gray-15 overflow-hidden">
                 <div className="-m-px">
                   <img
                     alt=""
@@ -130,7 +130,7 @@ const FilterByTagAcademy = ({ articles,  articleTopic, articleTopicContent }: an
                         className="after:absolute after:inset-0"
                         href={`/academy/${suglifyTitle(category)}/${suglifyTitle(title)}`}
                       >
-                        <P className="dark:text-white text-gray-15 font-headings scroll-mt-[120px]  2xl:md-tight  max-w-[320px] wrap-balance">
+                        <P className="dark:text-white text-gray-15 font-headings scroll-mt-[120px]  2xl:md-tight   wrap-balance">
                           {title}
                         </P>
                         <P className="text-xs">{description}</P>  
