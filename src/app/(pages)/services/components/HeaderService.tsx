@@ -111,11 +111,14 @@ const HeaderService = () => {
               </ul>
             </div>
             <div className="flex items-center flex-wrap gap-4 mt-6 lg:mt-10">
-
-              <button className="mx-auto rounded-full flex whitespace-nowrap focus:outline-none focus:ring-tertiary-purple disabled:opacity-50 group border-2 focus:ring-4 transition-opacity transition-colors hover:bg-opacity-75 disabled:hover:bg-opacity-100 border-white py-3 text-sm-flat leading-5 2xl:text-base-flat 2xl:leading-5 bg-blackbg dark:bg-white dark:text-gray-15 text-white px-6">
+            
+                              <a href="https://wa.me/+51954399179" className="flex gap-1 items-center justify-center" target="_blank">
+              <button  className="mx-auto rounded-full flex whitespace-nowrap focus:outline-none focus:ring-tertiary-purple disabled:opacity-50 group border-2 focus:ring-4 transition-opacity transition-colors hover:bg-opacity-75 disabled:hover:bg-opacity-100 border-white py-3 text-sm-flat leading-5 2xl:text-base-flat 2xl:leading-5 bg-blackbg dark:bg-white dark:text-gray-15 text-white px-6">
                 <span>Contactame</span>  <img className=" ml-3 w-[20px] object-contain h-[20px]"
                   src="https://cdn.pixabay.com/photo/2015/08/03/13/58/whatsapp-873316_640.png" alt="" />
               </button>
+                                </a>
+              
             </div>
           </div>
         </div>
@@ -168,12 +171,12 @@ const HeaderService = () => {
           <div className="text-center text-sm mt-2 opacity-50">0 costo desarrollo, solo pagos mensuales</div>
         </div>
         <div className="w-full flex justify-center max-w-xs mx-auto px-6">
-
+                              <a href="https://wa.me/+51954399179" className="flex gap-1 items-center justify-center" target="_blank">
           <button className="mx-auto rounded-full flex whitespace-nowrap focus:outline-none focus:ring-tertiary-purple disabled:opacity-50 group border-2 focus:ring-4 transition-opacity transition-colors hover:bg-opacity-75 disabled:hover:bg-opacity-100 border-white py-3 text-sm-flat leading-5 2xl:text-base-flat 2xl:leading-5 bg-blackbg dark:bg-white dark:text-gray-15 text-white px-6">
             <span>Contactame</span>  <img className=" ml-3 w-[20px] object-contain h-[20px]"
               src="https://cdn.pixabay.com/photo/2015/08/03/13/58/whatsapp-873316_640.png" alt="" />
           </button>
-
+</a>
         </div>
         <div className="mt-4">
           <div

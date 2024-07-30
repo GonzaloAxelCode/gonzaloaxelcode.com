@@ -27,20 +27,20 @@ const PageAcademy = () => {
                 Academia
               </span>
 
-                <p className="mb-5 px-5 lg:px-24 text-gray-15 dark:text-white text-3xl sm:text-3xl md:text-4xl font-headings text-gray-A4" style={{
-                  letterSpacing: "-.025em",
-                  lineHeight: 1.083,
-                }}>
-                  <strong>
-                                  Academia de programacion personal
-                  </strong>
-                </p>
+              <p className="mb-5 px-5 lg:px-24 text-gray-15 dark:text-white text-3xl sm:text-3xl md:text-4xl font-headings text-gray-A4" style={{
+                letterSpacing: "-.025em",
+                lineHeight: 1.083,
+              }}>
+                <strong>
+                  Academia de programacion personal
+                </strong>
+              </p>
               <div className="font-copy text-sm  lg:text-md 2xl:text-xl font-medium print:text-[14px] print:text-justify mt-4 lg:mt-6">
                 <p className="my-6 px-8  first:mt-0 last:mb-0 print:my-2 max-w-xl mx-auto dark:text-white text-black">
                   Academia personal de programacion donde publico contenido exclusivo de conceptos complicados de entender, temas propios de los lenguajes y tecnologias mas imporntantes.
                 </p>
               </div>
-              
+
             </div>
           </div>
           <img
@@ -70,14 +70,14 @@ const PageAcademy = () => {
           <div className="container">
             <div className="sm:flex justify-between items-center relative z-10">
 
-             
-<p className="mb-5   text-xl sm:text-2xl text-gray-15 dark:text-white md:text-2xl font-headings text-gray-A4" style={{
-                  letterSpacing: "-.025em",
-                  lineHeight: 1.083,
-                }}>
-                  <strong>
-                                       Nuevos temas proximamente              </strong>
-                </p>
+
+              <p className="mb-5   text-xl sm:text-2xl text-gray-15 dark:text-white md:text-2xl font-headings text-gray-A4" style={{
+                letterSpacing: "-.025em",
+                lineHeight: 1.083,
+              }}>
+                <strong>
+                  Nuevos temas proximamente              </strong>
+              </p>
             </div>
 
             <div className=" h-full mt-6 lg:mt-12 ">
@@ -186,7 +186,7 @@ const PageAcademy = () => {
                       <div className="flex flex-col gap-4 flex-grow">
 
                         <p className="scroll-mt-[120px]  text-xl">
-Multi-threading y Multi-processing en Python: Manejo Eficiente de Concurrencia
+                          Multi-threading y Multi-processing en Python: Manejo Eficiente de Concurrencia
                         </p>
 
                         <p className="text-gray-50" />

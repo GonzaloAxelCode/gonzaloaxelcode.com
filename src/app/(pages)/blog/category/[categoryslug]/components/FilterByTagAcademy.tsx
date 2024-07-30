@@ -13,11 +13,13 @@ const FilterByTagAcademy = ({ articles,  articleTopic, articleTopicContent }: an
 
     lessons,duration,
   } = extractInfoArticle(articleTopic)
+
+     let firstTitle  =articles[0]?.properties.Name?.title[0]?.plain_text ||  articles[0]?.properties.Nombre?.title[0]?.plain_text || "Articulo sin Titulo"
   return (
     <div className="max-w-[768px] lg:max-w-[1280px]  mx-auto  px-8">
       <article className="text-md ">
-        <div className="py-12   rounded-xl">
-          <header className="container grid lg:grid-cols-12 gap-6 items-center px-5 md:px-12">
+        <div className="pb-12   rounded-xl">
+          <header className="container grid pt-3 sm:pt-12 lg:grid-cols-12 gap-6 items-center px-5 md:px-12">
             <div className="col-span-6 flex flex-col pr-12 gap-6">
 
 
@@ -38,12 +40,15 @@ const FilterByTagAcademy = ({ articles,  articleTopic, articleTopicContent }: an
                 </P>
               </div>
             </div>
-                <a
+                <Link
                   className="rounded-lg  whitespace-nowrap focus:outline-none focus:ring-tertiary-purple disabled:opacity-50 group border-2 focus:ring-4 transition-opacity transition-colors hover:bg-opacity-75 disabled:hover:bg-opacity-100 border-white py-3 px-6 text-sm-flat leading-5 2xl:text-base-flat 2xl:leading-5 bg-black dark:bg-white dark:text-gray-15 text-white inline-block mb-5"
-                  href="/academy/prismic-and-nextjs/1-overview/1-intro"
+                  
+                     href={`/academy/${suglifyTitle(category)}/${suglifyTitle(firstTitle)}`}
                 >
-                  Aprender
-                </a>
+               
+
+                  Aprender 
+                </Link>
                 <div className="flex flex-wrap items-center gap-3 text-sm text-gray-A4">
                   <div className="flex items-center gap-1.5">
                     <svg
@@ -99,33 +104,23 @@ const FilterByTagAcademy = ({ articles,  articleTopic, articleTopicContent }: an
             </div>
           </header>
         </div>
-        <div className="container pt-12 lg:pt-24">
+        <div className="container ">
           <div className="lg:max-w-[46rem] pb-24 mx-auto">
             
             <div className="flex flex-col gap-4 p-8 -mx-8 rounded-2xl bg-gray-F7 dark:bg-blackbgsection">
               <h2>{articles.length} Lecciones</h2>
               {articles?.map((el: any, index: any) => {
-                const { tags, title, description, category, createdAt, cover } =
+                const { tags, icon,title, description, category, createdAt, cover } =
                   extractInfoArticle(el);
 
-                return <article key={index} className="h-full relative border-2 rounded-xl bg-white border-gray-EE   dark:bg-[#2b2b2b] dark:border-darkborder transition-colors ease-in-out duration-200 text-white dark:text-gray-15 group">
+                return <article key={index} className="h-full relative border-0 rounded-xl bg-white border-gray-EE   dark:bg-[#2b2b2b] dark:border-darkborder transition-colors ease-in-out duration-200 text-white dark:text-gray-15 group">
                   <div className="flex gap-4 p-6 justify-between items-center">
                     <div className="flex gap-4 items-center">
-                      <span className="w-10 h-10 rounded-lg shrink-0 font-bold text-md flex items-center justify-center group-hover:bg-gray-F7 transition-colors ease-in-out duration-200 bg-quaternary-purple text-primary-purple">
-                        <svg
-                          width={641}
-                          height={449}
-                          viewBox="0 0 641 449"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="w-5 h-5 transition-colors ease-in-out duration-200"
-                        >
-                          <path
-                            d="M320.015 0C311.915 0 303.915 1.4 296.315 4.1L15.8154 105.4C6.31539 108.9 0.0153923 117.9 0.0153923 128C0.0153923 138.1 6.31539 147.1 15.8154 150.6L73.7154 171.5C57.3154 197.3 48.0154 227.8 48.0154 259.9V288C48.0154 316.4 37.2154 345.7 25.7154 368.8C19.2154 381.8 11.8154 394.6 3.21539 406.4C0.0153923 410.7 -0.884608 416.3 0.915392 421.4C2.71539 426.5 6.91539 430.3 12.1154 431.6L76.1154 447.6C80.3154 448.7 84.8154 447.9 88.5154 445.6C92.2154 443.3 94.8154 439.5 95.6154 435.2C104.215 392.4 99.9154 354 93.5154 326.5C90.3154 312.3 86.0154 297.8 80.0154 284.5V259.9C80.0154 229.7 90.2154 201.2 107.915 178.4C120.815 162.9 137.515 150.4 157.115 142.7L314.115 81C322.315 77.8 331.615 81.8 334.815 90C338.015 98.2 334.015 107.5 325.815 110.7L168.815 172.4C156.415 177.3 145.515 184.8 136.615 194L296.215 251.6C303.815 254.3 311.815 255.7 319.915 255.7C328.015 255.7 336.015 254.3 343.615 251.6L624.215 150.6C633.715 147.2 640.015 138.1 640.015 128C640.015 117.9 633.715 108.9 624.215 105.4L343.715 4.1C336.115 1.4 328.115 0 320.015 0ZM128.015 376C128.015 411.3 214.015 448 320.015 448C426.015 448 512.015 411.3 512.015 376L496.715 230.6L354.515 282C343.415 286 331.715 288 320.015 288C308.315 288 296.515 286 285.515 282L143.315 230.6L128.015 376Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
+                                            <span className="w-12 h-12 rounded-lg shrink-0 flex items-center justify-center ">
+
+                                          
+                      <img className="" src={icon} alt="" />
+                       </span>
                       <Link
                         className="after:absolute after:inset-0"
                         href={`/academy/${suglifyTitle(category)}/${suglifyTitle(title)}`}

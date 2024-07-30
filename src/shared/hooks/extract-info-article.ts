@@ -21,14 +21,14 @@ let subtitle=
 
 
 
-
+  let icon = article?.icon?.external?.url || ""
   let category = article?.properties?.Category?.select?.name;
   let categoryColor = article?.properties?.Category?.select?.color;
 
   let createdAt = article?.properties?.Created?.created_time;
 
   const tags = article?.properties?.Tags?.multi_select || [];
-
+console.log(article)
   return {
     id,
     lessons,duration,subtitle,
@@ -38,6 +38,7 @@ let subtitle=
     description,
     category,
     createdAt,
+    icon,
     cover,
   };
 };

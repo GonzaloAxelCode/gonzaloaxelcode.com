@@ -29,7 +29,7 @@ export default function RootLayout({
           <div className="relative w-full dark:text-white text-gray-15  ">
             <Header />
             <Subheader />
-            <div className="my-4">{children}</div>
+            <div className="">{children}</div>
             <Footer />
           </div>
         </GlobalProviders>
