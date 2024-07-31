@@ -19,8 +19,13 @@ const nextConfig = {
         port: "",
         hostname: "www.notion.so",
       },
+       {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
     ],
     domains: [
+      "images.unsplash.com",
       "www.notion.so",
       "lh3.googleusercontent.com",
       "cdn.builder.io",
