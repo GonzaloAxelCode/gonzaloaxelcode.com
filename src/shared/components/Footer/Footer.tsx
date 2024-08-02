@@ -80,19 +80,19 @@ const Footer = () => {
             <Link className="-mx-1 px-1 hover:underline" href="/proyectos">
               Proyectos
             </Link>
-            <Link className="-mx-1 px-1 hover:underline" href="/about">
+            <Link className="-mx-1 px-1 hover:underline" href="/">
               Sobre mi
             </Link>
-
+   <Link className="-mx-1 px-1 hover:underline" href="/services">
+              Servicios
+            </Link>
             <Link
-              className="hidden sm:block -mx-1 px-1 hover:underline"
+              className=" -mx-1 px-1 hover:underline"
               href="/academy"
-              target="_blank"
+           
             >
-              <svg width={14} height={15} className="mr-1 hidden lg:inline">
-                <use href="/assets/v2/status-green-9b323a3710393221033993056c8b5de0999eaf3139262ab0625db787dee99f00.svg#root" />
-              </svg>
-              Academy (no disponible)
+             
+              Academy
             </Link>
           </div>
           <div className="mt-8 mb-2 flex lg:hidden">

@@ -1,20 +1,19 @@
 "use client";
-import LogosBg from "@/shared/components/LogosBg";
+import extractContentProyect from "@/shared/hooks/extractContentProyect";
 import { fetcherCache } from "@/shared/services/fetcher";
-import COLORS_NOTION from "@/shared/utils/colors-notion";
+import P from "@/shared/UIComponents/Base/P";
 import resumirTexto from "@/shared/utils/resume-text";
 import suglifyTitle from "@/shared/utils/suglify-title";
+import Image from "next/image";
 import Link from "next/link";
 import useSWR from "swr";
 import TecnologiesProyect from "./TecnologiesProyect";
-import extractContentProyect from "@/shared/hooks/extractContentProyect";
-
+// <TecnologiesProyect tecnologias={tecnologias} />
 const SectionProjects = () => {
   const { data: projects } = useSWR("/api/projects", fetcherCache);
 
   return (
-    <section className="pt-14 md:pt-32 max-w-[768px] lg:max-w-[1280px]  mx-auto  px-2 md:px-8">
-      <div className="flex flex-col gap-6 justify-center items-center">
+              <main className="grow mx-auto flex flex-col">
         {projects &&
           projects?.map((project: any, index: any) => {
             const {
@@ -25,259 +24,125 @@ const SectionProjects = () => {
               indicadores,
               tecnologias,
               isLocked,
+              category,
+              imagesPages,
               linkGithubFull,
             } = extractContentProyect(project);
-
+            
             const href = `/projects/${suglifyTitle(title)}`;
             return (
-              <div key={index} className="flex flex-col">
-                <div className="grid w-full grid-cols-1 gap-1 items-center pb-6   rounded-xl">
-                  <div className="flex flex-col w-full">
-                    <div className="grid w-full grid-cols-1 lg:grid-cols-2 gap-1 items-center pt-8">
-                      <div className="flex flex-col gap-6 px-8 lg:px-10 lg:pr-0 lg:pt-10">
-                        <div className="flex flex-col gap-3">
-                          <div className="lg:max-w-[511px]">
-                            <h3 className="text-3xl sm:text-3xl md:text-4xl leading-title ">
-                              {title}
-                            </h3>
-                          </div>
-                          <span className="body-medium lg:body-largemd:w-10/12">
-                            {resumirTexto(description, 140)}
-                          </span>
-                        </div>
+                <div key={index} className="grid  md:grid-cols-2 container items-center overflow-hidden slice-layout w-full py-12 md:py-15 2xl:py-20">
+              <div className="  md:grid md:grid-cols-6 relative z-10">
+                <div className="md:col-span-6 md:pr-4">
+                  <div className="flex items-center gap-1 mb-6">
+                    <span className="text-sm py-0.5 px-1.5 rounded-md font-bold border-2 flex items-centers gap-1  border-gray-15 bg-gray-15 dark:bg-white text-white  dark:text-black">
+                      {category}
+                    </span>
+                    <span className="text-sm items-center py-0.3 px-1.5 rounded-md font-bold border-2 flex items-centers gap-1 bg-quaternary-orange text-primary-orange border-tertiary-orange">
+                      <svg
+                        width={14}
+                        height={14}
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8 16C10.1217 16 12.1566 15.1571 13.6569 13.6569C15.1571 12.1566 16 10.1217 16 8C16 5.87827 15.1571 3.84344 13.6569 2.34315C12.1566 0.842855 10.1217 0 8 0C5.87827 0 3.84344 0.842855 2.34315 2.34315C0.842855 3.84344 0 5.87827 0 8C0 10.1217 0.842855 12.1566 2.34315 13.6569C3.84344 15.1571 5.87827 16 8 16ZM11.5312 6.53125L7.53125 10.5312C7.2375 10.825 6.7625 10.825 6.47188 10.5312L4.47188 8.53125C4.17813 8.2375 4.17813 7.7625 4.47188 7.47188C4.76563 7.18125 5.24062 7.17813 5.53125 7.47188L7 8.94063L10.4688 5.46875C10.7625 5.175 11.2375 5.175 11.5281 5.46875C11.8187 5.7625 11.8219 6.2375 11.5281 6.52812L11.5312 6.53125Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                      Beta
+                    </span>
+                  </div>
+                  <div className="mr-10">
 
-                        <TecnologiesProyect tecnologias={tecnologias} />
-                        {isLocked ? (
-                          <div className="flex items-center gap-3 flex-wrap">
-                            <div className=" flex items-center gap-2  px-4 py-2  w-fi">
-                              <img
-                                width={20}
-                                height={20}
-                                className=""
-                                src="https://cdn-icons-png.flaticon.com/512/456/456112.png"
-                              />
-                              <span>Acceso Privado</span>
-                            </div>
-                            {linkpreview === "#" && (
-                              <button className="cursor-pointer flex items-center gap-2  px-4 py-2  w-fi">
-                                <span className="flex items-center body-medium font-sans !font-medium ">
-                                  En desarrollo aun
-                                </span>
-                              </button>
-                            )}
 
-                            {linkpreview !== "#" && (
-                              <button className="cursor-pointer flex items-center gap-2  px-4 py-2  w-fi">
-                                <Link
-                                  target="_blank"
-                                  href={linkpreview}
-                                  className=" hover:underline"
-                                >
-                                  <span className="flex items-center body-medium font-sans !font-medium ">
-                                    Live Preview
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      id="root"
-                                      viewBox="0 0 20 20"
-                                      fill="currentColor"
-                                      className="w-5 h-5"
-                                      aria-hidden="true"
-                                    >
-                                      <path
-                                        fillRule="evenodd"
-                                        d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                                        clipRule="evenodd"
-                                      />
-                                    </svg>
-                                  </span>
-                                </Link>
-                              </button>
-                            )}
-                          </div>
-                        ) : null}
-                        {!isLocked ? (
-                          <div className="flex gap-3 flex-wrap">
-                            <button className="cursor-pointer flex items-center gap-2  px-4 py-2  w-fi">
-                              <Link
-                                href={linkGithubFull}
-                                target="_blank"
-                                className=" flex items-center hover:underline"
-                              >
-                                <span className="flex items-center body-medium font-sans !font-medium ">
-                                  <span className="mx-3">
-                                    Ver repositorio GitHub
-                                  </span>
-                                  <img
-                                    width={20}
-                                    height={20}
-                                    className="filter invert dark:invert-0"
-                                    src="https://cdn.sanity.io/images/sdd9dua4/production/9b1e47098fd7b242fc4f534c89390bbb8c6053a2-20x20.svg?fit=max&auto=format"
-                                  />
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    id="root"
-                                    viewBox="0 0 20 20"
-                                    fill="currentColor"
-                                    className="w-5 h-5"
-                                    aria-hidden="true"
-                                  >
-                                    <path
-                                      fillRule="evenodd"
-                                      d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                                      clipRule="evenodd"
-                                    />
-                                  </svg>
-                                </span>
-                              </Link>
-                            </button>
 
-                            <button className="cursor-pointer flex items-center gap-2  px-4 py-2  w-fi">
-                              <Link href={href} className=" hover:underline">
-                                <span className="flex items-center body-medium font-sans !font-medium ">
-                                  Detalles
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    id="root"
-                                    viewBox="0 0 20 20"
-                                    fill="currentColor"
-                                    className="w-5 h-5"
-                                    aria-hidden="true"
-                                  >
-                                    <path
-                                      fillRule="evenodd"
-                                      d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                                      clipRule="evenodd"
-                                    />
-                                  </svg>
-                                </span>
-                              </Link>
-                            </button>
+                    <p className="mb-5 text-2xl md:text-3xl font-headings text-gray-A4" style={{
+                      letterSpacing: "-.025em",
+                      lineHeight: 1.083,
+                    }}>
+                      <strong>
+                        {title}
+                      </strong>
+                    </p>
 
-                            <button className="cursor-pointer flex items-center gap-2  px-4 py-2  w-fi">
-                              <Link
-                                target="_blank"
-                                href={linkpreview}
-                                className=" hover:underline"
-                              >
-                                <span className="flex items-center body-medium font-sans !font-medium ">
-                                  Live Preview
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    id="root"
-                                    viewBox="0 0 20 20"
-                                    fill="currentColor"
-                                    className="w-5 h-5"
-                                    aria-hidden="true"
-                                  >
-                                    <path
-                                      fillRule="evenodd"
-                                      d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                                      clipRule="evenodd"
-                                    />
-                                  </svg>
-                                </span>
-                              </Link>
-                            </button>
-                          </div>
-                        ) : null}
-                      </div>
-                      <div className="relative md:ml-0 md:inline">
-                        <Link
-                          href={isLocked ? "#" : href}
-                          className="after:absolute after:inset-0"
-                        >
-                          <img src={cover} alt="" />
-                        </Link>
-                      </div>
+
+                    <div className="font-copy mb-4 text-sm lg:text-md 2xl:text-xl font-medium print:text-[14px] print:text-justify mt-4 lg:mt-6 max-w-lg">
+                      <p className="my-6 first:mt-0 last:mb-0 print:my-2 opacity-50">
+                        {resumirTexto(description,300)}
+                      </p>
                     </div>
-                    {!isLocked ? (
-                      <div className="grid grid-cols-1 gap-5 px-5 pt-6 sm:grid-cols-2 ">
-                        <div className="p-6  hover:-translate-y-1 transform transition-all duration-150  overflow-hidden  relative border-1 border-solid  dark:border-white/[0.12] border-black/[0.05] bg-[#f0f0f0] hover:bg-[#e9e9e9] dark:bg-[#282828]  rounded-xl cursor-pointer">
-                          <div className="w-full">
-                            <p className="font-headings text-2xl">
-                              {" "}
-                              <Link
-                                href={indicadores.indicador1?.href || "#d"}
-                                className="after:absolute after:inset-0"
-                                target="_blank"
-                              >
-                                {indicadores.indicador1?.title || "Sin titulo"}
-                              </Link>
-                            </p>
-                            <p className="pb-8 pr-5">
-                              {indicadores.indicador1?.description ||
-                                "Sin descripccion"}
-                            </p>
-                          </div>
-                          <img
-                            className=""
-                            src={
-                              indicadores.indicador1?.urlImage ||
-                              "https://res.cloudinary.com/ddksrkond/image/upload/v1699679048/features-image_a3k8sd.png"
-                            }
-                          />
-                          <div className="justify-center-center absolute right-[3%] top-[3%]  flex aspect-square flex-col items-center rounded-full border p-0.5  border-white/[0.12] dark:border-white/[0.12]  bg-white dark:bg-[#242424]">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="30"
-                              height="29"
-                            >
-                              <path
-                                className="fill-black dark:fill-white"
-                                fillRule="evenodd"
-                                d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
-                                clipRule="evenodd"
-                              ></path>
-                            </svg>
-                          </div>
-                        </div>
-                        <div className="p-6  hover:-translate-y-1 transform transition-all duration-150  overflow-hidden  relative border-1 border-solid dark:border-white/[0.12] border-black/[0.05]  bg-[#f0f0f0] hover:bg-[#e9e9e9] dark:bg-[#282828] rounded-xl cursor-pointer">
-                          <div className="w-full">
-                            <p className="font-headings text-2xl">
-                              <Link
-                                href={indicadores.indicador2?.href || "#d"}
-                                target="_blank"
-                                className="after:absolute after:inset-0"
-                              >
-                                {indicadores.indicador2?.title || "Sin titulo"}
-                              </Link>
-                            </p>
-                            <p className="pb-8 pr-5">
-                              {indicadores.indicador2?.description ||
-                                "Sin descripccion"}
-                            </p>
-                          </div>
-                          <img
-                            className=""
-                            src={
-                              indicadores.indicador2?.urlImage ||
-                              "https://res.cloudinary.com/ddksrkond/image/upload/v1699679048/features-image_a3k8sd.png"
-                            }
-                          />
-                          <div className="justify-center-center absolute right-[3%] top-[3%]  flex aspect-square flex-col items-center rounded-full border p-0.5  border-white/[0.12] dark:border-white/[0.12]  bg-white dark:bg-[#242424]">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="30"
-                              height="29"
-                            >
-                              <path
-                                className="fill-black dark:fill-white"
-                                fillRule="evenodd"
-                                d="M20.547 17.088V8.595h-8.493v1.666h5.648l-8.594 8.595 1.178 1.179 8.595-8.595v5.648h1.666Z"
-                                clipRule="evenodd"
-                              ></path>
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    ) : null}
+                    <TecnologiesProyect tecnologias={tecnologias} />
+                    <div className="flex items-center flex-wrap gap-4 mt-6">
+                      <Link href={href}>
+                      
+                      <button className="rounded-full  whitespace-nowrap focus:outline-none focus:ring-tertiary-purple disabled:opacity-50 group border-2 focus:ring-4 transition-opacity transition-colors hover:bg-opacity-75 disabled:hover:bg-opacity-100 border-gray-15 py-3 text-sm-flat leading-5 2xl:text-base-flat 2xl:leading-5 bg-gray-15 dark:bg-white text-white px-6 dark:text-black">
+                        Ver el software completo 
+                      </button>
+                                            </Link>
+                    </div>
                   </div>
                 </div>
               </div>
+              <div className="mt-6 sm:mt-0">
+
+                <div className="parent">
+                  <div className="div1" >
+                    <Image
+                      alt=""
+
+                      width={1440}
+                      height={623}
+                      decoding="async"
+                      data-nimg={1}
+                      className="object-cover rounded-100 border-0"
+
+                      src={cover}
+
+                    />
+                  </div>
+                  <div className="div2">
+
+                    <img
+                      alt=""
+
+                      width={905}
+                      height={623}
+                      decoding="async"
+                      data-nimg={1}
+                      className="object-cover rounded-100 border-0"
+
+                      src={imagesPages[0]?.external.url}
+
+                    />
+                  </div>
+                  <div className="div3">
+
+                    <img
+                      alt=""
+
+                      width={1220}
+                      height={623}
+                      decoding="async"
+                      data-nimg={1}
+                      className="object-cover rounded-100 border-0"
+                      src={imagesPages[1]?.external.url}
+                      
+
+                    />
+                  </div>
+
+                </div>
+                <P className="text-xs italic font-light my-2">
+                
+                </P>
+              </div>
+            </div>
             );
           })}
-      </div>
-    </section>
+      </main>
+      
   );
 };
 
