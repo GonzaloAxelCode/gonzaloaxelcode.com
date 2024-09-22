@@ -19,7 +19,6 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   return {
     title,
     description,
-
     openGraph: {
       title,
       description,
@@ -49,12 +48,14 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
         },
       ],
     },
-
     ...iconsMetadata,
     ...robotsDefault,
     ...othersMetadata,
   };
 }
+
+
+
 
 export default async function PageSlugBlog({ params }: any) {
   const { content, article } = await getFullArticleBySlug(params.slug);
@@ -71,9 +72,12 @@ export default async function PageSlugBlog({ params }: any) {
   );
 }
 
+
+
 export async function generateStaticParams() {
   const articles = await getAllArticles();
   return articles.map((el: any) => ({
     slug: suglifyTitle(el.properties.Name?.title[0]?.plain_text),
   }));
 }
+

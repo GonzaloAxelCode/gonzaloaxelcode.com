@@ -62,6 +62,64 @@ export const metadata: Metadata = {
   ...othersMetadata,
 };
 
+const projects = [
+  {
+    hrefLive: "https://udemycloneplus.vercel.app/",
+    title: "Clon de Udemy solo frontend UI",
+    description:
+      "Este proyecto es un clon de la reconocida plataforma de aprendizaje en línea Udemy, centrándose exclusivamente en la recreación de su interfaz de usuario UI en el lado del frontend.",
+    aptitudes: [
+      "Desarrollo de software",
+      "Desarrollo Frontend",
+      "React 18",
+      "Nextjs 12",
+      "Tailwindcss",
+    ],
+    imageprev:
+      "https://res.cloudinary.com/ddksrkond/image/upload/v1700274329/10shots_so_bgt2yc.png",
+  },
+  {
+    hrefLive: "https://fastfoodilo.vercel.app/fastfood",
+    title: "Aplicación de comida rápida solo frontend UI",
+    description:
+      "Este proyecto es un clon de una web de Themeforest de comida rápida en línea FastFood Lafka, con un enfoque principal en recrear fielmente su interfaz de usuario UI en el lado del frontend.",
+    aptitudes: ["Desarrollo de software", "Desarrollo Frontend", "Nextjs 12"],
+    imageprev:
+      "https://res.cloudinary.com/ddksrkond/image/upload/v1675868776/Blog/fastfood_uqvurg.png",
+  },
+  {
+    hrefLive: "https://samusystem.vercel.app/",
+    title: "Aplicación de reportes SAMU Fullstack",
+    description:
+      "Sistema para organizar los reportes y automatización de subida de información y reportes de errores de datos, con módulos de autenticación JWT y OTP.",
+    aptitudes: [
+      "Desarrollo de software",
+      "Desarrollo web backend",
+      "Django RestFramework",
+      "Angular 16",
+      "JWT",
+      "Docker",
+    ],
+    imageprev:
+      "https://res.cloudinary.com/ddksrkond/image/upload/v1713839604/SAMUAPPCAPTURE_nub9ca.png",
+  },
+  {
+    hrefLive: "https://trackbusiloadmin.vercel.app/login",
+    title: "TrackBusIlo",
+    description:
+      "Este proyecto es una aplicación para el control del marcaje de transportes públicos, que realiza el registro de cada ubicación designada y controla los horarios de salida y de llegada.",
+    aptitudes: [
+      "Desarrollo de software",
+      "HonoJS",
+      "React Native",
+      "Typescript",
+    ],
+    imageprev:
+      "https://res.cloudinary.com/ddksrkond/image/upload/v1726623547/trackingapp/TrackBusIlo_pp3wve.png",
+  },
+];
+
+
 const PageAboutHome = () => {
   return (
     <main className="w-full max-w-[768px] lg:max-w-[1200px]  mx-auto  px-8">
@@ -111,36 +169,47 @@ const PageAboutHome = () => {
                 </span>
               </h1>
               <p className="mb-6 text-md text-neutral-600  text-center md:text-left dark:text-neutral-400">
-                Desarrollador / Programador de software fullstack.
+                Fullstack Developer con experiencia en desarrollo de aplicaciones web, móviles y de escritorio.
                 <br className="hidden lg:block" />
-                Me especializo en en el desarrollo Fullstack con Nextjs y Django
-                RestFramework
+                Especialista en React JS y tecnologías modernas de frontend y backend.
               </p>
 
               <div className="flex gap-2 justify-center md:justify-normal lg:justify-normal">
-                <Link
-                  href="https://github.com/GonzaloAxelCode"
-                  target="_blank"
-                  className="inline-flex w-auto px-4 py-2 mt-5  text-sm sm:text-md font-bold  duration-300 ease-out border rounded-full bg-neutral-900 dark:bg-white dark:text-neutral-900 text-neutral-100  border-neutral-900"
-                >
-                  Sigueme en Github
-                </Link>
-                <Link
-                  href="/CURRICULUM2.pdf"
-                  target="_blank"
-                  className="inline-flex w-auto px-4 py-2 mt-5 text-sm sm:text-md font-bold duration-300 ease-out border rounded-full   dark:text-neutral-900  border-neutral-700 border-2 dark:border-neutral-300 bg-white dark:bg-black dark>text-white dark:text-white text-neutral-900"
-                >
-                  Descarga mi CV
-                </Link>
+
+                <button className="shiny-cta2">
+                  <Link
+                    href="/blog"
+                  >
+                    <span>Sigue mi blog</span>
+                  </Link>
+
+                </button>
+
+
+                <button className="shiny-cta">
+                  <Link href="/CVProfesional2.pdf" target="_blank">
+                    <span>Descargar mi CV</span>
+                  </Link>
+
+                </button>
+
               </div>
             </div>
 
+
             <div className="py-5 p-1  mx-auto lg:m-auto lg:mt-0 lg:ml-0">
               <div className="d-flex justify-content-center ">
-                <div className="image_outer_container">
-                  <div className="green_icon"></div>
-                  <div className="image_inner_container">
-                    <img src="https://res.cloudinary.com/ddksrkond/image/upload/c_crop,ar_1:1/v1700110843/SEO/WhatsApp_Image_2023-11-15_at_11.58.48_PM_pvgump.jpg" />
+                <div className="">
+
+                  <div className="">
+                    <div className="wrap">
+                      <div className="circle">
+                        <img
+                          src="https://res.cloudinary.com/ddksrkond/image/upload/v1726626928/me_yb8gfc_u_image_upload_mo34ahsr8fu71_bcysnc_c_thumb_w_1.0_h_1.0_fl_relative.layer_apply-fotor-20240917213026_ekk4jr.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -149,7 +218,10 @@ const PageAboutHome = () => {
         </div>
       </section>
 
-      <section className="w-full  py-10 md:py-16 2xl:py-20 overflow-hidden light-copy ">
+
+
+
+      <section className="w-full  py-5 md:py-10 2xl:py-15 overflow-hidden light-copy ">
         <div className="mb-4">
           <h2
             className="mt-0 mb-3 text-3xl font-black leading-tight sm:text-4xl sm:leading-tight md:text-[40px] md:leading-tight"
@@ -186,33 +258,16 @@ const PageAboutHome = () => {
 
         <div className=" w-full text-gray-15 overflow-hidden dark-copy">
           <div className="container md:grid md:grid-cols-12 md:gap-x-6">
-            <div className="md:col-span-5 mb-10 md:mb-20 flex flex-col gap-6">
+            <div className="md:col-span-12  md:mb-5 flex flex-col gap-6">
               <div className="text-base 2xl:text-md font-medium copy-muted">
                 <div className="text-md text-neutral-600 dark:text-neutral-400">
-                  <p className="my-6">
+                  <p className="mt-6">
                     ¡Saludos! Mi nombre es Gonzalo Axel Valdez Quispe, y me
                     dedico al fascinante mundo del desarrollo de software.
                     Recientemente me gradué en Ingeniería de Sistemas e
                     Informática. Este espacio web lo he creado con el propósito
                     de documentar mis proyectos y compartir mis experiencias en
-                    el campo del desarrollo web.
-                  </p>
-
-                  <p className="my-6">
-                    Aunque mi trayectoria en el desarrollo de software es breve,
-                    estoy lleno de entusiasmo y ansias de seguir aprendiendo y
-                    creciendo profesionalmente. Aquí, podrás encontrar contenido
-                    relacionado con mi constante aprendizaje en frameworks,
-                    bibliotecas y otras tecnologías relevantes en la actualidad.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="md:col-span-5 md:col-start-7 md:mt-[0%] mb-10 md:-mb-32 ">
-              <div className="text-md 2xl:text-md font-medium print:text-[12px] bg-gray-F7 dark:bg-blackbg  print:text-justify copy-muted p-12  rounded-xl">
-                <p className="my-6 first:mt-0 last:mb-0 print:my-2 text-neutral-600 dark:text-neutral-400">
-                  <p className="my-6">
-                    Durante mis estudios, he adquirido habilidades tanto
+                    el campo del desarrollo web. Durante mis estudios, he adquirido habilidades tanto
                     teóricas como prácticas que me capacitan para desarrollar
                     sistemas completos. Como aspirante a desarrollador de
                     software profesional, me comprometo a mejorar continuamente,
@@ -220,9 +275,11 @@ const PageAboutHome = () => {
                     backend, infraestructura, diseño UI/UX, DevOps, bases de
                     datos y mucho más cada día.
                   </p>
-                </p>
+
+                </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -383,33 +440,34 @@ const PageAboutHome = () => {
             </p>
           </div>
 
-          <div className="ml-6 flex flex-col">
-            <div className="  border-l border-gray-200 dark:border-neutral-700">
+          <div className=" flex flex-col">
+            <div className="  ">
               <div className="max-w-7xl mx-auto ">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  <div className="md:col-span-2">
-                    <div className="card-neumorphic p-8 grid grid-cols-3 gap-6">
+
+
+                  {projects.map((project, index) => (
+                    <div key={index} className="card-neumorphic p-4 grid grid-cols-1 gap-2">
                       <div>
-                        <Link href="#" className="flex  space-x-4">
+                        <Link href="#" className="flex space-x-4">
                           <img
                             className="img-neumorphic block rounded-100"
-                            src="https://res.cloudinary.com/ddksrkond/image/upload/v1700274329/10shots_so_bgt2yc.png"
-                            alt=""
+                            src={project.imageprev}
+                            alt={project.title}
                           />
                         </Link>
                       </div>
                       <div className="col-span-2">
-                        <div className="font-medium text-xl ">
-                          <P className="font-semibold">
+                        <div className="font-medium text-xl">
+                          <p className="font-semibold">
                             <Link
-                              href="https://udemycloneplus.com/"
+                              href={project.hrefLive}
                               target="_blank"
-                              className="flex  space-x-4 underline-offset-4 underline"
+                              className="flex space-x-4 underline-offset-4 underline"
                             >
-                              Clon de Udemy solo frontend UI
+                              {project.title}
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                id="root"
                                 viewBox="0 0 20 20"
                                 fill="currentColor"
                                 className="w-5 h-5"
@@ -420,183 +478,33 @@ const PageAboutHome = () => {
                                   d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
                                   clipRule="evenodd"
                                 />
-                              </svg>{" "}
+                              </svg>
                             </Link>
-                          </P>
-                        </div>
-                        <div className="pt-3 pb-5">
-                          <P className="text-sm">
-                            Este proyecto es un clon de la reconocida plataforma
-                            de aprendizaje en línea Udemy, centrándose
-                            exclusivamente en la recreación de su interfaz de
-                            usuario UI en el lado del frontend.
-                          </P>
-                        </div>
-                        <div className="flex flex-col">
-                          
-                          <div className="flex">
-                            <img
-                            className="user-neumorphic w-10 h-10 rounded-full object-contain"
-                            src={siteMetadata.photo}
-                            alt=""
-                          />
-                          <div className="ml-5">
-
-                            <span className="text-sm  block">Gonzalo Axel</span>
-                            <span className="text-xs  font-medium block">
-                              Desarrollador
-                            </span>
-                          </div>
-                          </div>
-                          <p className="text-sm font-light mt-5 text-neutral-600 dark:text-neutral-400">
-                            <span>Aptitudes:</span>{" "}
-                            <span>
-                              Desarrollo de software · Desarrollo Frontend ·
-                              React 18 · Nextjs 12 · Tailwindcss
-                            </span>
                           </p>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="md:col-span-2">
-                    <div className="card-neumorphic p-8 grid grid-cols-3 gap-6">
-                      <div>
-                        <Link href="#" className="flex  space-x-4">
-                          <img
-                            className="img-neumorphic block rounded-100"
-                            src="https://res.cloudinary.com/ddksrkond/image/upload/v1675868776/Blog/fastfood_uqvurg.png"
-                            alt=""
-                          />
-                        </Link>
-                      </div>
-                      <div className="col-span-2">
-                        <div className=" text-xl ">
-                          <P className="font-semibold">
-                            <Link
-                              href="https://fastfoodilo.com/fastfood"
-                              target="_blank"
-                              className="flex  space-x-4 underline-offset-4 underline"
-                            >
-                              Aplicacion de comida rapida solo frontend UI
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                id="root"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                className="w-5 h-5"
-                                aria-hidden="true"
-                              >
-                                <path
-                                  fillRule="evenodd"
-                                  d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                                  clipRule="evenodd"
-                                />
-                              </svg>{" "}
-                            </Link>
-                          </P>
-                        </div>
                         <div className="pt-3 pb-5">
-                          <P className="text-sm">
-                            Este proyecto es un clon de una web de Themeforest
-                            de comida rápida en línea FastFood Lafka ,con un
-                            enfoque principal en recrear fielmente su interfaz
-                            de usuario UI en el lado del frontend.
-                          </P>
+                          <p className="text-sm">{project.description}</p>
                         </div>
-
                         <div className="flex">
                           <img
                             className="user-neumorphic w-10 h-10 rounded-full"
                             src={siteMetadata.photo}
-                            alt=""
+                            alt="Desarrollador"
                           />
                           <div className="ml-5">
-                            <span className="text-sm  block">Gonzalo Axel</span>
-                            <span className="text-xs  font-medium block">
-                              Desarrollador
-                            </span>
+                            <span className="text-sm block">Gonzalo Axel</span>
+                            <span className="text-xs font-medium block">Desarrollador</span>
                           </div>
                         </div>
                         <p className="text-sm font-light mt-5 text-neutral-600 dark:text-neutral-400">
                           <span>Aptitudes:</span>{" "}
-                          <span>
-                            Desarrollo de software · Desarrollo Frontend ·
-                            FullCSS · Nextjs 12
-                          </span>
+                          <span>{project.aptitudes.join(" · ")}</span>
                         </p>
                       </div>
                     </div>
-                  </div>
-                  <div className="md:col-span-2">
-                    <div className="card-neumorphic p-8 grid grid-cols-3 gap-6">
-                      <div>
-                        <Link href="#" className="flex  space-x-4">
-                          <img
-                            className="img-neumorphic block rounded-100"
-                            src="https://res.cloudinary.com/ddksrkond/image/upload/v1713839604/SAMUAPPCAPTURE_nub9ca.png"
-                            alt=""
-                          />
-                        </Link>
-                      </div>
-                      <div className="col-span-2">
-                        <div className=" text-xl ">
-                          <P className="font-semibold">
-                            <Link
-                              href="https://samusystem.com/"
-                              target="_blank"
-                              className="flex  space-x-4 underline-offset-4 underline"
-                            >
-                              Aplicacion de reportes SAMU Fullstack
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                id="root"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                className="w-5 h-5"
-                                aria-hidden="true"
-                              >
-                                <path
-                                  fillRule="evenodd"
-                                  d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                                  clipRule="evenodd"
-                                />
-                              </svg>{" "}
-                            </Link>
-                          </P>
-                        </div>
-                        <div className="pt-3 pb-5">
-                          <P className="text-sm">
-                            Sistema para organizar los reportes y automatizacion
-                            de subida de informacion y reportes de errores de
-                            datos, con modulos de autenticacion JWT y OTP.
-                          </P>
-                        </div>
+                  ))}
 
-                        <div className="flex">
-                          <img
-                            className="user-neumorphic w-10 h-10 rounded-full"
-                            src={siteMetadata.photo}
-                            alt=""
-                          />
-                          <div className="ml-5">
-                            <span className="text-sm  block">Gonzalo Axel</span>
-                            <span className="text-xs  font-medium block">
-                              Desarrollador
-                            </span>
-                          </div>
-                        </div>
-                        <p className="text-sm font-light mt-5 text-neutral-600 dark:text-neutral-400">
-                          <span>Aptitudes:</span>{" "}
-                          <span>
-                            Desarrollo de software · Desarrollo web backend ·
-                            Django RestFramework · Angular 16 · Taiga UI · RXJS
-                            · JWT · PostgreSQL · Docker
-                          </span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+
                 </div>
               </div>
             </div>
@@ -825,10 +733,7 @@ const PageAboutHome = () => {
           Descubre mi blog personal, aqui es donde escribo sobre algunas
           novedades, curiosidades y sobre tecnologia.Puedes hecharle un vistazo.
         </p>
-        
-
         <RecentArticles />
-        
       </section>
       <section className="relative z-20 overflow-hidden my-10">
         <div className="mt-4">

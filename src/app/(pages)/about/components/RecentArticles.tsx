@@ -14,15 +14,15 @@ const RecentArticles = () => {
           perPage: 1,
           gap: "0.5rem",
           arrows: false,
-          marginLeft:20
+          marginLeft: 20
         }}
       >
-        <div className="w-full ">
-          <SplideTrack>
+        <div className="w-full bg-transparent">
+          <SplideTrack className="mx-20 overflow-visible ">
             {articles?.map((article: any, index: number) => (
               <SplideSlide
                 key={index}
-                className=" sm:translate-x-0 max-w-[300px] mr-2 py-4  dark:text-white text-gray-1F"
+                className=" sm:translate-x-0  max-w-[300px] mr-2 py-4  dark:text-white text-gray-1F"
               >
                 <CardArticle article={article} />
               </SplideSlide>

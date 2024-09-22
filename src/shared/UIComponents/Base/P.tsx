@@ -1,6 +1,6 @@
 import { cn } from "tailwind-cn";
 
-const P = ({ children,extClassName, className = "", ...args }: any) => {
+const P = ({ children, extClassName, className = "", ...args }: any) => {
   return (
     <p
       style={{
@@ -9,7 +9,7 @@ const P = ({ children,extClassName, className = "", ...args }: any) => {
       {...args}
       className={cn(
         "text-base font-bold-400 text-graydark dark:text-graywhite",
-        className,extClassName
+        className, extClassName
       )}
     >
       {children}

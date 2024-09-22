@@ -18,7 +18,7 @@ export async function POST(request: Request) {
   }
 
   async function verify(body: any) {
-    console.log(process.env.GOOGLE_ID);
+
     const ticket = await client.verifyIdToken({
       idToken: body.token,
       audience: process.env.GOOGLE_ID || "",

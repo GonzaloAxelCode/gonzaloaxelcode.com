@@ -125,7 +125,7 @@ const PageAbout = () => {
                   Sigueme en Github
                 </Link>
                 <Link
-                  href="/CURRICULUM2.pdf"
+                  href="/CVProfesional2.pdf"
                   target="_blank"
                   className="inline-flex w-auto px-4 py-2 mt-5 text-sm sm:text-md font-bold duration-300 ease-out border rounded-full   dark:text-neutral-900  border-neutral-700 dark:border-neutral-300 bg-white dark:bg-black dark>text-white dark:text-white text-neutral-900"
                 >
@@ -139,7 +139,7 @@ const PageAbout = () => {
                 <div className="image_outer_container">
                   <div className="green_icon"></div>
                   <div className="image_inner_container">
-                    <img src="https://res.cloudinary.com/ddksrkond/image/upload/c_crop,ar_1:1/v1700110843/SEO/WhatsApp_Image_2023-11-15_at_11.58.48_PM_pvgump.jpg" />
+                    <img src="https://res.cloudinary.com/ddksrkond/image/upload/v1726626928/me_yb8gfc_u_image_upload_mo34ahsr8fu71_bcysnc_c_thumb_w_1.0_h_1.0_fl_relative.layer_apply-fotor-20240917213026_ekk4jr.png" />
                   </div>
                 </div>
               </div>

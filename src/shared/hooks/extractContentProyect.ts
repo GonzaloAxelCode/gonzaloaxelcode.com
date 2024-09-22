@@ -13,6 +13,9 @@ const extractContentProyect = (proyect: any) => {
     month: "long",
     day: "numeric",
   });
+  let references = proyect?.properties?.Referencias?.rich_text[0]?.plain_text ||
+    "[]";
+
 
   let tags = proyect?.properties?.Tags?.multi_select || [];
   let description = proyect.properties?.Description?.rich_text[0]?.plain_text;
@@ -93,7 +96,7 @@ const extractContentProyect = (proyect: any) => {
     progress,
     tags,
     isLocked,
-
+    references,
     imagesPages,
   };
 };

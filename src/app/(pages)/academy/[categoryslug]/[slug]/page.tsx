@@ -64,7 +64,7 @@ export default async function PageSlugAcademy({ params }: any) {
 
 
   const { content, article } = await getFullAcademyArticleBySlug(params.slug);
-  console.log({ article })
+
 
   return (
     <main className="w-full">

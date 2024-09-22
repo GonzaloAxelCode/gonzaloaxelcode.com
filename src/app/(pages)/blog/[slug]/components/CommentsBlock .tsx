@@ -1,15 +1,11 @@
 "use client";
-import { GoogleLogin } from "@react-oauth/google";
-import { useEffect, useState } from "react";
-
 import {
   addComment,
-  addSubComment,
-  getComments,
+  getComments
 } from "@/shared/services/firebase";
-
+import { GoogleLogin } from "@react-oauth/google";
 import Image from "next/image";
-
+import { useEffect, useState } from "react";
 //@ts-ignore
 import moment from "moment";
 //@ts-ignore
@@ -66,9 +62,7 @@ const CommentsBlock = ({ idArticle }: any) => {
         emailUser: email,
       });
       setLoaderBtn(false);
-
       setNewComment({ ...newComment, comment: "" });
-
       setChange(!change);
     }
   };
@@ -91,7 +85,7 @@ const CommentsBlock = ({ idArticle }: any) => {
       });
     }
   }
-  function handleError() {}
+  function handleError() { }
 
   return (
     <div className="my-12">
@@ -196,9 +190,7 @@ const ButtonPostComment = ({
   handleClick,
   loaderBtn,
   commentString,
-  email,
-  user,
-  ...args
+  user
 }: any) => {
   return (
     <button
@@ -223,3 +215,19 @@ const ButtonPostComment = ({
     </button>
   );
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

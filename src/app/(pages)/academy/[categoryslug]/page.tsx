@@ -71,26 +71,26 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
 
 
 export default async function PageSlugAcademy({ params }: any) {
-  
-  
- const { articles, tags } = await getFullArticlesByCategorySlug(
-    params.categoryslug,process.env.NOTION_DATABASE_ACADEMY
+
+
+  const { articles, tags } = await getFullArticlesByCategorySlug(
+    params.categoryslug, process.env.NOTION_DATABASE_ACADEMY
   );
 
-  const {article,content} = await getFullArticleBySlug(params.categoryslug,
+  const { article, content } = await getFullArticleBySlug(params.categoryslug,
     process.env.NOTION_DATABASE_ACADEMY_TOPIC
   )
 
-    return (
-     <main className="w-full mb-20 ">
-    <FilterByTagAcademy articles={articles} articleTopic={article} articleTopicContent={content}/>
+  return (
+    <main className="w-full mb-20 ">
+      <FilterByTagAcademy articles={articles} articleTopic={article} articleTopicContent={content} />
     </main>
   );
 }
 
 export async function generateStaticParams() {
   const articles = await getAllArticles(
-     process.env.NOTION_DATABASE_ACADEMY,
+    process.env.NOTION_DATABASE_ACADEMY,
   );
   return articles.map((el: any) => ({
     categoryslug: suglifyTitle(el.properties.Category?.select?.name),

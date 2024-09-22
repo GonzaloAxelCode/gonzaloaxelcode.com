@@ -7,14 +7,14 @@ import Link from "next/link";
 import ContentBlock from "../../../[slug]/components/ContentBlokcs";
 
 
-const FilterByTagAcademy = ({ articles,  articleTopic, articleTopicContent }: any) => {
-  const{ tags, title, description,subtitle, category, createdAt, cover ,
+const FilterByTagAcademy = ({ articles, articleTopic, articleTopicContent }: any) => {
+  const { tags, title, description, subtitle, category, createdAt, cover,
 
 
-    lessons,duration,
+    lessons, duration,
   } = extractInfoArticle(articleTopic)
 
-     let firstTitle  =articles[0]?.properties.Name?.title[0]?.plain_text ||  articles[0]?.properties.Nombre?.title[0]?.plain_text || "Articulo sin Titulo"
+  let firstTitle = articles[0]?.properties.Name?.title[0]?.plain_text || articles[0]?.properties.Nombre?.title[0]?.plain_text || "Articulo sin Titulo"
   return (
     <div className="max-w-[768px] lg:max-w-[1280px]  mx-auto  px-8">
       <article className="text-md ">
@@ -34,20 +34,20 @@ const FilterByTagAcademy = ({ articles,  articleTopic, articleTopicContent }: an
                   </strong>
                 </p>
                 <div className="dark-copy pb-3">
-              <div className="font-copy text-base lg:text-md 2xl:text-xl font-medium print:text-[14px] print:text-justify">
-                <P className="font-medium my-6 text-md first:mt-0 last:mb-0 print:my-2 ">
-                  {description}
-                </P>
-              </div>
-            </div>
+                  <div className="font-copy text-base lg:text-md 2xl:text-xl font-medium print:text-[14px] print:text-justify">
+                    <P className="font-medium my-6 text-md first:mt-0 last:mb-0 print:my-2 ">
+                      {description}
+                    </P>
+                  </div>
+                </div>
                 <Link
                   className="rounded-lg  whitespace-nowrap focus:outline-none focus:ring-tertiary-purple disabled:opacity-50 group border-2 focus:ring-4 transition-opacity transition-colors hover:bg-opacity-75 disabled:hover:bg-opacity-100 border-white py-3 px-6 text-sm-flat leading-5 2xl:text-base-flat 2xl:leading-5 bg-black dark:bg-white dark:text-gray-15 text-white inline-block mb-5"
-                  
-                     href={`/academy/${suglifyTitle(category)}/${suglifyTitle(firstTitle)}`}
-                >
-               
 
-                  Aprender 
+                  href={`/academy/${suglifyTitle(category)}/${suglifyTitle(firstTitle)}`}
+                >
+
+
+                  Aprender
                 </Link>
                 <div className="flex flex-wrap items-center gap-3 text-sm text-gray-A4">
                   <div className="flex items-center gap-1.5">
@@ -95,7 +95,7 @@ const FilterByTagAcademy = ({ articles,  articleTopic, articleTopicContent }: an
                     decoding="async"
                     data-nimg={1}
                     className="w-full object-contain"
-                    
+
                     src={cover}
                     style={{ color: "transparent" }}
                   />
@@ -106,21 +106,21 @@ const FilterByTagAcademy = ({ articles,  articleTopic, articleTopicContent }: an
         </div>
         <div className="container ">
           <div className="lg:max-w-[46rem] pb-24 mx-auto">
-            
+
             <div className="flex flex-col gap-4 p-8 -mx-8 rounded-2xl bg-gray-F7 dark:bg-blackbgsection">
               <h2>{articles.length} Lecciones</h2>
               {articles?.map((el: any, index: any) => {
-                const { tags, icon,title, description, category, createdAt, cover } =
+                const { tags, icon, title, description, category, createdAt, cover } =
                   extractInfoArticle(el);
 
                 return <article key={index} className="h-full relative border-0 rounded-xl bg-white border-gray-EE   dark:bg-[#2b2b2b] dark:border-darkborder transition-colors ease-in-out duration-200 text-white dark:text-gray-15 group">
                   <div className="flex gap-4 p-6 justify-between items-center">
                     <div className="flex gap-4 items-center">
-                                            <span className="w-12 h-12 rounded-lg shrink-0 flex items-center justify-center ">
+                      <span className="w-12 h-12 rounded-lg shrink-0 flex items-center justify-center ">
 
-                                          
-                      <img className="" src={icon} alt="" />
-                       </span>
+
+                        <img className="" src={icon} alt="" />
+                      </span>
                       <Link
                         className="after:absolute after:inset-0"
                         href={`/academy/${suglifyTitle(category)}/${suglifyTitle(title)}`}
@@ -128,12 +128,12 @@ const FilterByTagAcademy = ({ articles,  articleTopic, articleTopicContent }: an
                         <P className="dark:text-white text-gray-15 font-headings scroll-mt-[120px]  2xl:md-tight   wrap-balance">
                           {title}
                         </P>
-                        <P className="text-xs">{description}</P>  
+                        <P className="text-xs">{description}</P>
                       </Link>
-                      
+
                     </div>
                     <div className="rounded-lg -mr-2 -my-2 ">
-                    
+
                     </div>
                   </div>
                 </article>
@@ -141,16 +141,16 @@ const FilterByTagAcademy = ({ articles,  articleTopic, articleTopicContent }: an
 
 
             </div>
-              <div className="w-full">
-        {articleTopicContent &&
-          articleTopicContent?.map((block: any, index: number) => {
-            return (
-              <div className="flex" key={index}>
-                <ContentBlock block={block} />
-              </div>
-            );
-          })}
-      </div>
+            <div className="w-full">
+              {articleTopicContent &&
+                articleTopicContent?.map((block: any, index: number) => {
+                  return (
+                    <div className="flex" key={index}>
+                      <ContentBlock block={block} />
+                    </div>
+                  );
+                })}
+            </div>
           </div>
         </div>
       </article>

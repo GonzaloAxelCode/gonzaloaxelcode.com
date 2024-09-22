@@ -6,6 +6,7 @@ import "@/shared/styles/tailwindcss-custom.css";
 import "@splidejs/react-splide/css/core";
 import { Metadata } from "next";
 
+import BackgroundEffect1 from "@/shared/backgroundEffects/BackgroundEffect1";
 import GlobalProviders from "../providers";
 export const metadata: Metadata = {
   metadataBase: new URL("https://gonzaloaxelcode.com"),
@@ -25,7 +26,9 @@ export default function RootLayout({
         id="body-id"
         className="body  overflow-x-hidden dark:text-white text-gray-15  antialiased selection:bg-primary-purple relative bg-white dark:bg-[#222222] "
       >
+
         <GlobalProviders>
+          <BackgroundEffect1 />
           <div className="relative w-full dark:text-white text-gray-15  ">
             <Header />
             <Subheader />

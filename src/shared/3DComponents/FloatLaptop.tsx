@@ -13,13 +13,13 @@ function Model({ open, hinge, ...props }) {
   // Load model
   //@ts-ignore
   const { nodes, materials } = useGLTF("/mac-draco.glb");
-  // Take care of cursor state on hover
+
   const [hovered, setHovered] = useState(false);
   useEffect(
     () => void (document.body.style.cursor = hovered ? "pointer" : "auto"),
     [hovered]
   );
-  // Make it float in the air when it's opened
+
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
     group.current.rotation.x = THREE.MathUtils.lerp(
@@ -116,8 +116,8 @@ export default function FloatLaptop() {
         dpr={[1, 2]}
         camera={{ position: [0, 0, -30], fov: 35 }}
         style={{
-          width:xl ? "500px":"500px",
-          height:xl ?"650px": "500px",
+          width: xl ? "500px" : "500px",
+          height: xl ? "650px" : "500px",
         }}
       >
         <three.pointLight
