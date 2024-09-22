@@ -29,7 +29,7 @@ const PageAcademy = () => {
             1000,
             "Movil.",
             1000,
-            "Descktop.",
+            "Desktop.",
             1000,
           ]}
         />
