@@ -13,11 +13,11 @@ const SidebarAcademy = () => {
 
     const [slugSelected, setSlugSelected] = useState("")
     useEffect(() => {
-        if (!isLoading) {
+        if (data) {
 
             setSlugSelected(suglifyTitle(extractInfoArticle(data[0]).title))
         }
-    }, [isLoading])
+    }, [data])
     return (
         <section className="mt-20 flex gap-5 relative flex-wrap md:flex-nowrap">
 

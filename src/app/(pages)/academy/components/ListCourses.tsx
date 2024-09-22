@@ -7,8 +7,6 @@ import Link from "next/link";
 import useSWR from 'swr';
 
 export default function ListCourses({ slug }: any) {
-  console.log(slug)
-
 
   const { data, error } = useSWR(slug ? `/api/coursesbyslug?slug=${slug}` : null, fetcherCache);
 

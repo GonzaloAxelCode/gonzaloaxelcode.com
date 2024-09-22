@@ -7,10 +7,7 @@ export const metadata: Metadata = {
 const ServicesPage = () => {
   return (
     <main>
-
-
-       <HeaderService />
-      
+      <HeaderService />
     </main>
   )
 }
