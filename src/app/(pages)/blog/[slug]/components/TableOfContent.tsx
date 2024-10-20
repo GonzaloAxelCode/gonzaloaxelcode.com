@@ -1,6 +1,6 @@
 "use client";
-import P from "@/shared/UIComponents/Base/P";
-import Title from "@/shared/UIComponents/Base/Title";
+import P from "@/shared/components/Base/P";
+import Title from "@/shared/components/Base/Title";
 import suglifyTitle from "@/shared/utils/suglify-title";
 //@ts-ignore
 import Cookies from "js-cookie";
@@ -33,7 +33,7 @@ function extractHeading1Text(inputArray: any) {
     }));
   return extractedArray;
 }
-const TableOfContent = ({ content, id, slug ,disable_raitings=false }: any) => {
+const TableOfContent = ({ content, id, slug, disable_raitings = false }: any) => {
   const extractedArray = extractHeading1Text(content);
   const [title, setTitle] = useState("");
   const { themeGlobal } = useTheme();
@@ -73,7 +73,7 @@ const TableOfContent = ({ content, id, slug ,disable_raitings=false }: any) => {
       rect.top >= 0 &&
       rect.left >= 0 &&
       rect.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
+      (window.innerHeight || document.documentElement.clientHeight) &&
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   }
@@ -112,10 +112,10 @@ const TableOfContent = ({ content, id, slug ,disable_raitings=false }: any) => {
                   height:
                     35 +
                     35 *
-                      (extractedArray.findIndex(
-                        (item: any) => item.slugtext === title
-                      ) +
-                        1),
+                    (extractedArray.findIndex(
+                      (item: any) => item.slugtext === title
+                    ) +
+                      1),
                 }}
                 className="w-1 origin-top bg-primary-purple absolute top-0 left-4 hidden lg:block transition-all duration-400"
               />
@@ -181,7 +181,7 @@ const TableOfContent = ({ content, id, slug ,disable_raitings=false }: any) => {
           <div style={{ position: "relative" }} />
         </div>
       </div>
-     {!disable_raitings &&   <div className="flex flex-col items-center">
+      {!disable_raitings && <div className="flex flex-col items-center">
         <div className="mt-1 flex items-center justify-between">
           <nav className="flex gap-2.5 items-center flex-wrap">
             <P className="font-semibold text-sm leading-tight">
@@ -253,7 +253,7 @@ const TableOfContent = ({ content, id, slug ,disable_raitings=false }: any) => {
             </div>
           </nav>
         </div>
-       
+
         <div className="flex gap-3 my-1 ">
           <button onClick={() => handleToggleLike("like")}>
             <div
@@ -262,8 +262,8 @@ const TableOfContent = ({ content, id, slug ,disable_raitings=false }: any) => {
                 backgroundColor: !isLiked("like")
                   ? ""
                   : !themeGlobal
-                  ? "#E9E9E9"
-                  : "black",
+                    ? "#E9E9E9"
+                    : "black",
               }}
             >
               <span className=" text-2xl">👍</span>
@@ -277,8 +277,8 @@ const TableOfContent = ({ content, id, slug ,disable_raitings=false }: any) => {
                 backgroundColor: !isLiked("heart")
                   ? ""
                   : !themeGlobal
-                  ? "#E9E9E9"
-                  : "black",
+                    ? "#E9E9E9"
+                    : "black",
               }}
             >
               <span className=" text-2xl">❤️</span>
@@ -293,8 +293,8 @@ const TableOfContent = ({ content, id, slug ,disable_raitings=false }: any) => {
                 backgroundColor: !isLiked("applause")
                   ? ""
                   : !themeGlobal
-                  ? "#E9E9E9"
-                  : "black",
+                    ? "#E9E9E9"
+                    : "black",
               }}
             >
               <span className=" text-2xl">👏</span>
@@ -309,8 +309,8 @@ const TableOfContent = ({ content, id, slug ,disable_raitings=false }: any) => {
                 backgroundColor: !isLiked("confetti")
                   ? ""
                   : !themeGlobal
-                  ? "#E9E9E9"
-                  : "black",
+                    ? "#E9E9E9"
+                    : "black",
               }}
             >
               {/*

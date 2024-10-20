@@ -1,5 +1,4 @@
-import Flex from "@/shared/UIComponents/Base/Flex";
-import P from "@/shared/UIComponents/Base/P";
+import P from "@/shared/components/Base/P";
 import obtenerInformacionArchivo from "@/shared/utils/detect-link-download";
 import Link from "next/link";
 

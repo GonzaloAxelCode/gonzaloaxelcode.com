@@ -1,5 +1,5 @@
 "use client";
-import P from "@/shared/UIComponents/Base/P";
+import P from "@/shared/components/Base/P";
 import { obtenerCategoriasUnicas } from "@/shared/hooks/functions-notion";
 import useScrollCalc from "@/shared/hooks/useScrollCalc";
 import { fetcherCache } from "@/shared/services/fetcher";

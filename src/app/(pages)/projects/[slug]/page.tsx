@@ -1,4 +1,5 @@
 
+import P from "@/shared/components/Base/P";
 import extractInfoArticle from "@/shared/hooks/extract-info-article";
 import extractContentProyect from "@/shared/hooks/extractContentProyect";
 import { getFullProjectBySlug } from "@/shared/hooks/functions-notion";
@@ -8,7 +9,6 @@ import {
   othersMetadata,
   robotsDefault,
 } from "@/shared/settings/default-metadata";
-import P from "@/shared/UIComponents/Base/P";
 import suglifyTitle from "@/shared/utils/suglify-title";
 import { Metadata } from "next";
 import Image from "next/image";

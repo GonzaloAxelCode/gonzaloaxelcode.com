@@ -1,14 +1,8 @@
 "use client";
-import Flex from "@/shared/UIComponents/Base/Flex";
-import P from "@/shared/UIComponents/Base/P";
-import Title from "@/shared/UIComponents/Base/Title";
 import useExtractInfoArticle from "@/shared/hooks/useExtractInfoArticle";
-import usePostViews from "@/shared/hooks/usePostViews";
 import siteMetadata from "@/shared/settings/sitemetdata";
 import COLORS_NOTION from "@/shared/utils/colors-notion";
 import formatDate from "@/shared/utils/format-date";
-import suglifyTitle from "@/shared/utils/suglify-title";
-import Image from "next/image";
 
 const PresentationArticle2 = ({ article }: any) => {
   const { title, cover, category, createdAt, categoryColor } =

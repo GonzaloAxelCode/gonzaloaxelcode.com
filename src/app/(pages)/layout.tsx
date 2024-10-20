@@ -1,9 +1,11 @@
+
+import "@/shared/styles/blob-rotate.css";
+import "@/shared/styles/custom-fonts.css";
 import "@/shared/styles/globals.css";
 import "@/shared/styles/tailwindcss-custom.css";
 import "@splidejs/react-splide/css/core";
+
 import { Metadata } from "next";
-
-
 
 import Layoutclient from "./layoutclient";
 export const metadata: Metadata = {

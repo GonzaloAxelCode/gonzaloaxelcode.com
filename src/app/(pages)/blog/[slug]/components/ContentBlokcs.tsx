@@ -1,10 +1,10 @@
 "use client";
-import P from "@/shared/UIComponents/Base/P";
-import Subtitle from "@/shared/UIComponents/Base/Subtitle";
+import P from "@/shared/components/Base/P";
+import Subtitle from "@/shared/components/Base/Subtitle";
 import Image from "next/image";
 
 //@ts-ignore
-import Title from "@/shared/UIComponents/Base/Title";
+import Title from "@/shared/components/Base/Title";
 //@ts-ignore
 import SyntaxHighlighter from "react-syntax-highlighter";
 //@ts-ignore

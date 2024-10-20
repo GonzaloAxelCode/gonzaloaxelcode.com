@@ -1,4 +1,3 @@
-import Subscribe from "@/shared/components/Subscribe";
 
 import {
   iconsMetadata,
@@ -64,16 +63,10 @@ export const metadata: Metadata = {
 const PageBlog = () => {
   return (
     <main className="w-full overflow-x-hidden">
-
-      <section className="w-full">
-        <BlogGridPresentation />
-      </section>
+      <BlogGridPresentation />
       <LastestContent />
       <ChooseTechStack />
       <ArticlesByTopic />
-      <div className="max-w-[768px] lg:max-w-[1280px]  mx-auto my-10 px-8">
-        <Subscribe />
-      </div>
     </main>
   );
 };

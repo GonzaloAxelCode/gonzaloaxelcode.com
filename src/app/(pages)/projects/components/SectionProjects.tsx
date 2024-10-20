@@ -98,6 +98,7 @@ const SectionProjects = () => {
                       </p>
                     </div>
                     <TecnologiesProyect tecnologias={tecnologias} />
+
                     <div className="flex items-center flex-wrap gap-4 mt-6">
 
                     </div>

@@ -1,9 +1,9 @@
 "use client";
 
+import P from "@/shared/components/Base/P";
 import useScrollCalc from "@/shared/hooks/useScrollCalc";
 import { fetcherCache } from "@/shared/services/fetcher";
 import siteMetadata from "@/shared/settings/sitemetdata";
-import P from "@/shared/UIComponents/Base/P";
 import sortByCreatedTime from "@/shared/utils/sort-createdtime";
 import suglifyTitle from "@/shared/utils/suglify-title";
 import { motion, useAnimation } from "framer-motion";
@@ -15,7 +15,7 @@ import Switcher from "../SwitcherDark";
 import News from "./News";
 
 export const pathsNavHeader = [
-    {
+  {
     text: "Inicio",
     path: "/",
   },
@@ -32,7 +32,7 @@ export const pathsNavHeader = [
     path: "/academy",
   },
 
-   {
+  {
     text: "Servicios",
     path: "/services",
   },
@@ -157,10 +157,10 @@ const Header = () => {
                       <span className="">
                         <span className="">
                           <img
-      className=" w-[40px] filter invert sm:w-[40px] object-contain h-[50px]"
-      src={siteMetadata.logoUrl}
-      alt="logo"
-            />
+                            className=" w-[40px] filter invert sm:w-[40px] object-contain h-[50px]"
+                            src={siteMetadata.logoUrl}
+                            alt="logo"
+                          />
                         </span>
                       </span>
                       <span className="text-white text-lg ml-1">
@@ -216,7 +216,7 @@ const Header = () => {
                     </li>
                   </Link>
 
-                
+
                   <Link
                     className="hover:translate-x-2 transition-all duration-100 "
                     href="/blog"
@@ -239,7 +239,7 @@ const Header = () => {
                       </svg>{" "}
                     </li>
                   </Link>
-                   <Link
+                  <Link
                     className="hover:translate-x-2 transition-all duration-100 "
                     href="/academy"
                     onClick={() => handleHoverEnd()}
@@ -260,7 +260,7 @@ const Header = () => {
                         ></path>
                       </svg>{" "}
                     </li>
-                  </Link> 
+                  </Link>
                   <Link
                     className="hover:translate-x-2 transition-all duration-100 "
                     href="/projects"
@@ -283,7 +283,7 @@ const Header = () => {
                       </svg>{" "}
                     </li>
                   </Link>
-                   <Link
+                  <Link
                     className="hover:translate-x-2 transition-all duration-100 "
                     href="/services"
                     onClick={() => handleHoverEnd()}
@@ -315,14 +315,13 @@ const Header = () => {
                     (articles &&
                       sortArticlesByDate[0]?.properties.Name?.title[0]
                         ?.plain_text) ||
-                      "Articulo sin Titulo"
+                    "Articulo sin Titulo"
                   )}`}
                   className="flex flex-col w-full  h-[350px] bg-[#292929] rounded-xl"
                   style={{
-                    backgroundImage: `url(${
-                      sortArticlesByDate[0]?.cover?.file?.url ||
+                    backgroundImage: `url(${sortArticlesByDate[0]?.cover?.file?.url ||
                       sortArticlesByDate[0]?.cover?.external?.url
-                    })`,
+                      })`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                   }}
@@ -364,16 +363,15 @@ const Header = () => {
                     (articles &&
                       sortArticlesByDate[1]?.properties.Name?.title[0]
                         ?.plain_text) ||
-                      "Articulo sin Titulo"
+                    "Articulo sin Titulo"
                   )}`}
                   className="flex flex-col w-full  h-[350px] bg-[#292929] rounded-xl"
                   style={{
                     backgroundImage: `
      
-      url(${
-        sortArticlesByDate[1]?.cover?.file?.url ||
-        sortArticlesByDate[1]?.cover?.external?.url
-      })
+      url(${sortArticlesByDate[1]?.cover?.file?.url ||
+                      sortArticlesByDate[1]?.cover?.external?.url
+                      })
     `,
                     backgroundSize: "cover",
                     backgroundPosition: "center",

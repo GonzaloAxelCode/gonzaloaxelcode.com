@@ -1,10 +1,10 @@
 
 "use client"
-import useTheme from "../hooks/useTheme";
+import useTheme from "../../hooks/useTheme";
 
 
 
-const BackgroundEffect1 = () => {
+const BlobDark = () => {
 
     const { darkSide } = useTheme()
     if (!darkSide) {
@@ -27,4 +27,4 @@ const BackgroundEffect1 = () => {
     );
 };
 
-export default BackgroundEffect1;
+export default BlobDark;

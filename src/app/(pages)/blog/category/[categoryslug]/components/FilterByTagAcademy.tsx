@@ -1,7 +1,7 @@
 "use client";
 
+import P from "@/shared/components/Base/P";
 import extractInfoArticle from "@/shared/hooks/extract-info-article";
-import P from "@/shared/UIComponents/Base/P";
 import suglifyTitle from "@/shared/utils/suglify-title";
 import Link from "next/link";
 import ContentBlock from "../../../[slug]/components/ContentBlokcs";

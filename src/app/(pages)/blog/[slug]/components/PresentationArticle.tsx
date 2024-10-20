@@ -1,6 +1,6 @@
 "use client";
-import P from "@/shared/UIComponents/Base/P";
-import Title from "@/shared/UIComponents/Base/Title";
+import P from "@/shared/components/Base/P";
+import Title from "@/shared/components/Base/Title";
 import useExtractInfoArticle from "@/shared/hooks/useExtractInfoArticle";
 import usePostViews from "@/shared/hooks/usePostViews";
 import siteMetadata from "@/shared/settings/sitemetdata";

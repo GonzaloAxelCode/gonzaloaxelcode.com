@@ -1,8 +1,9 @@
 "use client";
-import LogosBg from "@/shared/components/LogosBg";
+import { general_technologies } from "@/shared/data/tech-data";
 import { useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { cn } from "tailwind-cn";
+import TechList from "./TechList";
 
 const TitlePresentation = () => {
   const [gradientTextClass, setGradientTextClass] = useState(
@@ -46,7 +47,7 @@ const TitlePresentation = () => {
         </div>
       </div>
       <div className="ml-10  text-md flex flex-col ">
-        <LogosBg />
+        <TechList tools={general_technologies} />
         <span className=" max-w-[500px] mt-4 text-gray-1F  dark:text-gray-400">
           Apasionado por el desarrollo de sofware, con gran gusto en construir
           cualquier cosa con codigo y hacer aplicaciones facinantes.

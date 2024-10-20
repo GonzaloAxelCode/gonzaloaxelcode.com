@@ -64,13 +64,6 @@ export const editReplyComment = async (
   idcommentparent: any
 ) => {
   const washingtonRef = doc(db, "comments", idcommentparent);
-
-  const allReplyComments = [];
-
-  const filterCommentsAndRemoveById: any = [];
-
-  const addNewComment = [...filterCommentsAndRemoveById, newComment];
-
   const newReplies: any = [];
   await updateDoc(washingtonRef, {
     replies: newReplies,

@@ -72,7 +72,7 @@ const PageProjects = () => {
             1000,
             "Movil.",
             1000,
-            "Descktop.",
+            "Escritorio",
             1000,
           ]}
         />

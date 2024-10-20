@@ -1,5 +1,5 @@
 "use client";
-import P from "@/shared/UIComponents/Base/P";
+import P from "@/shared/components/Base/P";
 import extractInfoArticle from "@/shared/hooks/extract-info-article";
 import usePostRatings from "@/shared/hooks/usePostRatings";
 import { fetcherCache } from "@/shared/services/fetcher";

@@ -1,10 +1,10 @@
+import P from "@/shared/components/Base/P";
 import HeaderPresentation from "@/shared/components/Header/HeaderPresentation";
 import {
   iconsMetadata,
   othersMetadata,
   robotsDefault,
 } from "@/shared/settings/default-metadata";
-import P from "@/shared/UIComponents/Base/P";
 import type { Metadata } from "next";
 import SidebarAcademy from "./components/SidebarAcademy";
 
@@ -35,13 +35,7 @@ const PageAcademy = () => {
         />
         <P className="max-w-xl">Este es un apartado donde subo mi aprendizaje constante sobre tecnologias, programacion, temas avanzados y mas.</P>
       </section>
-
-
-
       <SidebarAcademy />
-
-
-
     </div>
   );
 };
