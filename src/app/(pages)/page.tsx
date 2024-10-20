@@ -1,16 +1,33 @@
 import LogosBg from "@/shared/components/LogosBg";
+
 import {
   iconsMetadata,
   othersMetadata,
   robotsDefault,
 } from "@/shared/settings/default-metadata";
 import siteMetadata from "@/shared/settings/sitemetdata";
-import P from "@/shared/UIComponents/Base/P";
 import type { Metadata } from "next";
 import Link from "next/link";
+
 import PresentationPortfolio from "../PresentationPortfolio";
 import MyTools from "./about/components/MyTools";
 import RecentArticles from "./about/components/RecentArticles";
+import TechList from "./components/TechList";
+
+const tools_app: any = {
+
+  ANDROID: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Android_logo_2019_%28stacked%29.svg/2346px-Android_logo_2019_%28stacked%29.svg.png",
+  HONOJS: "https://seeklogo.com/images/H/hono-logo-85A5D1206D-seeklogo.com.png",
+  REACT: "https://cdn.svgporn.com/logos/react.svg",
+  TYPESCRIPT: "https://cdn.svgporn.com/logos/typescript-icon.svg",
+  GIT: "https://cdn.svgporn.com/logos/git-icon.svg",
+  WORKERS: "https://blog.christophetd.fr/wp-content/uploads/2022/06/Image-2022-06-29-00-24-49.png",
+  CLOUDFLARE: "https://cdn.iconscout.com/icon/premium/png-256-thumb/cloudflare-2752221-2285038.png?f=webp&w=256",
+  MAPBOX: "https://cdn.icon-icons.com/icons2/2699/PNG/512/mapbox_logo_icon_169974.png"
+};
+
+
+
 
 export const metadata: Metadata = {
   title: "Gonzalo Axel Web Junior Developer",
@@ -146,16 +163,7 @@ const PageAboutHome = () => {
   return (
     <main className="w-full max-w-[1024px] lg:max-w-[1200px]  mx-auto  px-8">
 
-      <div className="hidden md:flex all-tools  flex-wrap    w-full mx-auto pt-4 justify-center md:justify-start ">
-        {Object.entries(tools).map(([tech, url]) => (
-
-          <div key={tech}
-            className="avatar w-[50px] h-[50px] m-1">
-            <img src={url} alt={tech} className="background" />
-            <img src={url} alt={tech} />
-          </div>
-        ))}
-      </div>
+      <TechList tools={tools} />
       <PresentationPortfolio />
 
       <section className="w-full  py-5 md:py-10 2xl:py-15 overflow-hidden light-copy ">
@@ -258,12 +266,12 @@ const PageAboutHome = () => {
               className="w-full text-base font-normal leading-relaxed text-body-color"
               style={{ maxWidth: 600 }}
             >
-              Te presento mi corta experiencia profesional en desarrollo.
+              Mi experiencia como desarrollador de software.
             </p>
           </div>
-          <div className="pb-10 ml-6 border-l border-gray-200 dark:border-neutral-700">
-            <div className="relative flex flex-col justify-start pl-12">
-              <div className="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700">
+          <div className="pb-10 ml-6 border-l border-gray-200 dark:border-neutral-700 gap-8 flex flex-col ">
+            <div className="relative flex flex-col justify-start pl-12 ">
+              <div className="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full  w-14 h-14 border-neutral-300 dark:border-neutral-700">
                 <img
                   src="https://res.cloudinary.com/ddksrkond/image/upload/v1686753544/samu/logosamuhd_a8atbw.png"
                   alt=""
@@ -274,7 +282,7 @@ const PageAboutHome = () => {
                 Abril 2023 · Julio 2023
               </p>
               <h3 className="my-1 text-lg font-bold dark:text-neutral-100">
-                Desarrollador Full-stack
+                Software developer
               </h3>
               <p className="mb-1 text-sm font-medium dark:text-neutral-300">
                 SAMU (MINSA) - Servicio de Atención Móvil de Urgencias ( ILO
@@ -289,50 +297,34 @@ const PageAboutHome = () => {
 
               <LogosBg />
             </div>
-          </div>
-        </div>
-        <div className="container">
-          <div className="grid grid-cols-12 gap-x-6">
-            <img
-              loading="lazy"
-              width={1030}
-              height={1300}
-              decoding="async"
-              data-nimg={1}
-              className="rounded-2xl border-2 border-gray-15 relative z-10 border-opacity-10 shadow-image-fix col-span-5"
-              style={{ color: "transparent" }}
-              src="https://res.cloudinary.com/ddksrkond/image/upload/v1713839604/SAMUAPPCAPTURE_nub9ca.png"
-            />
-            <div className="col-span-9 relative col-start-4 -mt-[30%]">
-              <img
-                loading="lazy"
-                width={1896}
-                height={1140}
-                decoding="async"
-                data-nimg={1}
-                className="rounded-2xl border-2 border-gray-15  border-opacity-10 shadow-image-fix"
-                style={{ color: "transparent" }}
-                src="https://res.cloudinary.com/ddksrkond/image/upload/v1675868776/Blog/fastfood_uqvurg.png"
-              />
-              <P>
-                <span className="block text-xs-flat text-sm   leading-4 mt-2 absolute max-w-[45%]">
-                  Imagenes de algunas aplicaciones creadas.
-                </span>
-              </P>
-            </div>
+            <div className="relative flex flex-col justify-start pl-12">
+              <div className="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full  w-14 h-14 border-neutral-300 dark:border-neutral-700">
+                <img
+                  src="https://res.cloudinary.com/ddksrkond/image/upload/v1700192103/Capture-removebg-preview_xtbln0.png"
+                  alt=""
+                  className="w-10 h-10 object-contain"
+                />
+              </div>
+              <p className="text-xs uppercase dark:text-neutral-100 text-neutral-500 trackign-widest">
+                Junio 2024 · Octubre 2024
+              </p>
+              <h3 className="my-1 text-lg font-bold dark:text-neutral-100">
+                Software Developer / React Native Developer
+              </h3>
+              <p className="mb-1 text-sm font-medium dark:text-neutral-300">
+                Freelance
+              </p>
+              <p className="text-sm font-light text-neutral-600 max-w-[400px] dark:text-neutral-400">
+                Desarrolle un aplicativo movil para el control de rutas de transporte publico, integrando geolocalizacion en tiempo
+                real, use clouflare workers para el despliegue y react native para la aplicacion.
+              </p>
+              <p className="my-3">Use las siguientes tecnologias: </p>
 
-            <img
-              loading="lazy"
-              width={816}
-              height={768}
-              decoding="async"
-              data-nimg={1}
-              className="rounded-2xl border-2 border-opacity-10 border-gray-15 col-start-8 z-10  shadow-image-fix col-span-4 -mt-[32%]"
-              style={{ color: "transparent" }}
-              src="https://res.cloudinary.com/ddksrkond/image/upload/v1699377009/dddd_onuqbj.png"
-            />
+              <LogosBg tools={tools_app} />
+            </div>
           </div>
         </div>
+
       </section>
 
       <section>
@@ -494,7 +486,7 @@ const PageAboutHome = () => {
           <div className="ml-6 flex flex-col">
             <div className="pb-10  border-l border-gray-200 dark:border-neutral-700">
               <div className="relative flex flex-col justify-start pl-12">
-                <div className="absolute top-0 left-0  flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700">
+                <div className="absolute top-0 left-0  flex items-center justify-center -translate-x-1/2 bg-white border rounded-full  w-14 h-14 border-neutral-300 ">
                   <img
                     src="https://res.cloudinary.com/ddksrkond/image/upload/v1699125504/Meta-Symbol_doxi6x.png"
                     alt="DevDojo"
@@ -539,7 +531,7 @@ const PageAboutHome = () => {
 
             <div className="pb-10 border-l border-gray-200 dark:border-neutral-700">
               <div className="relative flex flex-col justify-start pl-12">
-                <div className="absolute top-0 left-0  flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700">
+                <div className="absolute top-0 left-0  flex items-center justify-center -translate-x-1/2 bg-white border rounded-full  w-14 h-14 border-neutral-300 dark:border-neutral-700">
                   <img
                     src="https://res.cloudinary.com/ddksrkond/image/upload/v1699125504/Meta-Symbol_doxi6x.png"
                     alt="DevDojo"
@@ -583,7 +575,7 @@ const PageAboutHome = () => {
             </div>
             <div className="pb-10 border-l border-gray-200 dark:border-neutral-700">
               <div className="relative flex flex-col justify-start pl-12">
-                <div className="absolute top-0 left-0  flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700">
+                <div className="absolute top-0 left-0  flex items-center justify-center -translate-x-1/2 bg-white border rounded-full  w-14 h-14 border-neutral-300 ">
                   <img
                     src="https://res.cloudinary.com/ddksrkond/image/upload/v1699125504/Meta-Symbol_doxi6x.png"
                     alt="DevDojo"
@@ -600,6 +592,95 @@ const PageAboutHome = () => {
                     href="https://www.coursera.org/account/accomplishments/verify/ECTVTSGHGRYQ"
                   >
                     Version control certificate By Meta{" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="root"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="w-5 h-5"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </Link>
+                </h3>
+                <p className="mb-1 text-sm font-medium dark:text-neutral-300">
+                  Meta por Coursera
+                </p>
+                <p className="text-sm font-light text-neutral-600 dark:text-neutral-400">
+                  <span>Aptitudes:</span> <span> Mercurial · GitHub · Git</span>
+                </p>
+              </div>
+            </div>
+
+            <div className="pb-10 border-l border-gray-200 dark:border-neutral-700">
+              <div className="relative flex flex-col justify-start pl-12">
+                <div className="absolute top-0 left-0  flex items-center justify-center -translate-x-1/2 bg-white border rounded-full  w-14 h-14 border-neutral-300 ">
+                  <img
+                    src="https://res.cloudinary.com/ddksrkond/image/upload/v1699125504/Meta-Symbol_doxi6x.png"
+                    alt="DevDojo"
+                    className="w-12 h-12 object-contain"
+                  />
+                </div>
+                <p className="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest">
+
+                </p>
+                <h3 className=" my-1 flex text-lg font-bold dark:text-neutral-100">
+                  <Link
+                    className="flex hover:underline"
+                    target="_blank"
+                    href="#"
+                  >
+
+                    React Native{" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="root"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="w-5 h-5"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </Link>
+                </h3>
+                <p className="mb-1 text-sm font-medium dark:text-neutral-300">
+                  Meta por Coursera
+                </p>
+                <p className="text-sm font-light text-neutral-600 dark:text-neutral-400">
+                  <span>Aptitudes:</span> <span> Mercurial · GitHub · Git</span>
+                </p>
+              </div>
+            </div>
+            <div className="pb-10 border-l border-gray-200 dark:border-neutral-700">
+              <div className="relative flex flex-col justify-start pl-12">
+                <div className="absolute top-0 left-0  flex items-center justify-center -translate-x-1/2 bg-white border rounded-full w-14 h-14 border-neutral-300 ">
+                  <img
+                    src="https://res.cloudinary.com/ddksrkond/image/upload/v1699125504/Meta-Symbol_doxi6x.png"
+                    alt="DevDojo"
+                    className="w-12 h-12 object-contain"
+                  />
+                </div>
+                <p className="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest">
+
+                </p>
+                <h3 className=" my-1 flex text-lg font-bold dark:text-neutral-100">
+                  <Link
+                    className="flex hover:underline"
+                    target="_blank"
+                    href="#"
+                  >
+
+                    JavaScript programming{" "}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       id="root"
@@ -724,3 +805,227 @@ const PageAboutHome = () => {
 };
 
 export default PageAboutHome;
+/*****
+ * 
+   <div className="pb-10 border-l border-gray-200 dark:border-neutral-700">
+              <div className="relative flex flex-col justify-start pl-12">
+                <div className="absolute top-0 left-0  flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700">
+                  <img
+                    src="https://images.vexels.com/content/140583/preview/ibm-logo-9289b6.png"
+                    alt="DevDojo"
+                    className="w-12 h-12 object-contain"
+                  />
+                </div>
+                <p className="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest">
+
+                </p>
+                <h3 className=" my-1 flex text-lg font-bold dark:text-neutral-100">
+                  <Link
+                    className="flex hover:underline"
+                    target="_blank"
+                    href="#"
+                  >
+                    Design of interfaces and user experiences (UI/UX){" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="root"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="w-5 h-5"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </Link>
+                </h3>
+                <p className="mb-1 text-sm font-medium dark:text-neutral-300">
+                  IMB por Coursera
+                </p>
+                <p className="text-sm font-light text-neutral-600 dark:text-neutral-400">
+                  <span>Aptitudes:</span> <span> Mercurial · GitHub · Git</span>
+                </p>
+              </div>
+            </div>
+            <div className="pb-10 border-l border-gray-200 dark:border-neutral-700">
+              <div className="relative flex flex-col justify-start pl-12">
+                <div className="absolute top-0 left-0  flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700">
+                  <img
+                    src="https://inferencelabs9.com/wp-content/uploads/2024/01/AWS2-1.png"
+                    alt="DevDojo"
+                    className="w-12 h-12 object-contain"
+                  />
+                </div>
+                <p className="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest">
+
+                </p>
+                <h3 className=" my-1 flex text-lg font-bold dark:text-neutral-100">
+                  <Link
+                    className="flex hover:underline"
+                    target="_blank"
+                    href="#"
+                  >
+
+                    AWS Cloud Technical Fundamentals{" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="root"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="w-5 h-5"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </Link>
+                </h3>
+                <p className="mb-1 text-sm font-medium dark:text-neutral-300">
+                  Amazon Web Services por Coursera
+                </p>
+                <p className="text-sm font-light text-neutral-600 dark:text-neutral-400">
+                  <span>Aptitudes:</span> <span> Mercurial · GitHub · Git</span>
+                </p>
+              </div>
+            </div>
+            <div className="pb-10 border-l border-gray-200 dark:border-neutral-700">
+              <div className="relative flex flex-col justify-start pl-12">
+                <div className="absolute top-0 left-0  flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700">
+                  <img
+                    src="https://mrover.org/sponsorImages/coe.png"
+                    alt="DevDojo"
+                    className="w-12 h-12 object-contain"
+                  />
+                </div>
+                <p className="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest">
+
+                </p>
+                <h3 className=" my-1 flex text-lg font-bold dark:text-neutral-100">
+                  <Link
+                    className="flex hover:underline"
+                    target="_blank"
+                    href="#"
+                  >
+
+                    Intermediate PostgreSQL{" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="root"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="w-5 h-5"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </Link>
+                </h3>
+                <p className="mb-1 text-sm font-medium dark:text-neutral-300">
+                  University Of Michigan por Coursera
+                </p>
+                <p className="text-sm font-light text-neutral-600 dark:text-neutral-400">
+                  <span>Aptitudes:</span> <span> Mercurial · GitHub · Git</span>
+                </p>
+              </div>
+            </div>
+            <div className="pb-10 border-l border-gray-200 dark:border-neutral-700">
+              <div className="relative flex flex-col justify-start pl-12">
+                <div className="absolute top-0 left-0  flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700">
+                  <img
+                    src="https://d2j6dbq0eux0bg.cloudfront.net/images/24479407/3365229700.jpg"
+                    alt="DevDojo"
+                    className="w-12 h-12 object-contain"
+                  />
+                </div>
+                <p className="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest">
+
+                </p>
+                <h3 className=" my-1 flex text-lg font-bold dark:text-neutral-100">
+                  <Link
+                    className="flex hover:underline"
+                    target="_blank"
+                    href="#"
+                  >
+
+                    Building cloud services with the Java Spring Framework{" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="root"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="w-5 h-5"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </Link>
+                </h3>
+                <p className="mb-1 text-sm font-medium dark:text-neutral-300">
+                  Vanderbilt University por Coursera
+                </p>
+                <p className="text-sm font-light text-neutral-600 dark:text-neutral-400">
+                  <span>Aptitudes:</span> <span> Mercurial · GitHub · Git</span>
+                </p>
+              </div>
+            </div>
+            <div className="pb-10 border-l border-gray-200 dark:border-neutral-700">
+              <div className="relative flex flex-col justify-start pl-12">
+                <div className="absolute top-0 left-0  flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700">
+                  <img
+                    src="https://www.chinauniversityjobs.com/wp-content/uploads/2021/08/r%E9%A6%99%E6%B8%AF%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6-logo.png"
+                    alt="DevDojo"
+                    className="w-12 h-12 object-contain"
+                  />
+                </div>
+                <p className="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest">
+
+                </p>
+                <h3 className=" my-1 flex text-lg font-bold dark:text-neutral-100">
+                  <Link
+                    className="flex hover:underline"
+                    target="_blank"
+                    href="#"
+                  >
+
+                    Software engineering: modeling software systems with UML{" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="root"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="w-5 h-5"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </Link>
+                </h3>
+                <p className="mb-1 text-sm font-medium dark:text-neutral-300">
+                  The Hong Kong University of Science and Technology por Coursera
+                </p>
+                <p className="text-sm font-light text-neutral-600 dark:text-neutral-400">
+                  <span>Aptitudes:</span> <span> Mercurial · GitHub · Git</span>
+                </p>
+              </div>
+            </div>
+ * 
+ * *****/
+

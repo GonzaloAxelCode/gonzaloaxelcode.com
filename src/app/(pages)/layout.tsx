@@ -3,6 +3,8 @@ import "@/shared/styles/tailwindcss-custom.css";
 import "@splidejs/react-splide/css/core";
 import { Metadata } from "next";
 
+
+
 import Layoutclient from "./layoutclient";
 export const metadata: Metadata = {
   metadataBase: new URL("https://gonzaloaxelcode.com"),

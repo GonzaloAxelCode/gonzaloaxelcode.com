@@ -10,8 +10,6 @@ const PresentationPortfolio = () => {
         <div className="flex  flex-col-reverse items-center md:flex-row justify-between  ">
           <div className="relative w-full md:w-1/2 lg:w-3/4">
 
-
-
             <h1 className="mb-5 leading-title text-center md:text-left mt-5 md:mt-0 w-full text-3xl sm:text-4xl font-bold md:text-5xl lg:text-5xl dark:text-white">
               Hola 👋, soy{" "}
               <span className="relative">
